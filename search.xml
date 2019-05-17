@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[about]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[关于我]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[tags]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[标签]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[我的博客]]></title>
+    <url>%2Fp%2F78st7%2F</url>
+    <content type="text"><![CDATA[一级标题二级标题三级标题 一 二 三 引用 百度 粗体 斜体 Tables Are Cool col 3 is right-aligned $1600 col 2 is centered $12 zebra stripes are neat $1 代码： 123public static void main()&#123;print('hello world!')&#125; $E=mc^2$]]></content>
+  </entry>
+</search>

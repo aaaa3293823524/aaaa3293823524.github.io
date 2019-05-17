@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nextDay]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[目前想做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）]]></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[README]]></title>
     <url>%2Fp%2Fundefined%2F</url>
     <content type="text"></content>

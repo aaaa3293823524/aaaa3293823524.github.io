@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[图像融合]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[低频体现轮廓，高频体现细节![dwt2函数] images/图像融合.jpg [matlab编程基本api] http://www.docin.com/p-358189670.html]]></content>
+      <tags>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第二篇博客]]></title>
     <url>%2Fp%2F78uo0%2F</url>
     <content type="text"></content>
@@ -21,7 +29,7 @@
   <entry>
     <title><![CDATA[需要做的事情]]></title>
     <url>%2Fp%2F78tun%2F</url>
-    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop kaggle,天池,牛客竞赛，CCF CSP,PAT]]></content>
+    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop kaggle,天池,牛客竞赛，CCF CSP,PAT 数字图像处理，自然语言处理，推荐引擎，计算机视觉]]></content>
       <tags>
         <tag>搭建博客</tag>
         <tag>前端</tag>

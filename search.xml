@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[matlab知识]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[uint8 uint16 matlab四舍五入 转化为 0~255之间的整数四舍五入 转为0~65535之间的整数 db4 小波基]]></content>
+      <categories>
+        <category>matlab编程</category>
+      </categories>
+      <tags>
+        <tag>matlab编程</tag>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python爬虫总结]]></title>
     <url>%2Fp%2F792hn%2F</url>
     <content type="text"></content>
@@ -39,7 +51,7 @@
   <entry>
     <title><![CDATA[linux]]></title>
     <url>%2Fp%2F792hk%2F</url>
-    <content type="text"><![CDATA[打开Google浏览器/usr/bin/google-chrome-stable Ubuntu装搜狗输入法需要重启 界面操作 放弃 在Ubuntu上安装PPTP VPN服务卸载sudo apt —purge remove teamviewer]]></content>
+    <content type="text"><![CDATA[打开Google浏览器/usr/bin/google-chrome-stable Ubuntu装搜狗输入法需要重启 界面操作 放弃 在Ubuntu上安装PPTP VPN服务卸载sudo apt —purge remove teamviewer linux命令大全]]></content>
       <tags>
         <tag>linux</tag>
       </tags>
@@ -71,7 +83,7 @@
   <entry>
     <title><![CDATA[英语作文技巧]]></title>
     <url>%2Fp%2F790k6%2F</url>
-    <content type="text"><![CDATA[三段式有人认为 另外人认为 inform of insist我认为as is vividly shown扩展 举例说明 对比 比较 数字说明 说明论点重要性 副词修饰形容词表程度连词neither noreither orboth andbetween andhoweverto begin withwhat’s more/furthermore/in additionBelieve it or notto sum up/all in all/in a word/last but not leastsincerelyseldomtherefore/thusso that/in order totoo toattach importance to/be of great importanceAs for me/in my opinion/from my view of pointNowadaysgenerally speakingon the contraryaccount forat presentdue to/owing toin fact Meanwhile 句式only can beit is high time 强调句定语从句状语从句感叹句条件句the more the moremore nad moreone of the most比较级 more thanaccording to …… conducted by ,a high propotion ofas far as i am concernedmentioned abovewhat …. isthere areit is for/of to do sthas knownas well asillustrate/depict/portray 短语]]></content>
+    <content type="text"><![CDATA[三段式有人认为 另外人认为 inform of insist我认为as is vividly shown扩展 举例说明 对比 比较 数字说明 说明论点重要性 副词修饰形容词表程度连词neither noreither orboth andbetween andhoweverto begin withwhat’s more/furthermore/in additionBelieve it or notto sum up/all in all/in a word/last but not leastsincerelyseldomtherefore/thusso that/in order totoo toattach importance to/be of great importanceAs for me/in my opinion/from my view of pointNowadaysgenerally speakingon the contraryaccount forat presentdue to/owing toin fact Meanwhile first of all as as possible at firstUltimatelyby the wayeventually 句式only can beit is high time 强调句定语从句状语从句感叹句条件句the more the moremore nad moreone of the most比较级 more thanaccording to …… conducted by ,a high propotion ofas far as i am concernedmentioned abovewhat …. isthere areit is for/of to do sthas knownas well asillustrate/depict/portray 短语]]></content>
       <tags>
         <tag>英语</tag>
       </tags>
@@ -105,7 +117,7 @@
   <entry>
     <title><![CDATA[需要做的事情]]></title>
     <url>%2Fp%2F78tun%2F</url>
-    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop kaggle,天池,牛客竞赛，CCF CSP,PAT 数字图像处理，自然语言处理，推荐引擎，计算机视觉 自动化脚本制作，微信小程序]]></content>
+    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop kaggle,天池,牛客竞赛，CCF CSP,PAT 数字图像处理，自然语言处理，推荐引擎，计算机视觉 自动化脚本制作，微信小程序 裝深度操作系統（deepin），先用虚拟机试]]></content>
       <tags>
         <tag>搭建博客</tag>
         <tag>前端</tag>

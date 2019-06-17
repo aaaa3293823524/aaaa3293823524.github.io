@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[校园的一些网址]]></title>
+    <url>%2Fp%2F79s5x%2F</url>
+    <content type="text"><![CDATA[成绩:uims.jlu.edu.cn创新实践：ptms.jlu.edu.cn一卡通：dsf.jlu.edu.cn校园网：ip.jlu.edu.cnsais系统：https://sais.jlu.edu.cn账号：学号密码：#+（身份证号）]]></content>
+      <tags>
+        <tag>校园</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[黑苹果需要做的事情]]></title>
+    <url>%2Fp%2F79r53%2F</url>
+    <content type="text"><![CDATA[显卡驱动hd5500三种方法1 改bios dvmt 值为128m2 驱动broadwell3 声卡驱动显卡驱动后做的事情 添加Ubuntu到clover启动项中加exfat.efi到 clover目录下的driversUEFI64下 -亮度驱动 调节-电源驱动]]></content>
+      <tags>
+        <tag>黑苹果系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ngrok设置服务器外网访问]]></title>
+    <url>%2Fp%2F79cqj%2F</url>
+    <content type="text"><![CDATA[可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup]]></content>
+      <tags>
+        <tag>ngrok内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[matlab知识]]></title>
-    <url>%2Fp%2Fundefined%2F</url>
+    <url>%2Fp%2F795o6%2F</url>
     <content type="text"><![CDATA[uint8 uint16 matlab四舍五入 转化为 0~255之间的整数四舍五入 转为0~65535之间的整数 db4 小波基]]></content>
       <categories>
         <category>matlab编程</category>
@@ -75,7 +99,7 @@
   <entry>
     <title><![CDATA[明天要做的事情]]></title>
     <url>%2Fp%2F790kb%2F</url>
-    <content type="text"><![CDATA[买英文纸张练写字母把总结与扩展的论文看了预答辩课外8学分2B铅笔 ，橡皮，黑笔、准考证，表英语六级 2018年12月卷子 和2016年以前的卷子]]></content>
+    <content type="text"><![CDATA[买英文纸张练写字母把总结与扩展的论文看了预答辩课外8学分2B铅笔 ，橡皮，黑笔、准考证，表英语六级 2018年12月卷子 和2016年以前的卷子fiddler链接1 fiddler链接2]]></content>
       <tags>
         <tag>明天</tag>
       </tags>
@@ -83,7 +107,7 @@
   <entry>
     <title><![CDATA[英语作文技巧]]></title>
     <url>%2Fp%2F790k6%2F</url>
-    <content type="text"><![CDATA[三段式有人认为 另外人认为 inform of insist我认为as is vividly shown扩展 举例说明 对比 比较 数字说明 说明论点重要性 副词修饰形容词表程度连词neither noreither orboth andbetween andhoweverto begin withwhat’s more/furthermore/in additionBelieve it or notto sum up/all in all/in a word/last but not leastsincerelyseldomtherefore/thusso that/in order totoo toattach importance to/be of great importanceAs for me/in my opinion/from my view of pointNowadaysgenerally speakingon the contraryaccount forat presentdue to/owing toin fact Meanwhile first of all as as possible at firstUltimatelyby the wayeventually how about 提建议 Worst of all 句式only can beit is high time 强调句定语从句状语从句感叹句条件句the more the moremore nad moreone of the most比较级 more thanaccording to …… conducted by ,a high propotion ofas far as i am concernedmentioned abovewhat …. isthere areit is for/of to do sthas knownas well asillustrate/depict/portray 短语]]></content>
+    <content type="text"><![CDATA[how come三段式有人认为 另外人认为 inform of insist我认为as is vividly shown扩展 举例说明 对比 比较 数字说明 说明论点重要性 副词修饰形容词表程度连词neither noreither orboth andbetween andhoweverto begin withwhat’s more/furthermore/in additionBelieve it or notto sum up/all in all/in a word/last but not leastsincerelyseldomtherefore/thusso that/in order totoo toattach importance to/be of great importanceAs for me/in my opinion/from my view of pointNowadaysgenerally speakingon the contraryaccount forat presentdue to/owing toin fact Meanwhile first of all as as possible meantime at firstUltimatelyby the wayeventually how about 提建议 Worst of all as a matter of fact in other words 句式only can beit is high time 强调句定语从句状语从句感叹句条件句the more the moremore nad moreone of the most比较级 more thanaccording to …… conducted by ,a high propotion ofas far as i am concernedmentioned abovewhat …. isthere areit is for/of to do sthas knownas well asillustrate/depict/portray how did you like it? 短语]]></content>
       <tags>
         <tag>英语</tag>
       </tags>
@@ -117,7 +141,7 @@
   <entry>
     <title><![CDATA[需要做的事情]]></title>
     <url>%2Fp%2F78tun%2F</url>
-    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop kaggle,天池,牛客竞赛，CCF CSP,PAT 数字图像处理，自然语言处理，推荐引擎，计算机视觉 自动化脚本制作，微信小程序 裝深度操作系統（deepin），先用虚拟机试 锻炼（俯卧撑，仰卧起坐，哑铃）]]></content>
+    <content type="text"><![CDATA[需要做的事情 学习制作浏览器扩展程序 毕设相关文件 跑一些tensorflow和pytorch程序 实现机器学习实战里的代码 假期继续看书，刷leetcode,牛客网，看算法数据结构,opencv,maven 重学数据库，操作系统，linux(包括服务器搭建)，计算机网络（HTTP,安全，私网等）,设计模式，python,matlab 学大数据，ssM框架，英语,js编程 看论文，再学一遍机器学习，深度学习 李航《统计学习方法 第二版》，南瓜书， 重点推导数学公式 学机器学习的数学基础，复习高数，线代，概率论，组合数学，离散数学，计算机图形学等 看完opencv和大数据的视频，跑一下人工智能视频的代码,R语言，GO语言 sublime,DW,VSCode,IntelliJ IDEA,photoshop,AE,PR kaggle,天池,牛客竞赛，CCF CSP,PAT 数字图像处理，自然语言处理，推荐引擎，计算机视觉 自动化脚本制作，微信小程序 裝深度操作系統（deepin），先用虚拟机试 锻炼（俯卧撑，仰卧起坐，哑铃） 面经，笔试题 丰富简历]]></content>
       <tags>
         <tag>搭建博客</tag>
         <tag>前端</tag>

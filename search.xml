@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[黑苹果安装教程]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"><![CDATA[步骤1.分出一个mac盘 大小60G左右 如果你只是看视频 之类的差不多了 如果其他的就多点 ==mac 下你别想下游戏玩 我这里分出120G 分出来时黑色的 我们先不管它 有些步骤和大佬视频不同 也有补充 2.下载efi 可以找有自己电脑型号的 也可以下载通用的 我们用的工具也就这3个 还有你下载的eif 工具等下我会打包 我们先打开第一个 重点 这里有一个esp 网上说这个盘时要大于200m 因为要抹盘 不过我们的方式时不用的 为了安全最好也分给他200m以上 具体分盘大家百度哦 双击 进去 看到EFI 在双击 把大家下载好的efi 放进去 复制clover 3.复制好后 我们打开第3个软件 选择新建 类型其他系统 s输入大家喜欢的名字 选择刚刚的200m esp 添加这个文件 选择第一个按扭把clover反到第一个 不行 这里看不到我的盘 那我们换一个步骤 4.写入镜像 打开我们的第二个软件 这里我们还得去下载镜像的 镜像分为 原版和懒人版 正版是dmg 懒人的cdr格式 找到我们分区来的mac 右键选择第一个 手动 转错了 操 再来一次 这里等等 看到这里 apple hfs 就说明成功了 那我们直接先写入镜像 这里我们就要去下载镜像 这里是真大佬 去下载 下载好了后 我们选择mac盘 右键 选择第3个 这里我们点击蓝色的 选择镜像 淘宝的是有密码的 小斌下载的应该没有 点击ok 然后点击restore 我这边就用淘宝的恢复盘 拉到最大 然后等下好久呢 这个写好后 就是最后一步 设置磁盘id了 黑苹果安装容易 驱动最要人命的 ==所以 要安装的 要付出很大的代价 mac用来做开发很好的 特别是它的显示效果 大家可以快进下 好了 我们关闭软件 去cmd 5.设置磁盘id 这里就是需要用到我们的cmd工具 现在可以看到我们的mac盘了 我们写入id 我们现在重启电脑 ==卡 开机的时候有选择 这界面回根据不同的efi不一样 显示不一样 说白了 就是皮肤 然后选择苹果 回车 就可以进去了 进去后回安装系统 选择碰到 收集信息的时候选择 不收集 登入id 的时候 选择先不登入 就好了 diskpartlist disk —- 列出当前系统所有的磁盘，根据磁盘大小记下要安装的磁盘的编号select disk 0 —- 选择磁盘，0是磁盘编号，换成你自己实际的编号 挂载efi分区步骤：1 list vol 2 select vol 2 3 assign letter=M list partition —- 列出选择的磁盘上的分区，根据分区位置和大小记下要安装mac的分区select partition 4（看后面解释） —- 选择分区， 4是要安装的分区的编号。set id=48465300-0000-11AA-AA11-00306543ECAC —- 48465300-0000-11AA-AA11-00306543ECAC为苹果HFS+类型的GUID]]></content>
+      <tags>
+        <tag>黑苹果</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[校园的一些网址]]></title>
     <url>%2Fp%2F79s5x%2F</url>
     <content type="text"><![CDATA[成绩:uims.jlu.edu.cn创新实践：ptms.jlu.edu.cn一卡通：dsf.jlu.edu.cn校园网：ip.jlu.edu.cnsais系统：https://sais.jlu.edu.cn账号：学号密码：#+（身份证号）]]></content>
@@ -19,7 +27,7 @@
   <entry>
     <title><![CDATA[ngrok设置服务器外网访问]]></title>
     <url>%2Fp%2F79cqj%2F</url>
-    <content type="text"><![CDATA[可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup]]></content>
+    <content type="text"><![CDATA[可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup ubuntu安装软件命令sudo apt-get install foodpkg -i .debwget http:// ubuntu卸载软件命令sudo apt-get —purge remove foosudo apt-get remove foo 解决依赖问题sudo apt-get install -f 创建conda虚拟环境conda create -n name python=3.5 进入环境source activate test退出环境source deactivate 检查cuda版本cat /usr/local/cuda/version.txt conda install tensorflow-gpu=1.8.0 远程访问服务器Jupyter Notebook的方法 查看已安装的conda环境conda info -e 学习IDEA配置maven 配置大数据环境 kali linux 渗透测试系统 黑客教程 腾讯课堂]]></content>
       <tags>
         <tag>ngrok内网穿透</tag>
       </tags>

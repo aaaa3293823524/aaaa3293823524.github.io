@@ -1,8 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[天池竞赛学习总结（一）]]></title>
+    <url>%2Fp%2F79vmt%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[kaggle竞赛学习总结（一）]]></title>
+    <url>%2Fp%2F79vmt%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[opencv学习总结（一）]]></title>
+    <url>%2Fp%2F79vms%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SSM框架学习总结（一）]]></title>
+    <url>%2Fp%2F79vmr%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[算法和数据结构总结（一）]]></title>
+    <url>%2Fp%2F79vmr%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[设计模式学习总结]]></title>
+    <url>%2Fp%2F79vmp%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机网络学习总结（一）]]></title>
+    <url>%2Fp%2F79vmp%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[操作系统学习总结（一）]]></title>
+    <url>%2Fp%2F79vmp%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[图像分割学习总结（一）]]></title>
+    <url>%2Fp%2F79vmp%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数字图像处理学习总结（一）]]></title>
+    <url>%2Fp%2F79vmo%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[机器学习总结（一）]]></title>
+    <url>%2Fp%2F79vmo%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[自然语言处理学习总结（一）]]></title>
+    <url>%2Fp%2F79vmn%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[循环神经网络总结]]></title>
+    <url>%2Fp%2F79vmm%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[卷积神经网络总结]]></title>
+    <url>%2Fp%2F79vmm%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[深度学习框架学习]]></title>
+    <url>%2Fp%2F79vml%2F</url>
+    <content type="text"><![CDATA[tensorflow pytorch caffe]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux系统搭建以及学习（黑客）]]></title>
+    <url>%2Fp%2F79vmf%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[python学习（一）]]></title>
+    <url>%2Fp%2F79vm9%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>python学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hbase环境搭建]]></title>
+    <url>%2Fp%2F79vm7%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spark环境搭建]]></title>
+    <url>%2Fp%2F79vm6%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python数据分析学习总结]]></title>
+    <url>%2Fp%2F79vm5%2F</url>
+    <content type="text"><![CDATA[numpy matlab.pyplot pandas sklearn]]></content>
+      <tags>
+        <tag>python数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建hive环境]]></title>
+    <url>%2Fp%2F79vkf%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[刷题总结]]></title>
+    <url>%2Fp%2F79va2%2F</url>
+    <content type="text"><![CDATA[python:os模块os.rename()os.listdir()os.chgdir()os.map(int,input()) list(set(s1+s2)) lambda表达式 filter(lambda:x,) 列表推导式，字典推导式 enumerate zip re模块 12345678from collections import Counter string, k = input(), int(input())arr = sorted(Counter(string).values())for i in range(k): arr[-1] -= 1 arr.sort()print(sum(map(lambda c: c ** 2, arr))) sorted( key= ) reverse=True java: map的遍历12345678910111213141516171819202122//第三种 普遍使用,二次取值 通过Map.keySet遍历key和value： for(String key:map.keySet())&#123; System.out.println(key+"/"+map.get(key)); &#125; System.out.println("---------------------------------"); //第四种 通过Map.values()遍历所有的value，但不能遍历key for(String v:map.values())&#123; System.out.println("value:"+v); &#125; System.out.println("---------------------------------"); //第二种遍历方法 推荐，尤其是容量大时 for(Map.Entry&lt;String, String&gt; entry:map.entrySet())&#123; System.out.println(entry.getKey()+"/"+entry.getValue()); &#125; System.out.println("---------------------------------"); //第一种遍历方法 Set&lt;String&gt; set = map.keySet(); Iterator&lt;String&gt; it = set.iterator(); while(it.hasNext())&#123; String str = it.next(); System.out.println(str+"/"+map.get(str)); &#125; TreeSet和TreeMap可实现字典序 java字符串比较大小···String s1 = “abc”;String s2 = “abcd”;String s3 = “abcdfg”;String s4 = “1bcdfg”;String s5 = “cdfg”;System.out.println( s1.compareTo(s2) ); // -1 (前面相等,s1长度小1)System.out.println( s1.compareTo(s3) ); // -3 (前面相等,s1长度小3)System.out.println( s1.compareTo(s4) ); // 48 (“a”的ASCII码是97,”1”的的ASCII码是49,所以返回48)System.out.println( s1.compareTo(s5) ); // -2 (“a”的ASCII码是97,”c”的ASCII码是99,所以返回-2)··· LinkedList pop push Arrays.fill() 可用于数组初始化 PriorityQueue c++: include]]></content>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[黑苹果安装教程]]></title>
-    <url>%2Fp%2Fundefined%2F</url>
+    <url>%2Fp%2F79ujx%2F</url>
     <content type="text"><![CDATA[步骤1.分出一个mac盘 大小60G左右 如果你只是看视频 之类的差不多了 如果其他的就多点 ==mac 下你别想下游戏玩 我这里分出120G 分出来时黑色的 我们先不管它 有些步骤和大佬视频不同 也有补充 2.下载efi 可以找有自己电脑型号的 也可以下载通用的 我们用的工具也就这3个 还有你下载的eif 工具等下我会打包 我们先打开第一个 重点 这里有一个esp 网上说这个盘时要大于200m 因为要抹盘 不过我们的方式时不用的 为了安全最好也分给他200m以上 具体分盘大家百度哦 双击 进去 看到EFI 在双击 把大家下载好的efi 放进去 复制clover 3.复制好后 我们打开第3个软件 选择新建 类型其他系统 s输入大家喜欢的名字 选择刚刚的200m esp 添加这个文件 选择第一个按扭把clover反到第一个 不行 这里看不到我的盘 那我们换一个步骤 4.写入镜像 打开我们的第二个软件 这里我们还得去下载镜像的 镜像分为 原版和懒人版 正版是dmg 懒人的cdr格式 找到我们分区来的mac 右键选择第一个 手动 转错了 操 再来一次 这里等等 看到这里 apple hfs 就说明成功了 那我们直接先写入镜像 这里我们就要去下载镜像 这里是真大佬 去下载 下载好了后 我们选择mac盘 右键 选择第3个 这里我们点击蓝色的 选择镜像 淘宝的是有密码的 小斌下载的应该没有 点击ok 然后点击restore 我这边就用淘宝的恢复盘 拉到最大 然后等下好久呢 这个写好后 就是最后一步 设置磁盘id了 黑苹果安装容易 驱动最要人命的 ==所以 要安装的 要付出很大的代价 mac用来做开发很好的 特别是它的显示效果 大家可以快进下 好了 我们关闭软件 去cmd 5.设置磁盘id 这里就是需要用到我们的cmd工具 现在可以看到我们的mac盘了 我们写入id 我们现在重启电脑 ==卡 开机的时候有选择 这界面回根据不同的efi不一样 显示不一样 说白了 就是皮肤 然后选择苹果 回车 就可以进去了 进去后回安装系统 选择碰到 收集信息的时候选择 不收集 登入id 的时候 选择先不登入 就好了 diskpartlist disk —- 列出当前系统所有的磁盘，根据磁盘大小记下要安装的磁盘的编号select disk 0 —- 选择磁盘，0是磁盘编号，换成你自己实际的编号 挂载efi分区步骤：1 list vol 2 select vol 2 3 assign letter=M list partition —- 列出选择的磁盘上的分区，根据分区位置和大小记下要安装mac的分区select partition 4（看后面解释） —- 选择分区， 4是要安装的分区的编号。set id=48465300-0000-11AA-AA11-00306543ECAC —- 48465300-0000-11AA-AA11-00306543ECAC为苹果HFS+类型的GUID]]></content>
       <tags>
         <tag>黑苹果</tag>
@@ -58,8 +245,7 @@
     <url>%2Fp%2F792hn%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -76,8 +262,7 @@
     <url>%2Fp%2F792hl%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>

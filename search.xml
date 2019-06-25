@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js_DOM操作学习总结（一）]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[photoshop学习知识总结（一）]]></title>
+    <url>%2Fp%2Fundefined%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[推荐系统知识总结（一）]]></title>
+    <url>%2Fp%2F79wfu%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[学术的一些知识（一）]]></title>
+    <url>%2Fp%2F79wau%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java知识总结（一）]]></title>
+    <url>%2Fp%2F79wah%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[英语口语学习总结（一）]]></title>
+    <url>%2Fp%2F79vnc%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面试知识总结（一）]]></title>
+    <url>%2Fp%2F79vna%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[笔试题知识总结（一）]]></title>
+    <url>%2Fp%2F79vna%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微服务学习总结（一）]]></title>
+    <url>%2Fp%2F79vn9%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[运维学习总结（一）]]></title>
+    <url>%2Fp%2F79vn5%2F</url>
+    <content type="text"><![CDATA[awk处理按行存储数据的工具 sed shell脚本]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据库学习总结（一）]]></title>
+    <url>%2Fp%2F79vn2%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>搭建博客</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[天池竞赛学习总结（一）]]></title>
     <url>%2Fp%2F79vmt%2F</url>
     <content type="text"></content>
@@ -75,10 +172,9 @@
   <entry>
     <title><![CDATA[图像分割学习总结（一）]]></title>
     <url>%2Fp%2F79vmp%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[按分割目的划分 普通分割将不同分属不同物体的像素区域分开。如前景与后景分割开，狗的区域与猫的区域与背景分割开。 语义分割 图像的语义分割（Semantic Segmentation）在普通分割的基础上，分类出每一块区域的语义（即这块区域是什么物体）。如把画面中的所有物体都指出它们各自的类别。 实例分割在语义分割的基础上，给每个物体编号。如这个是该画面中的狗A，那个是画面中的狗B。 Fully Convolutional Networks (FCN) 我们介绍的第一篇论文是Fully Convolutional Networks for Semantic Segmentation，简称FCN。这篇论文是第一篇成功使用深度学习做图像语义分割的论文。论文的主要贡献有两点： 提出了全卷积网络。将全连接网络替换成了卷积网络，使得网络可以接受任意大小的图片，并输出和原图一样大小的分割图。只有这样，才能为每个像素做分类。使用了反卷积层（Deconvolution）。分类神经网络的特征图一般只有原图的几分之一大小。想要映射回原图大小必须对特征图进行上采样，这就是反卷积层的作用。虽然名字叫反卷积层，但其实它并不是卷积的逆操作，更合适的名字叫做转置卷积（Transposed Convolution），作用是从小的特征图卷出大的特征图。 DeepLabDeepLab有v1 v2 v3，第一篇名字叫做DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs。这一系列论文引入了以下几点比较重要的方法： 第一个是带洞卷积，英文名叫做Dilated Convolution，或者Atrous Convolution。带洞卷积实际上就是普通的卷积核中间插入了几个洞，如下图。 Pyramid Scene Parsing NetworkPyramid Scene Parsing Network的核心贡献是Global Pyramid Pooling，翻译成中文叫做全局金字塔池化。它将特征图缩放到几个不同的尺寸，使得特征具有更好地全局和多尺度信息，这一点在准确率提升上上非常有用。 Mask R-CNNMask R-CNN是大神何凯明的力作，将Object Detection与Semantic Segmentation合在了一起做。它的贡献主要是以下几点。 第一，神经网络有了多个分支输出。Mask R-CNN使用类似Faster R-CNN的框架，Faster R-CNN的输出是物体的bounding box和类别，而Mask R-CNN则多了一个分支，用来预测物体的语义分割图。也就是说神经网络同时学习两项任务，可以互相促进。 第二，在语义分割中使用Binary Mask。原来的语义分割预测类别需要使用0 1 2 3 4等数字代表各个类别。在Mask R-CNN中，检测分支会预测类别。这时候分割只需要用0 1预测这个物体的形状面具就行了。 第三，Mask R-CNN提出了RoiAlign用来替换Faster R-CNN中的RoiPooling。RoiPooling的思想是将输入图像中任意一块区域对应到神经网络特征图中的对应区域。RoiPooling使用了化整的近似来寻找对应区域，导致对应关系与实际情况有偏移。这个偏移在分类任务中可以容忍，但对于精细度更高的分割则影响较大。 为了解决这个问题，RoiAlign不再使用化整操作，而是使用线性插值来寻找更精准的对应区域。效果就是可以得到更好地对应。实验也证明了效果不错。下面展示了与之前方法的对比，下面的图是Mask R-CNN，可以看出精细了很多。 U-NetU-Net是原作者参加ISBI Challenge提出的一种分割网络，能够适应很小的训练集（大约30张图）。U-Net与FCN都是很小的分割网络，既没有使用空洞卷积，也没有后接CRF，结构简单。 类似于一个大大的U字母：首先进行Conv+Pooling下采样；然后Deconv反卷积进行上采样，crop之前的低层feature map，进行融合；然后再次上采样。重复这个过程，直到获得输出388x388x2的feature map，最后经过softmax获得output segment map。总体来说与FCN思路非常类似。 为何要提起U-Net？是因为U-Net采用了与FCN完全不同的特征融合方式：拼接！ 语义分割网络在特征融合时也有2种办法： FCN式的逐点相加，对应caffe的EltwiseLayer层，对应tensorflow的tf.add()U-Net式的channel维度拼接融合，对应caffe的ConcatLayer层，对应tensorflow的tf.concat() FCN-全卷积网络CRF-条件随机场MRF-马尔科夫随机场 FCN此处的FCN特指Fully Convolutional Networks for Semantic Segmentation论文中提出的结构，而非广义的全卷积网络。 作者的FCN主要使用了三种技术： 卷积化（Convolutional）上采样（Upsample）跳跃结构（Skip Layer） 卷积化 卷积化即是将普通的分类网络，比如VGG16，ResNet50/101等网络丢弃全连接层，换上对应的卷积层即可。 上采样 此处的上采样即是反卷积（Deconvolution）。当然关于这个名字不同框架不同，Caffe和Kera里叫Deconvolution，而tensorflow里叫conv_transpose。CS231n这门课中说，叫conv_transpose更为合适。 众所诸知，普通的池化（为什么这儿是普通的池化请看后文）会缩小图片的尺寸，比如VGG16 五次池化后图片被缩小了32倍。为了得到和原图等大的分割图，我们需要上采样/反卷积。 反卷积和卷积类似，都是相乘相加的运算。只不过后者是多对一，前者是一对多。而反卷积的前向和后向传播，只用颠倒卷积的前后向传播即可。所以无论优化还是后向传播算法都是没有问题 跳跃结构 （这个奇怪的名字是我翻译的，好像一般叫忽略连接结构）这个结构的作用就在于优化结果，因为如果将全卷积之后的结果直接上采样得到的结果是很粗糙的，所以作者将不同池化层的结果进行上采样之后来优化输出 SegNet/DeconvNet这样的结构总结在这儿，只是我觉得结构上比较优雅，它得到的结果不一定比上一种好。 DeepLab接下来介绍一个很成熟优雅的结构，以至于现在的很多改进是基于这个网络结构的进行的。 首先这里我们将指出一个第一个结构FCN的粗糙之处：为了保证之后输出的尺寸不至于太小，FCN的作者在第一层直接对原图加了100的padding，可想而知，这会引入噪声。 而怎样才能保证输出的尺寸不会太小而又不会产生加100 padding这样的做法呢？可能有人会说减少池化层不就行了，这样理论上是可以的，但是这样直接就改变了原先可用的结构了，而且最重要的一点是就不能用以前的结构参数进行fine-tune了。所以，Deeplab这里使用了一个非常优雅的做法：将pooling的stride改为1，再加上 1 padding。这样池化后的图片尺寸并未减小，并且依然保留了池化整合特征的特性。 但是，事情还没完。因为池化层变了，后面的卷积的感受野也对应的改变了，这样也不能进行fine-tune了。所以，Deeplab提出了一种新的卷积，带孔的卷积：Atrous Convolution 全连接条件随机场(DenseCRF) 对于每个像素i具有类别标签x_i还有对应的观测值y_i，这样每个像素点作为节点，像素与像素间的关系作为边，即构成了一个条件随机场。而且我们通过观测变量y_i来推测像素i对应的类别标签x_i。条件随机场如下： ２０１５年提出的ＳｅｇＮｅｔ网络是由编码器和解码器构成的分割网络前半部分是由卷积层和池化层组成的编码器，后半部分是由卷积层和上采样层组成的解码器。ＳｅｇＮｅｔ网络中，编码器提取特征图像，解码器将特征图像返回到输入图像的原始尺寸，以此方式实现端到端的网络结构。在此之后，又有大批的分割网络涌现出来。但大多都在ＦＣＮ的基础上一步步发展而来。下面对全卷积网络的主要构成进行概述 传统：水平集，区域生长，阈值，分水岭 基于阈值分割，基于边缘分割，基于聚类分割，基于轮廓分割，基于区域分割以及卷积神经网络 区域生长：该方法通过定义一个生长规则，然后在每一个Ｐ域内寻找一个种子像素，通过对图像进行扫描，依次在种子点周围邻域内寻找满足生长规则的像素并将其合并到种子所在的区域，然后再检查该区域的全部相邻点，并把满足生长准则的点合并到该区域，不断重复该过程直到找不到满足条件的像素为止。 对于噪声过多和灰度值不均匀的图像容易产生欠拟合和过拟合的问题 分水岭算法基于拓扑理论，通过模拟形态学的方法进行图像分割 水平集算法]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>图像分割</tag>
       </tags>
   </entry>
   <entry>
@@ -93,10 +189,9 @@
   <entry>
     <title><![CDATA[机器学习总结（一）]]></title>
     <url>%2Fp%2F79vmo%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[假设样本空间全体样本服从一个未知分布 认识数据 离散 连续 数据集 数据增强 召回率 准确率 F1 score 损失函数 分类器 贝叶斯 支持向量机 典型核函数 集成算法boostingbaggingstacking 随机森林 决策树 聚类原型kmeansknn层次自上而下自下而上 密度 网格 降维 PCA 监督学习无监督学习半监督学习强化学习 概率图模型 条件随机场 马尔科夫 神经网络 欠拟合与过拟合 dropout 数据预处理 优化算法sgd,bgd 随机梯度下降 批量梯度下降动量动量法（Ｍｏｍｅｎｔｕｍ）通过模拟物体运动时所产生的惯性来对其权值进行更新，通过模拟惯性时在一定程度上维持了物体原有的状态，然后在此状态上对其进行微调使其朝着正确的方向下降 Ａｄａｍ 最小批梯度下降法（ＭＢＧＤ 端到端 激活函数 在前向传播的过程中，会釆用激活函数的方式，对产生的结果进行非线性的处理。反向传播则是通过对结果误差的分析，通过链式法则和梯度下降的方法对神经网络中的权值进行调整，使结果更加接近于准确值。 梯度爆炸 梯度消失 ｔａｎｈ函数与ｓｉｇｍｏｄ函数关系如（２－４）所示，ｔａｎｈ（ｘ）＝２ｓｉｇｍｏｄ（２ｘ）—１ ｒｅｌｕ函数的出现有效的解决了梯度消失的问题，同时其收敛速度比另外两个函数更快 全卷积网络作为第一个针对语义进行分析的深度学习结构，在图像识别方面具有重要的影响力。Ｕ－ＮＥＴ网络作为针对医疗图像进行分析的网络结构，在细胞检测等方面应用广泛。ＳｅｇＮｅｔ网络作为目前最为高效的深度学习模型之一，在道路识别具有广泛的应用。 BN 批标准化操作 ＲＯＣ曲线AUC值 残差结构的概念的提出有效的解决了由于网络层次加深而导致的网络性能退化的问题，通过拟合残差映射的方式，即不直接将卷积结果作为输出，而是采用残差映射的方式来进行计算 残差公式 H(x)=x+F(x) 编码器 解码器 数据集产生测试集 留出法 分层采样 交叉验证法 k=m时 留一法 自助法 数据集较小、难以有效划分训练/测试集时很有用;，在初始数据量足够时，留出法和交叉验证法更常用一些.]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +199,7 @@
     <url>%2Fp%2F79vmn%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>自然语言处理</tag>
       </tags>
   </entry>
   <entry>
@@ -120,16 +214,15 @@
   <entry>
     <title><![CDATA[卷积神经网络总结]]></title>
     <url>%2Fp%2F79vmm%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[局部感知，权值共享减少了人工神经网络的训练参数，提高了训练效率 局部链接是指卷积神经网络中每一层的神经元只和上一层的一些区域进行连接。权值共享是指对同一个神经元，用于连接数据窗的权重是固定的。 感受野？ 特征图 参数个数 连接数的计算？ 卷积 池化同时池化层具有平移不变性，即即使图像经历了一小段位移，通过池化层所提取的特征也不会有变化 全连接 反卷积 尺寸变大，特征图数量减少 采用卷积神经网络对图像进行处理主要分为五个阶段，图像预处理，神经网络的构建，神经网络的训练以及参数调节，对于目标函数进行预测以及图像的后处理 图像处理一般分为图像灰度化，图像增强，图像去噪，图像二值化四个方面。 U-Net的特点：（1）将全连接层转换成卷积层 （2） 增加反卷积层（3）增加跳跃结构。CNN 通过浅层卷积提取图像的细节特征，如边缘、角点等，深层网络提取语义特征，如类别等( Akeret et al．，2017) 。U-Net 网络包括了两个呈对称状态的路径，左侧为收缩路径，用于捕捉图像的内容，右侧为扩张路径，用于精准定位。右侧路径每一次上采样都与对应左侧路径卷积层的特征进行拼接，融合多尺度特征，获得更丰富的图像信息。 图像分割中通常使用许多标准来评估算法的精度，这些精度通常都是像素精度及 IoU 的变种。 采用 3 种语义分割评价指标对分割结果进行评测，即: 统计像素准确率( pixel accuracy，PA) 、均像素精度( mean pixel accuracy，MPA) 和平均区域重合度( mean intersection over union，M-IoU) ，对网络的分割结果进行评估( 杨阿庆等，2017) 。 实验环境：基于 NVIDIA GTX1080 GPU 的硬件平台上搭建 Tensorflow 深度学习框架 目前主流物体检测算法需要预先划定默认框，通过对默认框的筛选剔除得到物体框 主流深度学习物体检测模型 采用的是回归的思想YOLO SSD 基于区域候选的思想SPP-net Ｒ-FCN 由于物体数量不可预知，不论是第 1 类还是第 2 类都需要按照一定的方式划定默认框( default boxes、anchors) ，从而建立起默认框预测框、真值物体框的关系以进行训练 迁移学习 ０１４年Ｓｉｍｏｎｙａｎ提出的ＶＧＧ网络，通过不断加深网络结构，对网络进行优化；从增强卷积功能方面进行优化，２０１４年Ｇ〇〇ｇｌｅＮｅｔ网络的提出，通过采用不同的卷积核进行卷积操作，最后进行融合来，进而强化卷积功能 VGG-16VGG-19 AlexNetＡｌｅｘＮｅｔ网络由五个卷积层和三个全连接层组成，与ＬｅＮｅｔ网络相比，该网络增加网络的卷积层以及全连接层的层数，増加特征提取的准确性，通过更换激活函数，采用修正线性单元，加入Ｄｒｏｐｏｕｔ层等方法减少过拟合现象的出现，通过使用ＧＰＵ来加快神经网络的训练速度，使得该网络具有更高的适用性 LeNetＬｅＮｅｔ网络，该网络由三个卷积层，一个下采样层以及一个全连接层组成 手写数字的识别方面有很好的效果，是卷积神经网络的第一个网络结构 GoogleNet resNet Inception V-Net 采用 经 典 的 语 义 分 割 模 型，如 FCN、Seg-Net、PSP-Net、DeepLab、Ｒefine-Net、U-Net等经典模型进行语义分割，利用特征提取模块所提取的特征，实现对每个像素点的密集分类，本文采用最基础的 FCN 模型为基础进行实 传统的算法诸如阈值分割、边缘分割等，取得了卓越的成就 深度学习的前端和后端是什么 图像分类、图像分割、目标检测]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[深度学习框架学习]]></title>
     <url>%2Fp%2F79vml%2F</url>
-    <content type="text"><![CDATA[tensorflow pytorch caffe]]></content>
+    <content type="text"><![CDATA[tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf. oat32 tf.float64 ）、整数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间的依赖关系 pytorch caffe keras theano 服务器 anaconda启动jupyter notebook报错 Error loading server extension jupyter_nbextensions_configurator ModuleNotFoundError: No module named ‘jupyter_nbextensions_configurator’]]></content>
       <tags>
         <tag>深度学习</tag>
       </tags>
@@ -137,12 +230,12 @@
   <entry>
     <title><![CDATA[linux系统搭建以及学习（黑客）]]></title>
     <url>%2Fp%2F79vmf%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[渗透测试]]></content>
   </entry>
   <entry>
     <title><![CDATA[python学习（一）]]></title>
     <url>%2Fp%2F79vm9%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[sys模块sys.stdin strip()]]></content>
       <tags>
         <tag>python学习</tag>
       </tags>
@@ -214,7 +307,7 @@
   <entry>
     <title><![CDATA[ngrok设置服务器外网访问]]></title>
     <url>%2Fp%2F79cqj%2F</url>
-    <content type="text"><![CDATA[可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup ubuntu安装软件命令sudo apt-get install foodpkg -i .debwget http:// ubuntu卸载软件命令sudo apt-get —purge remove foosudo apt-get remove foo 解决依赖问题sudo apt-get install -f 创建conda虚拟环境conda create -n name python=3.5 进入环境source activate test退出环境source deactivate 检查cuda版本cat /usr/local/cuda/version.txt conda install tensorflow-gpu=1.8.0 远程访问服务器Jupyter Notebook的方法 查看已安装的conda环境conda info -e 学习IDEA配置maven 配置大数据环境 kali linux 渗透测试系统 黑客教程 腾讯课堂]]></content>
+    <content type="text"><![CDATA[Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup ubuntu安装软件命令sudo apt-get install foodpkg -i .debwget http:// ubuntu卸载软件命令sudo apt-get —purge remove foosudo apt-get remove foo 解决依赖问题sudo apt-get install -f 创建conda虚拟环境conda create -n name python=3.5 进入环境source activate test退出环境source deactivate 检查cuda版本cat /usr/local/cuda/version.txt conda install tensorflow-gpu=1.8.0 Anaconda安装Pytorch （还没成功 还要再尝试）添加Anaconda的TUNA镜像 conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/设置搜索时显示通道地址 conda config —set show_channel_urls yes conda install pytorch torchvision -c soumith 远程访问服务器Jupyter Notebook的方法 查看已安装的conda环境conda info -e 学习IDEA配置maven 配置大数据环境 kali linux 渗透测试系统 黑客教程 腾讯课堂 关于jupyter notebook的一些事情 装插件python3.7 -m pip install jupyter_contrib_nbextensions import sysprint(sys.executable) 装有关内核的东西pip install ipykernel —user python -m ipykernel install —user pip install —upgrade pip&lt;!—将当前环境加入内核 这是系统的环境sudo python3.5 -m ipykernel install —name tf_python3.5 将我自己的环境加入方法 先看anaconda环境conda info -e conda environments:#base /home/zhangxuefeng/anaconda3tf_python3 * /home/zhangxuefeng/anaconda3/envs/tf_python3 再用下面的命令 —&gt; conda install nb_conda source ~/.bashrc 安装pytorchpytorch官网 conda install pytorch torchvision cudatoolkit=9.0 -c pytorch 换源conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config —set show_channel_urls yes conda config —prepend channels http://mirrors.ustc.edu.cn/anaconda/pkgs/free/ win10关机后自动重启解决办法 关机后电脑自动重启解决办法： 开始/运行/输入 regedit 回车，打开注册表编辑器，依次展开[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Window NT\Currentversion\Winlgon] 然后在右侧新建或修改已有的一个名称为＂PowerdownAfterShutdown＂的字符串值,其值＂1＂表示关机时关闭计算机电源,0表示重新启动电脑。 如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。]]></content>
       <tags>
         <tag>ngrok内网穿透</tag>
       </tags>
@@ -236,8 +329,7 @@
     <url>%2Fp%2F792hn%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -251,7 +343,7 @@
   <entry>
     <title><![CDATA[maven学习]]></title>
     <url>%2Fp%2F792hl%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[IntellIJ IDEA 配置 Maven 以及 修改 默认 Repository]]></content>
       <tags>
         <tag>搭建博客</tag>
         <tag>前端</tag>
@@ -260,7 +352,7 @@
   <entry>
     <title><![CDATA[Hadoop环境搭建]]></title>
     <url>%2Fp%2F792hl%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[三大发行版：apache 三种运行模式单机伪分布式分布式 结构化数据 半结构化数据 非结构化数据HDFS存储HDFS以流式数据访问模式来存储超大文件HDFS块设置要足够大 将寻址时间减少 数据传输时间占比更大也不能太大 map任务并行速度会慢 数据容错和可用性FileSystem类文件系统的一致模型 命令行hadoop fs mapreduce分析处理 两个阶段 map阶段和reduce阶段 键值对作为输入和输出两个函数 map函数和reduce函数 输入分片 jobtracker tasktracker namenode datanode 50070 HDFS 80208088 yarnmap任务将输出写入本地磁盘 combiner 合并函数 一种优化方案 对map输出进行处理 作为reduce的输入 无法确定其次数 RAID 冗余磁盘阵列 搭建虚拟机 指定虚拟机固定ip 安装eclipse zookeeper 协调服务 leader选举znode posix 可移植操作系统界面 sqoop Oozie Hue Hadoop I/O]]></content>
       <tags>
         <tag>大数据</tag>
       </tags>

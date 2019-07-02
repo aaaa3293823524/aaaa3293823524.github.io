@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r  ./linux64 zhangxu">
+  <meta name="description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.iban">
 <meta name="keywords" content="ngrok内网穿透">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ngrok设置服务器外网访问">
 <meta property="og:url" content="http://userzhang.ml/p/79cqj/index.html">
 <meta property="og:site_name" content="魔圣的博客">
-<meta property="og:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r  ./linux64 zhangxu">
+<meta property="og:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.iban">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T13:00:06.383Z">
+<meta property="og:updated_time" content="2019-06-29T04:01:57.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ngrok设置服务器外网访问">
-<meta name="twitter:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r  ./linux64 zhangxu">
+<meta name="twitter:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.iban">
 
 
 
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-25 21:00:06" itemprop="dateModified" datetime="2019-06-25T21:00:06+08:00">2019-06-25</time>
+                <time title="修改时间：2019-06-29 12:01:57" itemprop="dateModified" datetime="2019-06-29T12:01:57+08:00">2019-06-29</time>
               
             
           </span>
@@ -465,7 +465,7 @@
 
       
         <p>Bash<br>dash<br>zsh</p>
-<h1 id="可以把实验室服务器上的80端口-即gitlab映射出来"><a href="#可以把实验室服务器上的80端口-即gitlab映射出来" class="headerlink" title="可以把实验室服务器上的80端口 即gitlab映射出来"></a>可以把实验室服务器上的80端口 即gitlab映射出来</h1><p>./ngrok -config=ngrok.cfg -subdomain xxx 80</p>
+<h1 id="可以把实验室服务器上的80端口-即gitlab映射出来"><a href="#可以把实验室服务器上的80端口-即gitlab映射出来" class="headerlink" title="可以把实验室服务器上的80端口 即gitlab映射出来"></a>可以把实验室服务器上的80端口 即gitlab映射出来</h1><h1 id="用这种方法可以将其他端口-如jupyter-notebook映射出来"><a href="#用这种方法可以将其他端口-如jupyter-notebook映射出来" class="headerlink" title="用这种方法可以将其他端口 如jupyter notebook映射出来"></a>用这种方法可以将其他端口 如jupyter notebook映射出来</h1><p>./ngrok -config=ngrok.cfg -subdomain xxx 80</p>
 <h1 id="通过ssh外网访问"><a href="#通过ssh外网访问" class="headerlink" title="通过ssh外网访问"></a>通过ssh外网访问</h1><p>./ngrok -config=ngrok.cfg -proto=tcp 22<br>ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn</p>
 <p>scp -r  ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng</p>
 <p>nohup</p>
@@ -478,6 +478,7 @@
 <p>解决依赖问题<br>sudo apt-get install -f</p>
 <p>创建conda虚拟环境<br>conda create -n name python=3.5</p>
 <p>进入环境<br>source activate test<br>退出环境<br>source deactivate</p>
+<p>删除环境：<br>conda remove —name env_pytorch —all</p>
 <p>检查cuda版本<br>cat /usr/local/cuda/version.txt</p>
 <p>conda install tensorflow-gpu=1.8.0</p>
 <blockquote>
@@ -510,8 +511,9 @@
 <p>关机后电脑自动重启解决办法： </p>
 <ul>
 <li>开始/运行/输入 regedit 回车，打开注册表编辑器，依次展开[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Window NT\Currentversion\Winlgon] 然后在右侧新建或修改已有的一个名称为＂PowerdownAfterShutdown＂的字符串值,其值＂1＂表示关机时关闭计算机电源,0表示重新启动电脑。　 </li>
-<li>如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。 </li>
+<li>如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。</li>
 </ul>
+<p>pip install -r requirements.txt</p>
 
       
     </div>
@@ -691,7 +693,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -775,7 +777,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -853,7 +859,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#可以把实验室服务器上的80端口-即gitlab映射出来"><span class="nav-number">1.</span> <span class="nav-text">可以把实验室服务器上的80端口 即gitlab映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过ssh外网访问"><span class="nav-number">2.</span> <span class="nav-text">通过ssh外网访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda-environments"><span class="nav-number">3.</span> <span class="nav-text">conda environments:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#可以把实验室服务器上的80端口-即gitlab映射出来"><span class="nav-number">1.</span> <span class="nav-text">可以把实验室服务器上的80端口 即gitlab映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用这种方法可以将其他端口-如jupyter-notebook映射出来"><span class="nav-number">2.</span> <span class="nav-text">用这种方法可以将其他端口 如jupyter notebook映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过ssh外网访问"><span class="nav-number">3.</span> <span class="nav-text">通过ssh外网访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda-environments"><span class="nav-number">4.</span> <span class="nav-text">conda environments:</span></a></li></ol></div>
             
 
           </div>

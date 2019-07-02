@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[概率论和数理统计知识点总结]]></title>
+    <url>%2Fp%2F7a8iv%2F</url>
+    <content type="text"><![CDATA[第一章随机试验 样本空间 随机事件（ 基本事件 必然事件 不可能事件）事件关系和运算 和事件 积事件 差事件 对立事件 互逆交换律 结合律 分配律 德摩根律频率（频数除以试验次数） 概率（非负 规范 可列可加性）古典概型（取球 有放回 不放回）加法公式 乘法公式（条件概率）全概率公式 P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)贝叶斯公式 P(B1|A)=P(B1A)/P(A)=P(A|B1)P(B1)/如上全概率公式独立性 P（AB）=P(A)P(B)第二章 随机变量及其分布离散型随机变量和分布函数0-1分布二项（伯努利）分布泊松分布均匀分布指数分布正态分布随机变量分布函数F(x)=P{X&lt;=x}分布函数性质1 单调不减2 0&lt;=F（x）&lt;=13右连续 连续型随机变量和概率密度 （对分布函数求导得概率密度 对概率密度求积分得分布函数）第三章 多维随机变量及其分布离散型联合分布律边缘分布条件分布 条件分布律 条件概率密度 独立性 f(x,y)=fX(x)fY(y) F(x,y)=FX(x)FY(y) 条件概率密度 联合概率密度 边缘概率密度 两个随机变量的函数的分布1 Z=X+Y 卷积公式 2 Z=Y/X Z=XY分布 3 M=max{X,Y} N=min{X,Y} 第四章 随机变量的数字特征数学期望 方差 协方差 相关系数 矩，协方差矩阵E(X) D(X) COV(x,y) pxy =COV(x,y)/(根号D(x)*根号D(y)) 原点矩，中心矩，混合矩 第五章 大数定律及中心极限定理切比雪夫不等式 辛钦大数定理（弱大数定理） 相互独立 服从同一分布 依概率收敛 伯努利大数定理 （相当于辛钦大数定理对概率以概率收敛的特殊情况） 1中心极限定理 独立同分布2李雅普诺夫定理 不服从同分布 但独立3德莫弗-拉普拉斯定理 服从二项分布 第六章 样本及抽样分布随机样本 频率直方图 箱线图 统计量 不含未知参数 X2分布 t分布（学生式分布） F分布 第七章 参数估计统计推断的基本问题可以分为两大类 一类是估计问题 另一类是假设检验问题 点估计和区间估计分布函数已知 含有未知参数 根据总体的一个样本来估计参数 X:样本 x:样本值 最大似然估计法 最大似然估计值 最大似然估计量 对数似然方程 估计量的评选标准1 无偏性 2有效性 3相合性 置信水平 置信下限 置信上限 上a分位点 置信区间 正态总体均值与方差的区间估计 单侧置信区间单侧置信下限 单侧置信上限 第八章 假设检验检验统计量H0 原假设（零假设）H1 备择假设拒绝域 拒绝域的边界点为临界值第1类错误 弃真第2类错误 存伪 双边 单边 左边 右边 正态总体均值的假设检验 正态总体方差的假设检验 方差分析和回归分析bootstrap方法随机过程及统计描述马尔科夫链平稳随机过程]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js_DOM操作学习总结（一）]]></title>
-    <url>%2Fp%2Fundefined%2F</url>
+    <url>%2Fp%2F79wnf%2F</url>
     <content type="text"></content>
       <tags>
         <tag>搭建博客</tag>
@@ -11,7 +19,7 @@
   </entry>
   <entry>
     <title><![CDATA[photoshop学习知识总结（一）]]></title>
-    <url>%2Fp%2Fundefined%2F</url>
+    <url>%2Fp%2F79wi4%2F</url>
     <content type="text"></content>
       <tags>
         <tag>photoshop</tag>
@@ -29,7 +37,7 @@
   <entry>
     <title><![CDATA[学术的一些知识（一）]]></title>
     <url>%2Fp%2F79wau%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[谷歌学术，百度学术，中国知网，小木虫，SCI-hub,EI village]]></content>
       <tags>
         <tag>搭建博客</tag>
         <tag>前端</tag>
@@ -136,10 +144,9 @@
   <entry>
     <title><![CDATA[算法和数据结构总结（一）]]></title>
     <url>%2Fp%2F79vmr%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数据结构典型数据结构：集合结构 序列结构 层次结构 树形结构 图结构线性表单链表双链表循环链表队列 优先队列 双端堆栈 括号匹配 表达式计算和变换 字符串 数组 矩阵 二叉树 树 森林 图 基本图算法 最小生成树 最短路径 AOV/AOE网及其算法 AOV 拓扑排序 AOE 关键路径 AVL树 字典和集合 散列和散列表 排序 查找 算法分析 时间复杂度 空间复杂度 字典 算法python 列表insert放在最前面 列表append放在最后面算法性质//1有穷性 2能行性 3确定性 4 待更新 常数时间 多项式时间 指数时间算法描述 算法设计和分析 枚举法 递归 分治法 贪心法 回溯法 动态规划 分支限界法]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>算法和数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -222,7 +229,7 @@
   <entry>
     <title><![CDATA[深度学习框架学习]]></title>
     <url>%2Fp%2F79vml%2F</url>
-    <content type="text"><![CDATA[tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf. oat32 tf.float64 ）、整数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间的依赖关系 pytorch caffe keras theano 服务器 anaconda启动jupyter notebook报错 Error loading server extension jupyter_nbextensions_configurator ModuleNotFoundError: No module named ‘jupyter_nbextensions_configurator’]]></content>
+    <content type="text"><![CDATA[tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间的依赖关系 tf.Graph()tf.get_default_graph() 变量.initializer 为了方便 变量初始化用tf.global_variables_initializer 用placeholder代替常量tf.placeholder(tf.float32,shape=(1,2),name=’input’) sess=tf.Session() y是一堆操作sess.run(y,feed_dict={x:[[0.8,0.9]]}) 损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）tf.train.AdadeltaOptimizer(learning_rate= 学习率).minimize(损失函数) tf.nn.relutf.sigmoidtf.tanh 均方误差 MSE tf.where 相似于条件表达式tf.greater多层网络解决异或运算 噪声避免过拟合 正则化 （限制权重大小 ） 滑动平均模型 训练数据包括训练集和验证集 验证集来‘训练’超参数tf.variable_scope 命名空间tf.get_variable reuse=True 已经创建的变量 reuse=False 新建变量 tensorflow模型持久化 tf.train.Saver().meta 计算图的结构.ckpt 变量的取值 卷积和池化 特征提取全连接 分类 参数计算：卷积神经网络过滤器长宽深*输入深度+过滤器深 全连接网络输入*节点个数+节点个数 输出特征图尺寸：（（输入-过滤器+2*填充）/步长）+1 池化层 减小矩阵尺寸 一般不改变深度 减少最后全连接层的参数 卷积层使用过滤器横跨整个深度，池化层过滤器只影响一个深度的节点 tf.nn.conv2dtf.nn.max_pooltf.nn.avg_pool 全连接参数个数：输入*输出+输出 Inception 将卷积层并联在一起 当使用全0填充 步长为1时 输出矩阵大小相同 将深度拼接 Inception-v3有46层 11个Inception模块组成 有96个卷积层 迁移学习 瓶颈层 \ 一行不够下一行接着写 tensorflow多线程处理输入数据 队列 循环神经网络序列数据长期依赖问题 提出LSTM tensorBoard可视化高维向量input1=tf.constant([1.0,2.0,3.0],name=”input1”)input2=tf.Variable(tf.random_uniform([3]),name=”input2”)output=tf.add_n([input1,input2],name=”add”)writer=tf.summary.FileWriter(‘/home/zhangxuefeng/log’,tf.get_default_graph())writer.close() tensorboard —logdir={pwd} name_scope和Variable_scope区别tf.get_variable不受name_scope影响 不加命名空间 深度学习训练并行模式 多GPU并行 同步模式（效率不如异步模式） 异步模式（参数更新有问题） 分布式Tensorflow pytorch清华大学开源软件镜像站 conda config —add channels 检查pytorch是否支持GPUimport torchtorch.cuda.is_available() pyTorch基础Tensor可以和numpy的ndarray可以相互转换 区别在于Tensor可以在GPU运行，而ndarray只能CPU运行不同数据类型的Tensor,torch.FloatTensor,torch.DoubleTensor,torch.ShortTensor,torch.IntTensor,torch.LongTensorprint(“a is :{}”.format(a))torch.zeros((2,3))torch.randn((3,2)) torch.utils.data.Dataset torchvision 数据读取类 ImageFolder torch.nn.Moduletorch.optim 优化一阶优化算法 梯度下降二阶优化算法 Hessian方法 基于牛顿法 模型的保存和加载torch.save() 第一个参数保存对象 第二个参数是保存路径和名称 nn.Linear()nn.Sigmoid() 损失函数通过梯度*学习率更新参数sigmoid函数的两个缺点（1）梯度消失（2）非0均值tanh函数仍然存在梯度消失解决了0均值问题 RELU训练脆弱 maxout 模型的表示能力和容量梯度下降法变式Momentum动量： 动量计算，基于前面的梯度，也就是说参数更新不仅仅基于当前的梯度，也基于之前的梯度。 动量变形 Nesterov 计算经过动量更新后的位置的梯度Adagrad自适应学习率 RMSprop Adam(可以看成是RMSprop+Momentum) Tensor的拼接torch.cat() 处理数据和训练模型的技巧数据预处理中心化 标准化 PCA 白噪声 权重初始化全0初始化随机初始化稀疏初始化初始化偏置批标准化 防止过拟合正则化Dropoutnn.RELU(True)nn.Conv2d 卷积模块 nn.MaxPool2dnn.AvgPool2dnn.BatchNorm2sLeNet 网络层数很浅，也没激活层 1998年LeCun提出AlexNet相对于LeNet层数更深，第一次引入激活层RELU,全连接层引入Dropout层防止过拟合 有8层 11*11滤波器 2012年冠军 VGG使用很多小对的滤波器 层叠很多小的滤波器的感受野和一个大的滤波器的感受野是相同的，还能减少参数，同时有更深的网络结构 2014年亚军 GoogleNet(InceptionNet) 22层 2014年冠军 ResNet 2015 ImageNet竞赛冠军 残差模块 152层神经网络 恒等映射 H(x)-x LSTM nn.LSTM()记忆状态CGRU将输入门和遗忘门合成更新门 生成对抗网络生成模型 自动编码器 （编码器生成隐含向量 解码器） 变分自动编码器生成对抗网络的变式和应用 WGANCycle GAN caffekerastheanomxnetfast.ai服务器 anaconda启动jupyter notebook报错 Error loading server extension jupyter_nbextensions_configurator ModuleNotFoundError: No module named ‘jupyter_nbextensions_configurator’ 看内存大小free -m free -h]]></content>
       <tags>
         <tag>深度学习</tag>
       </tags>
@@ -235,7 +242,7 @@
   <entry>
     <title><![CDATA[python学习（一）]]></title>
     <url>%2Fp%2F79vm9%2F</url>
-    <content type="text"><![CDATA[sys模块sys.stdin strip()]]></content>
+    <content type="text"><![CDATA[Python教程- 廖雪峰的官方网站整除 //普通除法 /sys模块sys.stdin str int float bool tuple set self cls 装饰器 @staticmethodstrip() ipython魔术命令 %run 文件 %magic （2）%paste粘贴文本选择你要复制的代码，Ctrl+C复制，在ipython解释器中直接输入%paste则将复制的代码完整粘贴并且自动执行代码输入结果 （3）%cpaste也是粘贴文本的，但与%paste区别的是输入%cpaste命令后提示信息，该提示信息的意思是： 可以粘贴任何你复制的每一条代码，在你输入结束命令之前都不会执行代码，输入‘—’按回车或者使用‘Ctrl-D’停止粘贴代码，停止粘贴代码后会执行代码 %hist指历史命令 os.path.exists os.path.join]]></content>
       <tags>
         <tag>python学习</tag>
       </tags>
@@ -307,7 +314,7 @@
   <entry>
     <title><![CDATA[ngrok设置服务器外网访问]]></title>
     <url>%2Fp%2F79cqj%2F</url>
-    <content type="text"><![CDATA[Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup ubuntu安装软件命令sudo apt-get install foodpkg -i .debwget http:// ubuntu卸载软件命令sudo apt-get —purge remove foosudo apt-get remove foo 解决依赖问题sudo apt-get install -f 创建conda虚拟环境conda create -n name python=3.5 进入环境source activate test退出环境source deactivate 检查cuda版本cat /usr/local/cuda/version.txt conda install tensorflow-gpu=1.8.0 Anaconda安装Pytorch （还没成功 还要再尝试）添加Anaconda的TUNA镜像 conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/设置搜索时显示通道地址 conda config —set show_channel_urls yes conda install pytorch torchvision -c soumith 远程访问服务器Jupyter Notebook的方法 查看已安装的conda环境conda info -e 学习IDEA配置maven 配置大数据环境 kali linux 渗透测试系统 黑客教程 腾讯课堂 关于jupyter notebook的一些事情 装插件python3.7 -m pip install jupyter_contrib_nbextensions import sysprint(sys.executable) 装有关内核的东西pip install ipykernel —user python -m ipykernel install —user pip install —upgrade pip&lt;!—将当前环境加入内核 这是系统的环境sudo python3.5 -m ipykernel install —name tf_python3.5 将我自己的环境加入方法 先看anaconda环境conda info -e conda environments:#base /home/zhangxuefeng/anaconda3tf_python3 * /home/zhangxuefeng/anaconda3/envs/tf_python3 再用下面的命令 —&gt; conda install nb_conda source ~/.bashrc 安装pytorchpytorch官网 conda install pytorch torchvision cudatoolkit=9.0 -c pytorch 换源conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config —set show_channel_urls yes conda config —prepend channels http://mirrors.ustc.edu.cn/anaconda/pkgs/free/ win10关机后自动重启解决办法 关机后电脑自动重启解决办法： 开始/运行/输入 regedit 回车，打开注册表编辑器，依次展开[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Window NT\Currentversion\Winlgon] 然后在右侧新建或修改已有的一个名称为＂PowerdownAfterShutdown＂的字符串值,其值＂1＂表示关机时关闭计算机电源,0表示重新启动电脑。 如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。]]></content>
+    <content type="text"><![CDATA[Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.ibanzhuan.cn scp -r ./linux64 zhangxuefeng@192.168.3.234:/home/zhangxuefeng nohup ubuntu安装软件命令sudo apt-get install foodpkg -i .debwget http:// ubuntu卸载软件命令sudo apt-get —purge remove foosudo apt-get remove foo 解决依赖问题sudo apt-get install -f 创建conda虚拟环境conda create -n name python=3.5 进入环境source activate test退出环境source deactivate 删除环境：conda remove —name env_pytorch —all 检查cuda版本cat /usr/local/cuda/version.txt conda install tensorflow-gpu=1.8.0 Anaconda安装Pytorch （还没成功 还要再尝试）添加Anaconda的TUNA镜像 conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/设置搜索时显示通道地址 conda config —set show_channel_urls yes conda install pytorch torchvision -c soumith 远程访问服务器Jupyter Notebook的方法 查看已安装的conda环境conda info -e 学习IDEA配置maven 配置大数据环境 kali linux 渗透测试系统 黑客教程 腾讯课堂 关于jupyter notebook的一些事情 装插件python3.7 -m pip install jupyter_contrib_nbextensions import sysprint(sys.executable) 装有关内核的东西pip install ipykernel —user python -m ipykernel install —user pip install —upgrade pip&lt;!—将当前环境加入内核 这是系统的环境sudo python3.5 -m ipykernel install —name tf_python3.5 将我自己的环境加入方法 先看anaconda环境conda info -e conda environments:#base /home/zhangxuefeng/anaconda3tf_python3 * /home/zhangxuefeng/anaconda3/envs/tf_python3 再用下面的命令 —&gt; conda install nb_conda source ~/.bashrc 安装pytorchpytorch官网 conda install pytorch torchvision cudatoolkit=9.0 -c pytorch 换源conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config —add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config —set show_channel_urls yes conda config —prepend channels http://mirrors.ustc.edu.cn/anaconda/pkgs/free/ win10关机后自动重启解决办法 关机后电脑自动重启解决办法： 开始/运行/输入 regedit 回车，打开注册表编辑器，依次展开[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Window NT\Currentversion\Winlgon] 然后在右侧新建或修改已有的一个名称为＂PowerdownAfterShutdown＂的字符串值,其值＂1＂表示关机时关闭计算机电源,0表示重新启动电脑。 如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。 pip install -r requirements.txt]]></content>
       <tags>
         <tag>ngrok内网穿透</tag>
       </tags>

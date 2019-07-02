@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf. oat32 tf.float64 ）、整数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间">
+  <meta name="description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
 <meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习框架学习">
 <meta property="og:url" content="http://userzhang.ml/p/79vml/index.html">
 <meta property="og:site_name" content="魔圣的博客">
-<meta property="og:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf. oat32 tf.float64 ）、整数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间">
+<meta property="og:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T10:26:53.795Z">
+<meta property="og:updated_time" content="2019-07-02T03:19:15.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习框架学习">
-<meta name="twitter:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf. oat32 tf.float64 ）、整数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算之间">
+<meta name="twitter:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
 
 
 
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 18:26:53" itemprop="dateModified" datetime="2019-06-21T18:26:53+08:00">2019-06-21</time>
+                <time title="修改时间：2019-07-02 11:19:15" itemprop="dateModified" datetime="2019-07-02T11:19:15+08:00">2019-07-02</time>
               
             
           </span>
@@ -464,13 +464,75 @@
       
 
       
-        <p>tensorflow<br>TensorFlow 支持 14 种不同的类型，实数<br>（ tf. oat32 tf.float64 ）、整<br>数（ tf.int8 tf.intl tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64<br>tf.complex128<br>计算图<br>会话<br>张量 name shape dtype<br>每个节点都是一个运算，而每 条边代表了计算之间的依赖关系</p>
-<p>pytorch</p>
-<p>caffe</p>
-<p>keras </p>
-<p>theano</p>
-<p>服务器 anaconda启动jupyter notebook报错</p>
+        <p>tensorflow<br>TensorFlow 支持 14 种不同的类型，实数<br>（ tf.float32 tf.float64 ）、整<br>数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64<br>tf.complex128<br>计算图<br>会话<br>张量 name shape dtype<br>每个节点都是一个运算，而每 条边代表了计算之间的依赖关系</p>
+<p>tf.Graph()<br>tf.get_default_graph()</p>
+<p>变量.initializer</p>
+<p>为了方便 变量初始化用tf.global_variables_initializer</p>
+<h2 id="用placeholder代替常量"><a href="#用placeholder代替常量" class="headerlink" title="用placeholder代替常量"></a>用placeholder代替常量</h2><p>tf.placeholder(tf.float32,shape=(1,2),name=’input’)</p>
+<p>sess=tf.Session()</p>
+<p>y是一堆操作<br>sess.run(y,feed_dict={x:[[0.8,0.9]]})</p>
+<h2 id="损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><a href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）" class="headerlink" title="损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）"></a>损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</h2><p>tf.train.AdadeltaOptimizer(learning_rate= 学习率).minimize(损失函数)</p>
+<p>tf.nn.relu<br>tf.sigmoid<br>tf.tanh</p>
+<p>均方误差 MSE</p>
+<p>tf.where  相似于条件表达式<br>tf.greater<br>多层网络解决异或运算</p>
+<p>噪声<br>避免过拟合 正则化 （限制权重大小 ）</p>
+<p>滑动平均模型</p>
+<h2 id="训练数据包括训练集和验证集-验证集来‘训练’超参数"><a href="#训练数据包括训练集和验证集-验证集来‘训练’超参数" class="headerlink" title="训练数据包括训练集和验证集 验证集来‘训练’超参数"></a>训练数据包括训练集和验证集 验证集来‘训练’超参数</h2><p>tf.variable_scope 命名空间<br>tf.get_variable  reuse=True 已经创建的变量   reuse=False 新建变量</p>
+<p>tensorflow模型持久化 tf.train.Saver()<br>.meta 计算图的结构<br>.ckpt  变量的取值</p>
+<p>卷积和池化 特征提取<br>全连接   分类</p>
+<h2 id="参数计算："><a href="#参数计算：" class="headerlink" title="参数计算："></a>参数计算：</h2><p>卷积神经网络<br>过滤器长<em>宽</em>深*输入深度+过滤器深</p>
+<p>全连接网络<br>输入*节点个数+节点个数</p>
+<p>输出特征图尺寸：<br>（（输入-过滤器+2*填充）/步长）+1</p>
+<p>池化层 减小矩阵尺寸 一般不改变深度 减少最后全连接层的参数</p>
+<p>卷积层使用过滤器横跨整个深度，池化层过滤器只影响一个深度的节点</p>
+<p>tf.nn.conv2d<br>tf.nn.max_pool<br>tf.nn.avg_pool</p>
+<p>全连接参数个数：<br>输入*输出+输出</p>
+<p>Inception 将卷积层并联在一起</p>
+<p>当使用全0填充 步长为1时 输出矩阵大小相同 将深度拼接</p>
+<p>Inception-v3有46层 11个Inception模块组成  有96个卷积层</p>
+<p>迁移学习   瓶颈层</p>
+<p>\ 一行不够下一行接着写</p>
+<p>tensorflow多线程处理输入数据  队列</p>
+<p>循环神经网络<br>序列数据<br>长期依赖问题   提出LSTM</p>
+<h2 id="tensorBoard可视化高维向量"><a href="#tensorBoard可视化高维向量" class="headerlink" title="tensorBoard可视化高维向量"></a>tensorBoard可视化高维向量</h2><p>input1=tf.constant([1.0,2.0,3.0],name=”input1”)<br>input2=tf.Variable(tf.random_uniform([3]),name=”input2”)<br>output=tf.add_n([input1,input2],name=”add”)<br>writer=tf.summary.FileWriter(‘/home/zhangxuefeng/log’,tf.get_default_graph())<br>writer.close()</p>
+<p>tensorboard —logdir={pwd}</p>
+<p>name_scope和Variable_scope区别<br>tf.get_variable不受name_scope影响 不加命名空间</p>
+<p>深度学习训练并行模式 多GPU并行  同步模式（效率不如异步模式）  异步模式（参数更新有问题）</p>
+<p>分布式Tensorflow</p>
+<h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><p><a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a></p>
+<p>conda config —add channels</p>
+<h2 id="检查pytorch是否支持GPU"><a href="#检查pytorch是否支持GPU" class="headerlink" title="检查pytorch是否支持GPU"></a>检查pytorch是否支持GPU</h2><p>import torch<br>torch.cuda.is_available()</p>
+<h2 id="pyTorch基础"><a href="#pyTorch基础" class="headerlink" title="pyTorch基础"></a>pyTorch基础</h2><p>Tensor可以和numpy的ndarray可以相互转换 区别在于Tensor可以在GPU运行，而ndarray只能CPU运行<br>不同数据类型的Tensor,torch.FloatTensor,torch.DoubleTensor,torch.ShortTensor,torch.IntTensor,torch.LongTensor<br>print(“a is :{}”.format(a))<br>torch.zeros((2,3))<br>torch.randn((3,2))</p>
+<p>torch.utils.data.Dataset</p>
+<p>torchvision 数据读取类 ImageFolder</p>
+<p>torch.nn.Module<br>torch.optim 优化<br>一阶优化算法 梯度下降<br>二阶优化算法 Hessian方法  基于牛顿法</p>
+<h2 id="模型的保存和加载"><a href="#模型的保存和加载" class="headerlink" title="模型的保存和加载"></a>模型的保存和加载</h2><p>torch.save()   第一个参数保存对象  第二个参数是保存路径和名称</p>
+<p>nn.Linear()<br>nn.Sigmoid()</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>通过梯度*学习率更新参数<br>sigmoid函数的两个缺点<br>（1）梯度消失<br>（2）非0均值<br>tanh函数<br>仍然存在梯度消失<br>解决了0均值问题</p>
+<p>RELU<br>训练脆弱</p>
+<p>maxout</p>
+<h2 id="模型的表示能力和容量"><a href="#模型的表示能力和容量" class="headerlink" title="模型的表示能力和容量"></a>模型的表示能力和容量</h2><h2 id="梯度下降法变式"><a href="#梯度下降法变式" class="headerlink" title="梯度下降法变式"></a>梯度下降法变式</h2><p>Momentum<br>动量： 动量计算，基于前面的梯度，也就是说参数更新不仅仅基于当前的梯度，也基于之前的梯度。</p>
+<p>动量变形  Nesterov 计算经过动量更新后的位置的梯度<br>Adagrad<br>自适应学习率</p>
+<p>RMSprop</p>
+<p>Adam(可以看成是RMSprop+Momentum)</p>
+<h2 id="Tensor的拼接"><a href="#Tensor的拼接" class="headerlink" title="Tensor的拼接"></a>Tensor的拼接</h2><p>torch.cat()</p>
+<h2 id="处理数据和训练模型的技巧"><a href="#处理数据和训练模型的技巧" class="headerlink" title="处理数据和训练模型的技巧"></a>处理数据和训练模型的技巧</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>中心化</p>
+<p>标准化</p>
+<p>PCA</p>
+<p>白噪声</p>
+<h3 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h3><p>全0初始化<br>随机初始化<br>稀疏初始化<br>初始化偏置<br>批标准化</p>
+<h3 id="防止过拟合"><a href="#防止过拟合" class="headerlink" title="防止过拟合"></a>防止过拟合</h3><p>正则化<br>Dropout<br>nn.RELU(True)<br>nn.Conv2d  卷积模块</p>
+<p>nn.MaxPool2d<br>nn.AvgPool2d<br>nn.BatchNorm2s<br>LeNet 网络层数很浅，也没激活层      1998年LeCun提出<br>AlexNet相对于LeNet层数更深，第一次引入激活层RELU,全连接层引入Dropout层防止过拟合 有8层   11*11滤波器    2012年冠军</p>
+<p>VGG使用很多小对的滤波器 层叠很多小的滤波器的感受野和一个大的滤波器的感受野是相同的，还能减少参数，同时有更深的网络结构  2014年亚军</p>
+<p>GoogleNet(InceptionNet)   22层    2014年冠军</p>
+<p>ResNet 2015 ImageNet竞赛冠军 残差模块 152层神经网络 恒等映射    H(x)-x</p>
+<p>LSTM      nn.LSTM()<br>记忆状态C<br>GRU将输入门和遗忘门合成更新门</p>
+<p>生成对抗网络<br>生成模型      自动编码器  （编码器生成隐含向量  解码器） 变分自动编码器<br>生成对抗网络的变式和应用</p>
+<p>WGAN<br>Cycle GAN</p>
+<h1 id="caffe"><a href="#caffe" class="headerlink" title="caffe"></a>caffe</h1><h1 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h1><h1 id="theano"><a href="#theano" class="headerlink" title="theano"></a>theano</h1><h1 id="mxnet"><a href="#mxnet" class="headerlink" title="mxnet"></a>mxnet</h1><h1 id="fast-ai"><a href="#fast-ai" class="headerlink" title="fast.ai"></a>fast.ai</h1><p>服务器 anaconda启动jupyter notebook报错</p>
 <p> Error loading server extension jupyter_nbextensions_configurator<br> ModuleNotFoundError: No module named ‘jupyter_nbextensions_configurator’</p>
+<p> 看内存大小<br>free -m</p>
+<p>free -h</p>
 
       
     </div>
@@ -623,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -641,7 +712,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -725,7 +796,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -792,6 +867,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用placeholder代替常量"><span class="nav-number">1.</span> <span class="nav-text">用placeholder代替常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><span class="nav-number">2.</span> <span class="nav-text">损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据包括训练集和验证集-验证集来‘训练’超参数"><span class="nav-number">3.</span> <span class="nav-text">训练数据包括训练集和验证集 验证集来‘训练’超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数计算："><span class="nav-number">4.</span> <span class="nav-text">参数计算：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorBoard可视化高维向量"><span class="nav-number">5.</span> <span class="nav-text">tensorBoard可视化高维向量</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch"><span class="nav-number"></span> <span class="nav-text">pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查pytorch是否支持GPU"><span class="nav-number">1.</span> <span class="nav-text">检查pytorch是否支持GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyTorch基础"><span class="nav-number">2.</span> <span class="nav-text">pyTorch基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的保存和加载"><span class="nav-number">3.</span> <span class="nav-text">模型的保存和加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">4.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的表示能力和容量"><span class="nav-number">5.</span> <span class="nav-text">模型的表示能力和容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法变式"><span class="nav-number">6.</span> <span class="nav-text">梯度下降法变式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor的拼接"><span class="nav-number">7.</span> <span class="nav-text">Tensor的拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理数据和训练模型的技巧"><span class="nav-number">8.</span> <span class="nav-text">处理数据和训练模型的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">8.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重初始化"><span class="nav-number">8.2.</span> <span class="nav-text">权重初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止过拟合"><span class="nav-number">8.3.</span> <span class="nav-text">防止过拟合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#caffe"><span class="nav-number"></span> <span class="nav-text">caffe</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras"><span class="nav-number"></span> <span class="nav-text">keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#theano"><span class="nav-number"></span> <span class="nav-text">theano</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mxnet"><span class="nav-number"></span> <span class="nav-text">mxnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fast-ai"><span class="nav-number"></span> <span class="nav-text">fast.ai</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

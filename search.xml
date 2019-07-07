@@ -53,6 +53,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[设计模式学习总结]]></title>
+    <url>%2Fp%2F79vrp%2F</url>
+    <content type="text"><![CDATA[开闭原则单一职责原则 继承关联依赖组合聚合 UML图 创建型 创建型模式(Creational Pattern)关注的是对象的创建，将创建对象(类的实例化)的过程进行了抽象和封装，分离了对象创建和对象使用简单工厂 （静态工厂方法）equalsIgnoreCase() 在JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间。 工厂方法抽象工厂建造者 （部件和组装过程分开，一步步创建一个复杂的对象）JavaMail（一步一步构造一个完整的邮件对象，然后发送） 原型 （复制）深克隆 浅克隆clone() getClass()structs2中Action对象 Spring创建bean实例 单例 并发和同步问题 java.lang.Runtime类 默认情况下Spring会通过单例模式创建bean实例1&lt;bean id="date" class="java.util.Date" scope="singleton"/&gt; 饿汉 懒汉 结构型结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构结构型模式可以分为类结构型模式和对象结构型模式 适配器模式(Adapter)适配器模式既可以作为类结构型模式，也可以作为对象结构型模式。 桥接模式(Bridge)组合模式(Composite)树形结构 容器对象 叶子对象组合模式又可以称为“整体-部分”(Part-Whole)模式，属于对象结构型模式，它将对象组织到树结构中，可以用来描述整体与部分的关系 装饰模式(Decorator)在装饰器中既可以调用原有类的方法，还可以增加新的方法，以扩充原有类的功能 外观模式(Facade)享元模式(Flyweight)代理模式(Proxy)行为型行为型模式分为类行为型模式和对象行为型模式两种 职责链模式(Chain of Responsibility) Java中的异常处理机制 在Web应用开发中创建一个过滤器(Filter)链来对请求数据进行过滤，在工作流系统中实现公文的分级审批等等。 早期的Java AWT事件模型(JDK 1.0及更早) ：事件浮升(Event Bubbling)机制。 命令模式(Command)解释器模式(Interpreter)迭代器模式(Iterator) 遍历 java内置迭代器 next() 中介者模式(Mediator)qq群网状结构同事对象中介者模式的目的主要是松散多个模块之间的耦合，把这些耦合关系全部放到中介者中去实现；而外观模式的目的是简化客户端的调用，这点和中介者模式也不同。 备忘录模式(Memento)撤销(Undo)的功能 历史状态 观察者模式(Observer)观察者模式(Observer Pattern)：定义对象间的一种一对多依赖关系，使得每当一个对象状态发生改变时，其相关依赖对象皆得到通知并被自动更新。观察者模式又叫做发布-订阅(Publish/Subscribe)模式、模型-视图(Model/View)模式、源-监听器(Source/Listener)模式或从属者(Dependents)模式。观察者模式是一种对象行为型模式。 状态模式(State)状态类 状态模式和观察者模式的区别这两个模式都是在状态发生改变的时候触发行为，只不过观察者模式的行为是固定的，那就是通知所有的观察者，而状态模式是根据状态来选择不同的处理，当状态发生改变的时候，动态改变行为。 策略模式(Strategy)Java SE的容器布局管理是策略模式应用的经典实例。 策略模式与状态模式的比较可以通过环境类状态的个数来决定是使用策略模式还是状态模式。如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。 使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。策略模式中，具体策略类无须关心环境类；而状态模式中具体状态往往需要维护一个环境类的引用，以便通过该引用实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。 模板方法模式(Template Method)类行为型模式 基本方法是实现算法各个步骤的方法，是模板方法的组成部分。基本方法分为三种：抽象方法(Abstract Method)、具体方法(Concrete Method)和钩子方法(Hook Method)。 访问者模式(Visitor)优缺点 模式之间的比较和区别]]></content>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[英语口语学习总结（一）]]></title>
     <url>%2Fp%2F79vnc%2F</url>
     <content type="text"></content>
@@ -147,14 +155,6 @@
     <content type="text"><![CDATA[数据结构典型数据结构：集合结构 序列结构 层次结构 树形结构 图结构线性表单链表双链表循环链表队列 优先队列 双端堆栈 括号匹配 表达式计算和变换 字符串 数组 矩阵 二叉树 树 深度 编号 森林 图 邻接矩阵 邻接表 基本图算法 最小生成树 最短路径 AOV/AOE网及其算法 AOV 拓扑排序 AOE 关键路径 AVL树 字典和集合 散列和散列表 排序 稳定 不稳定插入 希尔 冒泡 堆 堆排序 快速排序 选择排序 合并排序 值排序 查找 算法分析 时间复杂度 空间复杂度 字典 算法python 列表insert放在最前面 列表append放在最后面算法性质//1有穷性 2能行性 3确定性 4 待更新 常数时间 多项式时间 指数时间算法描述 算法设计和分析 进制转换（商为0停止） 最大公约数（辗转相除法 余数为0停止） 最小公倍数（两数相乘除以最大公约数） 枚举法 递归 分治法 贪心法 回溯法 动态规划 （最大连续子序列和 最长不下降子序列（LIS） 最长公共子序列（LCS） 最长回文子串 找零钱） 分支限界法 大整数 四则运算 分数 组合数 排列 散列 排序 链表处理 背包问题 并查集 堆 算法笔记 数塔 动态规划 （递推 自底向上 递归 自顶向下） 重叠子问题和最优子结构 分治不重叠 贪心也有子结构但需要证明 设计状态和状态转移方程是动态规划的难点 以A[i]为结尾的。。。 最长回文子串 hash+二分 BKDRHash ELFHash 动态链表 静态链表 stack top() empty() push() pop() size() queue front() 队首元素 back（）队尾元素 pair 合成元素 （代替二元结构体 map插入） first second map和set实现是用红黑树实现的 algorithm头文件下的常用函数max() min() abs() swap() reverse() sort() next_permutation() fill() lower_bound() upper_bound() set [ erase()两种用法 1删除单个元素 2删除区间] clear find() begin() end() string substr(pos,len) replace() strcat strlen strcmp prority_queue 优先级最高的元素是队首元素 只有通过top() 访问队首元素 less greater 解决一些贪心问题 优先队列本质是堆 迭代器 全排列 散列 字符串散列 线性探查法 平方探查法 链地址法（拉链法） 二分法 two pointers 简单模拟 日期处理]]></content>
       <tags>
         <tag>算法和数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[设计模式学习总结]]></title>
-    <url>%2Fp%2F79vmp%2F</url>
-    <content type="text"><![CDATA[开闭原则单一职责原则 继承关联依赖组合聚合 UML图 创建型 创建型模式(Creational Pattern)关注的是对象的创建，将创建对象(类的实例化)的过程进行了抽象和封装，分离了对象创建和对象使用简单工厂 （静态工厂方法）equalsIgnoreCase() 在JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间。 工厂方法抽象工厂建造者 （部件和组装过程分开，一步步创建一个复杂的对象）JavaMail（一步一步构造一个完整的邮件对象，然后发送） 原型 （复制）深克隆 浅克隆clone() getClass()structs2中Action对象 Spring创建bean实例 单例 并发和同步问题 java.lang.Runtime类 默认情况下Spring会通过单例模式创建bean实例1&lt;bean id="date" class="java.util.Date" scope="singleton"/&gt; 饿汉 懒汉 结构型结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构结构型模式可以分为类结构型模式和对象结构型模式 适配器模式(Adapter)适配器模式既可以作为类结构型模式，也可以作为对象结构型模式。 桥接模式(Bridge)组合模式(Composite)树形结构 容器对象 叶子对象组合模式又可以称为“整体-部分”(Part-Whole)模式，属于对象结构型模式，它将对象组织到树结构中，可以用来描述整体与部分的关系 装饰模式(Decorator)在装饰器中既可以调用原有类的方法，还可以增加新的方法，以扩充原有类的功能 外观模式(Facade)享元模式(Flyweight)代理模式(Proxy)行为型行为型模式分为类行为型模式和对象行为型模式两种 职责链模式(Chain of Responsibility) Java中的异常处理机制 在Web应用开发中创建一个过滤器(Filter)链来对请求数据进行过滤，在工作流系统中实现公文的分级审批等等。 早期的Java AWT事件模型(JDK 1.0及更早) ：事件浮升(Event Bubbling)机制。 命令模式(Command)解释器模式(Interpreter)迭代器模式(Iterator) 遍历 java内置迭代器 next() 中介者模式(Mediator)qq群网状结构同事对象中介者模式的目的主要是松散多个模块之间的耦合，把这些耦合关系全部放到中介者中去实现；而外观模式的目的是简化客户端的调用，这点和中介者模式也不同。 备忘录模式(Memento)撤销(Undo)的功能 历史状态 观察者模式(Observer)观察者模式(Observer Pattern)：定义对象间的一种一对多依赖关系，使得每当一个对象状态发生改变时，其相关依赖对象皆得到通知并被自动更新。观察者模式又叫做发布-订阅(Publish/Subscribe)模式、模型-视图(Model/View)模式、源-监听器(Source/Listener)模式或从属者(Dependents)模式。观察者模式是一种对象行为型模式。 状态模式(State)状态类 状态模式和观察者模式的区别这两个模式都是在状态发生改变的时候触发行为，只不过观察者模式的行为是固定的，那就是通知所有的观察者，而状态模式是根据状态来选择不同的处理，当状态发生改变的时候，动态改变行为。 策略模式(Strategy)Java SE的容器布局管理是策略模式应用的经典实例。 策略模式与状态模式的比较可以通过环境类状态的个数来决定是使用策略模式还是状态模式。如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。 使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。策略模式中，具体策略类无须关心环境类；而状态模式中具体状态往往需要维护一个环境类的引用，以便通过该引用实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。 模板方法模式(Template Method)类行为型模式 基本方法是实现算法各个步骤的方法，是模板方法的组成部分。基本方法分为三种：抽象方法(Abstract Method)、具体方法(Concrete Method)和钩子方法(Hook Method)。 访问者模式(Visitor)优缺点 模式之间的比较和区别]]></content>
-      <tags>
-        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>

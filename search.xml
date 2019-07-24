@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[牛客网刷题目录.md]]></title>
+    <url>%2Fp%2F7ax53%2F</url>
+    <content type="text"><![CDATA[My accepted nowcoder solutions # 标题 代码地址 使用语言 1 获取所有员工的em 获取所有员工的em Sql 2 获取有奖金的员工相 获取有奖金的员工相 Sql 3 对于employe 对于employe Sql 4 统计salary的 统计salary的 Sql 5 查找字符串’10, 查找字符串’10, Sql 6 针对库中的所有表生 针对库中的所有表生 Sql 7 将所有获取奖金的员 将所有获取奖金的员 Sql 8 如何获取emp_v 如何获取emp_v Sql 9 在audit表上创 在audit表上创 Sql 10 将titles_t 将titles_t Sql 11 将id=5以及em 将id=5以及em Sql 12 将所有to_dat 将所有to_dat Sql 13 删除emp_no重 删除emp_no重 Sql 14 构造一个触发器au 构造一个触发器au Sql 15 在last_upd 在last_upd Sql 16 针对上面的sala 针对上面的sala Sql 17 针对actor表创 针对actor表创 Sql 18 对first_na 对first_na Sql 19 创建一个actor 创建一个actor Sql 20 批量插入数据，不使 批量插入数据，不使 Sql 21 批量插入数据 批量插入数据 Sql 22 创建一个actor 创建一个actor Sql 23 将employee 将employee Sql 24 查找所有员工的la 查找所有员工的la Sql 25 获取当前薪水第二多 获取当前薪水第二多 Sql 26 统计出当前各个ti 统计出当前各个ti Sql 27 查找employe 查找employe Sql 28 统计各个部门对应员 统计各个部门对应员 Sql 29 查找所有员工自入职 查找所有员工自入职 Sql 30 获取当前薪水第二多 获取当前薪水第二多 Sql 31 查找所有已经分配部 查找所有已经分配部 Sql 32 获取所有非mana 获取所有非mana Sql 33 获取所有部门当前m 获取所有部门当前m Sql 34 找出所有员工当前薪 找出所有员工当前薪 Sql 35 查找入职员工时间排 查找入职员工时间排 Sql 36 查找最晚入职员工的 查找最晚入职员工的 Sql 37 数字构造 数字构造 Java 38 骰子游戏 骰子游戏 C 39 神奇数 神奇数 Java 40 区间表达 区间表达 Python 41 字符串价值 字符串价值 Java 42 疯狂队列 疯狂队列 C 43 缺失的括号 缺失的括号 Java 44 缩写 缩写 Python 45 红和绿 红和绿 C 46 数字字符 数字字符 Python 47 单词缩写 单词缩写 Java 48 幸运数字 幸运数字 C 49 买橘子 买橘子 Java 50 分割后处理 分割后处理 C 51 寻找丑数 寻找丑数 Python 52 给定整数序列求连续 给定整数序列求连续 C 53 整数无序数组求第K 整数无序数组求第K Java 54 整数成绩最大化 整数成绩最大化 Java 55 字符覆盖 字符覆盖 Java 56 完成括号匹配 完成括号匹配 Python 57 字符串复制 字符串复制 Java 58 3和5的倍数 3和5的倍数 C 59 字符串提取 字符串提取 C 60 字母数字混合排序 字母数字混合排序 Java 61 最大差值 最大差值 C 62 连线游戏 连线游戏 Python 63 序列操作 序列操作 Java 64 题目列表 题目列表 Java 65 交错序列 交错序列 C 66 超链接 超链接 Python 67 人民币转换 人民币转换 C 68 记票统计 记票统计 Java 69 201301 JA 201301 JA Java 70 整形数组合并 整形数组合并 Python 71 图片整理 图片整理 Java 72 删除字符串中出现次 删除字符串中出现次 Python 73 输入一行字符，分别 输入一行字符，分别 Python 74 整数与IP地址间的 整数与IP地址间的 Python 75 字符串加解密 字符串加解密 Java 76 查找兄弟单词 查找兄弟单词 Python 77 坐标移动 坐标移动 Python 78 购物单 购物单 Java 79 字串的连接最长路径 字串的连接最长路径 Python 80 字符串反转 字符串反转 Python 81 数字颠倒 数字颠倒 Python 82 计算字符个数 计算字符个数 Java 83 字符串最后一个单词 字符串最后一个单词 Python 84 清除行列 清除行列 Java 85 井字棋 井字棋 C 86 机器人走方格I 机器人走方格I Java 87 无判断max 无判断max Java 88 另类加法 另类加法 Java 89 最接近的数 最接近的数 Java 90 整数转化 整数转化 Java 91 奇偶位交换 奇偶位交换 Java 92 链表分割 链表分割 Java 93 链式A+B 链式A+B Java 94 子串判断 子串判断 Java 95 最大子方阵 最大子方阵 Java 96 最大和子矩阵 最大和子矩阵 C 97 数组中的逆序对 数组中的逆序对 Java 98 实时中位数 实时中位数 Java 99 二叉树平衡检查 二叉树平衡检查 Java 100 双栈排序 双栈排序 Java 101 回文链表 回文链表 C 102 基本字符串压缩 基本字符串压缩 Java 103 确定字符互异 确定字符互异 Java 104 合并表记录 合并表记录 Python 105 提取不重复的整数 提取不重复的整数 Python 106 字符个数统计 字符个数统计 Python 107 句子逆序 句子逆序 Python 108 矩阵乘法 矩阵乘法 C 109 字符串排序 字符串排序 C 110 字符串合并处理 字符串合并处理 C 111 201301 JA 201301 JA C 112 统计每个月兔子的总 统计每个月兔子的总 Python 113 字符逆序 字符逆序 Python 114 求int型正整数在 求int型正整数在 Python 115 单词识别 单词识别 Python 116 农夫、羊、菜和狼的 农夫、羊、菜和狼的 C 117 对称平方数1 对称平方数1 Python 118 反序数 反序数 Java 119 加法等式 加法等式 Java 120 反序相等 反序相等 Java 121 对称平方数 对称平方数 Python 122 三角形相加 三角形相加 Java 123 ZOJ ZOJ Python 124 开门人和关门人 开门人和关门人 Java 125 最大报销额 最大报销额 C 126 字母统计 字母统计 Java 127 密码翻译 密码翻译 Python 128 完数VS盈数 完数VS盈数 Python 129 数字求和 数字求和 Python 130 谁是你的潜在朋友 谁是你的潜在朋友 Python 131 查找学生信息 查找学生信息 Python 132 神奇的口袋 神奇的口袋 C 133 全排列 全排列 Python 134 最简真分数 最简真分数 Python 135 与7无关的数 与7无关的数 Python 136 吃糖果 吃糖果 Python 137 整数奇偶排序 整数奇偶排序 Python 138 字符串排序 字符串排序 Java 139 最大上升子序列和 最大上升子序列和 C 140 学分绩点 学分绩点 Python 141 打印极值点下标 打印极值点下标 Python 142 日志排序 日志排序 Python 143 小白鼠排队 小白鼠排队 Python 144 中位数 中位数 Python 145 球的半径和体积 球的半径和体积 Python 146 大整数的因子 大整数的因子 Python 147 递推数列 递推数列 Python 148 最小邮票数 最小邮票数 C 149 复数 复数 Java 150 N阶楼梯上楼问题 N阶楼梯上楼问题 Java 151 守形数 守形数 C 152 统计字符 统计字符 Java 153 数字反转 数字反转 Java 154 分段函数 分段函数 C 155 进制转换2 进制转换2 Java 156 最长&amp;最短文本 最长&amp;最短文本 Java 157 哈夫曼树 哈夫曼树 Java 158 最小长方形 最小长方形 Java 159 统计同成绩学生人数 统计同成绩学生人数 Java 160 二次方程计算器 二次方程计算器 C 161 计算表达式 计算表达式 C 162 进制转换 进制转换 C 163 拦截导弹 拦截导弹 C 164 买房子 买房子 C 165 围圈报数 围圈报数 C 166 众数 众数 Java 167 阶乘 阶乘 Java 168 整数和 整数和 Java 169 字符串连接 字符串连接 Java 170 完数 完数 Java 171 放苹果 放苹果 C 172 进制转换 进制转换 C 173 abc abc Java 174 最大子矩阵 最大子矩阵 C 175 10进制 VS 2 10进制 VS 2 C 176 剩下的树 剩下的树 C 177 最大序列和 最大序列和 C 178 玛雅人的密码 玛雅人的密码 C 179 回文串 回文串 Java 180 有几个PAT（25 有几个PAT（25 C 181 第二大的数 第二大的数 Java 182 倒水 倒水 C 183 斐波那契数列 斐波那契数列 Java 184 2的N次方 2的N次方 Java 185 求素数 求素数 Java 186 排序 排序 Java 187 合并符串 合并符串 Java 188 调整方阵 调整方阵 Java 189 找最小数 找最小数 C 190 素数 素数 Java 191 找最小数 找最小数 C 192 数字之和 数字之和 Java 193 平方因子 平方因子 Java 194 三角形的边 三角形的边 Java 195 字符串的反码 字符串的反码 Java 196 链表中倒数第k个结 链表中倒数第k个结 Java 197 简单计算器 简单计算器 C 198 进制转换 进制转换 Java 199 连通图 连通图 Java 200 N的阶乘 N的阶乘 Java 201 特殊乘法 特殊乘法 Java 202 计算两个矩阵的乘积 计算两个矩阵的乘积 Java 203 字符串去特定字符 字符串去特定字符 Java 204 欧拉回路 欧拉回路 C 205 最短路径问题 最短路径问题 Java 206 字符串内排序 字符串内排序 Java 207 字符串链接 字符串链接 Java 208 素数判定 素数判定 Java 209 阶乘 阶乘 Java 210 a+b a+b Java 211 矩阵转置 矩阵转置 Java 212 比较奇偶数个数 比较奇偶数个数 Java 213 求最大值 求最大值 Java 214 数组逆置 数组逆置 Java 215 找x 找x Java 216 互换最大最小数 互换最大最小数 Java 217 二叉树 二叉树 Java 218 反序输出 反序输出 Java 219 求平均年龄 求平均年龄 Java 220 八进制 八进制 Java 221 回文字符串 回文字符串 Java 222 矩阵最大值 矩阵最大值 Java 223 对称矩阵 对称矩阵 Java 224 二叉树遍历 二叉树遍历 Java 225 n的阶乘 n的阶乘 Java 226 重建二叉树 重建二叉树 Java 227 栈的压入、弹出序列 栈的压入、弹出序列 Java 228 矩形覆盖 矩形覆盖 Java 229 序列化二叉树 序列化二叉树 Java 230 把二叉树打印成多行 把二叉树打印成多行 Java 231 机器人的运动范围 机器人的运动范围 Java 232 矩阵中的路径 矩阵中的路径 Java 233 滑动窗口的最大值 滑动窗口的最大值 Java 234 反转链表 反转链表 Java 235 调整数组顺序使奇数 调整数组顺序使奇数 Java 236 平衡二叉树 平衡二叉树 Java 237 数字在排序数组中出 数字在排序数组中出 Java 238 孩子们的游戏(圆圈.md) 孩子们的游戏(圆圈 Java 239 数组中只出现一次的 数组中只出现一次的 Java 240 二叉树的深度 二叉树的深度 Java 241 数组中出现次数超过 数组中出现次数超过 Java 242 从上往下打印二叉树 从上往下打印二叉树 Java 243 对称的二叉树 对称的二叉树 Java 244 两个链表的第一个公 两个链表的第一个公 Java 245 第一个只出现一次的 第一个只出现一次的 Java 246 把数组排成最小的数 把数组排成最小的数 Java 247 整数中1出现的次数 整数中1出现的次数 Java 248 连续子数组的最大和 连续子数组的最大和 Java 249 最小的K个数 最小的K个数 Java 250 数值的整数次方 数值的整数次方 Java 251 二进制中1的个数 二进制中1的个数 Java 252 变态跳台阶 变态跳台阶 Java 253 斐波那契数列 斐波那契数列 Java 254 从尾到头打印链表 从尾到头打印链表 Java 255 二维数组中的查找 二维数组中的查找 Java 256 用两个栈实现队列 用两个栈实现队列 Java 257 合并两个排序的链表 合并两个排序的链表 Java 258 输入整型数组和排序 输入整型数组和排序 Java 259 查找输入整数二进制 查找输入整数二进制 Java 260 找出字符串中第一个 找出字符串中第一个 C 261 尼科彻斯定理 尼科彻斯定理 C 262 字符串分割 字符串分割 C 263 （练习用）挑7 （练习用）挑7 Java 264 火车进站 火车进站 C 265 超长正整数相加 超长正整数相加 C 266 按字节截取字符串 按字节截取字符串 Java 267 计算字符串的距离 计算字符串的距离 C 268 输出单向链表中倒数 输出单向链表中倒数 Java 269 名字的漂亮度 名字的漂亮度 Java 270 蛇形矩阵 蛇形矩阵 Java 271 24点运算 24点运算 Java 272 统计大写字母个数 统计大写字母个数 Java 273 表示数字 表示数字 Java 274 等差数列 等差数列 Java 275 四则运算 四则运算 Java 276 字符串匹配 字符串匹配 Java 277 字符串运用-密码截 字符串运用-密码截 C 278 【中级】单词倒排 【中级】单词倒排 Java 279 字符统计 字符统计 Java 280 螺旋数 螺旋数 C 281 寄居蟹与海葵 寄居蟹与海葵 Java 282 英文金曲大赛 英文金曲大赛 Java 283 叠筐 叠筐 C 284 发放贷款 发放贷款 Java 285 鹊桥相会 鹊桥相会 C 286 最长公共子序列 最长公共子序列 C 287 数字和为sum的方 数字和为sum的方 C 288 删除公共字符 删除公共字符 Java 289 编码 编码 Java 290 集合 集合 Python 291 整数加法 整数加法 Java 292 统计字符 统计字符 Java 293 字符串中找出连续最 字符串中找出连续最 Java 294 n个数里出现次数大 n个数里出现次数大 Java 295 n个数里最小的k个 n个数里最小的k个 Java 296 水仙花数 水仙花数 Java 297 买苹果 买苹果 Java 298 数字翻转 数字翻转 Java 299 连续最大和 连续最大和 C 300 最大的奇约数 最大的奇约数 Java 301 数串 数串 Java 302 拼凑面额 拼凑面额 Java 303 求和 求和 C 304 求数列的和 求数列的和 Python 305 保留最大的数 保留最大的数 Python 306 判断题 判断题 Matlab 307 六一儿童节 六一儿童节 Python 308 出差 出差 Java 309 砌墙 砌墙 Java 310 最大收益 最大收益 Java 311 中美代表 中美代表 Java 312 句子反转 句子反转 Java 313 数根 数根 Java 314 剪花布条 剪花布条 Java 315 抄送列表 抄送列表 Java 316 解读密码 解读密码 Java 317 骆驼命名法 骆驼命名法 Java 318 冲突的电话号码 冲突的电话号码 Java 319 All-in-Al All-in-Al Java 320 快到碗里来 快到碗里来 Java 321 统计一 统计一 Java 322 红与黑 红与黑 Java 323 数据库连接池 数据库连接池 Java 324 最长句子 最长句子 Java 325 Emacs计算器 Emacs计算器 Java 326 过年回家 过年回家 Java 327 裁减网格纸 裁减网格纸 Java 328 删数 删数 Java 329 年终奖 年终奖 Java 330 投篮游戏 投篮游戏 Java 331 最大间隔 最大间隔 Java 332 表达式组成方案 表达式组成方案 Java 333 表达式合法判断 表达式合法判断 Java 334 平均年龄 平均年龄 Java 335 添加回文串 添加回文串 Java 336 顺时针旋转矩阵 顺时针旋转矩阵 Java 337 汉诺塔问题I 汉诺塔问题I Java 338 发奖金 发奖金 Java 339 二分查找 二分查找 Java 340 首个重复字符 首个重复字符 Java 341 直方图内最大矩形 直方图内最大矩形 Java 342 最后一位 最后一位 Java 343 奶牛编号 奶牛编号 Java 344 最小众倍数 最小众倍数 C 345 小易喜欢的数列 小易喜欢的数列 C 346 数字游戏 数字游戏 Java 347 迷宫寻路 迷宫寻路 Java 348 彩色的砖块 彩色的砖块 Java 349 交错01串 交错01串 Java 350 独立的小易 独立的小易 Java 351 空中旅行 空中旅行 Java 352 拼凑三角形 拼凑三角形 Java 353 回文素数 回文素数 Java 354 删除重复字符 删除重复字符 Java 355 大整数相乘 大整数相乘 Java 356 最长回文 最长回文 Java 357 换座位 换座位 Java 358 寻找舞伴 寻找舞伴 Java 359 二叉树 二叉树 C 360 最短编辑距离 最短编辑距离 Java 361 不喜欢括号 不喜欢括号 Java 362 一笔画 一笔画 Java 363 滑雪 滑雪 C 364 数字三角形 数字三角形 Java 365 放苹果 放苹果 C 366 换零钱 换零钱 Java 367 五子棋 五子棋 Java 368 狐狸和绳子 狐狸和绳子 Java 369 八皇后问题 八皇后问题 Java 370 鸽兔同校 鸽兔同校 Java 371 杨辉三角 杨辉三角 Java 372 循环数 循环数 Java 373 猴子分桃 猴子分桃 Java 374 素数和 素数和 Java 375 写出这个数 (20 写出这个数 (20 Java 376 选大王 选大王 Java 377 三角形 三角形 Java 378 分解因数 分解因数 C 379 一的个数 一的个数 Java 380 挖掘机技术哪家强( 挖掘机技术哪家强( Java 381 统计同成绩学生(2 统计同成绩学生(2 Java 382 组个最小数 (20 组个最小数 (20 Java 383 D进制的A+B ( D进制的A+B ( Java 384 个位数统计 (15 个位数统计 (15 Java 385 锤子剪刀布 (20 锤子剪刀布 (20 Java 386 A除以B (20) A除以B (20) Java 387 1016. 部分A 1016. 部分A Java 388 福尔摩斯的约会 ( 福尔摩斯的约会 ( Java 389 数素数 (20) 数素数 (20) C 390 A+B和C (15 A+B和C (15 Java 391 幸运的袋子 幸运的袋子 C 392 藏宝图 藏宝图 Java 393 分田地 分田地 C 394 下厨房 下厨房 Java 395 素数对 素数对 Java 396 进制转换 进制转换 C 397 末尾0的个数 末尾0的个数 Java 398 求最大最小数 求最大最小数 Java 399 百万富翁问题 百万富翁问题 Python 400 模块 模块 前端 401 正确的使用 par 正确的使用 par 前端 402 乘法 乘法 前端 403 求二次方 求二次方 前端 404 流程控制 流程控制 前端 405 倒置字符串 倒置字符串 Java 406 跳台阶 跳台阶 Java 407 求1+2+3+.. 求1+2+3+.. Java 408 替换空格 替换空格 Java 409 记负均正II 记负均正II C 410 将真分数分解为埃及 将真分数分解为埃及 C 411 放苹果 放苹果 C 412 查找组成一个偶数最 查找组成一个偶数最 C 413 字符串通配符 字符串通配符 C 414 成绩排序 成绩排序 C 415 查找两个字符串a, 查找两个字符串a, C 416 MP3光标位置 MP3光标位置 C 417 字符串加密 字符串加密 C 418 DNA序列 DNA序列 C 419 学英语 学英语 C 420 iNOC产品部— iNOC产品部— C 421 质数因子 质数因子 C 422 输入n个整数，输出 输入n个整数，输出 C 423 简单密码 简单密码 C 424 密码验证合格程序 密码验证合格程序 C 425 表达式求值 表达式求值 C 426 称砝码 称砝码 C 427 在字符串中找出连续 在字符串中找出连续 C 428 求解立方根 求解立方根 C 429 求最小公倍数 求最小公倍数 C 430 计算日期到天数转换 计算日期到天数转换 C 431 迷宫问题 迷宫问题 C 432 进制转换 进制转换 C 433 字符串分隔 字符串分隔 C 434 暗黑的字符串 暗黑的字符串 C 435 跳石板 跳石板 C 436 优雅的点 优雅的点 Java 437 回文序列 回文序列 C 438 洗牌 洗牌 Java 439 Fibonacci Fibonacci C 440 小易喜欢的单词 小易喜欢的单词 Java 441 两种排序方法 两种排序方法 Java 442 饥饿的小易 饥饿的小易 Java 443 统计回文 统计回文 Java 444 解救小易 解救小易 Java 445 不要二 不要二 Java 446 混合颜料 混合颜料 C 447 数列还原 数列还原 Java 448 星际穿越 星际穿越 Java 449 分苹果 分苹果 Java]]></content>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[leetcode刷题目录.md]]></title>
+    <url>%2Fp%2F7ax52%2F</url>
+    <content type="text"><![CDATA[My accepted leetcode solutions Last updated: 2019-07-24 This repository is automatically generated and deployed by leetcode-publisher. # Title 标题 Difficulty 1 two-sum 两数之和 2 add-two-numbers 两数相加 3 longest-substring-without-repeating-characters 无重复字符的最长子串 4 median-of-two-sorted-arrays 寻找两个有序数组的中位数 6 zigzag-conversion Z 字形变换 7 reverse-integer 整数反转 9 palindrome-number 回文数 10 regular-expression-matching 正则表达式匹配 11 container-with-most-water 盛最多水的容器 15 3sum 三数之和 16 3sum-closest 最接近的三数之和 17 letter-combinations-of-a-phone-number 电话号码的字母组合 19 remove-nth-node-from-end-of-list 删除链表的倒数第N个节点 20 valid-parentheses 有效的括号 21 merge-two-sorted-lists 合并两个有序链表 29 divide-two-integers 两数相除 45 jump-game-ii 跳跃游戏 II 48 rotate-image 旋转图像 50 powx-n Pow(x, n) 53 maximum-subarray 最大子序和 55 jump-game 跳跃游戏 56 merge-intervals 合并区间 57 insert-interval 插入区间 58 length-of-last-word 最后一个单词的长度 66 plus-one 加一 72 edit-distance 编辑距离 73 set-matrix-zeroes 矩阵置零 74 search-a-2d-matrix 搜索二维矩阵 94 binary-tree-inorder-traversal 二叉树的中序遍历 100 same-tree 相同的树 102 binary-tree-level-order-traversal 二叉树的层次遍历 144 binary-tree-preorder-traversal 二叉树的前序遍历 150 evaluate-reverse-polish-notation 逆波兰表达式求值 151 reverse-words-in-a-string 翻转字符串里的单词 154 find-minimum-in-rotated-sorted-array-ii 寻找旋转排序数组中的最小值 II 155 min-stack 最小栈 338 counting-bits 比特位计数 344 reverse-string 反转字符串 367 valid-perfect-square 有效的完全平方数 371 sum-of-two-integers 两整数之和 387 first-unique-character-in-a-string 字符串中的第一个唯一字符 453 minimum-moves-to-equal-array-elements 最小移动次数使数组元素相等 551 student-attendance-record-i 学生出勤记录 I 557 reverse-words-in-a-string-iii 反转字符串中的单词 III]]></content>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git常见使用命令]]></title>
+    <url>%2Fp%2F7afov%2F</url>
+    <content type="text"><![CDATA[create a new repository on the command linegit initgit add README.mdgit commit -m “first commit”git remote add origin git@github.com:aaaa3293823524/leet.gitgit push -u origin master push an existing repository from the command linegit remote add origin git@github.com:aaaa3293823524/leet.gitgit push -u origin master]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[最优化算法学习]]></title>
+    <url>%2Fp%2F7afmh%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>最优化算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[概率论和数理统计知识点总结]]></title>
     <url>%2Fp%2F7a8iv%2F</url>
     <content type="text"><![CDATA[第一章随机试验 样本空间 随机事件（ 基本事件 必然事件 不可能事件）事件关系和运算 和事件 积事件 差事件 对立事件 互逆交换律 结合律 分配律 德摩根律频率（频数除以试验次数） 概率（非负 规范 可列可加性）古典概型（取球 有放回 不放回）加法公式 乘法公式（条件概率）全概率公式 P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)贝叶斯公式 P(B1|A)=P(B1A)/P(A)=P(A|B1)P(B1)/如上全概率公式独立性 P（AB）=P(A)P(B)第二章 随机变量及其分布离散型随机变量和分布函数0-1分布二项（伯努利）分布泊松分布均匀分布指数分布正态分布随机变量分布函数F(x)=P{X&lt;=x}分布函数性质1 单调不减2 0&lt;=F（x）&lt;=13右连续 连续型随机变量和概率密度 （对分布函数求导得概率密度 对概率密度求积分得分布函数）第三章 多维随机变量及其分布离散型联合分布律边缘分布条件分布 条件分布律 条件概率密度 独立性 f(x,y)=fX(x)fY(y) F(x,y)=FX(x)FY(y) 条件概率密度 联合概率密度 边缘概率密度 两个随机变量的函数的分布1 Z=X+Y 卷积公式 2 Z=Y/X Z=XY分布 3 M=max{X,Y} N=min{X,Y} 第四章 随机变量的数字特征数学期望 方差 协方差 相关系数 矩，协方差矩阵E(X) D(X) COV(x,y) pxy =COV(x,y)/(根号D(x)*根号D(y)) 原点矩，中心矩，混合矩 第五章 大数定律及中心极限定理切比雪夫不等式 辛钦大数定理（弱大数定理） 相互独立 服从同一分布 依概率收敛 伯努利大数定理 （相当于辛钦大数定理对概率以概率收敛的特殊情况） 1中心极限定理 独立同分布2李雅普诺夫定理 不服从同分布 但独立3德莫弗-拉普拉斯定理 服从二项分布 第六章 样本及抽样分布随机样本 频率直方图 箱线图 统计量 不含未知参数 X2分布 t分布（学生式分布） F分布 第七章 参数估计统计推断的基本问题可以分为两大类 一类是估计问题 另一类是假设检验问题 点估计和区间估计分布函数已知 含有未知参数 根据总体的一个样本来估计参数 X:样本 x:样本值 最大似然估计法 最大似然估计值 最大似然估计量 对数似然方程 估计量的评选标准1 无偏性 2有效性 3相合性 置信水平 置信下限 置信上限 上a分位点 置信区间 正态总体均值与方差的区间估计 单侧置信区间单侧置信下限 单侧置信上限 第八章 假设检验检验统计量H0 原假设（零假设）H1 备择假设拒绝域 拒绝域的边界点为临界值第1类错误 弃真第2类错误 存伪 双边 单边 左边 右边 正态总体均值的假设检验 正态总体方差的假设检验 方差分析和回归分析bootstrap方法随机过程及统计描述马尔科夫链平稳随机过程]]></content>
@@ -30,8 +62,7 @@
     <url>%2Fp%2F79wfu%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>推荐系统</tag>
       </tags>
   </entry>
   <entry>
@@ -65,17 +96,15 @@
     <url>%2Fp%2F79vnc%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>英语</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[面试知识总结（一）]]></title>
     <url>%2Fp%2F79vna%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[不同公司准备不同简历准备一个日程本 记录笔试 面试时间 offer1 薪水（税前还是税后）2 补助（税前还是税后）3 工作职位4 工作时间 地点5 保险公积金等福利6 加班 出差7 工作内容8 年假9 户口10 股票11 发展机会12 奖金（年终）13 公司背景14 签约年限和违约金 应聘渠道宣讲会等书面简历中华英才 智联招聘 电子简历拉勾网 牛客网 大街网 书单 100题系列by_July C和c++常见笔试题 程序员面试金典（第5版） 剑指offer 名企面试官精讲典型编程题 十五个经典算法研究与总结、目录+索引 程序员面试宝典 欧立奇 第五版 程序员代码面试指南 IT名企算法与数据结构题目最优解 [左程云著] Java程序员面试宝典(第2版)(欧立奇,刘洋,段韬) PDF 大公司最爱问的97道面试题 完整面试资料 200+最常见Java面试题参考答案 面试流程1 电话面试2 共享桌面远程面试单点 调试能力 思考清楚再开始编码良好的代码命名和缩进对齐习惯能单元测试3 现场面试 英语面试 行为面试自我介绍项目经验 为什么跳槽： 换个环境和学习状态 能学习到新知识 对自己的能力提升有帮助 技术面试基础知识 要仔细考虑边界情况 如输入为空的情况错误处理 动手写代码之前先想好测试用例 哈希表 最大堆 红黑树 沟通能力 学习能力（看了什么书 学了什么新技术） 抽象建模和发散思维能力 位运算实现加法 应聘者提问]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -83,8 +112,7 @@
     <url>%2Fp%2F79vna%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>笔试题</tag>
       </tags>
   </entry>
   <entry>
@@ -107,10 +135,9 @@
   <entry>
     <title><![CDATA[数据库学习总结（一）]]></title>
     <url>%2Fp%2F79vn2%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[sql语句练习牛客网练习 MySQL技术内幕 InnoDB存储引擎存储引擎：MyISAM,InnoDB,NDB,Memory,Archive,Federated,Maria,Merge,CSV,Sphinx,Infobright单进程多线程架构数据库：文件数据库实例：进程、线程 范围查询 全盘扫描 索引与算法 索引内部机制索引太多 应用性能影响索引太少 查询性能影响 B+树索引（B代表平衡）查找的是数据行所在的页，然后通过把页调入内存，再查找，最终找到数据 由 二叉查找树，平衡二叉树（AVL树），B树演化而来 AVL树维护价值大 （一次或多次左旋 右旋 看！！！！） 插入 删除 聚集索引 辅助聚集索引 辅助索引的叶节点包含主键，但不包含完整的行信息 选用时机：如果某个字段取值范围很广，几乎没有重复，高选择性 顺序读，随机读与预读取 联合索引 指的是对表上多个列做索引，键值数量大于等于2 哈希索引哈希算法 散列表数据结构 自适应哈希索引 表存储引擎基于表，不是数据库 存储引擎接口 逻辑存储结构表空间段 区（64个连续页 1MB） 页（64KB） 物理存储结构约束 数据完整性约束和索引的区别 索引是一个数据结构 约束更是一个逻辑的概念 视图物化视图分区表 关键特性插入缓冲 二次写 自适应哈希索引 预读存储容量的限制，事务支持，锁的粒度，多版本支持，支持的索引，备份和复制等 连接MySQL操作是连接进程和MySQL数据库实例进行通信 TCP/ip 权限视图user表 命名管道（named-pipe）和共享内存(shared-memory) unix域套接字 InnoB系统架构 后台线程 InnoDB存储引擎有7个后台线程：4个IO 1个master 1个锁监控线程 1个错误监控线程 master thread 优先级别最高 由几个循环组成，主循环，后台循环，刷新循环，暂停循环 内存 缓冲池 内存池 锁 行锁 表锁 页锁 自增长 锁的算法 锁问题：丢失更新 脏读（不同事务下，可以读到另外事务未提交的数据 违反隔离性） 不可重复读（违反一致性） 锁升级 将当前锁的粒度降低 行-&gt;页-&gt;表 多用户 并发访问用到 事务 ——-区别于文件系统重要特性之一 ACID特性A:原子性 整个事务是不可分割单位 只有所有事务的操作全执行成功，事务才算执行成功 C:一致性 一种状态到另一种状态 完整性约束没有被破坏 I:隔离性 在一个事务提交前 对其他事务不可见（通过锁来实现） D:持久性（事务提交后 改变是永久性的） A I D通过数据库的redo和undo来完成 事务控制语句 隐式提交的sql语句 事务隔离级别 四个 分布式事务 不好的事务习惯 备份与恢复热备 冷备 温备性能调优]]></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -152,7 +179,7 @@
   <entry>
     <title><![CDATA[算法和数据结构总结（一）]]></title>
     <url>%2Fp%2F79vmr%2F</url>
-    <content type="text"><![CDATA[数据结构典型数据结构：集合结构 序列结构 层次结构 树形结构 图结构线性表单链表双链表循环链表队列 优先队列 双端堆栈 括号匹配 表达式计算和变换 字符串 数组 矩阵 二叉树 树 深度 编号 森林 图 邻接矩阵 邻接表 基本图算法 最小生成树 最短路径 AOV/AOE网及其算法 AOV 拓扑排序 AOE 关键路径 AVL树 字典和集合 散列和散列表 排序 稳定 不稳定插入 希尔 冒泡 堆 堆排序 快速排序 选择排序 合并排序 值排序 查找 算法分析 时间复杂度 空间复杂度 字典 算法python 列表insert放在最前面 列表append放在最后面算法性质//1有穷性 2能行性 3确定性 4 待更新 常数时间 多项式时间 指数时间算法描述 算法设计和分析 进制转换（商为0停止） 最大公约数（辗转相除法 余数为0停止） 最小公倍数（两数相乘除以最大公约数） 枚举法 递归 分治法 贪心法 回溯法 动态规划 （最大连续子序列和 最长不下降子序列（LIS） 最长公共子序列（LCS） 最长回文子串 找零钱） 分支限界法 大整数 四则运算 分数 组合数 排列 散列 排序 链表处理 背包问题 并查集 堆 算法笔记 数塔 动态规划 （递推 自底向上 递归 自顶向下） 重叠子问题和最优子结构 分治不重叠 贪心也有子结构但需要证明 设计状态和状态转移方程是动态规划的难点 以A[i]为结尾的。。。 最长回文子串 hash+二分 BKDRHash ELFHash 动态链表 静态链表 stack top() empty() push() pop() size() queue front() 队首元素 back（）队尾元素 pair 合成元素 （代替二元结构体 map插入） first second map和set实现是用红黑树实现的 algorithm头文件下的常用函数max() min() abs() swap() reverse() sort() next_permutation() fill() lower_bound() upper_bound() set [ erase()两种用法 1删除单个元素 2删除区间] clear find() begin() end() string substr(pos,len) replace() strcat strlen strcmp prority_queue 优先级最高的元素是队首元素 只有通过top() 访问队首元素 less greater 解决一些贪心问题 优先队列本质是堆 迭代器 全排列 散列 字符串散列 线性探查法 平方探查法 链地址法（拉链法） 二分法 two pointers 简单模拟 日期处理]]></content>
+    <content type="text"><![CDATA[数据结构中序线索二叉树 典型数据结构：集合结构 序列结构 层次结构 树形结构 图结构线性表单链表双链表循环链表队列 优先队列 双端堆栈 括号匹配 表达式计算和变换 字符串 数组 矩阵 二叉树 树 深度 编号 森林 图 邻接矩阵 邻接表 基本图算法 最小生成树 最短路径 AOV/AOE网及其算法 AOV 拓扑排序 AOE 关键路径 AVL树 字典和集合 散列和散列表 排序 稳定 不稳定插入 希尔 冒泡 堆 堆排序 快速排序 选择排序 合并排序 值排序 查找 算法分析 时间复杂度 空间复杂度 字典 算法python 列表insert放在最前面 列表append放在最后面算法性质//1有穷性 2能行性 3确定性 4 待更新 常数时间 多项式时间 指数时间算法描述 算法设计和分析 进制转换（商为0停止） 最大公约数（辗转相除法 余数为0停止） 最小公倍数（两数相乘除以最大公约数） 枚举法 递归 分治法 贪心法 回溯法 动态规划 （最大连续子序列和 最长不下降子序列（LIS） 最长公共子序列（LCS） 最长回文子串 找零钱） 分支限界法 大整数 四则运算 分数 组合数 排列 散列 排序 链表处理 背包问题 并查集 堆 算法笔记 数塔 动态规划 （递推 自底向上 递归 自顶向下） 重叠子问题和最优子结构 分治不重叠 贪心也有子结构但需要证明 设计状态和状态转移方程是动态规划的难点 以A[i]为结尾的。。。 最长回文子串 hash+二分 BKDRHash ELFHash 动态链表 静态链表 stack top() empty() push() pop() size() queue front() 队首元素 back（）队尾元素 pair 合成元素 （代替二元结构体 map插入） first second map和set实现是用红黑树实现的 algorithm头文件下的常用函数max() min() abs() swap() reverse() sort() next_permutation() fill() lower_bound() upper_bound() set [ erase()两种用法 1删除单个元素 2删除区间] clear find() begin() end() string substr(pos,len) replace() strcat strlen strcmp prority_queue 优先级最高的元素是队首元素 只有通过top() 访问队首元素 less greater 解决一些贪心问题 优先队列本质是堆 迭代器 全排列 散列 字符串散列 线性探查法 平方探查法 链地址法（拉链法） 二分法 two pointers 简单模拟 日期处理 最大流问题：最大流网络和最大流 容量限制 流量守恒 Ford-Fulkerson方法 最大流最小切割定理 残存网络 增广路径 流网络的切割 最大二分匹配问题 推送-重贴标签算法 矩阵运算 线性规划]]></content>
       <tags>
         <tag>算法和数据结构</tag>
       </tags>
@@ -162,8 +189,7 @@
     <url>%2Fp%2F79vmp%2F</url>
     <content type="text"></content>
       <tags>
-        <tag>搭建博客</tag>
-        <tag>前端</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>

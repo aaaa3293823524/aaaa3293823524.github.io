@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="魔圣的博客">
 <meta property="og:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.iban">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-29T04:01:57.338Z">
+<meta property="og:updated_time" content="2020-08-17T23:37:40.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ngrok设置服务器外网访问">
 <meta name="twitter:description" content="Bashdashzsh 可以把实验室服务器上的80端口 即gitlab映射出来用这种方法可以将其他端口 如jupyter notebook映射出来./ngrok -config=ngrok.cfg -subdomain xxx 80 通过ssh外网访问./ngrok -config=ngrok.cfg -proto=tcp 22ssh -p 端口 username@0.tcp.ngrok.iban">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-29 12:01:57" itemprop="dateModified" datetime="2019-06-29T12:01:57+08:00">2019-06-29</time>
+                <time title="修改时间：2020-08-18 07:37:40" itemprop="dateModified" datetime="2020-08-18T07:37:40+08:00">2020-08-18</time>
               
             
           </span>
@@ -481,6 +481,8 @@
 <p>删除环境：<br>conda remove —name env_pytorch —all</p>
 <p>检查cuda版本<br>cat /usr/local/cuda/version.txt</p>
 <p>conda install tensorflow-gpu=1.8.0</p>
+<p>安装opencv</p>
+<p>conda install —channel <a href="https://conda.anaconda.org/menpo" target="_blank" rel="noopener">https://conda.anaconda.org/menpo</a> opencv3</p>
 <blockquote>
 <p>Anaconda安装Pytorch         （还没成功 还要再尝试）<br>添加Anaconda的TUNA镜像<br>  conda config —add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>设置搜索时显示通道地址<br>  conda config —set show_channel_urls yes</p>
 </blockquote>
@@ -514,6 +516,11 @@
 <li>如果是因为网络唤醒引起的，双击本地连接选属性/配置/高级/在左侧选关机网络唤醒，在右侧选关闭确定。</li>
 </ul>
 <p>pip install -r requirements.txt</p>
+<p>方法1 在python程序中</p>
+<p>import os<br>os.environ[“CUDA_VISIBLE_DEVICES”] = “1”<br> 方法2，运行时 </p>
+<p>CUDA_VISIBLE_DEVICES=1 python   **.py</p>
+<p>conda install cudatoolkit=9.0</p>
+<h1 id="Anaconda-安装pygame"><a href="#Anaconda-安装pygame" class="headerlink" title="Anaconda 安装pygame"></a>Anaconda 安装pygame</h1><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a> pygame</p>
 
       
     </div>
@@ -875,7 +882,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#可以把实验室服务器上的80端口-即gitlab映射出来"><span class="nav-number">1.</span> <span class="nav-text">可以把实验室服务器上的80端口 即gitlab映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用这种方法可以将其他端口-如jupyter-notebook映射出来"><span class="nav-number">2.</span> <span class="nav-text">用这种方法可以将其他端口 如jupyter notebook映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过ssh外网访问"><span class="nav-number">3.</span> <span class="nav-text">通过ssh外网访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda-environments"><span class="nav-number">4.</span> <span class="nav-text">conda environments:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#可以把实验室服务器上的80端口-即gitlab映射出来"><span class="nav-number">1.</span> <span class="nav-text">可以把实验室服务器上的80端口 即gitlab映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用这种方法可以将其他端口-如jupyter-notebook映射出来"><span class="nav-number">2.</span> <span class="nav-text">用这种方法可以将其他端口 如jupyter notebook映射出来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过ssh外网访问"><span class="nav-number">3.</span> <span class="nav-text">通过ssh外网访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda-environments"><span class="nav-number">4.</span> <span class="nav-text">conda environments:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Anaconda-安装pygame"><span class="nav-number">5.</span> <span class="nav-text">Anaconda 安装pygame</span></a></li></ol></div>
             
 
           </div>
@@ -896,7 +903,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

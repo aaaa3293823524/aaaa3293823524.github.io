@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="魔圣的博客">
 <meta property="og:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-15T07:32:53.927Z">
+<meta property="og:updated_time" content="2019-09-25T07:54:35.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习框架学习">
 <meta name="twitter:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-15 15:32:53" itemprop="dateModified" datetime="2019-09-15T15:32:53+08:00">2019-09-15</time>
+                <time title="修改时间：2019-09-25 15:54:35" itemprop="dateModified" datetime="2019-09-25T15:54:35+08:00">2019-09-25</time>
               
             
           </span>
@@ -537,6 +537,77 @@
 <p>free -h</p>
 <p>MAP(mean average precision)</p>
 <p>张量（名字 维度 类型）</p>
+<p>CNN 通过浅层卷积提取图<br>像的细节特征，如边缘、角点等，深层网络提取语义<br>特征，如类别等</p>
+<p>torch.optim 实现各种优化算法包</p>
+<p>保存和加载<br>torch.save(model,’…….pth’)  结构和参数信息</p>
+<p>torch.load(‘model.pth’)</p>
+<p>sigmoid是logistic分布函数特殊形式</p>
+<p>torchvision.transforms     可以图像增强 转化成Tensor</p>
+<p>循环神经网络  基于记忆的模型</p>
+<p>判别式模型又可以称为条件概率模型，</p>
+<p>典型的判别式模型包括 k 近邻、决策树、卷积神经网<br>络、支持向量机（SVM）等。 </p>
+<p>典型的生成式模型有：朴素贝叶斯和隐马尔<br>科夫模型等。 </p>
+<p>自编码器的应用主要有两个方面，第一是<br>数据去噪，第二是为进行可视化降维。 </p>
+<p>用%automagic on 启用自动魔术命令功能后，可以省略百分号“%’<br>的输入即可直接运行魔术命令</p>
+<p>J  焦点上移一个 ce ll;<br>K  焦点下移一个 cell 熟悉 im 读者对这 模式应该很习惯；<br>A  在当前 cell 上面插入 个新的 cell;<br>B  在当前 cell 的下面插入 个新的 cell;<br>DD 连续按两次 ，删除当前 cell 。这是另 vimer 喜欢”的功能编辑模式如下。</p>
+<h2 id="numpy知识"><a href="#numpy知识" class="headerlink" title="numpy知识"></a>numpy知识</h2><p>np.zeros((3,3))</p>
+<p>np.ones((3,3))</p>
+<p>np.random.randn()</p>
+<p>np.random.randint(10 , 20 , 6)    10到20之间 6个随机数</p>
+<p>b = np . random.randint(l , 5 , 20) . reshape(4 , 5)</p>
+<p>a= np.arange(6)<br>In [ 4] : a + 5 ＃数组和标量<br>Out [ 4] : array ( [ 5 , 6 , 7 , 8 , 9 , 1 0 ] )</p>
+<p>np.linspace(-np . pi , np.pi , 200)</p>
+<p>需要注意 乘法是对应元素相乘 不是矩阵内积 矩阵内积使用 np.dot（）函 数。</p>
+<p>Numpy 提供了 些基本的统计功能，包括求和、求平均值、求方差等</p>
+<p>a . sum ()<br>a.mean()<br>a . std()<br>a.min()<br>a . max()<br>a . argmin() ＃最小值元素所在的索引<br>a . argmax() ＃最大值元素所在的索引</p>
+<p>In [78) : b<br>Out[78) :<br>array( [ [3 , 2 , 4 , 2),<br>[ 4 , 5 , 1, l),<br>[ 4 , 4 , 1 , 4) ,<br>[3 , 3 , 4, 4) ,<br>[3 , 2, 4 , 5) ,<br>[3 , 5 , 2, 5]))<br>In [85) : b . sum()<br>Out [ 85) : 78<br>In [86) : b . sum(axis=O}<br>Out [ 8 6 ) : array ( [ 2 0 , 2 1 , 1 6 , 21 ) )<br>In [87) : b . sum(axis=l}<br>Out [87): array ( [11 , 11 , 13, 14, 14, 15))<br>In [88) : b.sum(axis=l} . sum()<br>Out [88) : 78<br>In [94) : b .min(axis=l}<br>Out[94) : array([2 , 1 , 1 , 3 , 2 , 2))<br>In [95) : b . argmin (axis=l}<br>Out[95) : array([l , 2 , 2 , 0 , 1 , 2))<br>In [96) : b.std(axis=l )</p>
+<p>In (37) : a<br>Out (37] :<br>array ( [ [ 1, 4 , 8 , 10],<br>(10 , 9 , 6 , 2] ,<br>[ 1 , 4 ‘ 10 ‘ 5] ,<br>[ 5 , 7 , 1 , 1] ‘<br>[ 5 , 2 , 2 , 8 ],<br>[ 6 , 10 , 10 , 7]])<br>In [40) : b = np . sort (a , axis=1) ＃按行独立排序，返回一个备份<br>In[41) : b<br>Out[41 ):<br>array ( ([ 1 , 4 , 8 , 10) ,<br>[ 2 , 6 , 9 , 10) , </p>
+<p>[1 , 4 , 5 , 10],<br>[1 , 1 , 5 , 7],<br>[2 , 2 , 5 , 8] ,<br>[6 , 7 , 10 , 10])</p>
+<p>保存为文本格式的可读性好，但性能较低。也可以直接保存为 Numpy 有的二进<br>格式    np . save ( ’ a . npy ’, a)</p>
+<p>c = np.load(‘a.npy’)</p>
+<h1 id="Pandas知识"><a href="#Pandas知识" class="headerlink" title="Pandas知识"></a>Pandas知识</h1><p>Panda 是一个强大的时间序列数据处理工具包<br>Pandas 最基础的数据结构是 Series   另一个是DataFrame</p>
+<p>df = pd . DataFrame(np . random . randn(6 , 4) , columns=list ( ’ ABCD ’ ))</p>
+<p>df.shape<br>[OUT) : ( 6 , 4 )</p>
+<p>df. h ead (3 )</p>
+<p>df . tail (2)</p>
+<p>df. describe ()<br>describ （）计算出每列的元素个数、平均值、标准差、最小值、最大<br>值及几种中位数的值</p>
+<p>可以很方便地对数据进行修改，如可以添加 列，列名为 TAGo<br>(IN] : df (” TAG ” ]=[” cat”, ” dog”,”cat”,”cat”,”cat ”,”dog” ]</p>
+<p>df =pd.read csv (’ data . csv ’, index col=O}</p>
+<p>我们还可以使用 DataFrame to_ csv（）函数把数据保存到文件中</p>
+<h1 id="Matplotlib知识"><a href="#Matplotlib知识" class="headerlink" title="Matplotlib知识"></a>Matplotlib知识</h1><h1 id="scikit-learn知识"><a href="#scikit-learn知识" class="headerlink" title="scikit-learn知识"></a>scikit-learn知识</h1><p>scikit-learn 是一个开源的 Python 机器学习工具包</p>
+<p>from sklearn import datasets<br>digits = datasets .load_digits ()</p>
+<p>这个过程就是数据清洗，即把采集到的 、不适合用<br>来做机器学习训练的数据进行预处理，从而转换为适合机器学习的数据。</p>
+<p>scikit-le arn 所有的评估模型对象都有 fit（）这个接口，这是用来 练模型的接口。针对<br>有监督的机器学习（如上面的例子〉，使用 fit(X, ）来进行训练，其中 是标记数据。针<br>对无监督的机器学习算法，使用自t(X）来进行训练，因为无监督机器学习算法的数据集是<br>没有标记的，不需要传入y</p>
+<p>2.8 妇展学习资源、</p>
+<ol>
+<li><a href="http://scipy" target="_blank" rel="noopener">http://scipy</a> ctures.org ，这是一个按照 CC4.0 协议发布的网站，是 个优秀的 Python<br>科学计算工具包的教程合集。</li>
+<li><a href="https://docs.scipy.org/doc/" target="_blank" rel="noopener">https://docs.scipy.org/doc/</a> , numpy scipy 的官方文档。</li>
+<li><a href="https://en.wikipedia.org/wiki/Random_walk" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Random_walk</a> ，随机漫步算法。</li>
+<li><a href="https://en.wikipedia.org/wiki/S" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/S</a> ieve <em>of</em> Eratosthenes 埃拉托斯特尼筛法</li>
+<li><a href="https://en" target="_blank" rel="noopener">https://en</a>. wikipedia.org/wiki/Monte _Carlo method 蒙特卡罗方法</li>
+<li><a href="http://pandas.pydata.org" target="_blank" rel="noopener">http://pandas.pydata.org</a>, Pandas 官网</li>
+<li><a href="http://matplotlib.org" target="_blank" rel="noopener">http://matplotlib.org</a>, matplotlib 的官方网站 ，包含大量 绘图实例。</li>
+<li><a href="http://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/documentation.html</a>, scikit-learn 宫方文档。</li>
+</ol>
+<p>在模型选择时，我们使用训练数据集来 练算法参数，用 交叉验证数据集来验证参数。<br>选择交叉验证数据集的成本 lcv（（）） 最小的多项式来作为数据拟合模型，最后再用测试数据<br>集来测试选择出来的模型针对测试数据集的准确性</p>
+<p>在scikit-leam 里，评估模型性能的算法都在 klean. metrics 里。其中，计算查准率<br>和召回率的 API 分别为 sklean.metrics precision<em> score（）和 sklean .metrics.recall</em> score （）</p>
+<p>squeeze 函数：从数组的形状中删除单维度条目，即把shape中为1的维度去掉</p>
+<p>flatten层</p>
+<p><a href="https://blog.csdn.net/program_developer/article/details/80853425" target="_blank" rel="noopener">https://blog.csdn.net/program_developer/article/details/80853425</a></p>
+<p>很好用的网络可视化工具，专门用来可视化.prototxt文件，你可以将.prototxt文件中的内容复制到该链接点击打开 <a href="http://ethereon.github.io/netscope/#/editor" target="_blank" rel="noopener">http://ethereon.github.io/netscope/#/editor</a><br>，然后按下Shift+Enter,就可以看到漂亮的网络结构啦</p>
+<h1 id="支持向量机："><a href="#支持向量机：" class="headerlink" title="支持向量机："></a>支持向量机：</h1><p>SVM有三种模型，由简至繁为</p>
+<p>当训练数据训练可分时，通过硬间隔最大化，可学习到硬间隔支持向量机，又叫线性可分支持向量机<br>当训练数据训练近似可分时，通过软间隔最大化，可学习到软间隔支持向量机，又叫线性支持向量机<br>当训练数据训练不可分时，通过软间隔最大化及核技巧(kernel trick)，可学习到非线性支持向量机</p>
+<h1 id="梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃"><a href="#梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃" class="headerlink" title="梯度提升决策树（Gradient Boosting Decision Tree，GB⁃"></a>梯度提升决策树（Gradient Boosting Decision Tree，GB⁃</h1><p>DT）是一种迭代决策树算法</p>
+<p>xgboost<br>lightgbm</p>
+<h1 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h1><p>主成分分析法是通过数学降维方法, 从众多原始变量中找出几个综合性强的变量来代替原始变量, 这些综合性强的几个变量彼此间互不相关且能最大程度反映原始变量的信息量[5]。</p>
+<p>主成分分析计算步骤如下。</p>
+<p>步骤1:对原始数据进行标准化处理并计算相关系数矩阵。</p>
+<p>步骤2:计算特征值与特征向量。求出相关系数矩阵的特征值λ (i=1, 2, …, p) , 并使其按大小顺序排列, 即λ1≥λ2≥λ3…≥λp≥0, 然后分别求出对应于特征值的特征向量ei (i=1, 2, …, p) , 其中p为相关系数矩阵的阶数。</p>
+<p>步骤3:计算主成分贡献率与累计贡献率。经过筛选分析, 选取累计贡献率达到85%以上的因子作为需水量的主要影响因子即主成分。</p>
+<p>步骤4:计算主成分载荷。表示原始数据的协方差矩阵的特征值。</p>
+<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><p>EM 算法是在机器学习和计算机视觉的数据聚类<br>（Data Clustering）领域常用方法之一，在实际应用中，我们所观察到的数据很多时候是不完全数据，而<br>传统的优化方法在处理缺失数据情况下的极大似然估计会变得异常复杂，由此学者们提出了 EM 算法</p>
+<p>M 算法也称期望最大化算法，是一种从不完全数据中求参数极大似然估计的迭代算法</p>
+<p>EM 算法经常被应用于混合模型的参数估计当中，众所周知，正确使用该方法的前提是知道混合模<br>型中子总体的个数（即混合模型中的分布个数）C   </p>
 
       
     </div>
@@ -898,7 +969,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用placeholder代替常量"><span class="nav-number">1.</span> <span class="nav-text">用placeholder代替常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><span class="nav-number">2.</span> <span class="nav-text">损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据包括训练集和验证集-验证集来‘训练’超参数"><span class="nav-number">3.</span> <span class="nav-text">训练数据包括训练集和验证集 验证集来‘训练’超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数计算："><span class="nav-number">4.</span> <span class="nav-text">参数计算：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorBoard可视化高维向量"><span class="nav-number">5.</span> <span class="nav-text">tensorBoard可视化高维向量</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch"><span class="nav-number"></span> <span class="nav-text">pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查pytorch是否支持GPU"><span class="nav-number">1.</span> <span class="nav-text">检查pytorch是否支持GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyTorch基础"><span class="nav-number">2.</span> <span class="nav-text">pyTorch基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的保存和加载"><span class="nav-number">3.</span> <span class="nav-text">模型的保存和加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">4.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的表示能力和容量"><span class="nav-number">5.</span> <span class="nav-text">模型的表示能力和容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法变式"><span class="nav-number">6.</span> <span class="nav-text">梯度下降法变式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor的拼接"><span class="nav-number">7.</span> <span class="nav-text">Tensor的拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理数据和训练模型的技巧"><span class="nav-number">8.</span> <span class="nav-text">处理数据和训练模型的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">8.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重初始化"><span class="nav-number">8.2.</span> <span class="nav-text">权重初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止过拟合"><span class="nav-number">8.3.</span> <span class="nav-text">防止过拟合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#caffe"><span class="nav-number"></span> <span class="nav-text">caffe</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras"><span class="nav-number"></span> <span class="nav-text">keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#theano"><span class="nav-number"></span> <span class="nav-text">theano</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mxnet"><span class="nav-number"></span> <span class="nav-text">mxnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fast-ai"><span class="nav-number"></span> <span class="nav-text">fast.ai</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用placeholder代替常量"><span class="nav-number">1.</span> <span class="nav-text">用placeholder代替常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><span class="nav-number">2.</span> <span class="nav-text">损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据包括训练集和验证集-验证集来‘训练’超参数"><span class="nav-number">3.</span> <span class="nav-text">训练数据包括训练集和验证集 验证集来‘训练’超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数计算："><span class="nav-number">4.</span> <span class="nav-text">参数计算：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorBoard可视化高维向量"><span class="nav-number">5.</span> <span class="nav-text">tensorBoard可视化高维向量</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch"><span class="nav-number"></span> <span class="nav-text">pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查pytorch是否支持GPU"><span class="nav-number">1.</span> <span class="nav-text">检查pytorch是否支持GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyTorch基础"><span class="nav-number">2.</span> <span class="nav-text">pyTorch基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的保存和加载"><span class="nav-number">3.</span> <span class="nav-text">模型的保存和加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">4.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的表示能力和容量"><span class="nav-number">5.</span> <span class="nav-text">模型的表示能力和容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法变式"><span class="nav-number">6.</span> <span class="nav-text">梯度下降法变式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor的拼接"><span class="nav-number">7.</span> <span class="nav-text">Tensor的拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理数据和训练模型的技巧"><span class="nav-number">8.</span> <span class="nav-text">处理数据和训练模型的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">8.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重初始化"><span class="nav-number">8.2.</span> <span class="nav-text">权重初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止过拟合"><span class="nav-number">8.3.</span> <span class="nav-text">防止过拟合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#caffe"><span class="nav-number"></span> <span class="nav-text">caffe</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras"><span class="nav-number"></span> <span class="nav-text">keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#theano"><span class="nav-number"></span> <span class="nav-text">theano</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mxnet"><span class="nav-number"></span> <span class="nav-text">mxnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fast-ai"><span class="nav-number"></span> <span class="nav-text">fast.ai</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy知识"><span class="nav-number">1.</span> <span class="nav-text">numpy知识</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas知识"><span class="nav-number"></span> <span class="nav-text">Pandas知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib知识"><span class="nav-number"></span> <span class="nav-text">Matplotlib知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scikit-learn知识"><span class="nav-number"></span> <span class="nav-text">scikit-learn知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持向量机："><span class="nav-number"></span> <span class="nav-text">支持向量机：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃"><span class="nav-number"></span> <span class="nav-text">梯度提升决策树（Gradient Boosting Decision Tree，GB⁃</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主成分分析"><span class="nav-number"></span> <span class="nav-text">主成分分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM算法"><span class="nav-number"></span> <span class="nav-text">EM算法</span></a></li></div>
             
 
           </div>
@@ -919,7 +990,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

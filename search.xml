@@ -356,7 +356,7 @@
   <entry>
     <title><![CDATA[matlab知识]]></title>
     <url>%2Fp%2F795o6%2F</url>
-    <content type="text"><![CDATA[uint8 uint16 matlab四舍五入 转化为 0~255之间的整数四舍五入 转为0~65535之间的整数 db4 小波基]]></content>
+    <content type="text"><![CDATA[uint8 uint16 matlab四舍五入 转化为 0~255之间的整数ss四舍五入 转为0~65535之间的整数 db4 小波基]]></content>
       <categories>
         <category>matlab编程</category>
       </categories>

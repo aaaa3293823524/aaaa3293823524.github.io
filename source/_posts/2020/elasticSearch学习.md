@@ -32,3 +32,18 @@ abbrlink: 7q7i2
 二次评分
 排序
 查询重写
+
+
+
+redis  双缓存
+
+set session transaction isolation level read committed;
+
+set session transaction isolation level repeatable read;
+
+show status like '%innodb_row_lock%';
+
+select * from information_schema.innodb_trx;
+
+
+mysqldumpslow

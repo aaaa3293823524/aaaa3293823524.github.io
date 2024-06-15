@@ -581,4 +581,425 @@ nohup java -jar rocketmq-console-ng-1.0.0.jar &
 
 
 
+git config --global -l 
 
+ git ls-files
+
+git reset --soft 工作区和暂存区都有
+git reset --mix 默认 工作区有 暂存区无
+git reset --hard 工作区和暂存区都无 
+
+ git diff 默认工作区和暂存区
+  git diff HEAD 暂存区和版本库
+
+  HEAD^
+  HEAD~  
+  HEAD~2  之前2个版本
+
+
+git rm 
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-06_22-18-38.png)
+
+
+.gitignore 不加入版本库
+
+** 匹配中间目录
+
+
+
+git remote add origin
+
+git remote -v
+
+git push -u origin main
+
+
+GUI工具  sourcetree
+
+
+
+git branch
+
+git checkout
+
+git switch
+
+git branch -d 删除已合并的分支
+git branch -D 删除分支
+
+git merge --abort 中断合并
+
+git chekout -b
+
+hotfix
+
+git tag
+
+
+
+join_buffer
+
+order by索引测试
+
+CREATE TABLE `t_name` (
+  `id` int NOT NULL COMMENT '用户id',
+  `name` varchar(255)  NOT NULL COMMENT '用户姓名',
+  `age` int not NULL COMMENT '年龄',
+  `sex` varchar(255) not NULL COMMENT '性别',
+  PRIMARY KEY (`id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create index idx_age on t_name(name,age,sex);
+
+explain select * from t_name where age=18 order by name;
+
+alter table t_name add column `password` varchar(255) not null comment '密码';
+
+
+sort_buffer
+
+max_length_for_sort_data
+
+全字段排序
+
+rowid排序
+
+
+group by
+
+SQL_BIGRESULT
+
+
+show engine innodb status;  (看last detected deadlock 死锁)
+
+自增锁模式 表锁
+show variables like '%innodb_autoinc_lock_mode%';
+
+0  传统 自增锁互斥
+1  连续 能确定插入条数 自增值预留 不使用自增锁 使用mutex分配id insert into  ;不能确定插入条数  使用自增锁 同0
+2 交叉 只用mutex获取id  但主从同步binlog采用statement格式记录sql语句主从同步会有问题
+
+
+-- mysql 8
+SELECT * FROM performance_schema.data_locks;
+
+-- mysql 5.7
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+
+查死锁表
+SELECT * FROM performance_schema.data_locks;
+
+等待锁的事务
+SELECT * FROM performance_schema.data_lock_waits;
+
+是否锁表
+show open tables where in_use>0;
+
+
+死锁杀进程
+
+show processlist
+select * from information_schema.innodb_trx;
+
+show engines;
+
+select * from information_schema.engines;
+
+set default_storage_engines='';
+
+控制块 (表空间 数据页编号 内存页地址)  哈希表
+每一页有页目录可二分查找,最小最大记录,前一个页面和后一个页面指针
+
+传统lru
+预读失效(局部性原理) 全表扫描导致失去热点数据
+
+改进lru
+新旧 5:3
+
+预读先放中间点,访问到放入新链表头部
+
+老生代停留时间窗口
+
+线性预读,随机预读(将当前区剩余页放入buffer pool)
+逻辑存储结构  逻辑存储空间中 表空间 
+段 区 页(块)
+
+数据段 索引段 回滚段
+区由连续页组成 1MB  innodb每次从磁盘申请4-5个页 页16KB 一个区有64个页
+innodb_read_ahead_threshold 连续访问多少个页面后把下一个区页面读入buffer pool 不能超过64
+
+
+随机预读
+innodb_read_ahead  废弃
+
+buffer pool参数优化
+innodb_buffer_pool_size
+服务器内存
+小于1GB 128MB
+1-4GB *0.5
+>4GB *0.75
+
+innodb_log_file_size 自动配置的日志文件大小
+缓冲池大小
+不到8GB  512MB
+8GB-128GB 1024
+>128GB  2048
+
+
+innodb_old_blocks_pct  37   设置100则退化为普通lru
+
+innodb_old_blocks_time   ms单位    老生代停留时间窗口 数据检索一般几毫秒,几十毫秒
+
+# Buffer pool三种page和链表
+free  未使用    free链表(放控制块)
+clean 已使用(加载磁盘数据) 页面未修改 lru链表
+dirty 页面已修改   lru链表  flush链表(控制块)   page cleaner线程刷盘
+
+
+# change buffer 写缓冲区
+非唯一索引(不需要做唯一性校验)
+辅助索引页更改
+
+辅助索引页不在buffer pool时用change buffer记录更改,某时刻(有查询操作 buffer pool将页加载进来)加载到buffer pool合并,减少访问一次磁盘
+
+后台线程定期merge,数据库正常关闭也会merge
+
+innodb_change_buffering
+all
+none
+inserts
+deletes (索引记录最初被标记为删除,不是物理删除)
+cahnges
+purges 后台物理删除
+
+innodb_change_buffer_max_size  百分比 默认20 最大25
+
+# 自适应哈希索引
+innodb_adaptive_hash_index
+innodb存储引擎会监控表上索引页(二级索引)的查询,自动建立合适的hash索引,提升数据页访问效率 O(1)
+降低对二级索引树的频繁访问
+缺点  
+占用buffer pool
+只适用等值查询
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-08_18-39-39.png)
+
+二级索引列->数据页
+# log buffer 日志缓冲区
+增删改,可靠性(不丢失,可还原),记录日志(操作数据的轨迹)
+定期或满了刷到磁盘
+默认16MB
+innodb_log_buffer_size
+innodb_flush_log_at_trx_commit
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-08_18-48-05.png)
+log buffer->os cache->判断
+# innodb存储结构
+表空间 存储表结构和数据(含索引)
+## 系统表空间  
+change buffer
+ibdata1
+innodb_data_file_path  系统表空间文件大小和数量
+innodb_autoextend_increment   自动增加64M
+## 独立表空间 
+单个表数据和索引
+innodb_file_per_table
+
+.ibd文件
+
+## 通用表空间 
+共享表空间包括系统表空间和通用表空间,可以被多个表共享
+create tablespace myts;
+show variables like '%datadir%';
+drop tablespace myts;
+create tablespace myts; add datafile 'myts.ibd' engine=innodb;
+create table  tablespace myts;
+alter table t1 tablespace innodb_file_per_table;
+## 临时表空间 
+外部临时表
+create temporary table
+show tables 不显示临时表信息
+内部临时表
+group by,order by,distinct,union 
+undo回滚时,如果空间不足,mysql内部使用自动生成的临时表
+
+会话临时表空间
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-08_20-07-23.png)
+初始10个临时表空间
+.ibt
+innodb_temp_spaces_dir
+全局临时表空间
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-08_20-04-48.png)
+select @@innodb_temp_data_file_path;
+ibtmp1
+12M
+## undo表空间
+show variables like 'innodb_page_size';
+innodb_undo_directory
+innodb_undo_tablespace
+8 初始16M 翻倍扩容
+8之前 10M
+127个
+undo_001 undo_002
+
+select tablespace_name,file_name from information_schema.files;
+# 双写缓冲区
+
+写失效(部分页失效)
+innodb_doublewrite
+
+# redo log
+ib_logfile0  ib_logfile1
+
+每个回滚段1024 undo log segment
+128
+innodb_rollback_segments
+
+
+
+#  binlog
+binlog_format
+log_bin
+max_binlog_size
+
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-08_23-00-48.png)
+
+max_allowed_packet
+
+# 主从同步
+stop slave
+reset master
+
+锁表
+flush tables with read lock;
+
+unlock tables;
+
+故障分类 故障时间乘以权重
+
+业务指标 用户访问量 订单量 查询量
+技术指标 cpu,磁盘,内存
+## MMM
+
+## MHA
+
+## QMHA
+zk集群通知变更
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_14-21-38.png)
+
+## PXC MGR
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_14-25-17.png)
+
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_14-50-06.png)
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_14-52-49.png)
+
+
+系统耦合,开发效率低
+高性能,高可用 低成本  安全
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_15-10-08.png)
+
+能力,成本,时间
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_15-15-10.png)
+
+
+PACELC
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_15-35-53.png)
+
+Bully 霸道集群选主  长者为大
+MongoDB 节点最后操作时间戳来表示id,时间戳最新节点最大
+选举速度快,算法简单
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_20-03-11.png)
+
+民主选举算法 一致性算法/协议
+强一致 paxos raft zab
+弱一致 gossip
+
+basic paxos
+multi paxos
+
+任何写入操作 数据同步 选举
+
+角色定义:提案 批准 学习
+
+# raft 可靠 可复制 冗余 容错
+leader选举
+日志复制 (数据同步)
+
+随机选举超时算法 300ms
+# ZAB 原子广播
+消息广播 (数据同步)
+崩溃恢复 (选举)
+
+zxid 64位 高32位epoch 低32位递增(客户端事务请求加1)
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_22-10-06.png)
+
+分布式锁
+
+数据量大 分表  存储和查询
+并发高 分库 数据库连接
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-09_23-43-44.png)
+
+查表法 灵活
+
+正常情况主从延迟不会超过10ms
+
+
+
+多级缓存  热点数据 避免oom
+读写分离
+
+服务等级协议 SLA
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-06-10_16-17-28.png)
+
+redis查看信息
+info
+info memory
+
+oom
+jvm参数 系统挂了生成dump文件
+jmap -dump
+jvisualvm gcroot 线程引用定位问题
+
+jmap -heap 堆信息
+
+jmap -histo 堆统计信息
+
+jstat -gc 垃圾收集信息
+
+cpu飙高
+top
+top -H -p 1234
+jstack  |grep  -A 20
+
+
+7种sql进阶
+自定义排序  order by field()
+空值排序   order by if(isnull(),0,1)
+case when
+分组连接  group_concat
+with rollup
+
+with as
+
+insert ignore into
+
+replace into
+
+on duplicate update
+
+springboot加速启动
+
+hutool
+
+io流
+
+多线程编排  asyncTool
+
+
+同步/异步: 线程主动调用系统调用把准备好的数据从内核拷贝到用户空间(同步),内核自己把数据拷贝到用户空间直接通知线程(异步)
+
+阻塞/非阻塞:recvfrom系统调用是否在数据未就绪阻塞

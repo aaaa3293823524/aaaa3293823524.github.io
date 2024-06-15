@@ -161,3 +161,5 @@ https://blog.csdn.net/liuyunshengsir/article/details/129416612
 
 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
 <property name="url" value="jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC"/>
+
+![](https://gitee.com/mosheng123456789/pics/raw/master//Users/zhangxuefeng/Desktop/img/Snipaste_2024-02-11_01-23-50.png)

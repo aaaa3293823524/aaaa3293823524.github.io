@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="编译驱动程序 显卡 x window cpu 如果内存不够大， 就会使用到硬盘的内存交换空间（swap） 磁盘阵列（RAID）是利用硬件技术将数个硬盘整合成为一个大硬盘的方法，操作系统只会看到最后被整合起来的大硬盘  备份 在Linux系统中，每个设备都被当成一个文件来对待 SATA接口的硬盘的文件名称即为/dev/sd[a-d]打印机   软盘 分别是/dev/lp0, /dev/fd0Linu">
+<meta name="keywords" content="搭建博客,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习">
+<meta property="og:url" content="https://userzhang.tk/p/811a3/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="编译驱动程序 显卡 x window cpu 如果内存不够大， 就会使用到硬盘的内存交换空间（swap） 磁盘阵列（RAID）是利用硬件技术将数个硬盘整合成为一个大硬盘的方法，操作系统只会看到最后被整合起来的大硬盘  备份 在Linux系统中，每个设备都被当成一个文件来对待 SATA接口的硬盘的文件名称即为/dev/sd[a-d]打印机   软盘 分别是/dev/lp0, /dev/fd0Linu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211209230213649.jpg">
+<meta property="og:updated_time" content="2021-12-10T04:07:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux学习">
+<meta name="twitter:description" content="编译驱动程序 显卡 x window cpu 如果内存不够大， 就会使用到硬盘的内存交换空间（swap） 磁盘阵列（RAID）是利用硬件技术将数个硬盘整合成为一个大硬盘的方法，操作系统只会看到最后被整合起来的大硬盘  备份 在Linux系统中，每个设备都被当成一个文件来对待 SATA接口的硬盘的文件名称即为/dev/sd[a-d]打印机   软盘 分别是/dev/lp0, /dev/fd0Linu">
+<meta name="twitter:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211209230213649.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/811a3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>linux学习 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/811a3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux学习
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-11-16 18:03:21" itemprop="dateCreated datePublished" datetime="2021-11-16T18:03:21+08:00">2021-11-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-12-10 12:07:56" itemprop="dateModified" datetime="2021-12-10T12:07:56+08:00">2021-12-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>编译驱动程序</p>
+<p>显卡 x window cpu</p>
+<p>如果内存不够大， 就会使用到硬盘的内存交换空间（swap）</p>
+<p>磁盘阵列（RAID）是利用硬件技术将数个硬盘整合成为一个大硬盘的方法，操作系统只会看到最后被整合起来的大硬盘  备份</p>
+<p>在Linux系统中，每个设备都被当成一个文件来对待</p>
+<p>SATA接口的硬盘的文件名称即为/dev/sd[a-d]<br>打印机   软盘 分别是/dev/lp0, /dev/fd0<br>Linux核心侦测到磁盘的顺序<br>磁盘的组成主要有盘片、机械手臂、磁头与主轴马达所组成， 而数据 的写入其实是在盘片上面</p>
+<p>盘片上面又可细分出扇区（Sector）与磁道（Track）两种单位， 其中扇区的物理量设计有两种大小，分别是 512Bytes 与 4KBytes<br>第一个扇区  MBR （Master Boot Record） 格式   主要开机记录区     安装开机管理程序（446）   分区表（64）<br>GPT （GUID partition table）<br>柱面   </p>
+<p>延伸分区的目的是使用额外的扇区来记录分区信息，延伸分区本身并不能被 拿来格式化。 然后我们可以通过延伸分区所指向的那个区块继续作分区的记录</p>
+<p>主要分区与延伸分区最多可以有四笔<br>延伸分区最多只能有一个<br>逻辑分区是由延伸分区持续切割出来的分区</p>
+<p>GPT  逻辑区块位址 LBA0   GPT 使用了 34 个 LBA 区块来纪录分区 信息<br>GPT 除了前面 34 个 LBA 之外，整个磁盘的最后 33 个 LBA 也拿来作为另一个备份</p>
+<p>开机管理程序 grub</p>
+<p>开机检测程序  BIOS UEFI<br>开机管理程序的目的是在载入（load）核心文件<br>挂载点<br>—help<br>man   info<br>编辑器  nano<br>关机 shutdown   -h 关机  -r 重启     reboot<br>init 0关机   init 6重启<br>echo $LANG  语系 locale</p>
+<h1 id="代表以-root-的身份登陆系统，而-则代表一般身份使用者"><a href="#代表以-root-的身份登陆系统，而-则代表一般身份使用者" class="headerlink" title="代表以 root 的身份登陆系统，而 $ 则代表一般身份使用者"></a>代表以 root 的身份登陆系统，而 $ 则代表一般身份使用者</h1><p>GNOME/KDE</p>
+<p>i-node  属性记录的有多少 不同的文件名链接到相同的一个i-node号码</p>
+<p>u g o a  + - =</p>
+<p>区块（block）设备文件    储存数据， 以提供系统随机存取的周边设备，举 例来说，硬盘与软盘等就是啦<br>字符（character）设备文件  键盘、鼠标 一次性读取”的，不能够截断输出</p>
+<p>第5章 linux目录配置<br>寻找文件和指令</p>
+<p>basename  dirname<br>cat -n -v  -A</p>
+<p>g前进到第一行  G前进到最后一行<br>chattr   设置文件隐藏属性<br>lsattr</p>
+<p>文件特殊权限    SUID SGID SBIT<br>file 文件类型<br>which （寻找“可执行文件”）   type （bash shell）   命令<br>whereis 或者是 locate 来检查</p>
+<p>第7章 inode  block<br>命令别名设置功能： （alias）<br>管线  数据流重定向<br>环境变量例如 PATH、HOME、MAIL、SHELL,HOSTNAME,USER<br>export 变量变为环境变量<br>PS1 提示字符<br>read  declare<br>变量内容删除</p>
+<p>bash环境配置文件<br>/etc/profile   ~/.bash_profile<br>source 或者.  读入配置文件<br>&amp;   工作控制 （job control）：将指令变成背景下工作</p>
+<blockquote>
+<p> 取代   &gt;&gt;累加<br>/dev/null 垃圾桶黑洞设备与特殊写法<br>2&gt;&amp;1    1&gt;&amp;2</p>
+</blockquote>
+<p>cut 处理多空格相连数据吃力    选行中的段<br>cut -d 分割字符  -f</p>
+<p>grep   选行  -n<br>-i  忽略大小写<br>-v 反向选择</p>
+<p>sort  r  f u          sort -t   -k (和cut类似)</p>
+<p>uniq  -c 计数  -i  忽略大小写</p>
+<p>wc -l ：仅列出行； -w ：仅列出多少字（英文单字）； -m ：多少字符；</p>
+<p>双向重导向  tee<br>字符转换命令 tr,col,join,paste,expand<br>split  大文件分为小文件</p>
+<p>xargs  x 是加减乘除的乘号，args 则是 arguments （参数） 的意思<br>xargs -n 1<br>—color=auto<br>行首 ^  行尾 $<br>只有行首跟行尾 （^$）  空白行<br>.*<br>{}<br>第11章 正则表达式<br>sed本身也是管线命令    取代、删除、新增、撷取特定行<br>-n ：使用安静（silent）模式。在一般 sed 的用法中，所有来自 STDIN 的数据一般都会被列出到屏幕上。 但如果加上 -n 参数后，则只有经过 sed 特殊处理的那一行（或者动作）才会被列出来。 -e ：直接在命令行界面上进行 sed 的动作编辑； -f ：直接将 sed 的动作写在一个文件内， -f filename 则可以执行 filename 内的 sed 动作； -r ：sed 的动作支持的是延伸型正则表达式的语法。（默认是基础正则表达式语法） -i ：直接修改读取的文件内容，而不是由屏幕输出。</p>
+<p>sed ‘s/要被取代的字串/新的字串/g’<br>sed -i<br>awk</p>
+<p>awk ‘条件类型1{动作1} 条件类型2{动作2} …’ filename<br>$1    $0代表一整列数据</p>
+<p>NF 每一行 （$0） 拥有的字段总数<br>NR 目前 awk 所处理的是“第几行”数据<br>FS 目前的分隔字符，默认是空白键</p>
+<p>BEGIN    END</p>
+<p>磁盘与文件系统<br>ext2  block群组</p>
+<blockquote>
+<p>压缩 打包<br>进程管理</p>
+</blockquote>
+<p>select  poll epoll</p>
+<blockquote>
+<p>I/O</p>
+</blockquote>
+<h2 id="压缩和打包"><a href="#压缩和打包" class="headerlink" title="压缩和打包"></a>压缩和打包</h2><p>网络传输也用压缩，加快传输速度</p>
+<p><em>.Z compress 程序压缩的文件；
+</em>.zip zip 程序压缩的文件；<br><em>.gz gzip 程序压缩的文件； 
+</em>.bz2 bzip2 程序压缩的文件；<br><em>.xz xz 程序压缩的文件； 
+</em>.tar tar 程序打包的数据，并没有压缩过；<br><em>.tar.gz tar 程序打包的文件，其中并且经过 gzip 的压缩 
+</em>.tar.bz2 tar 程序打包的文件，其中并且经过 bzip2 的压缩<br>*.tar.xz tar 程序打包的文件，其中并且经过 xz 的压缩<br>这些指令通常仅能针对一个文件来压缩与解压缩，如此一来， 每 次压缩与解压缩都要一大堆文件，岂不烦人？此时，那个所谓的“打包软件, tar”就显的很重要 啦、</p>
+<p>目前 gzip 可以解开 compress, zip 与 gzip 等软件所 压缩的文件</p>
+<p>选项与参数：<br> -c ：将压缩的数据输出到屏幕上，可通过数据流重导向来处理；<br> -d ：解压缩的参数；<br> -t ：可以用来检验一个压缩文件的一致性～看看文件有无错误；<br> -v ：可以显示出原文件/压缩文件的压缩比等信息；<br> -# ：# 为数字的意思，代表压缩等级，<br> -1 最快，但是压缩比最差、<br> -9 最慢，但是压缩比最好！<br> 默认是 -6</p>
+<p> 如果你还想要从文字压缩文件当中找数据的话，可以通过 egrep 来搜寻关键字喔！而 不需要将压缩文件解开才以 grep 进行！ 这对查询备份中的文本文件数据相当有用</p>
+<p> bzip2, bzcat/bzmore/bzless/bzgrep<br> 若说 gzip 是为了取代 compress 并提供更好的压缩比而成立的，那么 bzip2 则是为了取代 gzip 并提供更佳的压缩比而来的</p>
+<p> 选项与参数：<br> -c ：将压缩的过程产生的数据输出到屏幕上！<br> -d ：解压缩的参数<br> -k ：保留原始文件，而不会删除原始的文件喔！<br> -z ：压缩的参数 （默认值，可以不加）<br> -v ：可以显示出原文件/压缩文件的压缩比等信息；<br> -# ：与 gzip 同样的，都是在计算压缩比的参数，<br> -9 最佳， -1 最快！</p>
+<p> xz, xzcat/xzmore/xzless/xzgrep<br> xz 这个压缩比更高<br> 选项与参数：<br> -d ：就是解压缩啊！<br> -t ：测试压缩文件的完整性，看有没有错误<br> -l ：列出压缩文件的相关信息<br> -k ：保留原本的文件不删除～<br> -c ：同样的，就是将数据由屏幕上输出的意思！<br> -# ：同样的，也有较佳的压缩比的意思！</p>
+<p> 选项与参数：<br> -c ：创建打包文件，可搭配<br> -v 来察看过程中被打包的文件名（filename）<br>-t ：察看打包文件的内容含有哪些文件名，重点在察看“文件名”就是了；<br>-x ：解打包或解压缩的功能，可以搭配<br>-C （大写） 在特定目录解开 特别留意的是，<br>-c, -t, -x 不可同时出现在一串命令行中。<br>-z ：通过 gzip 的支持进行压缩/解压缩：此时文件名最好为 <em>.tar.gz<br>-j ：通过 bzip2 的支持进行压缩/解压缩：此时文件名最好为 </em>.tar.bz2<br>-J ：通过 xz 的支持进行压缩/解压缩：此时文件名最好为 *.tar.xz 特别留意， -z, -j, -J 不可以同时出现在一串命令行中<br>-v ：在压缩/解压缩的过程中，将正在处理的文件名显示出来！<br>-f filename：-f 后面要立刻接要被处理的文件名！建议 -f 单独写一个选项啰！（比较不会忘记）<br>-C 目录 ：这个选项用在解压缩，若要在特定目录解压缩，可以使用这个选项。<br> 其他后续练习会使用到的选项介绍：<br> -p（小写） ：保留备份数据的原本权限与属性，常用于备份（-c）重要的配置文件<br> -P（大写） ：保留绝对路径，亦即允许备份数据中含有根目录存在之意； —exclude=FILE：在压缩的过程中，不要将 FILE 打包！<br> <img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211209230213649.jpg" alt><br> dd 可备份完整的 partition 或 disk ，因为 dd 可读取磁盘的 sector 表面数据 cpio 为相当优秀的备份指令，不过必须要搭配类似 find 指令来读入欲备份的文件名数 据，方可进行备份动作。</p>
+<h2 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h2><p> shell script 有点像是早期的批处理文件</p>
+<p>/etc/init.d/* 这个脚本启动的方式 （systemV） 已经被新一代的 systemd 所取 代 （从 CentOS 7 开始）</p>
+<ul>
+<li>自动化管理的重要依据</li>
+<li>追踪与管理系统的重要工作</li>
+</ul>
+<p>防火墙连续规则 （iptables），开机载入程序的项目 （就是在 /etc/rc.d/rc.local 里头的数据）<br>用在系统管理上面是很好的一项工具，但是用在处理大量数值运算上， 就不够好</p>
+<p>shell.sh 文件必须要具备可读与可执行 （rx） 的权限<br>将 shell.sh 放在 PATH 指定的目录内</p>
+<p>PATH 与 LANG （如果有使用到输出相关的信息时） 是当中最重要的</p>
+<p>程序码</p>
+<p>使用 vim 而不是 vi ，因为 vim 会有额外的 语法检验机制</p>
+<p>利用 test 指令的测试功能</p>
+<p>在中括号 [] 内的每个元件都需要有空白键来分隔； 在中括号内的变量，最好都以双引号括号起来； 在中括号内的常数，最好都以单或双引号括号起来。</p>
+<p>如果你想要重新 启动系统的网络，可以这样做：<br>/etc/init.d/network restart</p>
+<p>$*<br>$#<br>$@</p>
+<p>条件判断式  if  then</p>
+<p>if [ 条件判断式 ]; then<br>   当条件判断式成立时，可以进行的指令工作内容；<br>else<br>    当条件判断式不成立时，可以进行的指令工作内容；<br>fi</p>
+<p>if [ 条件判断式一 ]; then<br>   当条件判断式一成立时，可以进行的指令工作内容；<br>elif [ 条件判断式二 ]; then<br>   当条件判断式二成立时，可以进行的指令工作内容；<br>else<br>    当条件判断式一与二均不成立时，可以进行的指令工作内容；<br>fi</p>
+<p>netstat 的指令，这个 指令可以查询到目前主机有打开的网络服务端口 （service ports）</p>
+<p>80: WWW 22: ssh 21: ftp 25: mail 111: RPC（远端程序调用） 631: CUPS（打印服务功能）</p>
+<p>case ${1} in “hello”）<br> echo “Hello, how are you ?”<br> ;;<br> “”）<br> echo “You MUST input parameters, ex&gt; {${0} someword}”<br>  ;;<br>  *） # 其实就相当于万用字符，0~无穷多个任意字符之意！<br>  echo “Usage ${0} {hello}”<br>  ;;<br>esac</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>while do done, until do done （不定循环）</p>
+<p>while [ condition ] &lt;==中括号内的状态就是判断式<br>do         &lt;==do 是循环的开始！<br>   程序段落 done &lt;==<br>done 是循环的结束 </p>
+<p>while 的中文是“当….时”，所以，这种方式说的是“当 condition 条件成立时，就进行循环，直 到 condition 的条件不成立才停止”的意思。还有另外一种不定循环的方式： </p>
+<p>until [ condition ]<br>do<br>程序段落<br> done<br>这种方式恰恰与 while 相反，它说的是“当 condition 条件成立时，就终止循环， 否则就持续 进行循环的程序段</p>
+<p>for var in con1 con2 con3 …<br>do<br>  程序段<br>done</p>
+<p>for （（ i=1; i&lt;=${nu}; i=i+1 ））<br> do<br>    s=$（（${s}+${i}））<br> done</p>
+<h2 id="例行性工作调度（crontab）"><a href="#例行性工作调度（crontab）" class="headerlink" title="例行性工作调度（crontab）"></a>例行性工作调度（crontab）</h2><p> Linux 工作调度的种类： at, cron<br>at ：at 是个可以处理仅执行一次就结束调度的指令，不过要执行 at 时， 必须要有 atd 这个服务的支持才行</p>
+<p>crontab ：crontab 这个指令所设置的工作将会循环的一直进行下去！ 可循环的时间为分 钟、小时、每周、每月或每年等。crontab 除了可以使用指令执行外，亦可编辑 /etc/crontab 来支持。 至于让 crontab 可以生效的服务则是 crond 这个服务喔！</p>
+<p>一只程序“ logwatch ”来主动分析登录信息</p>
+<p>利用 /etc/at.allow 与 /etc/at.deny 这两个文件来进行 at 的使用限制</p>
+<p>系统的配置文件： /etc/crontab, /etc/cron.d/*</p>
+<p>anacron</p>
+<p>nohup</p>
+<h2 id="程序管理与SELinux"><a href="#程序管理与SELinux" class="headerlink" title="程序管理与SELinux"></a>程序管理与SELinux</h2><p>fork and exec：程序调用的流程</p>
+<p>程序都会借由父程序以复制 （fork） 的方式产生一个一模一样的子程序， 然后被复制出来的子程序再以 exec 的方式来执行实际 要进行的程序，最终就成为一个子程序的存在</p>
+<p>PPID</p>
+<p>系统或网络服务：常驻在内存的程序</p>
+<p>多重登陆环境的七个基本终端窗口<br>六个文字界面登陆窗口，以及一个图形界面</p>
+<p>再按 [Alt]+[F1]…..[F7] 来 切换到其他的终端机界面，然后以 ps -aux 找出刚刚的错误程序，然后给他 kill 一下</p>
+<p>工作管理<br>前景：你可以控制与下达指令的这个环境称为前景的工作 （foreground）；<br>背景：可以自行运行的工作，你无法使用 [ctrl]+c 终止他，可使用 bg/fg 调用该工作</p>
+<p>观察目前的背景工作状态： jobs</p>
+<p>将背景工作拿到前景来处理：fg</p>
+<p>让工作在背景下的状态变成运行中： bg</p>
+<p>如果你想要让在背景的工作在你登出后还能够继续的执行，使用 nohup 搭配 &amp; 是不错的</p>
+<p>静态的 ps 或者是动态的 top，还能以 pstree 来查阅程序树之间的关系静 态的 ps 或者是动态的 top，还能以 pstree 来查阅程序树之间的关系</p>
+<p>观察系统所有程序： ps aux<br>仅观察自己的 bash 相关程序： ps -l</p>
+<p>选项与参数：<br> -d ：后面可以接秒数，就是整个程序画面更新的秒数。默认是 5 秒； -b ：以批次的方式执行 top ，还有更多的参数可以使用喔！ 通常会搭配数据流重导向来将批次的结果输出成为文件。<br> -n ：与 -b 搭配，意义是，需要进行几次 top 的输出结果。<br>  -p ：指定某些个 PID 来进行观察监测而已。<br>   在 top 执行过程当中可以使用的按键指令：<br>  ? ：显示在 top 当中可以输入的按键指令；<br>  P ：以 CPU 的使用资源排序显示；<br>  M ：以 Memory 的使用资源排序显示；<br>   N ：以 PID 来排序喔！<br>   T ：由该 Process 使用的 CPU 时间累积 （TIME+） 排序。<br>   k ：给予某个 PID 一个讯号 （signal）<br>    r ：给予某个 PID 重新制订一个 nice 值。<br>    q ：离开 top 软件的按键。</p>
+<p>程序管理</p>
+<p>系统资源的观察<br>free ：观察内存使用情况<br>uname：查阅系统与核心相关信息<br>uptime：观察系统启动时间与工作负载<br>netstat ：追踪网络或插槽档<br>dmesg ：分析核心产生的讯息<br>vmstat ：侦测系统资源变化</p>
+<p>特殊文件与程序<br>查询已打开文件或已执行程序打开之文件</p>
+<p>lsof ：列出被程序所打开的文件文件名</p>
+<p>pidof ：找出某支正在执行的程序的 PID</p>
+<p>SELinux   安全强化的 Linux</p>
+<h2 id="系统服务"><a href="#系统服务" class="headerlink" title="系统服务"></a>系统服务</h2><p>Unix 的 system V 版本<br>基本上 init 的管理机制有几个特色<br>使用 bash shell script 所写成的脚本程序，需要启动、关闭、重新启动、观察状 态时， 可以通过如下的方式来处理：<br>启动：/etc/init.d/daemon start<br>关闭：/etc/init.d/daemon stop<br>重新启动：/etc/init.d/daemon restart<br>状态观察：/etc/init.d/daemon status</p>
+<p>systemd<br>从 CentOS 7.x 以后，Red Hat 系列的 distribution 放弃沿用多年的 System V 开机启动服务的 流程，就是前一小节提到的 init 启动脚本的方法， 改用 systemd 这个启动服务管理机制</p>
+<p>平行处理所有服务，加速开机流程： 旧的 init 启动脚本是“一项一项任务依序启动”的模 式，因此不相依的服务也是得要一个一个的等待<br>系统启动的速度变快</p>
+<p>一经要求就回应的 on-demand 启动方式： systemd 全部就是仅有一只 systemd 服务搭 配 systemctl 指令来处理，无须其他额外的指令来支持</p>
+<p>首先 systemd 先定义所有的服务为一个服务单位 （unit），并将该 unit 归类到不同的服务类型 （type） 去</p>
+<p>向下相容旧有的 init 服务脚本</p>
+<p>systemd 的配置文件放置目录</p>
+<p>通过 systemctl 管理服务</p>
+<p>systemctl [command] [unit]<br>command 主要有：<br>start ：立刻启动后面接的 unit<br>stop ：立刻关闭后面接的 unit<br>restart ：立刻关闭后启动后面接的 unit，亦即执行 stop 再 start 的意思<br> reload ：不关闭后面接的 unit 的情况下，重新载入配置文件，让设置生效<br> enable ：设置下次开机时，后面接的 unit 会被启动<br> disable ：设置下次开机时，后面接的 unit 不会被启动<br> status ：目前后面接的这个 unit 的状态，会列出有没有正在执行、开机默认执行否、登录等信息等！<br> is-active ：目前有没有正在运行中 is-enable ：开机时有没有默认要启用这个 unit</p>
+<p>/etc    /usr/lib</p>
+<h2 id="登录文件"><a href="#登录文件" class="headerlink" title="登录文件"></a>登录文件</h2><p> 记录系统活动信息的几个文件， 例如：何时、何地 （来源 IP）、何人 （什么服务名称）、做了什么动作 （讯息登录啰）。 换句话说就是：记 录系统在什么时候由哪个程序做了什么样的行为时，发生了何种的事件等等<br> /var/log/</p>
+<p> systemd-journald.service：最主要的讯息收受者，由 systemd 提供的；<br> rsyslog.service：主要登录系统与网络等服务的讯息；<br> logrotate：主要在进行登录文件的轮替功能。</p>
+<h2 id="开机流程，模块管理-loader"><a href="#开机流程，模块管理-loader" class="headerlink" title="开机流程，模块管理 loader"></a>开机流程，模块管理 loader</h2><p>按下电源按键后计算机硬件会主动的读取 BIOS 或 UEFI BIOS 来载入硬件信息及 进行硬件系统的自我测试， 之后系统会主动的去读取第一个可开机的设备 （由 BIOS 设置 的） ，此时就可以读入开机管理程序</p>
+<p>开机管理程序可以指定使用哪个核心文件来开机，并实际载入核心到内存当中解压缩与执行， 此时核心就能够开始在内存内活动，并侦测所有硬件信息与载入适当的驱动程序来使整 部主机开始运行， 等到核心侦测硬件与载入驱动程序完毕后，一个最阳春的操作系统就开始 在你的 PC 上面跑了。</p>
+<p>主机系统开始运行后，此时 Linux 才会调用外部程序开始准备软件执行的环境，并且实际的 载入所有系统运行所需要的软件程序哩！ 最后系统就会开始等待你的登陆与操作啦</p>
+<p>核心： /boot/vmlinuz 或 /boot/vmlinuz-version；<br>核心解压缩所需 RAM Disk： /boot/initramfs （/boot/initramfs-version）；<br>核心模块： /lib/modules/version/kernel 或 /lib/modules/$（uname -r）/kernel；<br>核心源代码： /usr/src/linux 或 /usr/src/kernels/ （要安装才会有，默认不安装）</p>
+<p>核心版本： /proc/version<br>系统核心功能： /proc/sys/kernel/</p>
+<p>如果我有个新的硬件，偏偏我的操作系统不支持，该怎么办<br>重新编译核心，并加入最新的硬件驱动程序源代码；<br>将该硬件的驱动程序编译成为模块，在开机时载入该模块</p>
+<p>核心模块与相依性</p>
+<p>lsmod<br>模块名称（Module）；<br>模块的大小（size）；<br> 此模块是否被其他模块所使用 （Used by）</p>
+<p> modinfo</p>
+<p> 核心模块的载入与移除<br>insmod 则完全由使用者自行载入一个完整文件名的模块<br>rmmod</p>
+<p>使用 insmod 与 rmmod 的问题就是，你必须要自行找到模块的完整文件名才行</p>
+<p>核心模块的额外参数设置：/etc/modprobe.d/*conf</p>
+<p>第一支程序 systemd 及使用 default.target 进入开机程 序分析</p>
+<p>grub2<br>boot loader 的两个 stage<br>Stage 1：执行 boot loader 主程序：<br>Stage 2：主程序载入配置文件：</p>
+<p>配置文件是放在哪里啊？这些与 grub2 有关的文件都放置到 /boot/grub2 中</p>
+<p>grub2 的配置文件 /boot/grub2/grub.cfg 初探</p>
+<p>grub2 配置文件维护 /etc/default/grub 与 /etc/grub.d</p>
+<p>忘记root密码<br>文件系统错误无法开机</p>
+<h2 id="x-window设置介绍"><a href="#x-window设置介绍" class="headerlink" title="x window设置介绍"></a>x window设置介绍</h2><h2 id="linux核心编译与管理"><a href="#linux核心编译与管理" class="headerlink" title="linux核心编译与管理"></a>linux核心编译与管理</h2><p>系统移植<br>编译前的任务：认识核心与取得核心源代码</p>
+<p>这个核心文件通常被放置成 /boot/vmlinuz-xxx ，不过也不见得， 因为一部主机上面可以拥有 多个核心文件，只是开机的时候仅能选择一个来载入而已</p>
+<p>自制核心 - 核心编译</p>
+<p>关于驱动程序 - 是厂商的责任还是核心的责任</p>
+<p>核心的编译重点在于“你要你的 Linux 作什么</p>
+<p>核心的版本</p>
+<p>核心源代码的解压缩/安装/观察</p>
+<p>核心的编译与安装</p>
+<p>开始安装新核心与多重核心菜单 （grub）</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/810fg/" rel="next" title="springboot学习">
+                <i class="fa fa-chevron-left"></i> springboot学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/814x7/" rel="prev" title="jquery学习">
+                jquery学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代表以-root-的身份登陆系统，而-则代表一般身份使用者"><span class="nav-number">1.</span> <span class="nav-text">代表以 root 的身份登陆系统，而 $ 则代表一般身份使用者</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩和打包"><span class="nav-number">1.1.</span> <span class="nav-text">压缩和打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell脚本"><span class="nav-number">1.2.</span> <span class="nav-text">shell脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">1.3.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例行性工作调度（crontab）"><span class="nav-number">1.4.</span> <span class="nav-text">例行性工作调度（crontab）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序管理与SELinux"><span class="nav-number">1.5.</span> <span class="nav-text">程序管理与SELinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统服务"><span class="nav-number">1.6.</span> <span class="nav-text">系统服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录文件"><span class="nav-number">1.7.</span> <span class="nav-text">登录文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开机流程，模块管理-loader"><span class="nav-number">1.8.</span> <span class="nav-text">开机流程，模块管理 loader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-window设置介绍"><span class="nav-number">1.9.</span> <span class="nav-text">x window设置介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux核心编译与管理"><span class="nav-number">1.10.</span> <span class="nav-text">linux核心编译与管理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/811a3/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

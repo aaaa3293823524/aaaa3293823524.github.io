@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="第一章随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）事件关系和运算   和事件  积事件  差事件  对立事件  互逆交换律  结合律  分配律  德摩根律频率（频数除以试验次数）  概率（非负  规范  可列可加性）古典概型（取球 有放回  不放回）加法公式  乘法公式（条件概率）全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)贝叶斯公式  P(">
+<meta name="keywords" content="数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论和数理统计知识点总结">
+<meta property="og:url" content="https://userzhang.tk/p/7a8iv/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="第一章随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）事件关系和运算   和事件  积事件  差事件  对立事件  互逆交换律  结合律  分配律  德摩根律频率（频数除以试验次数）  概率（非负  规范  可列可加性）古典概型（取球 有放回  不放回）加法公式  乘法公式（条件概率）全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)贝叶斯公式  P(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-02T06:33:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="概率论和数理统计知识点总结">
+<meta name="twitter:description" content="第一章随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）事件关系和运算   和事件  积事件  差事件  对立事件  互逆交换律  结合律  分配律  德摩根律频率（频数除以试验次数）  概率（非负  规范  可列可加性）古典概型（取球 有放回  不放回）加法公式  乘法公式（条件概率）全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)贝叶斯公式  P(">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/7a8iv/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>概率论和数理统计知识点总结 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/7a8iv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">概率论和数理统计知识点总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-02 11:19:46 / 修改时间：14:33:42" itemprop="dateCreated datePublished" datetime="2019-07-02T11:19:46+08:00">2019-07-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="随机试验-样本空间-随机事件（-基本事件-必然事件-不可能事件）"><a href="#随机试验-样本空间-随机事件（-基本事件-必然事件-不可能事件）" class="headerlink" title="随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）"></a>随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）</h2><h2 id="事件关系和运算-和事件-积事件-差事件-对立事件-互逆"><a href="#事件关系和运算-和事件-积事件-差事件-对立事件-互逆" class="headerlink" title="事件关系和运算   和事件  积事件  差事件  对立事件  互逆"></a>事件关系和运算   和事件  积事件  差事件  对立事件  互逆</h2><h2 id="交换律-结合律-分配律-德摩根律"><a href="#交换律-结合律-分配律-德摩根律" class="headerlink" title="交换律  结合律  分配律  德摩根律"></a>交换律  结合律  分配律  德摩根律</h2><h2 id="频率（频数除以试验次数）-概率（非负-规范-可列可加性）"><a href="#频率（频数除以试验次数）-概率（非负-规范-可列可加性）" class="headerlink" title="频率（频数除以试验次数）  概率（非负  规范  可列可加性）"></a>频率（频数除以试验次数）  概率（非负  规范  可列可加性）</h2><h2 id="古典概型（取球-有放回-不放回）"><a href="#古典概型（取球-有放回-不放回）" class="headerlink" title="古典概型（取球 有放回  不放回）"></a>古典概型（取球 有放回  不放回）</h2><h2 id="加法公式-乘法公式（条件概率）"><a href="#加法公式-乘法公式（条件概率）" class="headerlink" title="加法公式  乘法公式（条件概率）"></a>加法公式  乘法公式（条件概率）</h2><h2 id="全概率公式-P-A-P-A-B1-P-B1-P-A-B2-P-B2"><a href="#全概率公式-P-A-P-A-B1-P-B1-P-A-B2-P-B2" class="headerlink" title="全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)"></a>全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)</h2><h2 id="贝叶斯公式-P-B1-A-P-B1A-P-A-P-A-B1-P-B1-如上全概率公式"><a href="#贝叶斯公式-P-B1-A-P-B1A-P-A-P-A-B1-P-B1-如上全概率公式" class="headerlink" title="贝叶斯公式  P(B1|A)=P(B1A)/P(A)=P(A|B1)P(B1)/如上全概率公式"></a>贝叶斯公式  P(B1|A)=P(B1A)/P(A)=P(A|B1)P(B1)/如上全概率公式</h2><h2 id="独立性-P（AB）-P-A-P-B"><a href="#独立性-P（AB）-P-A-P-B" class="headerlink" title="独立性  P（AB）=P(A)P(B)"></a>独立性  P（AB）=P(A)P(B)</h2><h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="离散型随机变量和分布函数"><a href="#离散型随机变量和分布函数" class="headerlink" title="离散型随机变量和分布函数"></a>离散型随机变量和分布函数</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><h3 id="二项（伯努利）分布"><a href="#二项（伯努利）分布" class="headerlink" title="二项（伯努利）分布"></a>二项（伯努利）分布</h3><h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><h3 id="随机变量分布函数"><a href="#随机变量分布函数" class="headerlink" title="随机变量分布函数"></a>随机变量分布函数</h3><p>F(x)=P{X&lt;=x}<br>分布函数性质<br>1 单调不减<br>2 0&lt;=F（x）&lt;=1<br>3右连续</p>
+<h2 id="连续型随机变量和概率密度-（对分布函数求导得概率密度-对概率密度求积分得分布函数）"><a href="#连续型随机变量和概率密度-（对分布函数求导得概率密度-对概率密度求积分得分布函数）" class="headerlink" title="连续型随机变量和概率密度  （对分布函数求导得概率密度  对概率密度求积分得分布函数）"></a>连续型随机变量和概率密度  （对分布函数求导得概率密度  对概率密度求积分得分布函数）</h2><h1 id="第三章-多维随机变量及其分布"><a href="#第三章-多维随机变量及其分布" class="headerlink" title="第三章  多维随机变量及其分布"></a>第三章  多维随机变量及其分布</h1><h2 id="离散型"><a href="#离散型" class="headerlink" title="离散型"></a>离散型</h2><p>联合分布律<br>边缘分布<br>条件分布  条件分布律  条件概率密度</p>
+<p>独立性  f(x,y)=fX(x)fY(y)     F(x,y)=FX(x)FY(y) </p>
+<p>条件概率密度  联合概率密度  边缘概率密度</p>
+<p>两个随机变量的函数的分布<br>1  Z=X+Y   卷积公式</p>
+<p>2 Z=Y/X   Z=XY分布</p>
+<p>3 M=max{X,Y}   N=min{X,Y}</p>
+<h1 id="第四章-随机变量的数字特征"><a href="#第四章-随机变量的数字特征" class="headerlink" title="第四章  随机变量的数字特征"></a>第四章  随机变量的数字特征</h1><p>数学期望  方差 协方差     相关系数                            矩，协方差矩阵<br>E(X)     D(X) COV(x,y)  pxy =COV(x,y)/(根号D(x)*根号D(y))   原点矩，中心矩，混合矩</p>
+<h1 id="第五章-大数定律及中心极限定理"><a href="#第五章-大数定律及中心极限定理" class="headerlink" title="第五章  大数定律及中心极限定理"></a>第五章  大数定律及中心极限定理</h1><p>切比雪夫不等式</p>
+<p>辛钦大数定理（弱大数定理）  相互独立 服从同一分布  依概率收敛</p>
+<p>伯努利大数定理   （相当于辛钦大数定理对概率以概率收敛的特殊情况）</p>
+<p>1中心极限定理  独立同分布<br>2李雅普诺夫定理   不服从同分布  但独立<br>3德莫弗-拉普拉斯定理  服从二项分布</p>
+<h1 id="第六章-样本及抽样分布"><a href="#第六章-样本及抽样分布" class="headerlink" title="第六章  样本及抽样分布"></a>第六章  样本及抽样分布</h1><p>随机样本</p>
+<p>频率直方图</p>
+<p>箱线图</p>
+<p>统计量  不含未知参数</p>
+<p>X2分布</p>
+<p>t分布（学生式分布）</p>
+<p>F分布</p>
+<h1 id="第七章-参数估计"><a href="#第七章-参数估计" class="headerlink" title="第七章  参数估计"></a>第七章  参数估计</h1><p>统计推断的基本问题可以分为两大类  一类是估计问题  另一类是假设检验问题</p>
+<p>点估计和区间估计<br>分布函数已知 含有未知参数 根据总体的一个样本来估计参数  X:样本  x:样本值  </p>
+<p>最大似然估计法    最大似然估计值  最大似然估计量  对数似然方程</p>
+<p>估计量的评选标准<br>1 无偏性</p>
+<p>2有效性</p>
+<p>3相合性</p>
+<p>置信水平  置信下限  置信上限   上a分位点  置信区间</p>
+<p>正态总体均值与方差的区间估计</p>
+<p>单侧置信区间<br>单侧置信下限  单侧置信上限</p>
+<h1 id="第八章-假设检验"><a href="#第八章-假设检验" class="headerlink" title="第八章  假设检验"></a>第八章  假设检验</h1><p>检验统计量<br>H0 原假设（零假设）<br>H1 备择假设<br>拒绝域  拒绝域的边界点为临界值<br>第1类错误       弃真<br>第2类错误       存伪</p>
+<p>双边</p>
+<p>单边  左边  右边</p>
+<p>正态总体均值的假设检验</p>
+<p>正态总体方差的假设检验</p>
+<h1 id="方差分析和回归分析"><a href="#方差分析和回归分析" class="headerlink" title="方差分析和回归分析"></a>方差分析和回归分析</h1><h1 id="bootstrap方法"><a href="#bootstrap方法" class="headerlink" title="bootstrap方法"></a>bootstrap方法</h1><h1 id="随机过程及统计描述"><a href="#随机过程及统计描述" class="headerlink" title="随机过程及统计描述"></a>随机过程及统计描述</h1><h1 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h1><h1 id="平稳随机过程"><a href="#平稳随机过程" class="headerlink" title="平稳随机过程"></a>平稳随机过程</h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/79wnf/" rel="next" title="js_DOM操作学习总结（一）">
+                <i class="fa fa-chevron-left"></i> js_DOM操作学习总结（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/7afmh/" rel="prev" title="最优化算法学习">
+                最优化算法学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#随机试验-样本空间-随机事件（-基本事件-必然事件-不可能事件）"><span class="nav-number">1.1.</span> <span class="nav-text">随机试验  样本空间 随机事件（ 基本事件  必然事件 不可能事件）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件关系和运算-和事件-积事件-差事件-对立事件-互逆"><span class="nav-number">1.2.</span> <span class="nav-text">事件关系和运算   和事件  积事件  差事件  对立事件  互逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换律-结合律-分配律-德摩根律"><span class="nav-number">1.3.</span> <span class="nav-text">交换律  结合律  分配律  德摩根律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#频率（频数除以试验次数）-概率（非负-规范-可列可加性）"><span class="nav-number">1.4.</span> <span class="nav-text">频率（频数除以试验次数）  概率（非负  规范  可列可加性）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#古典概型（取球-有放回-不放回）"><span class="nav-number">1.5.</span> <span class="nav-text">古典概型（取球 有放回  不放回）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加法公式-乘法公式（条件概率）"><span class="nav-number">1.6.</span> <span class="nav-text">加法公式  乘法公式（条件概率）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全概率公式-P-A-P-A-B1-P-B1-P-A-B2-P-B2"><span class="nav-number">1.7.</span> <span class="nav-text">全概率公式   P(A)=P(A|B1)P(B1)+P(A|B2)P(B2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贝叶斯公式-P-B1-A-P-B1A-P-A-P-A-B1-P-B1-如上全概率公式"><span class="nav-number">1.8.</span> <span class="nav-text">贝叶斯公式  P(B1|A)=P(B1A)/P(A)=P(A|B1)P(B1)/如上全概率公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#独立性-P（AB）-P-A-P-B"><span class="nav-number">1.9.</span> <span class="nav-text">独立性  P（AB）=P(A)P(B)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-随机变量及其分布"><span class="nav-number">2.</span> <span class="nav-text">第二章 随机变量及其分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型随机变量和分布函数"><span class="nav-number">2.1.</span> <span class="nav-text">离散型随机变量和分布函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-1分布"><span class="nav-number">2.1.1.</span> <span class="nav-text">0-1分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二项（伯努利）分布"><span class="nav-number">2.1.2.</span> <span class="nav-text">二项（伯努利）分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泊松分布"><span class="nav-number">2.1.3.</span> <span class="nav-text">泊松分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均匀分布"><span class="nav-number">2.1.4.</span> <span class="nav-text">均匀分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数分布"><span class="nav-number">2.1.5.</span> <span class="nav-text">指数分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正态分布"><span class="nav-number">2.1.6.</span> <span class="nav-text">正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机变量分布函数"><span class="nav-number">2.1.7.</span> <span class="nav-text">随机变量分布函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续型随机变量和概率密度-（对分布函数求导得概率密度-对概率密度求积分得分布函数）"><span class="nav-number">2.2.</span> <span class="nav-text">连续型随机变量和概率密度  （对分布函数求导得概率密度  对概率密度求积分得分布函数）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-多维随机变量及其分布"><span class="nav-number">3.</span> <span class="nav-text">第三章  多维随机变量及其分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型"><span class="nav-number">3.1.</span> <span class="nav-text">离散型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-随机变量的数字特征"><span class="nav-number">4.</span> <span class="nav-text">第四章  随机变量的数字特征</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-大数定律及中心极限定理"><span class="nav-number">5.</span> <span class="nav-text">第五章  大数定律及中心极限定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章-样本及抽样分布"><span class="nav-number">6.</span> <span class="nav-text">第六章  样本及抽样分布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-参数估计"><span class="nav-number">7.</span> <span class="nav-text">第七章  参数估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第八章-假设检验"><span class="nav-number">8.</span> <span class="nav-text">第八章  假设检验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方差分析和回归分析"><span class="nav-number">9.</span> <span class="nav-text">方差分析和回归分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bootstrap方法"><span class="nav-number">10.</span> <span class="nav-text">bootstrap方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机过程及统计描述"><span class="nav-number">11.</span> <span class="nav-text">随机过程及统计描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#马尔科夫链"><span class="nav-number">12.</span> <span class="nav-text">马尔科夫链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平稳随机过程"><span class="nav-number">13.</span> <span class="nav-text">平稳随机过程</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/7a8iv/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

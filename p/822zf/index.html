@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="https://pan.baidu.com/s/169SFtYEvel44hRJhmFTRTQ提取码：1234       服务拆分   单一职责 服务远程调用   发送http请求   RestTemplate 注册中心  配置中心提供者  消费者Eureka注册中心 eureka原理分析 服务注册 eureka集群   所以要将eureka自己也注册服务发现 ribbon负载均衡     轮询">
+<meta name="keywords" content="搭建博客,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微服务学习">
+<meta property="og:url" content="https://userzhang.tk/p/822zf/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="https://pan.baidu.com/s/169SFtYEvel44hRJhmFTRTQ提取码：1234       服务拆分   单一职责 服务远程调用   发送http请求   RestTemplate 注册中心  配置中心提供者  消费者Eureka注册中心 eureka原理分析 服务注册 eureka集群   所以要将eureka自己也注册服务发现 ribbon负载均衡     轮询">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220163405585.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220163547426.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220164159150.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220165138171.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182322357.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182513880.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182855252.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220191253363.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220192919938.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220193128030.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194532688.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194656019.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194723033.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194928392.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200003298.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200529095.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200806071.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220202833189.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220203830828.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220203924177.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220204136894.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220204400210.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205559496.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205726275.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205850486.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220211128867.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220211210671.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212024011.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212327704.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212414295.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212634275.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220213618430.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220215910010.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220215934025.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220220702485.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220220937073.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220221256395.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220222009444.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220222031440.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220223605326.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220223809589.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224224679.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224246401.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224516750.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224826703.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225146887.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225445319.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225955605.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230244097.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230411478.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230444019.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231359317.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231455179.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231906447.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232009683.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232308234.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232349932.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232801853.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233629186.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233745549.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233830483.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234258449.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234411485.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234458724.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220235126172.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220235711897.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221000029206.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221090720485.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221090933553.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091010187.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091710769.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091834789.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221092356791.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221092900353.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221093556826.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221093946594.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221095439348.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100516390.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100819957.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100933723.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101047863.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101401886.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101824015.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101934238.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102513324.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102750224.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102920090.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103019303.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103252952.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103818701.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103916977.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104420097.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104538762.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104918340.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221110331675.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221110544728.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221111738235.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221111956662.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221112054964.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221112126563.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115322702.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115439645.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115634326.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115813799.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115900939.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221120044769.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221120315753.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121115533.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121335487.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121454391.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121936368.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221122041906.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221124556958.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221124808858.jpg">
+<meta property="og:updated_time" content="2022-01-20T09:25:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微服务学习">
+<meta name="twitter:description" content="https://pan.baidu.com/s/169SFtYEvel44hRJhmFTRTQ提取码：1234       服务拆分   单一职责 服务远程调用   发送http请求   RestTemplate 注册中心  配置中心提供者  消费者Eureka注册中心 eureka原理分析 服务注册 eureka集群   所以要将eureka自己也注册服务发现 ribbon负载均衡     轮询">
+<meta name="twitter:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220163405585.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/822zf/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>微服务学习 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/822zf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微服务学习
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-12-20 16:27:53" itemprop="dateCreated datePublished" datetime="2021-12-20T16:27:53+08:00">2021-12-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-01-20 17:25:24" itemprop="dateModified" datetime="2022-01-20T17:25:24+08:00">2022-01-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://pan.baidu.com/s/169SFtYEvel44hRJhmFTRTQ" target="_blank" rel="noopener">https://pan.baidu.com/s/169SFtYEvel44hRJhmFTRTQ</a><br>提取码：1234</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220163405585.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220163547426.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220164159150.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220165138171.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182322357.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182513880.jpg" alt></p>
+<p>服务拆分   单一职责<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220182855252.jpg" alt></p>
+<p>服务远程调用   发送http请求   RestTemplate<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220191253363.jpg" alt></p>
+<p>注册中心  配置中心<br>提供者  消费者<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220192919938.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220193128030.jpg" alt><br>Eureka注册中心</p>
+<p>eureka原理分析<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194532688.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194656019.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194723033.jpg" alt></p>
+<p>服务注册<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220194928392.jpg" alt></p>
+<p>eureka集群   所以要将eureka自己也注册<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200003298.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200529095.jpg" alt><br>服务发现<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220200806071.jpg" alt></p>
+<p>ribbon负载均衡     轮询 随机等  权重<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220202833189.jpg" alt></p>
+<p>负载均衡拦截器<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220203830828.jpg" alt><br>饿</p>
+<p>负载策略<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220203924177.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220204136894.jpg" alt></p>
+<p>第1种配置全局    第2种针对某个微服务<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220204400210.jpg" alt></p>
+<p>饥饿加载<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205559496.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205726275.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220205850486.jpg" alt><br>nacos注册中心<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220211128867.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220211210671.jpg" alt><br>nacos和eureka区别   nacos功能更丰富</p>
+<p>服务分级存储<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212024011.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212327704.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212414295.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220212634275.jpg" alt></p>
+<p>NacosRule负载均衡   修改负载均衡规则   优先选择本地集群  本地集群内随机负载均衡<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220213618430.jpg" alt></p>
+<p>nacos服务实例的权重设置   权重越高访问频率越高<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220215910010.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220215934025.jpg" alt></p>
+<p>设置为0   版本更新 灰度测试<br>nacos环境隔离  namespace<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220220702485.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220220937073.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220221256395.jpg" alt></p>
+<p>临时实例（心跳）    非临时实例（nacos主动询问）<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220222009444.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220222031440.jpg" alt><br>Nacos配置管理    有变化的配置<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220223605326.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220223809589.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224224679.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224246401.jpg" alt><br>微服务配置拉取</p>
+<p>配置热更新<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224516750.jpg" alt>   属性注入</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220224826703.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225146887.jpg" alt><br>多环境配置共享<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225445319.jpg" alt><br>nacos集群搭建</p>
+<p>Feign远程调用    集成了ribbon做负载均衡<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220225955605.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230244097.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230411478.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220230444019.jpg" alt>路径占位符</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231359317.jpg" alt><br>自定义配置<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231455179.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220231906447.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232009683.jpg" alt></p>
+<p>性能优化<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232308234.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232349932.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220232801853.jpg" alt></p>
+<p>Feign最佳实践   两种<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233629186.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233745549.jpg" alt><br>Gateway网关<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220233830483.jpg" alt></p>
+<p>身份认证 权限校验<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234258449.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234411485.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220234458724.jpg" alt><br>网关也是一个微服务</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220235126172.jpg" alt></p>
+<p>断言 布尔表达式</p>
+<p>路由断言工厂</p>
+<p>路由的过滤器配置</p>
+<p>全局过滤器</p>
+<p>过滤器链执行顺序</p>
+<p>跨域配置</p>
+<p>服务网关  路由请求 负载均衡</p>
+<p>微服务保护<br>Sentinel<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211220235711897.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221000029206.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221090720485.jpg" alt><br>预防高并发<br>避免如网络问题，full gc的假死（stop the world）<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221090933553.jpg" alt></p>
+<p>sentinel和Hystrix<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091010187.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091710769.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221091834789.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221092356791.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221092900353.jpg" alt></p>
+<p>超时 服务降级  隔离</p>
+<p>流量控制<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221093556826.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221093946594.jpg" alt></p>
+<p>jmeter测试计划<br>流控模式<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221095439348.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100516390.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100819957.jpg" alt>    链路 请求来源<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221100933723.jpg" alt><br>流控效果<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101047863.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101401886.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101824015.jpg" alt><br>隔离和降级<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221101934238.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102513324.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102750224.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221102920090.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103019303.jpg" alt></p>
+<p>线程隔离<br>线程池  信号量<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103252952.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103818701.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221103916977.jpg" alt></p>
+<p>熔断降级   断路器   状态机   熔断持续时间   阈值   熔断策略<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104420097.jpg" alt><br>熔断策略  慢调用 异常比例  异常数<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104538762.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221104918340.jpg" alt><br>授权规则和规则持久化    请求者身份判断<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221110331675.jpg" alt><br>授权规则<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221110544728.jpg" alt><br>自定义异常结果<br>实现BlockExceptionHandler</p>
+<h1 id="规则持久化-默认内存"><a href="#规则持久化-默认内存" class="headerlink" title="规则持久化  默认内存"></a>规则持久化  默认内存</h1><p>规则管理模式<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221111738235.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221111956662.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221112054964.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221112126563.jpg" alt><br>实现push模式</p>
+<p>与Hystrix区别</p>
+<p>分布式事务理论<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115322702.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115439645.jpg" alt><br>CAP定理<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115634326.jpg" alt></p>
+<p>数据同步<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115813799.jpg" alt><br>响应<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221115900939.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221120044769.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221120315753.jpg" alt><br>BASE理论<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121115533.jpg" alt><br>事务协调者<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121335487.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121454391.jpg" alt><br>Seata架构<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221121936368.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221122041906.jpg" alt><br>TC服务</p>
+<p>微服务集成seata<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221124556958.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211221124808858.jpg" alt><br>XA<br>TCC<br>AT<br>SAGA<br>熔断机制</p>
+<p>分布式锁</p>
+<p>分布式搜索</p>
+<p>持续集成</p>
+<p>多级缓存</p>
+<p>缓存同步</p>
+<p>lua语法</p>
+<p>消息堆积  惰性队列</p>
+<p>截图工具 snipaste</p>
+<p>translate</p>
+<p>服务链路监控 Zipkin  Sleuth</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/822r0/" rel="next" title="springmvc学习">
+                <i class="fa fa-chevron-left"></i> springmvc学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/824vf/" rel="prev" title="elasticsearch学习">
+                elasticsearch学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#规则持久化-默认内存"><span class="nav-number">1.</span> <span class="nav-text">规则持久化  默认内存</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/822zf/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

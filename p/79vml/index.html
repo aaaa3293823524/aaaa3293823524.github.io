@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
+<meta name="keywords" content="深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习框架学习">
+<meta property="og:url" content="https://userzhang.tk/p/79vml/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-25T07:54:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度学习框架学习">
+<meta name="twitter:description" content="tensorflowTensorFlow 支持 14 种不同的类型，实数（ tf.float32 tf.float64 ）、整数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64tf.complex128计算图会话张量 name shape dtype每个节点都是一个运算，而每 条边代表了计算">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/79vml/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>深度学习框架学习 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/79vml/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深度学习框架学习
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-20 20:45:38" itemprop="dateCreated datePublished" datetime="2019-06-20T20:45:38+08:00">2019-06-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-25 15:54:36" itemprop="dateModified" datetime="2019-09-25T15:54:36+08:00">2019-09-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>tensorflow<br>TensorFlow 支持 14 种不同的类型，实数<br>（ tf.float32 tf.float64 ）、整<br>数（ tf.int8 tf.intl6 tf.int32 tf.int64 tf.uint8 ）、布尔型 tf.bool) 和复数（ tf.complex64<br>tf.complex128<br>计算图<br>会话<br>张量 name shape dtype<br>每个节点都是一个运算，而每 条边代表了计算之间的依赖关系</p>
+<p>tf.Graph()<br>tf.get_default_graph()</p>
+<p>变量.initializer</p>
+<p>为了方便 变量初始化用tf.global_variables_initializer</p>
+<h2 id="用placeholder代替常量"><a href="#用placeholder代替常量" class="headerlink" title="用placeholder代替常量"></a>用placeholder代替常量</h2><p>tf.placeholder(tf.float32,shape=(1,2),name=’input’)</p>
+<p>sess=tf.Session()</p>
+<p>y是一堆操作<br>sess.run(y,feed_dict={x:[[0.8,0.9]]})</p>
+<h2 id="损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><a href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）" class="headerlink" title="损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）"></a>损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</h2><p>tf.train.AdadeltaOptimizer(learning_rate= 学习率).minimize(损失函数)</p>
+<p>tf.nn.relu<br>tf.sigmoid<br>tf.tanh</p>
+<p>均方误差 MSE</p>
+<p>tf.where  相似于条件表达式<br>tf.greater<br>多层网络解决异或运算</p>
+<p>噪声<br>避免过拟合 正则化 （限制权重大小 ）</p>
+<p>滑动平均模型</p>
+<h2 id="训练数据包括训练集和验证集-验证集来‘训练’超参数"><a href="#训练数据包括训练集和验证集-验证集来‘训练’超参数" class="headerlink" title="训练数据包括训练集和验证集 验证集来‘训练’超参数"></a>训练数据包括训练集和验证集 验证集来‘训练’超参数</h2><p>tf.variable_scope 命名空间<br>tf.get_variable  reuse=True 已经创建的变量   reuse=False 新建变量</p>
+<p>tensorflow模型持久化 tf.train.Saver()<br>.meta 计算图的结构<br>.ckpt  变量的取值</p>
+<p>卷积和池化 特征提取<br>全连接   分类</p>
+<h2 id="参数计算："><a href="#参数计算：" class="headerlink" title="参数计算："></a>参数计算：</h2><p>卷积神经网络<br>过滤器长<em>宽</em>深*输入深度+过滤器深</p>
+<p>全连接网络<br>输入*节点个数+节点个数</p>
+<p>输出特征图尺寸：<br>（（输入-过滤器+2*填充）/步长）+1</p>
+<p>池化层 减小矩阵尺寸 一般不改变深度 减少最后全连接层的参数</p>
+<p>卷积层使用过滤器横跨整个深度，池化层过滤器只影响一个深度的节点</p>
+<p>tf.nn.conv2d<br>tf.nn.max_pool<br>tf.nn.avg_pool</p>
+<p>全连接参数个数：<br>输入*输出+输出</p>
+<p>Inception 将卷积层并联在一起</p>
+<p>当使用全0填充 步长为1时 输出矩阵大小相同 将深度拼接</p>
+<p>Inception-v3有46层 11个Inception模块组成  有96个卷积层</p>
+<p>迁移学习   瓶颈层</p>
+<p>\ 一行不够下一行接着写</p>
+<p>tensorflow多线程处理输入数据  队列</p>
+<p>循环神经网络<br>序列数据<br>长期依赖问题   提出LSTM</p>
+<h2 id="tensorBoard可视化高维向量"><a href="#tensorBoard可视化高维向量" class="headerlink" title="tensorBoard可视化高维向量"></a>tensorBoard可视化高维向量</h2><p>input1=tf.constant([1.0,2.0,3.0],name=”input1”)<br>input2=tf.Variable(tf.random_uniform([3]),name=”input2”)<br>output=tf.add_n([input1,input2],name=”add”)<br>writer=tf.summary.FileWriter(‘/home/zhangxuefeng/log’,tf.get_default_graph())<br>writer.close()</p>
+<p>tensorboard —logdir={pwd}</p>
+<p>name_scope和Variable_scope区别<br>tf.get_variable不受name_scope影响 不加命名空间</p>
+<p>深度学习训练并行模式 多GPU并行  同步模式（效率不如异步模式）  异步模式（参数更新有问题）</p>
+<p>分布式Tensorflow</p>
+<h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><p><a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a></p>
+<p>conda config —add channels</p>
+<h2 id="检查pytorch是否支持GPU"><a href="#检查pytorch是否支持GPU" class="headerlink" title="检查pytorch是否支持GPU"></a>检查pytorch是否支持GPU</h2><p>import torch<br>torch.cuda.is_available()</p>
+<h2 id="pyTorch基础"><a href="#pyTorch基础" class="headerlink" title="pyTorch基础"></a>pyTorch基础</h2><p>Tensor可以和numpy的ndarray可以相互转换 区别在于Tensor可以在GPU运行，而ndarray只能CPU运行<br>不同数据类型的Tensor,torch.FloatTensor,torch.DoubleTensor,torch.ShortTensor,torch.IntTensor,torch.LongTensor<br>print(“a is :{}”.format(a))<br>torch.zeros((2,3))<br>torch.randn((3,2))</p>
+<p>torch.utils.data.Dataset</p>
+<p>torchvision 数据读取类 ImageFolder</p>
+<p>torch.nn.Module<br>torch.optim 优化<br>一阶优化算法 梯度下降<br>二阶优化算法 Hessian方法  基于牛顿法</p>
+<h2 id="模型的保存和加载"><a href="#模型的保存和加载" class="headerlink" title="模型的保存和加载"></a>模型的保存和加载</h2><p>torch.save()   第一个参数保存对象  第二个参数是保存路径和名称</p>
+<p>nn.Linear()<br>nn.Sigmoid()</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>通过梯度*学习率更新参数<br>sigmoid函数的两个缺点<br>（1）梯度消失<br>（2）非0均值<br>tanh函数<br>仍然存在梯度消失<br>解决了0均值问题</p>
+<p>RELU<br>训练脆弱</p>
+<p>maxout</p>
+<p>交叉熵</p>
+<p>均方误差</p>
+<h2 id="模型的表示能力和容量"><a href="#模型的表示能力和容量" class="headerlink" title="模型的表示能力和容量"></a>模型的表示能力和容量</h2><h2 id="梯度下降法变式"><a href="#梯度下降法变式" class="headerlink" title="梯度下降法变式"></a>梯度下降法变式</h2><p>Momentum<br>动量： 动量计算，基于前面的梯度，也就是说参数更新不仅仅基于当前的梯度，也基于之前的梯度。</p>
+<p>动量变形  Nesterov 计算经过动量更新后的位置的梯度<br>Adagrad<br>自适应学习率</p>
+<p>RMSprop</p>
+<p>Adam(可以看成是RMSprop+Momentum)</p>
+<h2 id="Tensor的拼接"><a href="#Tensor的拼接" class="headerlink" title="Tensor的拼接"></a>Tensor的拼接</h2><p>torch.cat()</p>
+<h2 id="处理数据和训练模型的技巧"><a href="#处理数据和训练模型的技巧" class="headerlink" title="处理数据和训练模型的技巧"></a>处理数据和训练模型的技巧</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>中心化</p>
+<p>标准化</p>
+<p>PCA</p>
+<p>白噪声</p>
+<h3 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h3><p>全0初始化<br>随机初始化<br>稀疏初始化<br>初始化偏置<br>批标准化</p>
+<h3 id="防止过拟合"><a href="#防止过拟合" class="headerlink" title="防止过拟合"></a>防止过拟合</h3><p>正则化<br>Dropout<br>nn.RELU(True)<br>nn.Conv2d  卷积模块</p>
+<p>nn.MaxPool2d<br>nn.AvgPool2d<br>nn.BatchNorm2s<br>LeNet 网络层数很浅，也没激活层      1998年LeCun提出<br>AlexNet相对于LeNet层数更深，第一次引入激活层RELU,全连接层引入Dropout层防止过拟合 有8层   11*11滤波器    2012年冠军</p>
+<p>VGG使用很多小对的滤波器 层叠很多小的滤波器的感受野和一个大的滤波器的感受野是相同的，还能减少参数，同时有更深的网络结构  2014年亚军</p>
+<p>GoogleNet(InceptionNet)   22层    2014年冠军</p>
+<p>ResNet 2015 ImageNet竞赛冠军 残差模块 152层神经网络 恒等映射    H(x)-x</p>
+<p>LSTM      nn.LSTM()<br>记忆状态C<br>GRU将输入门和遗忘门合成更新门</p>
+<p>生成对抗网络<br>生成模型      自动编码器  （编码器生成隐含向量  解码器） 变分自动编码器<br>生成对抗网络的变式和应用</p>
+<p>WGAN<br>Cycle GAN</p>
+<h1 id="caffe"><a href="#caffe" class="headerlink" title="caffe"></a>caffe</h1><h1 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h1><h1 id="theano"><a href="#theano" class="headerlink" title="theano"></a>theano</h1><h1 id="mxnet"><a href="#mxnet" class="headerlink" title="mxnet"></a>mxnet</h1><h1 id="fast-ai"><a href="#fast-ai" class="headerlink" title="fast.ai"></a>fast.ai</h1><p>服务器 anaconda启动jupyter notebook报错</p>
+<p> Error loading server extension jupyter_nbextensions_configurator<br> ModuleNotFoundError: No module named ‘jupyter_nbextensions_configurator’</p>
+<p> 看内存大小<br>free -m</p>
+<p>free -h</p>
+<p>MAP(mean average precision)</p>
+<p>张量（名字 维度 类型）</p>
+<p>CNN 通过浅层卷积提取图<br>像的细节特征，如边缘、角点等，深层网络提取语义<br>特征，如类别等</p>
+<p>torch.optim 实现各种优化算法包</p>
+<p>保存和加载<br>torch.save(model,’…….pth’)  结构和参数信息</p>
+<p>torch.load(‘model.pth’)</p>
+<p>sigmoid是logistic分布函数特殊形式</p>
+<p>torchvision.transforms     可以图像增强 转化成Tensor</p>
+<p>循环神经网络  基于记忆的模型</p>
+<p>判别式模型又可以称为条件概率模型，</p>
+<p>典型的判别式模型包括 k 近邻、决策树、卷积神经网<br>络、支持向量机（SVM）等。 </p>
+<p>典型的生成式模型有：朴素贝叶斯和隐马尔<br>科夫模型等。 </p>
+<p>自编码器的应用主要有两个方面，第一是<br>数据去噪，第二是为进行可视化降维。 </p>
+<p>用%automagic on 启用自动魔术命令功能后，可以省略百分号“%’<br>的输入即可直接运行魔术命令</p>
+<p>J  焦点上移一个 ce ll;<br>K  焦点下移一个 cell 熟悉 im 读者对这 模式应该很习惯；<br>A  在当前 cell 上面插入 个新的 cell;<br>B  在当前 cell 的下面插入 个新的 cell;<br>DD 连续按两次 ，删除当前 cell 。这是另 vimer 喜欢”的功能编辑模式如下。</p>
+<h2 id="numpy知识"><a href="#numpy知识" class="headerlink" title="numpy知识"></a>numpy知识</h2><p>np.zeros((3,3))</p>
+<p>np.ones((3,3))</p>
+<p>np.random.randn()</p>
+<p>np.random.randint(10 , 20 , 6)    10到20之间 6个随机数</p>
+<p>b = np . random.randint(l , 5 , 20) . reshape(4 , 5)</p>
+<p>a= np.arange(6)<br>In [ 4] : a + 5 ＃数组和标量<br>Out [ 4] : array ( [ 5 , 6 , 7 , 8 , 9 , 1 0 ] )</p>
+<p>np.linspace(-np . pi , np.pi , 200)</p>
+<p>需要注意 乘法是对应元素相乘 不是矩阵内积 矩阵内积使用 np.dot（）函 数。</p>
+<p>Numpy 提供了 些基本的统计功能，包括求和、求平均值、求方差等</p>
+<p>a . sum ()<br>a.mean()<br>a . std()<br>a.min()<br>a . max()<br>a . argmin() ＃最小值元素所在的索引<br>a . argmax() ＃最大值元素所在的索引</p>
+<p>In [78) : b<br>Out[78) :<br>array( [ [3 , 2 , 4 , 2),<br>[ 4 , 5 , 1, l),<br>[ 4 , 4 , 1 , 4) ,<br>[3 , 3 , 4, 4) ,<br>[3 , 2, 4 , 5) ,<br>[3 , 5 , 2, 5]))<br>In [85) : b . sum()<br>Out [ 85) : 78<br>In [86) : b . sum(axis=O}<br>Out [ 8 6 ) : array ( [ 2 0 , 2 1 , 1 6 , 21 ) )<br>In [87) : b . sum(axis=l}<br>Out [87): array ( [11 , 11 , 13, 14, 14, 15))<br>In [88) : b.sum(axis=l} . sum()<br>Out [88) : 78<br>In [94) : b .min(axis=l}<br>Out[94) : array([2 , 1 , 1 , 3 , 2 , 2))<br>In [95) : b . argmin (axis=l}<br>Out[95) : array([l , 2 , 2 , 0 , 1 , 2))<br>In [96) : b.std(axis=l )</p>
+<p>In (37) : a<br>Out (37] :<br>array ( [ [ 1, 4 , 8 , 10],<br>(10 , 9 , 6 , 2] ,<br>[ 1 , 4 ‘ 10 ‘ 5] ,<br>[ 5 , 7 , 1 , 1] ‘<br>[ 5 , 2 , 2 , 8 ],<br>[ 6 , 10 , 10 , 7]])<br>In [40) : b = np . sort (a , axis=1) ＃按行独立排序，返回一个备份<br>In[41) : b<br>Out[41 ):<br>array ( ([ 1 , 4 , 8 , 10) ,<br>[ 2 , 6 , 9 , 10) , </p>
+<p>[1 , 4 , 5 , 10],<br>[1 , 1 , 5 , 7],<br>[2 , 2 , 5 , 8] ,<br>[6 , 7 , 10 , 10])</p>
+<p>保存为文本格式的可读性好，但性能较低。也可以直接保存为 Numpy 有的二进<br>格式    np . save ( ’ a . npy ’, a)</p>
+<p>c = np.load(‘a.npy’)</p>
+<h1 id="Pandas知识"><a href="#Pandas知识" class="headerlink" title="Pandas知识"></a>Pandas知识</h1><p>Panda 是一个强大的时间序列数据处理工具包<br>Pandas 最基础的数据结构是 Series   另一个是DataFrame</p>
+<p>df = pd . DataFrame(np . random . randn(6 , 4) , columns=list ( ’ ABCD ’ ))</p>
+<p>df.shape<br>[OUT) : ( 6 , 4 )</p>
+<p>df. h ead (3 )</p>
+<p>df . tail (2)</p>
+<p>df. describe ()<br>describ （）计算出每列的元素个数、平均值、标准差、最小值、最大<br>值及几种中位数的值</p>
+<p>可以很方便地对数据进行修改，如可以添加 列，列名为 TAGo<br>(IN] : df (” TAG ” ]=[” cat”, ” dog”,”cat”,”cat”,”cat ”,”dog” ]</p>
+<p>df =pd.read csv (’ data . csv ’, index col=O}</p>
+<p>我们还可以使用 DataFrame to_ csv（）函数把数据保存到文件中</p>
+<h1 id="Matplotlib知识"><a href="#Matplotlib知识" class="headerlink" title="Matplotlib知识"></a>Matplotlib知识</h1><h1 id="scikit-learn知识"><a href="#scikit-learn知识" class="headerlink" title="scikit-learn知识"></a>scikit-learn知识</h1><p>scikit-learn 是一个开源的 Python 机器学习工具包</p>
+<p>from sklearn import datasets<br>digits = datasets .load_digits ()</p>
+<p>这个过程就是数据清洗，即把采集到的 、不适合用<br>来做机器学习训练的数据进行预处理，从而转换为适合机器学习的数据。</p>
+<p>scikit-le arn 所有的评估模型对象都有 fit（）这个接口，这是用来 练模型的接口。针对<br>有监督的机器学习（如上面的例子〉，使用 fit(X, ）来进行训练，其中 是标记数据。针<br>对无监督的机器学习算法，使用自t(X）来进行训练，因为无监督机器学习算法的数据集是<br>没有标记的，不需要传入y</p>
+<p>2.8 妇展学习资源、</p>
+<ol>
+<li><a href="http://scipy" target="_blank" rel="noopener">http://scipy</a> ctures.org ，这是一个按照 CC4.0 协议发布的网站，是 个优秀的 Python<br>科学计算工具包的教程合集。</li>
+<li><a href="https://docs.scipy.org/doc/" target="_blank" rel="noopener">https://docs.scipy.org/doc/</a> , numpy scipy 的官方文档。</li>
+<li><a href="https://en.wikipedia.org/wiki/Random_walk" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Random_walk</a> ，随机漫步算法。</li>
+<li><a href="https://en.wikipedia.org/wiki/S" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/S</a> ieve <em>of</em> Eratosthenes 埃拉托斯特尼筛法</li>
+<li><a href="https://en" target="_blank" rel="noopener">https://en</a>. wikipedia.org/wiki/Monte _Carlo method 蒙特卡罗方法</li>
+<li><a href="http://pandas.pydata.org" target="_blank" rel="noopener">http://pandas.pydata.org</a>, Pandas 官网</li>
+<li><a href="http://matplotlib.org" target="_blank" rel="noopener">http://matplotlib.org</a>, matplotlib 的官方网站 ，包含大量 绘图实例。</li>
+<li><a href="http://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/documentation.html</a>, scikit-learn 宫方文档。</li>
+</ol>
+<p>在模型选择时，我们使用训练数据集来 练算法参数，用 交叉验证数据集来验证参数。<br>选择交叉验证数据集的成本 lcv（（）） 最小的多项式来作为数据拟合模型，最后再用测试数据<br>集来测试选择出来的模型针对测试数据集的准确性</p>
+<p>在scikit-leam 里，评估模型性能的算法都在 klean. metrics 里。其中，计算查准率<br>和召回率的 API 分别为 sklean.metrics precision<em> score（）和 sklean .metrics.recall</em> score （）</p>
+<p>squeeze 函数：从数组的形状中删除单维度条目，即把shape中为1的维度去掉</p>
+<p>flatten层</p>
+<p><a href="https://blog.csdn.net/program_developer/article/details/80853425" target="_blank" rel="noopener">https://blog.csdn.net/program_developer/article/details/80853425</a></p>
+<p>很好用的网络可视化工具，专门用来可视化.prototxt文件，你可以将.prototxt文件中的内容复制到该链接点击打开 <a href="http://ethereon.github.io/netscope/#/editor" target="_blank" rel="noopener">http://ethereon.github.io/netscope/#/editor</a><br>，然后按下Shift+Enter,就可以看到漂亮的网络结构啦</p>
+<h1 id="支持向量机："><a href="#支持向量机：" class="headerlink" title="支持向量机："></a>支持向量机：</h1><p>SVM有三种模型，由简至繁为</p>
+<p>当训练数据训练可分时，通过硬间隔最大化，可学习到硬间隔支持向量机，又叫线性可分支持向量机<br>当训练数据训练近似可分时，通过软间隔最大化，可学习到软间隔支持向量机，又叫线性支持向量机<br>当训练数据训练不可分时，通过软间隔最大化及核技巧(kernel trick)，可学习到非线性支持向量机</p>
+<h1 id="梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃"><a href="#梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃" class="headerlink" title="梯度提升决策树（Gradient Boosting Decision Tree，GB⁃"></a>梯度提升决策树（Gradient Boosting Decision Tree，GB⁃</h1><p>DT）是一种迭代决策树算法</p>
+<p>xgboost<br>lightgbm</p>
+<h1 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h1><p>主成分分析法是通过数学降维方法, 从众多原始变量中找出几个综合性强的变量来代替原始变量, 这些综合性强的几个变量彼此间互不相关且能最大程度反映原始变量的信息量[5]。</p>
+<p>主成分分析计算步骤如下。</p>
+<p>步骤1:对原始数据进行标准化处理并计算相关系数矩阵。</p>
+<p>步骤2:计算特征值与特征向量。求出相关系数矩阵的特征值λ (i=1, 2, …, p) , 并使其按大小顺序排列, 即λ1≥λ2≥λ3…≥λp≥0, 然后分别求出对应于特征值的特征向量ei (i=1, 2, …, p) , 其中p为相关系数矩阵的阶数。</p>
+<p>步骤3:计算主成分贡献率与累计贡献率。经过筛选分析, 选取累计贡献率达到85%以上的因子作为需水量的主要影响因子即主成分。</p>
+<p>步骤4:计算主成分载荷。表示原始数据的协方差矩阵的特征值。</p>
+<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><p>EM 算法是在机器学习和计算机视觉的数据聚类<br>（Data Clustering）领域常用方法之一，在实际应用中，我们所观察到的数据很多时候是不完全数据，而<br>传统的优化方法在处理缺失数据情况下的极大似然估计会变得异常复杂，由此学者们提出了 EM 算法</p>
+<p>M 算法也称期望最大化算法，是一种从不完全数据中求参数极大似然估计的迭代算法</p>
+<p>EM 算法经常被应用于混合模型的参数估计当中，众所周知，正确使用该方法的前提是知道混合模<br>型中子总体的个数（即混合模型中的分布个数）C   </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/79vmf/" rel="next" title="linux系统搭建以及学习（黑客）">
+                <i class="fa fa-chevron-left"></i> linux系统搭建以及学习（黑客）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/79vmm/" rel="prev" title="卷积神经网络总结">
+                卷积神经网络总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用placeholder代替常量"><span class="nav-number">1.</span> <span class="nav-text">用placeholder代替常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小-（优化目标）"><span class="nav-number">2.</span> <span class="nav-text">损失函数刻画当前预测值和真实答案之间的差距。然后通过反向传播使差距减小 （优化目标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据包括训练集和验证集-验证集来‘训练’超参数"><span class="nav-number">3.</span> <span class="nav-text">训练数据包括训练集和验证集 验证集来‘训练’超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数计算："><span class="nav-number">4.</span> <span class="nav-text">参数计算：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorBoard可视化高维向量"><span class="nav-number">5.</span> <span class="nav-text">tensorBoard可视化高维向量</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch"><span class="nav-number"></span> <span class="nav-text">pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查pytorch是否支持GPU"><span class="nav-number">1.</span> <span class="nav-text">检查pytorch是否支持GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyTorch基础"><span class="nav-number">2.</span> <span class="nav-text">pyTorch基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的保存和加载"><span class="nav-number">3.</span> <span class="nav-text">模型的保存和加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">4.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型的表示能力和容量"><span class="nav-number">5.</span> <span class="nav-text">模型的表示能力和容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法变式"><span class="nav-number">6.</span> <span class="nav-text">梯度下降法变式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor的拼接"><span class="nav-number">7.</span> <span class="nav-text">Tensor的拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理数据和训练模型的技巧"><span class="nav-number">8.</span> <span class="nav-text">处理数据和训练模型的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">8.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重初始化"><span class="nav-number">8.2.</span> <span class="nav-text">权重初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止过拟合"><span class="nav-number">8.3.</span> <span class="nav-text">防止过拟合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#caffe"><span class="nav-number"></span> <span class="nav-text">caffe</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras"><span class="nav-number"></span> <span class="nav-text">keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#theano"><span class="nav-number"></span> <span class="nav-text">theano</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mxnet"><span class="nav-number"></span> <span class="nav-text">mxnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fast-ai"><span class="nav-number"></span> <span class="nav-text">fast.ai</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy知识"><span class="nav-number">1.</span> <span class="nav-text">numpy知识</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas知识"><span class="nav-number"></span> <span class="nav-text">Pandas知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib知识"><span class="nav-number"></span> <span class="nav-text">Matplotlib知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scikit-learn知识"><span class="nav-number"></span> <span class="nav-text">scikit-learn知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持向量机："><span class="nav-number"></span> <span class="nav-text">支持向量机：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度提升决策树（Gradient-Boosting-Decision-Tree，GB⁃"><span class="nav-number"></span> <span class="nav-text">梯度提升决策树（Gradient Boosting Decision Tree，GB⁃</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主成分分析"><span class="nav-number"></span> <span class="nav-text">主成分分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM算法"><span class="nav-number"></span> <span class="nav-text">EM算法</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/79vml/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

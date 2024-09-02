@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="三次握手  4次挥手https://blog.csdn.net/weixin_33929309/article/details/91629868 最擅长领域  学习经历项目看视频   为什么用这个技术  设计 规划   功能实现  场景协程hashmap 线程不安全快恢复     https://blog.csdn.net/qq_36953135/article/details/775060092">
+<meta name="keywords" content="搭建博客,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录不太熟悉的考点">
+<meta property="og:url" content="https://userzhang.tk/p/80sm9/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="三次握手  4次挥手https://blog.csdn.net/weixin_33929309/article/details/91629868 最擅长领域  学习经历项目看视频   为什么用这个技术  设计 规划   功能实现  场景协程hashmap 线程不安全快恢复     https://blog.csdn.net/qq_36953135/article/details/775060092">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T06:12:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记录不太熟悉的考点">
+<meta name="twitter:description" content="三次握手  4次挥手https://blog.csdn.net/weixin_33929309/article/details/91629868 最擅长领域  学习经历项目看视频   为什么用这个技术  设计 规划   功能实现  场景协程hashmap 线程不安全快恢复     https://blog.csdn.net/qq_36953135/article/details/775060092">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/80sm9/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>记录不太熟悉的考点 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/80sm9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记录不太熟悉的考点
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-11-08 22:57:29" itemprop="dateCreated datePublished" datetime="2021-11-08T22:57:29+08:00">2021-11-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-01-09 14:12:32" itemprop="dateModified" datetime="2022-01-09T14:12:32+08:00">2022-01-09</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>三次握手  4次挥手<a href="https://blog.csdn.net/weixin_33929309/article/details/91629868" target="_blank" rel="noopener">https://blog.csdn.net/weixin_33929309/article/details/91629868</a></p>
+<p>最擅长领域  学习经历<br>项目看视频   为什么用这个技术  设计 规划   功能实现  场景<br>协程<br>hashmap 线程不安全<br>快恢复     <a href="https://blog.csdn.net/qq_36953135/article/details/77506009" target="_blank" rel="noopener">https://blog.csdn.net/qq_36953135/article/details/77506009</a><br>2、快恢复   <a href="https://blog.csdn.net/jtracydy/article/details/52366461" target="_blank" rel="noopener">https://blog.csdn.net/jtracydy/article/details/52366461</a><br>（1）当发送方连续收到三个重复确认时，就执行“乘法减小”算法，把慢开始门限减半。这是为了预防网络发生拥塞，但不执行慢开始算法。<br>（2）由于发送方现在认为网络很可能没有发生拥塞（如果网络发生了严重拥塞，就不会一连有好几个报文段连续到达接收方，也就不会导致接收方连续发送重复确认）。因此与慢开始不同之处就是现在不执行慢开始算法（即拥塞窗口现在不设置为1）而是把拥塞窗口的值设置为慢开始门限减半后的值，然后开始执行拥塞避免算法（“加法增大”），使拥塞窗口缓慢地线性增大。</p>
+<p>快重传<br>1、快重传<br>快重传算法首先要求接收方每收到一个失序的报文段就立即发出重复确认（为的是使发送方及早的知道有报文段没有到达对方）而不要等到自己发送数据时才捎带确认。</p>
+<p>快重传算法规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段，而不必继续等待为其设置的重传计时器到期。</p>
+<p>https过程<br>内部类    <a href="https://www.cnblogs.com/dearcabbage/p/10609838.html" target="_blank" rel="noopener">https://www.cnblogs.com/dearcabbage/p/10609838.html</a><br>内部类可以分为四种:成员内部类、局部内部类、匿名内部类、静态内部类</p>
+<p>局部内部类存在于方法中。<br>他和成员内部类的区别在于局部内部类的访问权限仅限于方法或作用域内<br>局部内部类就像局部变量一样，前面不能访问修饰符以及static修饰符</p>
+<p>静态内部类和成员内部类相比多了一个static修饰符。它与类的静态成员变量一般，是不依赖于外部类的。同时静态内部类也有它的特殊性。因为外部类加载时只会加载静态域，所以静态内部类不能使用外部类的非静态变量与方法。<br>同时可以知道成员内部类里面是不能含静态属性或方法的。</p>
+<p>静态内部类对象的创建一般是外部类.内部类 类名 = new 外部类.内部类();<br>成员内部类对象的创建一般是外部类.内部类 类名 = 外部类对象名.new 内部类();</p>
+<p>内部类的好处<br>完善了Java多继承机制，由于每一个内部类都可以独立的继承接口或类，所以无论外部类是否继承或实现了某个类或接口，对于内部类没有影响。<br>方便写事件驱动程序。</p>
+<p>bean生命周期<br>spring事务传播行为<br>Spring在TransactionDefinition接口中规定了7种类型的事务传播行为。事务传播行为是Spring框架独有的事务增强特性<br>事务传播行为用来描述由某一个事务传播行为修饰的方法被嵌套进另一个方法的时事务如何传播<br>PROPAGATION_</p>
+<p>spring事务隔离级别<br>TransactionDefinition接口中定义了五个表示隔离级别的常量<br><a href="https://www.cnblogs.com/Jomini/p/14016229.html" target="_blank" rel="noopener">https://www.cnblogs.com/Jomini/p/14016229.html</a><br>循环依赖三重缓存<br> Java中的循环依赖分两种，一种是构造器的循环依赖（只能报错），另一种是属性的循环依赖<br> Spring解决的循环依赖就是指属性的循环依赖</p>
+<p>可以看出这三个map的优先级。其中singletonObjects里面存放的是初始化之后的单例对象；earlySingletonObjects中存放的是一个已完成实例化未完成初始化的早期单例对象；而singletonFactories中存放的是ObjectFactory对象，此对象的getObject方法返回值即刚完成实例化还未开始初始化的单例对象。所以先后顺序是，单例对象先存在于singletonFactories中，后存在于earlySingletonObjects中，最后初始化完成后放入singletonObjects中。<br>当debug到此处时，以上述Teacher和Student两个循环引用的类为例，如果第一个走到这一步的是Teacher，则从此处这三个map中get到的值都是空，因为还未添加进去。这个方法主要是给循环依赖中后来过来的对象用。</p>
+<p>Spring通过将实例化后的对象提前暴露给Spring容器中的singletonFactories，解决了循环依赖的问题</p>
+<p>最左前缀匹配  慢查询<br><a href="https://blog.csdn.net/sinat_41917109/article/details/88944290" target="_blank" rel="noopener">https://blog.csdn.net/sinat_41917109/article/details/88944290</a><br>最左边开始连续匹配，用到了索引<br>匹配列前缀<br>如果左边的列是精确查找的，右边的列可以进行范围查找<br>drop（删除表） truncate（释放空间） delete（不释放空间）<br><a href="https://www.cnblogs.com/zhizhao/p/7825469.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhizhao/p/7825469.html</a><br>快排 排序算法时间复杂度 空间复杂度<br>红黑树</p>
+<p>连通分支等图编程  trie 并查集<br>jvm 三色标记法<br>白色：没有检查（或者检查过了，确实没有引用指向它了）<br>灰色：自身被检查了，成员没被检查完（可以认为访问到了，但是正在被检查，就是图的遍历里那些在队列中的节点）<br>黑色：自身和成员都被检查完了</p>
+<p>初始时，所有对象都在 【白色集合】中；<br>将GC Roots 直接引用到的对象 挪到 【灰色集合】中；<br>从灰色集合中获取对象：<br>3.1. 将本对象 引用到的 其他对象 全部挪到 【灰色集合】中；<br>3.2. 将本对象 挪到 【黑色集合】里面。<br>重复步骤3，直至【灰色集合】为空时结束。<br>结束后，仍在【白色集合】的对象即为GC Roots 不可达，可以进行回收。</p>
+<p>树状数组 线段树</p>
+<p>spring bean生命周期<br>实例化和属性赋值对应构造方法和setter方法的注入，初始化和销毁是用户能自定义扩展的两个阶段。</p>
+<blockquote>
+<p>实例化 Instantiation<br>属性赋值 Populate<br>初始化 Initialization<br>销毁 Destruction</p>
+</blockquote>
+<p>单实例在容器启动时创建对象（当然也可以设置懒加载方式，使得单实例也可以在获取时创建）<br>多实例在每次获取时创建对象</p>
+<p>对象的初始化<br>当对象已经创建完成，并赋好了值，再去调用初始化的方法</p>
+<p>对象的销毁<br>单实例在容器关闭时，容器会自动调用销毁方法<br>多实例容器不会调用销毁方法，必须用户自定义销毁方法</p>
+<p>实例化：Spring 容器根据配置中的 beanDefinition实例化bean。<br>属性赋值：Spring 使用依赖注入(构造器或者setter)填充所有属性，如 bean 中所定义的配置。<br>初始化之前： 如果存在bean实现的任何XXXBeanPostProcessors，则调用 postProcessBeforeInitialization() 方法。<br>初始化：如果为 bean 指定了 init 方法（ 的 init-method 属性），那么将调用它，或者实现了InitializingBean接口，则调用postPropertiesSet()方法实现初始化逻辑。<br>初始化之后：如果存在与 bean 关联的任何 BeanPostProcessors，则将调用 postProcessAfterInitialization() 方法。<br>销毁：如果为 bean 指定了 destroy 方法（ 的 destroy-method 属性），那么将调用它，或者实现了DisposableBean 接口，当 spring 容器关闭时，会调用 destory()。</p>
+<p>CMS：写屏障 + 增量更新  并发标记  重新标记<br>G1：写屏障 + SATB（原始快照）<br>ZGC：读屏障</p>
+<p>第一种问题： 错标   没什么太大影响 下一轮垃圾回收可解决<br>第二种问题：漏标，或者叫错杀<br>错杀的情况只有在 下边两个条件同时发生，才会发生<br>黑色对象指向了白色对象；<br>而本来指向这个白色对象的灰色对象断开了对它的连接。</p>
+<p>在这讲述解决方案之前，要描述两个名词：读屏障和写屏障。注意，这里的屏障和并发编程中的屏障是两码事儿。这里的屏障很简单，可以理解成就是在读写操作前后插入一段代码，用于记录一些信息、保存某些数据等，概念类似于AOP。</p>
+<p>增量更新，就是在赋值操作之前添加一个写屏障，在写屏障中记录新增的引用<br>在我们这个例子中，在并发标记阶段，A是一个黑色对象，F是一个白色对象，A引用了F，这个引用关系会被记录下来，然后通过这个记录在重新标记阶段再从A对象开始枚举一次，保证如果A还是保持着F的引用，那么F会被正确标记；如果A到F的引用在并发标记阶段又断开了，此次枚举也无法访问到它，活该被清除。</p>
+<p>在重新标记阶段如果用户线程还是继续执行，那么这个GC永远可能也做不完了，所以重新标记需要STW，但是这个时间消耗不会太夸张。如果实在重新标记阶段耗时过长，那么可以尝试在重新标记之前做一次Minor GC</p>
+<p>原始快照是站在减少引用的对象（也就是例子中的B对象）的角度来解决问题。所谓原始快照，简单的讲，就是在赋值操作（这里是置空）执行之前添加一个写屏障，在写屏障中记录被置空的对象引用。比如，用户线程要执行：B.f=null；那么在写屏障中，首先会把B.f记录下来，然后再进行置空操作。记录下来的这个对象就可以称为原始快照。<br>那么记录下来之后呢？很简单，之后直接把它变为黑色。意思就是默认认为它不是垃圾，不需要将其清理。当然，这样处理有两种情况，一种情况是，F的确不是垃圾，直到清理的那一刻，都仍然有至少一个引用链能访问到它，这没有什么问题；另一种情况就是F又变成了垃圾。在上述的例子中，就是A到F的引用链也断了，或者直接A都成垃圾了，那F对象就成了浮动垃圾。对于浮动垃圾，前面不止一次就提到了，直接不用理会，如果到下一次GC时它仍然是垃圾，自然会被清理掉。</p>
+<p>白色对象可能是从其他对象的引用链上”转移“过来的，也可能就是一个新对象。其实可以想象的到，对于新对象加入到黑色节点，我们无法使用原始快照，但是可以使用增量更新，或者直接简单处理，和并发清理阶段一样：在这期间创建的新对象都认为不是垃圾（比如标记为黑色），如果成了垃圾，那就是浮动垃圾，还是留待下一次GC处理。总之，标记的总体原则就是，“另可放过，不可杀错”<br><a href="https://blog.csdn.net/huangzhilin2015/article/details/115282572" target="_blank" rel="noopener">https://blog.csdn.net/huangzhilin2015/article/details/115282572</a></p>
+<p><a href="https://www.jianshu.com/p/14cd2c9d2cd2" target="_blank" rel="noopener">https://www.jianshu.com/p/14cd2c9d2cd2</a><br>对称加密的特点是算法公开、加密和解密速度快，适合于对大数据量进行加密，常见的对称加密算法有DES、3DES、TDEA、Blowfish、RC5和IDEA。</p>
+<p>非对称加密与对称加密相比，其安全性更好<br>HTTPS为了兼顾安全与效率，同时使用了对称加密和非对称加密。数据是被对称加密传输的，对称加密过程需要客户端的一个密钥，为了确保能把该密钥安全传输到服务器端，采用非对称加密对该密钥进行加密传输，总的来说，对数据进行对称加密，对称加密所要使用的密钥通过非对称加密传输。</p>
+<p>验证证书<br>根证书在验证证书的过程中起着核心的作用<br>证书的指纹和签名(指纹算法)<br>指纹的字符串，指纹可以理解为证书身份的唯一代表，是用来保证证书的完整性的，确保证书没有被修改过<br>签名是在信息后面加上的一段数字串，可以证明该信息有没有被修改过。数字证书在发布的时候，CA机构将证书的指纹和指纹算法通过自己的私钥加密得到的就是证书的签名了</p>
+<p>我们在验证证书的时候，首先通过机构的根公钥去解密证书的签名，解密成功的话会得到证书的指纹和指纹算法，指纹是一个hash值，它代表着证书的原始内容，此时再通过指纹算法计算证书内容得到另外一个hash值，如果这两个hash值相同，则代表证书没有被篡改过，否则就是被篡改了</p>
+<p>中间人攻击  对比证书上的URL和我们请求的URL是否相同，我们还是可以判断当前证书是不是服务器发的证书</p>
+<p>time_wait close_wait</p>
+<p>线程池状态<br>running  能够接收新任务，以及对已添加的任务进行处理<br>shutdown    不接收新任务，但能处理已添加的任务<br>stop   不接收新任务，不处理已添加的任务，并且会中断正在处理的任务<br>tyding   所有的任务已终止<br>terminated   线程池彻底终止，就变成TERMINATED状态</p>
+<p>跨域   同源策略会阻止一个域的javascript脚本和另外一个域的内容进行交互</p>
+<p>JSONP 是服务器与客户端跨源通信的常用方法。最大特点就是简单适用，兼容性好（兼容低版本IE），缺点是只支持get请求，不支持post请求。</p>
+<p>核心思想：网页通过添加一个<script>元素，向服务器请求 JSON 数据，服务器收到请求后，将数据放在一个指定名字的回调函数的参数位置传回来。<br>CORS 是跨域资源分享<br>nginx反向代理</p>
+<p>restful接口<br>web攻击</p>
+<p>jwt 字符串 hear payload 签名<br>token  服务端 生成验证 扩展 app 跨域<br>对于springSecurity的过滤器，我的理解是大致可以分为三类：</p>
+<p>1.常规的过滤器，用于对http协议进行支持，如cors,xsrf,headerWrite等，它们通常需要沿着过滤链继续传递;</p>
+<p>2.用于认证的过滤器，它们可以根据认证的结果对过滤链进行阻断，如直接返回结果给前端，或者重定向;</p>
+<p>3.用于授权的过滤器，它以认证为前提。处于过滤链的末端，通过它之后，将会进入到servlet进行服务;</p>
+<p>红黑树的规定   它能够确保任何一个节点的左右子树的高度差不会超过二者中较低那个的一倍</p>
+<p>每个节点要么是红色，要么是黑色。<br>根节点必须是黑色<br>红色节点不能连续（也即是，红色节点的孩子和父亲都不能是红色）。<br>对于每个节点，从该点至null（树尾端）的任何路径，都含有相同个数的黑色节点</p>
+<p>插入或者删除操作往往会破坏上述条件3或条件4，需要通过调整使得查找树重新满足红黑树的条件<br>一类是颜色调整，即改变某个节点的颜色；另一类是结构调整，集改变检索树的结构关系。结构调整过程包含两个基本操作：左旋（Rotate Left），右旋（RotateRight）。</p>
+<p>设计模式的目的<br>公司有什么了解</p>
+<p>explain 命令</p>
+<p>二维数组寻找峰值 O(nlogm)<br>指针head变</p>
+<p>跳跃表  压缩列表 </p>
+<p>TCP粘包拆包<br>happens before<br>分布式  高并发 微服务</p>
+<p>字节序大端小端<br>大端字节序：高位字节在前，低位字节在后，这是人类读写数值的方法。<br>小端字节序：低位字节在前，高位字节在后，即以0x1122形式储存。</p>
+<p>首先，为什么会有小端字节序？<br>答案是，计算机电路先处理低位字节，效率比较高，因为计算都是从低位开始的。所以，计算机的内部处理都是小端字节序。<br>但是，人类还是习惯读写大端字节序。所以，除了计算机的内部处理，其他的场合几乎都是大端字节序，比如网络传输和文件储存。<br>4.<br>计算机处理字节序的时候，不知道什么是高位字节，什么是低位字节。它只知道按顺序读取字节，先读第一个字节，再读第二个字节。<br>如果是大端字节序，先读到的就是高位字节，后读到的就是低位字节。小端字节序正好相反。<br>理解这一点，才能理解计算机如何处理字节序。</p>
+<p>实现生产者消费者<br>jvm命令排查</p>
+<p>I/O<br>zookeeper</p>
+<p>序列化保证传输完整性</p>
+<p>dto  vo<br>@Resource  和@Autowired</p>
+<p>偏向锁  一个线程获取锁<br>轻量级锁 线程交替执行  不存在锁竞争</p>
+<p>JVM会为每个线程在当前线程的栈帧中创建用于存储锁记录的空间，我们称为Displaced Mark Word。如果一个线程获得锁的时候发现是轻量级锁，会把锁的Mark Word复制到自己的Displaced Mark Word里面。</p>
+<p>然后线程尝试用CAS操作将自己线程栈中拷贝的锁记录的地址写入到锁对象的Mark Word中。如果成功，当前线程获得锁，如果失败，表示Mark Word已经被替换成了其他线程的锁记录，说明在与其它线程竞争锁，当前线程就尝试使用自旋来获取锁。</p>
+<p>自旋（不释放cpu 空操作）</p>
+<p>JDK采用了适应性自旋，简单来说就是线程如果自旋成功了，则下次自旋时触发重量级锁的阀值会更高，如果自旋失败了，则自旋的次数就会减少。</p>
+<p>当前线程会使用CAS操作将Displaced Mark Word的内容复制回锁的Mark Word里面。如果没有发生竞争，那么这个复制的操作会成功。如果有其他线程因为自旋多次导致轻量级锁升级成了重量级锁，那么CAS操作会失败，此时会释放锁并唤醒被阻塞的线程。(锁释放失败)</p>
+<p>重量级锁  操作系统Mutex lock   重量级锁会设置几种状态用来区分请求的线程<br>阻塞 唤醒开销大<br>重量级锁就是由对象监视器monitor来实现的，当多个线程同时请求某个重量级锁时，重量级锁会设置几种状态用来区分请求的线程：</p>
+<p>锁降级因为如果没有多线程竞争，还是使用重量级锁会造成额外的开销，所以当JVM进入SafePoint安全点（可以简单的认为安全点就是所有用户线程都停止的，只有JVM垃圾回收线程可以执行）的时候，会检查是否有闲置的Monitor，然后试图进行降级。</p>
+<p>偏向锁的解锁很简单，其仅仅将线程的栈中的最近一条 lockrecord的 obj字段设置为null</p>
+<p>ReentrantLock公平锁和非公平锁</p>
+<p>其次是synchronized的等待队列只有一个(调用wait()方法的线程会进入等待队列)，而ReentrantLock可以有多个条件等待队列。</p>
+<p>注解可以是作用于源码层面，字节码文件层面，运行时层面。</p>
+<p>通常情况下，我们使用的注解都是运行时注解，在运行时，JVM在运行时会针对注解生成一个动态代理类，通过反射获取注解时，实际上返回的是Java运行时生成的动态代理对象$Proxy1，而Proxy类就是我们注解（接口）的具体实现类。</p>
+<p>扩容  hashtable(sychronized)  concurrenthashmap(标识节点 到新数组)</p>
+<blockquote>
+<p>假设原数组长度为16，length-1二进制表示为1111。key1的hash值为9，二进制表示为01001，key2的hash值为25，11001，</p>
+</blockquote>
+<p>所以hash&amp;(length-1)的结果只要看低4位的结果，9和25的低4位都是1001，所以计算结果一致，计算结果都是9，所以在数组中处于数组下标为9的元素链表中。</p>
+<p>扩容后数组长度为32，length-1二进制表示为11111，key1的hash值为9，二进制表示为01001，key2的hash值为25，11001，</p>
+<p>所以hash&amp;(2*length-1)的结果需要看低5位的结果，9和25的低4位都是1001，所以计算结果不一致，计算结果都是9和25，因为key2的hash值的第五位为1，key1的hash值的第五位为0，所以会多16，也就是原数组长度的大小。</p>
+<p>所以原数组同一下标index下的链表存储的hash冲突的元素，扩容后在新数组中的下标newIndex要么为index，要么为index+length（去决定于hash值的第N位为1，还是0，也就是hash&amp;length的结果，原数组长度length为2的N-1次幂）</p>
+<p>所以会遍历链表(或者红黑树)，然后对数组下标index下每个节点计算hash&amp;length的结果，然后存放在两个不同的临时链表中，遍历完成后，hash&amp;length结果为0的元素组成的临时链表会存储在新数组index位置，hash&amp;length结果为1的元素组成的临时链表会存储在新数组index+length位置。</p>
+<blockquote>
+<p>ConcurrentHashMap，HashTable是线程安全的， 在多线程操作时，因为get(key)和containsKey(key)两个操作和在一起不是一个原子性操作，可能在containsKey(key)时发现存在这个键值对，但是get(key)时，有其他线程删除了键值对，导致get(key)返回的Node是null，然后执行方法时抛出异常。所以无法区分value为null还是不存在key。</p>
+</blockquote>
+<p>LinkedHashMap   LRU    before指针 after指针</p>
+<p>hashmap链表成环  1.7<br>扩容头插法</p>
+<p>1.8之后<br>首先迁移时不是拿到一个键值对就迁移一个了，而是对一个数组下标下的链表进行遍历，根据hash值的不同，分成两个链表，然后将两个链表分别设置到新的数组的<br>下标下。</p>
+<p>扩容尾插法</p>
+<p><a href="https://blog.csdn.net/jiangjunlanzhoulan/article/details/81239054">https://blog.csdn.net/jiangjunlanzhoulan/article/details/81239054</a></p>
+<p>concurrenthashmap</p>
+<p>atomic原子变量类就是乐观锁</p>
+<p>time_wait状态存在的意义是可以有效地终止TCP连接</p>
+<p>LockSupport</p>
+<p>jdk动态代理<br>Proxy.newProxyInstance()</p>
+<p>创建一个类，继承InvocationHandler，重写invoke()方法，在这个方法里面做一些日志打印的操作后，然后通过反射的API调用method.invoke(target, args);</p>
+<p>实现原理：就是在调用Proxy.newProxyInstance()时会根据类加载器和目标类Class对象动态创建一个代理类出来，动态代理类的所有方法的实现都是向下面这样，方法内部都是调用invocationHandler的invoke()方法</p>
+<p>cglib动态代理</p>
+<p>创建一个类，继承MethodInterceptor类，重写intercept方法，接受方法调用。创建一个Enhancer实例，设置代理类的父类为目标类，设置回调。</p>
+<p>树状数组 是一种用于维护前缀信息的的数据结构</p>
+<p>Floyd算法 （最短路径）</p>
+<p>jquery  bootstrap</p>
+<p>油猴脚本<br><a href="https://blog.csdn.net/u011054333/article/details/104101806">https://blog.csdn.net/u011054333/article/details/104101806</a></p>
+<p>项目遇到问题   项目亮点</p>
+<p>JVM<br>组成：类加载器，运行时数据区，内存分区，执行引擎，本地库接口，<br>类加载：</p>
+<p>双亲委派机制：加载器（应用加载器，扩展加载器，根加载器）<br>JVM启动过程（JVM的装入环境和配置（查JRE）、装载JVM（LoadJavaVM）、初始化JVM（CreateJavaVM），运行Java程序（GetMainClassName））<br>JVM内存模型：<br>本地方法栈：执行本地native方法<br>虚拟机方法栈:执行java方法（局部变量表、操作数栈、动态连接、方法出口）<br>程序计数器：字节码的行号<br>方法区：虚拟机加载的类型信息、常量、静态变量、即时编译器编译后的代码缓存等 1.8之前永生代堆中，之后本地内存元空间<br>堆<br>内存溢出泄露：<br>java编译过程：初始化插入式注解处理器、解析与填充符号表过程、注解处理、分析与字节码生成）</p>
+<p>Redis扩容机制</p>
+<p>时间复杂度分析</p>
+<p>web开发<br>spring核心：aop（动态代理，切点切面通知）ioc(控制反转 DI)<br>JDK动态代理和cglib区别：接口   ；底层字节码技术，子类代理（在性能方面，CGLib高很多。但是，CGLib在创建代理对象时所花费的时间多）<br>spring boot：使用“习惯优于配置”的理念，很容易创建一个能独立运行、准生产级别、基于Spring框架的项目<br>stater:Spring Boot通过提供众多起步依赖（Starter）降低项目依赖的复杂度<br>springboot启动流程：<br>自动装配：引入对应的Starters，Spring Boot启动时便会自动加载相关依赖，配置相应的初始化参数<br>过程：Spring Boot通过@EnableAutoConfiguration注解开启自动配置，加载spring.factories中注册的各种AutoConfiguration类（@Conditional指定的生效条件），实例化类中定义的Bean（组件等），并注入Spring容器<br>常用注解：@SpringBootApplication（启动类）；@EnableAutoConfiguration（自动配置） @Import @Conditional<br>@Autowired @Resource 区别：Spring注解，JDK注解； 按类型注入，按名称（也可以按类型）注入；<br>bean的作用域：@Scope注解修改Bean的作用域<br>bean生命周期：实例化 -&gt; 属性赋值 -&gt; 初始化 -&gt; 销毁<br>解决循环依赖：<br>  a. 构造器：这种依赖spring是处理不了的，抛出异常。<br>  b. 单例模式下的setter：通过“三级缓存”处理循环依赖。<br>  c. 非单例：无法处理。<br>这三级缓存的作用分别是：<br>spring管理事务：编程式事务  声明式事务 （@Transactional）<br>spirng事务传播方式：<br>spring MVC：<br>流程：请求 建立连接 前端控制器 请求映射器 请求适配器 ModelAndView 视图解析器 view  渲染返回<br>注解：@RequestMapping （请求地址映射）@RequestParam（请求参数绑定）@RequestBody：@PathVaribale（绑定url中的占位符）</p>
+<p>rehash<br>switch里面内容</p>
+<p>正向代理和反向代理</p>
+<p>tomcat类加载   字节码文件剖析</p>
+<p>vo dto<br><a href="https://www.cnblogs.com/zxf330301/p/6534643.html">https://www.cnblogs.com/zxf330301/p/6534643.html</a></p>
+<p>http缓存</p>
+<p>多路io复用</p>
+</script></p>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/80p92/" rel="next" title="redis">
+                <i class="fa fa-chevron-left"></i> redis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/80uv4/" rel="prev" title="Mancher回文串">
+                Mancher回文串 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/80sm9/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

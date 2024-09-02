@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="lucene一个字段三种性质:分词 索引 存储 Lucene-demo索引文档的基本数据结构 12345678910111213141516171819202122232425262728293031323334353637383940414243package com.test;/** * @author zhangxuefeng */public class Book &amp;#123;    pr">
+<meta name="keywords" content="搭建博客,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elasticsearch基本概念">
+<meta property="og:url" content="https://userzhang.tk/p/8vugc/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="lucene一个字段三种性质:分词 索引 存储 Lucene-demo索引文档的基本数据结构 12345678910111213141516171819202122232425262728293031323334353637383940414243package com.test;/** * @author zhangxuefeng */public class Book &amp;#123;    pr">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020807858.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020814639.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020831967.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020834172.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020849737.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020851071.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020854908.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020901253.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409012336944.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020915791.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020931717.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292205259.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292206308.png">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292212396.png">
+<meta property="og:updated_time" content="2024-09-02T08:19:32.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Elasticsearch基本概念">
+<meta name="twitter:description" content="lucene一个字段三种性质:分词 索引 存储 Lucene-demo索引文档的基本数据结构 12345678910111213141516171819202122232425262728293031323334353637383940414243package com.test;/** * @author zhangxuefeng */public class Book &amp;#123;    pr">
+<meta name="twitter:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020807858.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/8vugc/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Elasticsearch基本概念 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/8vugc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Elasticsearch基本概念
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2024-08-11 00:12:17" itemprop="dateCreated datePublished" datetime="2024-08-11T00:12:17+08:00">2024-08-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2024-09-02 16:19:32" itemprop="dateModified" datetime="2024-09-02T16:19:32+08:00">2024-09-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="lucene"><a href="#lucene" class="headerlink" title="lucene"></a>lucene</h1><p><strong>一个字段三种性质</strong>:分词 索引 存储</p>
+<h2 id="Lucene-demo"><a href="#Lucene-demo" class="headerlink" title="Lucene-demo"></a>Lucene-demo</h2><p>索引文档的基本数据结构</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhangxuefeng</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Float price;</span><br><span class="line">    <span class="keyword">private</span> String desc;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(Float price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDesc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDesc</span><span class="params">(String desc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.desc = desc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一个方法创建索引index;第二个方法,搜索索引,返回索引文档的前10条;第三个方法创建索引index2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.analysis.Analyzer;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.analysis.standard.StandardAnalyzer;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.document.*;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.index.DirectoryReader;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.index.IndexReader;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.index.IndexWriter;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.index.IndexWriterConfig;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.queryparser.classic.ParseException;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.queryparser.classic.QueryParser;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.search.IndexSearcher;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.search.Query;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.search.ScoreDoc;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.search.TopDocs;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.store.Directory;</span><br><span class="line"><span class="keyword">import</span> org.apache.lucene.store.FSDirectory;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> sun.jvm.hotspot.oops.FloatField;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Paths;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhangxuefeng</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LuceneIndexTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCreateIndex</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        List&lt;Book&gt;bookList=<span class="keyword">new</span> ArrayList&lt;&gt; ();</span><br><span class="line">        Book booka=<span class="keyword">new</span> Book ();</span><br><span class="line">        booka.setId (<span class="number">1</span>);</span><br><span class="line">        booka.setName (<span class="string">"Lucene"</span>);</span><br><span class="line">        booka.setDesc (<span class="string">"Lucene test"</span>);</span><br><span class="line">        booka.setPrice (<span class="number">100.45f</span>);</span><br><span class="line">        Book bookb=<span class="keyword">new</span> Book ();</span><br><span class="line">        bookb.setId (<span class="number">11</span>);</span><br><span class="line">        bookb.setName (<span class="string">"Redis"</span>);</span><br><span class="line">        bookb.setDesc (<span class="string">"Redis test"</span>);</span><br><span class="line">        bookb.setPrice (<span class="number">102.45f</span>);</span><br><span class="line">        Book bookc=<span class="keyword">new</span> Book ();</span><br><span class="line">        bookc.setId (<span class="number">21</span>);</span><br><span class="line">        bookc.setName (<span class="string">"Hadoop"</span>);</span><br><span class="line">        bookc.setDesc (<span class="string">"Hadoop test"</span>);</span><br><span class="line">        bookc.setPrice (<span class="number">602.45f</span>);</span><br><span class="line">        bookList.add (booka);</span><br><span class="line">        bookList.add (bookb);</span><br><span class="line">        bookList.add (bookc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建文档对象</span></span><br><span class="line">        List&lt;Document&gt;documents=<span class="keyword">new</span> ArrayList&lt;&gt; ();</span><br><span class="line">        <span class="keyword">for</span> (Book book : bookList) &#123;</span><br><span class="line">            Document document=<span class="keyword">new</span> Document ();</span><br><span class="line">            document.add (<span class="keyword">new</span> TextField (<span class="string">"id"</span>,book.getId ().toString (), Field.Store.YES));</span><br><span class="line">            document.add (<span class="keyword">new</span> TextField (<span class="string">"name"</span>,book.getName (), Field.Store.YES));</span><br><span class="line">            document.add (<span class="keyword">new</span> TextField (<span class="string">"price"</span>,book.getPrice ().toString (), Field.Store.YES));</span><br><span class="line">            document.add (<span class="keyword">new</span> TextField (<span class="string">"desc"</span>,book.getDesc (), Field.Store.YES));</span><br><span class="line">            documents.add (document);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//创建Analyser 对文档分词</span></span><br><span class="line">        Analyzer analyzer=<span class="keyword">new</span> StandardAnalyzer ();</span><br><span class="line">        <span class="comment">//创建Directory和IndexWriterConfig</span></span><br><span class="line">        Directory directory= FSDirectory.open (Paths.get (<span class="string">"/Users/zhangxuefeng/Documents/lucene/index"</span>));</span><br><span class="line">        IndexWriterConfig indexWriterConfig=<span class="keyword">new</span> IndexWriterConfig (analyzer);</span><br><span class="line">        <span class="comment">//创建IndexWriter写入对象</span></span><br><span class="line">        IndexWriter indexWriter=<span class="keyword">new</span> IndexWriter (directory,indexWriterConfig);</span><br><span class="line">        <span class="comment">//添加文档对象</span></span><br><span class="line">        <span class="keyword">for</span> (Document doc : documents) &#123;</span><br><span class="line">            indexWriter.addDocument (doc);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        indexWriter.close ();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSearchIndex</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//1 创建query搜索对象</span></span><br><span class="line">        <span class="comment">//创建分词器</span></span><br><span class="line">        Analyzer analyzer=<span class="keyword">new</span> StandardAnalyzer ();</span><br><span class="line">        <span class="comment">//创建搜索解析器</span></span><br><span class="line">        QueryParser queryParser=<span class="keyword">new</span> QueryParser (<span class="string">"id"</span>,analyzer);</span><br><span class="line">        <span class="comment">//创建搜索对象</span></span><br><span class="line">        Query query= queryParser.parse (<span class="string">"desc:Hadoop OR name:Redis"</span>);</span><br><span class="line">        <span class="comment">//2 创建Directory流对象 指定索引库位置</span></span><br><span class="line">        Directory directory= FSDirectory.open (Paths.get (<span class="string">"/Users/zhangxuefeng/Documents/lucene/index"</span>));</span><br><span class="line">        <span class="comment">//3 创建索引读取对象</span></span><br><span class="line">        IndexReader indexReader= DirectoryReader.open (directory);</span><br><span class="line">        <span class="comment">//4 创建索引搜索对象</span></span><br><span class="line">        IndexSearcher indexSearcher=<span class="keyword">new</span> IndexSearcher (indexReader);</span><br><span class="line">        <span class="comment">//打分排序</span></span><br><span class="line">        System.out.println (indexSearcher.getSimilarity (<span class="keyword">true</span>));</span><br><span class="line">        <span class="comment">//5 执行搜索 返回结果集 TopDocs</span></span><br><span class="line">        TopDocs topDocs=indexSearcher.search (query,<span class="number">10</span>);<span class="comment">//前10个</span></span><br><span class="line">        System.out.println (<span class="string">"查询到数据总条数："</span>+topDocs.totalHits);</span><br><span class="line">        <span class="comment">//获取排序的文档</span></span><br><span class="line">        ScoreDoc[] docs=topDocs.scoreDocs;</span><br><span class="line">        <span class="keyword">for</span> (ScoreDoc scoreDoc : docs) &#123;</span><br><span class="line">            <span class="comment">//获取文档id</span></span><br><span class="line">            <span class="keyword">int</span> docId=scoreDoc.doc;</span><br><span class="line">            Document doc =indexSearcher.doc (docId);</span><br><span class="line">            System.out.println (<span class="string">"score:"</span>+scoreDoc.score);</span><br><span class="line">            System.out.println (<span class="string">"docId:"</span>+docId);</span><br><span class="line">            System.out.println (<span class="string">"bookId:"</span>+doc.get (<span class="string">"id"</span>));</span><br><span class="line">            System.out.println (<span class="string">"name:"</span>+doc.get (<span class="string">"name"</span>));</span><br><span class="line">            System.out.println (<span class="string">"price:"</span>+doc.get (<span class="string">"price"</span>));</span><br><span class="line">            System.out.println (<span class="string">"desc:"</span>+doc.get (<span class="string">"desc"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        indexReader.close ();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCreateIndex2</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        List&lt;Book&gt;bookList=<span class="keyword">new</span> ArrayList&lt;&gt; ();</span><br><span class="line">        Book booka=<span class="keyword">new</span> Book ();</span><br><span class="line">        booka.setId (<span class="number">1</span>);</span><br><span class="line">        booka.setName (<span class="string">"Lucene"</span>);</span><br><span class="line">        booka.setDesc (<span class="string">"Lucene test"</span>);</span><br><span class="line">        booka.setPrice (<span class="number">100.45f</span>);</span><br><span class="line">        Book bookb=<span class="keyword">new</span> Book ();</span><br><span class="line">        bookb.setId (<span class="number">11</span>);</span><br><span class="line">        bookb.setName (<span class="string">"Redis"</span>);</span><br><span class="line">        bookb.setDesc (<span class="string">"Redis test"</span>);</span><br><span class="line">        bookb.setPrice (<span class="number">102.45f</span>);</span><br><span class="line">        Book bookc=<span class="keyword">new</span> Book ();</span><br><span class="line">        bookc.setId (<span class="number">21</span>);</span><br><span class="line">        bookc.setName (<span class="string">"Hadoop"</span>);</span><br><span class="line">        bookc.setDesc (<span class="string">"Hadoop test"</span>);</span><br><span class="line">        bookc.setPrice (<span class="number">602.45f</span>);</span><br><span class="line">        bookList.add (booka);</span><br><span class="line">        bookList.add (bookb);</span><br><span class="line">        bookList.add (bookc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建文档对象</span></span><br><span class="line">        List&lt;Document&gt;documents=<span class="keyword">new</span> ArrayList&lt;&gt; ();</span><br><span class="line">        <span class="keyword">for</span> (Book book : bookList) &#123;</span><br><span class="line">            Document document=<span class="keyword">new</span> Document ();</span><br><span class="line">            <span class="comment">//IntPoint 分词 索引 不存储 存储结合 StoredField</span></span><br><span class="line">            Field id= <span class="keyword">new</span> IntPoint(<span class="string">"id"</span>,book.getId ());</span><br><span class="line">            System.out.println (id.fieldType ().stored ()+<span class="string">":"</span>+id.fieldType ().tokenized ());</span><br><span class="line">            Field id_v= <span class="keyword">new</span> StoredField (<span class="string">"id"</span>,book.getId ());</span><br><span class="line">            <span class="comment">//分词 索引 存储 TextField</span></span><br><span class="line">            Field name = <span class="keyword">new</span> TextField (<span class="string">"name"</span>, book.getName (), Field.Store.YES);</span><br><span class="line">            <span class="comment">//分词 索引 不存储</span></span><br><span class="line">            Field price = <span class="keyword">new</span> FloatPoint (<span class="string">"price"</span>, book.getPrice ());</span><br><span class="line">            <span class="comment">//分词 索引 不存储 TextField</span></span><br><span class="line">            Field desc = <span class="keyword">new</span> TextField (<span class="string">"desc"</span>, book.getDesc (), Field.Store.NO);</span><br><span class="line">            document.add (id);</span><br><span class="line"><span class="comment">//            document.add (id_v);  //id,id_v都加入会存储在文档</span></span><br><span class="line">            document.add (name);</span><br><span class="line">            document.add (name);</span><br><span class="line">            document.add (price);</span><br><span class="line">            document.add (desc);</span><br><span class="line">            documents.add (document);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//创建Analyser 对文档分词</span></span><br><span class="line">        Analyzer analyzer=<span class="keyword">new</span> StandardAnalyzer ();</span><br><span class="line">        <span class="comment">//创建Directory和IndexWriterConfig</span></span><br><span class="line">        Directory directory= FSDirectory.open (Paths.get (<span class="string">"/Users/zhangxuefeng/Documents/lucene/index2"</span>));</span><br><span class="line">        IndexWriterConfig indexWriterConfig=<span class="keyword">new</span> IndexWriterConfig (analyzer);</span><br><span class="line">        <span class="comment">//创建IndexWriter写入对象</span></span><br><span class="line">        IndexWriter indexWriter=<span class="keyword">new</span> IndexWriter (directory,indexWriterConfig);</span><br><span class="line">        <span class="comment">//添加文档对象</span></span><br><span class="line">        <span class="keyword">for</span> (Document doc : documents) &#123;</span><br><span class="line">            indexWriter.addDocument (doc);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        indexWriter.close ();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>index目录结构</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020807858.png" alt="image-20240902080748653"></p>
+<p>第二个方法单元测试输出</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020814639.png" alt="image-20240902081450435"></p>
+<h2 id="lucene工具"><a href="#lucene工具" class="headerlink" title="lucene工具"></a>lucene工具</h2><p>java写的swing图形化工具luke</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020831967.png" alt="image-20240902083142856"></p>
+<h3 id="打开索引"><a href="#打开索引" class="headerlink" title="打开索引"></a>打开索引</h3><ol>
+<li><p>File-&gt;Open index</p>
+</li>
+<li><p>选择索引所在目录</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020834172.png" alt="image-20240902083419021"></p>
+<h3 id="查看对应字段分词后建立的索引"><a href="#查看对应字段分词后建立的索引" class="headerlink" title="查看对应字段分词后建立的索引"></a>查看对应字段分词后建立的索引</h3><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020849737.png" alt="image-20240902084929573"></p>
+<h3 id="查看索引的文档"><a href="#查看索引的文档" class="headerlink" title="查看索引的文档"></a>查看索引的文档</h3><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020851071.png" alt="image-20240902085059940"></p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>AND OR NOT</p>
+<p><code>*:*</code>所有文档</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020854908.png" alt="image-20240902085435659"></p>
+<p>搜索文档中desc包含test并且price是602.45</p>
+<p><code>desc:test AND price:602.45</code>  </p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020901253.png" alt="image-20240902090130094"></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409012336944.png" alt="image-20240901233652783"></p>
+<p>每个索引由多个段(segment)组成，每个段只会被创建一次但会被查询多次。索引期间，段经创建就不会再被修改。例如，文档被删除以后，删除信息被单独保存在一个文件中，而段本身并没有修改。<br>多个段会在一个叫作段合并(segments merge)的阶段被合并在一起，而且要么强制执行，要么由 Lucene 的内在机制决定在某个时刻执行，合并后段的数量更少，但是更大。段合并非常耗I/O，且合并期间有些不再使用的信息也将被清理掉，例如，被删除的文档。对于容纳相同数据的索引，段的数量较少时，搜索速度更快。尽管如此，还是需要强调一下:因为段合并非常耗I/O，请不要强制进行段合并，你只需要仔细配置段合并策略，剩余的事情Lucene会自行搞定。</p>
+<p>段合并策略</p>
+<p>文本分析。分析器(分词器,过滤器,字符映射器)</p>
+<h1 id="ES简介"><a href="#ES简介" class="headerlink" title="ES简介"></a>ES简介</h1><h2 id="ES基本概念"><a href="#ES基本概念" class="headerlink" title="ES基本概念"></a>ES基本概念</h2><p><strong>索引</strong><br>ElasticSearch 将它的数据存储在一个或多个索引(index)中。用 SQL 领域的术语来类比，索引就像数据库，可以向索引写人文档或者从索引中读取文档，并通过在 ElasticSearch内部使用 Lucene 将数据写入索引或从索引中检索数据。需要注意的是，ElasticSearch 中的索引可能由一个或多个 Lucene索引构成，具体细节由 ElasticSearch 的索引分片(shard)、复制(replica)机制及其配置决定。<br><strong>文档</strong><br>文档(document)是 ElasticSearch 世界中的主要实体(对 Lucene 来说也是如此)。对所有使用 ElasticSearch 的案例来说，它们最终都可以归结为对文档的搜索。文档由字段构成，每个字段有它的字段名以及一个或多个字段值(在这种情况下，该字段被称为是多值的，即文档中有多个同名字段)。文档之间可能有各自不同的字段集合，且文档并没有固定的模式或强制的结构。另外，这些规则也适用于 Lucene 文档。事实上，ElasticSearch 的文档最后都存储为 Lucene 文档了。从客户端的角度来看，文档是一个JSON 对象</p>
+<p><strong>映射</strong><br>正如你在1.1节所了解的那样，所有文档在写入索引前都需要先进行分析。用户可以设置一些参数，来决定如何将输入文本分割为词条，哪些词条应该被过滤掉，或哪些附加处理是有必要被调用的(如移除 HTML 标签)。此外，ElasticSearch 也提供了各种特性，如排序时所需的字段内容信息。这就是映射(mapping)扮演的角色，存储所有这种元信息。虽然ElasticSearch 能根据字段值自动检测字段的类型，但有时候(事实上，几乎是所有时候)用户还是想自行配置映射，以避免出现一些令人不愉快的意外。<br><strong>类型</strong><br>ElasticSearch 中每个文档都有与之对应的类型(type)定义。这允许用户在一个索引中存储多种文档类型，并为不同文档类型提供不同的映射。<br><strong>节点</strong><br>单个的 ElasticSearch 服务实例称为节点(node)。很多时候部署一个ElasticSearch节点就足以应付大多数简单的应用，但是考虑到容错性或在数据膨胀到单机无法应付这些状况时，你也许会更倾向于使用多节点的 ElasticSearch 集群。</p>
+<p><strong>集群</strong><br>当数据量或查询压力超过单机负载时，需要多个节点来协同处理，所有这些节点组成的系统称为集群(cluster)。集群同时也是无间断提供服务的一种解决方案，即便在某些节点因为宕机或执行管理任务(如升级)不可用时。ElasticSearch几乎无缝集成了集群功能。在我们看来，这是它胜过竞争对手的最主要的优点之一。而且，在 ElasticSearch 中配置一个集群是再容易不过的事了。<br><strong>分片</strong><br>正如我们之前提到的那样，集群允许系统存储的数据总量超过单机容量。为了满足这个需求，ElasticSearch 将数据散布到多个物理 Lucene 索引上。这些 Lucene 索引称为分片(shard)，而散布这些分片的过程叫作分片处理(sharding)。ElasticSearch 会自动完成分片处理，并且让这些分片呈现出一个大索引的样子。请记住，除了ElasticSearch 本身自动进行分片处理外，用户为具体的应用进行参数调优也是至关重要的，因为分片的数量在索引创建时就已经配置好，而且之后无法改变，至少对目前的版本是这样的。</p>
+<p><strong>副本</strong><br>分片处理允许用户向 ElasticSearch 集群推送超过单机容量的数据。副本(replica)则解决了访问压力过大时单机无法处理所有请求的问题。思路很简单，即为每个分片创建冗余的副本，处理查询时可以把这些副本用作最初的主分片(primary shard)。请记住，我们并未付出额外的代价。即使某个分片所在的节点宕机，ElasticSearch 也可以使用其副本，从而不会造成数据丢失，而且支持在任意时间点添加或移除副本，所以一旦有需要可随时调整副本的数量。<br><strong>网关</strong><br>在ElasticSearch 的工作过程中，关于集群状态，索引设置的各种信息都会被收集起来，并在网关(gateway)中被持久化。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>Es中索引可能由lucene一个或多个索引构成</p>
+<p>有一件事情需要记住，建索引操作只会发生在主分片上，而不是副本上。当把一个索引请求发送至某节点时，如果该节点没有对应的主分片或者只有副本，那么这个请求会被转发到拥有正确的主分片的节点(如下图所示)。</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020915791.png" alt="image-20240902091522637"></p>
+<h2 id="ES集群状态"><a href="#ES集群状态" class="headerlink" title="ES集群状态"></a>ES集群状态</h2><p>红 主分片和副本都有</p>
+<p>黄 主分片有和副本没有</p>
+<p>绿  主分片缺失</p>
+<h1 id="查询DSL进阶"><a href="#查询DSL进阶" class="headerlink" title="查询DSL进阶"></a>查询DSL进阶</h1><h2 id="评分公式"><a href="#评分公式" class="headerlink" title="评分公式"></a>评分公式</h2><p>为了计算文档得分，需要考虑以下这些因子:<br>文档权重(document boost):索引期赋予某个文档的权重值。<br>字段权重(field boost):查询期赋予某个字段的权重值。<br>协调因子(coord):基于文档中词项命中个数的协调因子，一个文档命中了查询中的词项越多，得分越高。<br>逆文档频率(inverse document frequency):一个基于词项的因子，用来告诉评分公式该词项有多么罕见。逆文档频率越低，词项越罕见。评分公式利用该因子为包含罕见词项的文档加权。<br>长度范数(length norm):每个字段的基于词项个数的归一化因子(在索引期计算出来并存储在索引中)。一个字段包含的词项数越多，该因子的权重越低，这意味着Apache Lucene 评分公式更“喜欢”包含更少词项的字段。<br>词频(term frequency):一个基于词项的因子，用来表示一个词项在某个文档中出现了多少次。词频越高，文档得分越高。<br>查询范数(query norm):一个基于查询的归一化因子，它等于查询中词项的权重平方和。查询范数使不同查询的得分能相互比较，尽管这种比较通常是困难且不可行的。</p>
+<h3 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF/IDF"></a>TF/IDF</h3><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202409020931717.png" alt="image-20240902093154573"></p>
+<h2 id="二次评分"><a href="#二次评分" class="headerlink" title="二次评分"></a>二次评分</h2><p>rescore</p>
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><h3 id="批量取"><a href="#批量取" class="headerlink" title="批量取"></a>批量取</h3><p>_mget</p>
+<h3 id="批量查询"><a href="#批量查询" class="headerlink" title="批量查询"></a>批量查询</h3><p>_msearch</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="多值字段排序"><a href="#多值字段排序" class="headerlink" title="多值字段排序"></a>多值字段排序</h3><h3 id="基于嵌套对象排序"><a href="#基于嵌套对象排序" class="headerlink" title="基于嵌套对象排序"></a>基于嵌套对象排序</h3><h2 id="数据更新API"><a href="#数据更新API" class="headerlink" title="数据更新API"></a>数据更新API</h2><p>post   _update</p>
+<p><a href="http://blog.mikemccandless.com/2010/12/using-finite-state-transducers-in.html" target="_blank" rel="noopener">http://blog.mikemccandless.com/2010/12/using-finite-state-transducers-in.html</a></p>
+<p>refresh</p>
+<p>Refresh_interval</p>
+<p>Translog</p>
+<h1 id="段合并"><a href="#段合并" class="headerlink" title="段合并"></a>段合并</h1><p>在ElasticSearch中每个索引都会创建一到多个分片以及零到多个副本，也知道这些分片或副本本质上都是 Lucene 索引，而 Lucene 索引又基于多个索引段构建（至少一个索引段）。索引文件中绝大部分数据都是只写一次，读多次，而只有用于保存文档删除信息的文件才会被多次更改。在某些时刻，当某种条件满足时，多个索引段会被拷贝合并到一个更大的索引段，而那些旧的索引段会被抛弃并从磁盘中删除，这个操作称为段合并（segment merging)。</p>
+<p>es索引-&gt;各个索引分片和副本-&gt;每个分片是lucene索引-&gt;lucene索引中有至少一个段-&gt;段中是文档</p>
+<p>段不可变,删除只是增加文档删除信息,段合并时结合删除信息合并新的不含删除文档的新段并把被合并的段删除,提高搜索性能和节省内存,但这个过程涉及比较多的IO操作</p>
+<h2 id="段合并策略"><a href="#段合并策略" class="headerlink" title="段合并策略"></a>段合并策略</h2><p> index.merge.policy.type: tiered</p>
+<p>正排索引。text默认不建立。fielddata</p>
+<p>doc_value</p>
+<p>分片扩充容量。 副本高可用和查询吞吐量</p>
+<p>路由</p>
+<p>别名</p>
+<p>分片分配器</p>
+<p>过滤器缓存</p>
+<p>字段缓存</p>
+<p>清除缓存</p>
+<p>segments API</p>
+<p>预热器API</p>
+<p>热点线程</p>
+<h1 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h1><p>参考;</p>
+<p><a href="https://cloud.tencent.com/developer/article/2398535" target="_blank" rel="noopener">深入解析Elasticsearch的内部数据结构和机制</a></p>
+<p>倒排索引结构时，我们主要涉及到三个部分：倒排表（Posting List）、词项字典（Term Dictionary）和词项索引（Term Index）</p>
+<h5 id="倒排表（Posting-List）"><a href="#倒排表（Posting-List）" class="headerlink" title="倒排表（Posting List）"></a>倒排表（Posting List）</h5><p>包括文档ID和单词在该文档中出现的位置、频率等附加信息</p>
+<p>词项字典是一个包含文档集合中所有唯一单词的列表。每个单词在词项字典中都有一个唯一的条目，这个条目指向倒排表中与该单词对应的条目</p>
+<p>每个单词都按照某种顺序（例如字典序）排列，并且每个单词都有一个指针或引用，指向倒排表中相应的条目</p>
+<p><strong>词典查找的挑战</strong></p>
+<ul>
+<li>全文检索系统通常需要处理大量的文本数据，这意味着词典（Term Dictionary）也会非常大。虽然可以使用各种高效的数据结构（如哈希表、B树等）来加速查找，但这些数据结构通常都需要将数据加载到内存中才能实现最优的查找性能。然而，将整个词典加载到内存中可能会导致巨大的内存消耗，甚至耗尽可用内存。</li>
+<li>此外，即使词典被加载到内存中，由于内存访问速度仍然远低于CPU的处理速度，因此查找性能仍然可能受到限制。特别是在需要进行大量的随机内存访问时，性能影响会更加显著。</li>
+</ul>
+<p>Suggest API</p>
+<p>completion suggester</p>
+<p>_all字段</p>
+<p>全文搜索</p>
+<p>基本数据类型</p>
+<p>查询方式</p>
+<p>写流程</p>
+<p>读流程</p>
+<p>doc_values 排序,聚合  为true增加正排索引,增加磁盘占用,也会导致索引速度慢一些   可压缩  默认所有字段启用,除了text </p>
+<p>text不能设置doc_value为true 影响性能.  可以用fielddata设置</p>
+<p>深分页</p>
+<p>index.max_result_window默认10000</p>
+<p>From size</p>
+<p>scroll</p>
+<p>search after</p>
+<h1 id="es集群搭建"><a href="#es集群搭建" class="headerlink" title="es集群搭建"></a>es集群搭建</h1><p>Docker 创建了单节点的es和kibanam但因为es存储空间问题,kibana总是会有问题</p>
+<p>在centos虚拟机node4,node5,node6搭建es集群,在本机Mac m1用kibana和cerebro管理es集群</p>
+<h2 id="es集群启动"><a href="#es集群启动" class="headerlink" title="es集群启动"></a>es集群启动</h2><p>es启动不能用root用户启动es,要新建一个用户,我新建了elsearch</p>
+<p>在三个节点都执行下面操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/software/elasticsearch-<span class="number">7.16</span>.2</span><br><span class="line">su elsearch</span><br><span class="line">nohup bin/elasticsearch &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="Mac-m1启动cerebro"><a href="#Mac-m1启动cerebro" class="headerlink" title="Mac m1启动cerebro"></a>Mac m1启动cerebro</h2><p>输入下面命令</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/zhangxuefeng/Downloads/cerebro-<span class="number">0.9</span>.4/bin</span><br><span class="line">nohup ./cerebro &amp;</span><br></pre></td></tr></table></figure>
+<p>打开浏览器输入<code>http://localhost:9000/</code></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292205259.png" alt="image-20240829220519122"></p>
+<p>输入<code>http://node4:9200</code>进入</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292206308.png" alt="image-20240829220621189"></p>
+<h2 id="Mac-m1启动kibana"><a href="#Mac-m1启动kibana" class="headerlink" title="Mac m1启动kibana"></a>Mac m1启动kibana</h2><p>输入下面命令</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/zhangxuefeng/Downloads/kibana-<span class="number">7.16</span>.2-darwin-aarch64/</span><br><span class="line">nohup bin/kibana &amp;</span><br></pre></td></tr></table></figure>
+<p>浏览器输入<code>http://localhost:5601/</code>进入kibana</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/202408292212396.png" alt="image-20240829221239210"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/8vt5v/" rel="next" title="JDBC相关理论">
+                <i class="fa fa-chevron-left"></i> JDBC相关理论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/8vuge/" rel="prev" title="Spring源码梳理">
+                Spring源码梳理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lucene"><span class="nav-number">1.</span> <span class="nav-text">lucene</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lucene-demo"><span class="nav-number">1.1.</span> <span class="nav-text">Lucene-demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lucene工具"><span class="nav-number">1.2.</span> <span class="nav-text">lucene工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开索引"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看对应字段分词后建立的索引"><span class="nav-number">1.2.2.</span> <span class="nav-text">查看对应字段分词后建立的索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看索引的文档"><span class="nav-number">1.2.3.</span> <span class="nav-text">查看索引的文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.2.4.</span> <span class="nav-text">搜索</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES简介"><span class="nav-number">2.</span> <span class="nav-text">ES简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">ES基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES集群状态"><span class="nav-number">2.2.</span> <span class="nav-text">ES集群状态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询DSL进阶"><span class="nav-number">3.</span> <span class="nav-text">查询DSL进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评分公式"><span class="nav-number">3.1.</span> <span class="nav-text">评分公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF-IDF"><span class="nav-number">3.1.1.</span> <span class="nav-text">TF/IDF</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次评分"><span class="nav-number">3.2.</span> <span class="nav-text">二次评分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批量操作"><span class="nav-number">3.3.</span> <span class="nav-text">批量操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量取"><span class="nav-number">3.3.1.</span> <span class="nav-text">批量取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量查询"><span class="nav-number">3.3.2.</span> <span class="nav-text">批量查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">3.4.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多值字段排序"><span class="nav-number">3.4.1.</span> <span class="nav-text">多值字段排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于嵌套对象排序"><span class="nav-number">3.4.2.</span> <span class="nav-text">基于嵌套对象排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据更新API"><span class="nav-number">3.5.</span> <span class="nav-text">数据更新API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#段合并"><span class="nav-number">4.</span> <span class="nav-text">段合并</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#段合并策略"><span class="nav-number">4.1.</span> <span class="nav-text">段合并策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#倒排索引"><span class="nav-number">5.</span> <span class="nav-text">倒排索引</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#倒排表（Posting-List）"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">倒排表（Posting List）</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#es集群搭建"><span class="nav-number">6.</span> <span class="nav-text">es集群搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#es集群启动"><span class="nav-number">6.1.</span> <span class="nav-text">es集群启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-m1启动cerebro"><span class="nav-number">6.2.</span> <span class="nav-text">Mac m1启动cerebro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-m1启动kibana"><span class="nav-number">6.3.</span> <span class="nav-text">Mac m1启动kibana</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/8vugc/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,4108 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="My accepted nowcoder solutions      # 标题 代码地址 使用语言     1 获取所有员工的em 获取所有员工的em Sql   2 获取有奖金的员工相 获取有奖金的员工相 Sql   3 对于employe 对于employe Sql   4 统计salary的 统计salary的 Sql   5 查找字符串’10, 查找字符串’10, Sql   6 针对">
+<meta name="keywords" content="刷题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客网刷题目录.md">
+<meta property="og:url" content="https://userzhang.tk/p/7ax53/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="My accepted nowcoder solutions      # 标题 代码地址 使用语言     1 获取所有员工的em 获取所有员工的em Sql   2 获取有奖金的员工相 获取有奖金的员工相 Sql   3 对于employe 对于employe Sql   4 统计salary的 统计salary的 Sql   5 查找字符串’10, 查找字符串’10, Sql   6 针对">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://static.nowcoder.com/images/res/logo/logo-v3.png">
+<meta property="og:updated_time" content="2019-07-24T07:27:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="牛客网刷题目录.md">
+<meta name="twitter:description" content="My accepted nowcoder solutions      # 标题 代码地址 使用语言     1 获取所有员工的em 获取所有员工的em Sql   2 获取有奖金的员工相 获取有奖金的员工相 Sql   3 对于employe 对于employe Sql   4 统计salary的 统计salary的 Sql   5 查找字符串’10, 查找字符串’10, Sql   6 针对">
+<meta name="twitter:image" content="https://static.nowcoder.com/images/res/logo/logo-v3.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/7ax53/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>牛客网刷题目录.md | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/7ax53/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">牛客网刷题目录.md
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 15:03:54 / 修改时间：15:27:48" itemprop="dateCreated datePublished" datetime="2019-07-24T15:03:54+08:00">2019-07-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p align="center" color="black"><img width="300" src="https://static.nowcoder.com/images/res/logo/logo-v3.png"></p><p></p>
+<h3 align="center">My accepted nowcoder solutions</h3>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">#</th>
+<th style="text-align:center">标题</th>
+<th style="text-align:center">代码地址</th>
+<th style="text-align:center">使用语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><a href="nowcoder/1-获取所有员工的em.md">获取所有员工的em</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50171705" target="_blank" rel="noopener">获取所有员工的em</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><a href="nowcoder/2-获取有奖金的员工相.md">获取有奖金的员工相</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50171377" target="_blank" rel="noopener">获取有奖金的员工相</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><a href="nowcoder/3-对于employe.md">对于employe</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50171140" target="_blank" rel="noopener">对于employe</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><a href="nowcoder/4-统计salary的.md">统计salary的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50170957" target="_blank" rel="noopener">统计salary的</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><a href="nowcoder/5-查找字符串&#39;10,.md">查找字符串’10,</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50170718" target="_blank" rel="noopener">查找字符串’10,</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center"><a href="nowcoder/6-针对库中的所有表生.md">针对库中的所有表生</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50170552" target="_blank" rel="noopener">针对库中的所有表生</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center"><a href="nowcoder/7-将所有获取奖金的员.md">将所有获取奖金的员</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50170049" target="_blank" rel="noopener">将所有获取奖金的员</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center"><a href="nowcoder/8-如何获取emp_v.md">如何获取emp_v</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50168893" target="_blank" rel="noopener">如何获取emp_v</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center"><a href="nowcoder/9-在audit表上创.md">在audit表上创</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50168765" target="_blank" rel="noopener">在audit表上创</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center"><a href="nowcoder/10-将titles_t.md">将titles_t</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50167346" target="_blank" rel="noopener">将titles_t</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center"><a href="nowcoder/11-将id=5以及em.md">将id=5以及em</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50167267" target="_blank" rel="noopener">将id=5以及em</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center"><a href="nowcoder/12-将所有to_dat.md">将所有to_dat</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50167103" target="_blank" rel="noopener">将所有to_dat</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center"><a href="nowcoder/13-删除emp_no重.md">删除emp_no重</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50166867" target="_blank" rel="noopener">删除emp_no重</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center"><a href="nowcoder/14-构造一个触发器au.md">构造一个触发器au</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50166005" target="_blank" rel="noopener">构造一个触发器au</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center"><a href="nowcoder/15-在last_upd.md">在last_upd</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50165797" target="_blank" rel="noopener">在last_upd</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center"><a href="nowcoder/16-针对上面的sala.md">针对上面的sala</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50165444" target="_blank" rel="noopener">针对上面的sala</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">17</td>
+<td style="text-align:center"><a href="nowcoder/17-针对actor表创.md">针对actor表创</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50163897" target="_blank" rel="noopener">针对actor表创</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td style="text-align:center"><a href="nowcoder/18-对first_na.md">对first_na</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50163598" target="_blank" rel="noopener">对first_na</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">19</td>
+<td style="text-align:center"><a href="nowcoder/19-创建一个actor.md">创建一个actor</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50163075" target="_blank" rel="noopener">创建一个actor</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center"><a href="nowcoder/20-批量插入数据，不使.md">批量插入数据，不使</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50162668" target="_blank" rel="noopener">批量插入数据，不使</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">21</td>
+<td style="text-align:center"><a href="nowcoder/21-批量插入数据.md">批量插入数据</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50162415" target="_blank" rel="noopener">批量插入数据</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td style="text-align:center"><a href="nowcoder/22-创建一个actor.md">创建一个actor</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50162185" target="_blank" rel="noopener">创建一个actor</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">23</td>
+<td style="text-align:center"><a href="nowcoder/23-将employee.md">将employee</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50161859" target="_blank" rel="noopener">将employee</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">24</td>
+<td style="text-align:center"><a href="nowcoder/24-查找所有员工的la.md">查找所有员工的la</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50161410" target="_blank" rel="noopener">查找所有员工的la</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center"><a href="nowcoder/25-获取当前薪水第二多.md">获取当前薪水第二多</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50160644" target="_blank" rel="noopener">获取当前薪水第二多</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">26</td>
+<td style="text-align:center"><a href="nowcoder/26-统计出当前各个ti.md">统计出当前各个ti</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50159984" target="_blank" rel="noopener">统计出当前各个ti</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">27</td>
+<td style="text-align:center"><a href="nowcoder/27-查找employe.md">查找employe</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50159763" target="_blank" rel="noopener">查找employe</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">28</td>
+<td style="text-align:center"><a href="nowcoder/28-统计各个部门对应员.md">统计各个部门对应员</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50159691" target="_blank" rel="noopener">统计各个部门对应员</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">29</td>
+<td style="text-align:center"><a href="nowcoder/29-查找所有员工自入职.md">查找所有员工自入职</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50148184" target="_blank" rel="noopener">查找所有员工自入职</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">30</td>
+<td style="text-align:center"><a href="nowcoder/30-获取当前薪水第二多.md">获取当前薪水第二多</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50147953" target="_blank" rel="noopener">获取当前薪水第二多</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">31</td>
+<td style="text-align:center"><a href="nowcoder/31-查找所有已经分配部.md">查找所有已经分配部</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50147269" target="_blank" rel="noopener">查找所有已经分配部</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">32</td>
+<td style="text-align:center"><a href="nowcoder/32-获取所有非mana.md">获取所有非mana</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50146921" target="_blank" rel="noopener">获取所有非mana</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">33</td>
+<td style="text-align:center"><a href="nowcoder/33-获取所有部门当前m.md">获取所有部门当前m</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50146569" target="_blank" rel="noopener">获取所有部门当前m</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center"><a href="nowcoder/34-找出所有员工当前薪.md">找出所有员工当前薪</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50146088" target="_blank" rel="noopener">找出所有员工当前薪</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">35</td>
+<td style="text-align:center"><a href="nowcoder/35-查找入职员工时间排.md">查找入职员工时间排</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50145346" target="_blank" rel="noopener">查找入职员工时间排</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">36</td>
+<td style="text-align:center"><a href="nowcoder/36-查找最晚入职员工的.md">查找最晚入职员工的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=50144866" target="_blank" rel="noopener">查找最晚入职员工的</a></td>
+<td style="text-align:center">Sql</td>
+</tr>
+<tr>
+<td style="text-align:center">37</td>
+<td style="text-align:center"><a href="nowcoder/37-数字构造.md">数字构造</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49118258" target="_blank" rel="noopener">数字构造</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">38</td>
+<td style="text-align:center"><a href="nowcoder/38-骰子游戏.md">骰子游戏</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49117634" target="_blank" rel="noopener">骰子游戏</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">39</td>
+<td style="text-align:center"><a href="nowcoder/39-神奇数.md">神奇数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49116843" target="_blank" rel="noopener">神奇数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:center"><a href="nowcoder/40-区间表达.md">区间表达</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49115751" target="_blank" rel="noopener">区间表达</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">41</td>
+<td style="text-align:center"><a href="nowcoder/41-字符串价值.md">字符串价值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49114900" target="_blank" rel="noopener">字符串价值</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td style="text-align:center"><a href="nowcoder/42-疯狂队列.md">疯狂队列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49114697" target="_blank" rel="noopener">疯狂队列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">43</td>
+<td style="text-align:center"><a href="nowcoder/43-缺失的括号.md">缺失的括号</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49114431" target="_blank" rel="noopener">缺失的括号</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">44</td>
+<td style="text-align:center"><a href="nowcoder/44-缩写.md">缩写</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49114351" target="_blank" rel="noopener">缩写</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">45</td>
+<td style="text-align:center"><a href="nowcoder/45-红和绿.md">红和绿</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49113037" target="_blank" rel="noopener">红和绿</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">46</td>
+<td style="text-align:center"><a href="nowcoder/46-数字字符.md">数字字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49112706" target="_blank" rel="noopener">数字字符</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">47</td>
+<td style="text-align:center"><a href="nowcoder/47-单词缩写.md">单词缩写</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49112564" target="_blank" rel="noopener">单词缩写</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">48</td>
+<td style="text-align:center"><a href="nowcoder/48-幸运数字.md">幸运数字</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49112353" target="_blank" rel="noopener">幸运数字</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">49</td>
+<td style="text-align:center"><a href="nowcoder/49-买橘子.md">买橘子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49112012" target="_blank" rel="noopener">买橘子</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td style="text-align:center"><a href="nowcoder/50-分割后处理.md">分割后处理</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49111312" target="_blank" rel="noopener">分割后处理</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">51</td>
+<td style="text-align:center"><a href="nowcoder/51-寻找丑数.md">寻找丑数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49111061" target="_blank" rel="noopener">寻找丑数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">52</td>
+<td style="text-align:center"><a href="nowcoder/52-给定整数序列求连续.md">给定整数序列求连续</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49110819" target="_blank" rel="noopener">给定整数序列求连续</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">53</td>
+<td style="text-align:center"><a href="nowcoder/53-整数无序数组求第K.md">整数无序数组求第K</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49110466" target="_blank" rel="noopener">整数无序数组求第K</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">54</td>
+<td style="text-align:center"><a href="nowcoder/54-整数成绩最大化.md">整数成绩最大化</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49109205" target="_blank" rel="noopener">整数成绩最大化</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">55</td>
+<td style="text-align:center"><a href="nowcoder/55-字符覆盖.md">字符覆盖</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49108229" target="_blank" rel="noopener">字符覆盖</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">56</td>
+<td style="text-align:center"><a href="nowcoder/56-完成括号匹配.md">完成括号匹配</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49106054" target="_blank" rel="noopener">完成括号匹配</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">57</td>
+<td style="text-align:center"><a href="nowcoder/57-字符串复制.md">字符串复制</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49105499" target="_blank" rel="noopener">字符串复制</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">58</td>
+<td style="text-align:center"><a href="nowcoder/58-3和5的倍数.md">3和5的倍数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49097760" target="_blank" rel="noopener">3和5的倍数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">59</td>
+<td style="text-align:center"><a href="nowcoder/59-字符串提取.md">字符串提取</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49096784" target="_blank" rel="noopener">字符串提取</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">60</td>
+<td style="text-align:center"><a href="nowcoder/60-字母数字混合排序.md">字母数字混合排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49096461" target="_blank" rel="noopener">字母数字混合排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">61</td>
+<td style="text-align:center"><a href="nowcoder/61-最大差值.md">最大差值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49095486" target="_blank" rel="noopener">最大差值</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">62</td>
+<td style="text-align:center"><a href="nowcoder/62-连线游戏.md">连线游戏</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49094613" target="_blank" rel="noopener">连线游戏</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">63</td>
+<td style="text-align:center"><a href="nowcoder/63-序列操作.md">序列操作</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49094071" target="_blank" rel="noopener">序列操作</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">64</td>
+<td style="text-align:center"><a href="nowcoder/64-题目列表.md">题目列表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49093507" target="_blank" rel="noopener">题目列表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">65</td>
+<td style="text-align:center"><a href="nowcoder/65-交错序列.md">交错序列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49092561" target="_blank" rel="noopener">交错序列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">66</td>
+<td style="text-align:center"><a href="nowcoder/66-超链接.md">超链接</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49092151" target="_blank" rel="noopener">超链接</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">67</td>
+<td style="text-align:center"><a href="nowcoder/67-人民币转换.md">人民币转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090653" target="_blank" rel="noopener">人民币转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">68</td>
+<td style="text-align:center"><a href="nowcoder/68-记票统计.md">记票统计</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090603" target="_blank" rel="noopener">记票统计</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">69</td>
+<td style="text-align:center"><a href="nowcoder/69-201301JA.md">201301 JA</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090203" target="_blank" rel="noopener">201301 JA</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">70</td>
+<td style="text-align:center"><a href="nowcoder/70-整形数组合并.md">整形数组合并</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49089897" target="_blank" rel="noopener">整形数组合并</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">71</td>
+<td style="text-align:center"><a href="nowcoder/71-图片整理.md">图片整理</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49054081" target="_blank" rel="noopener">图片整理</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">72</td>
+<td style="text-align:center"><a href="nowcoder/72-删除字符串中出现次.md">删除字符串中出现次</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49053893" target="_blank" rel="noopener">删除字符串中出现次</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">73</td>
+<td style="text-align:center"><a href="nowcoder/73-输入一行字符，分别.md">输入一行字符，分别</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49052216" target="_blank" rel="noopener">输入一行字符，分别</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">74</td>
+<td style="text-align:center"><a href="nowcoder/74-整数与IP地址间的.md">整数与IP地址间的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49052117" target="_blank" rel="noopener">整数与IP地址间的</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">75</td>
+<td style="text-align:center"><a href="nowcoder/75-字符串加解密.md">字符串加解密</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49051804" target="_blank" rel="noopener">字符串加解密</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">76</td>
+<td style="text-align:center"><a href="nowcoder/76-查找兄弟单词.md">查找兄弟单词</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49050174" target="_blank" rel="noopener">查找兄弟单词</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">77</td>
+<td style="text-align:center"><a href="nowcoder/77-坐标移动.md">坐标移动</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49049615" target="_blank" rel="noopener">坐标移动</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">78</td>
+<td style="text-align:center"><a href="nowcoder/78-购物单.md">购物单</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49047729" target="_blank" rel="noopener">购物单</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">79</td>
+<td style="text-align:center"><a href="nowcoder/79-字串的连接最长路径.md">字串的连接最长路径</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49047102" target="_blank" rel="noopener">字串的连接最长路径</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">80</td>
+<td style="text-align:center"><a href="nowcoder/80-字符串反转.md">字符串反转</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49046068" target="_blank" rel="noopener">字符串反转</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">81</td>
+<td style="text-align:center"><a href="nowcoder/81-数字颠倒.md">数字颠倒</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49045916" target="_blank" rel="noopener">数字颠倒</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">82</td>
+<td style="text-align:center"><a href="nowcoder/82-计算字符个数.md">计算字符个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49023570" target="_blank" rel="noopener">计算字符个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">83</td>
+<td style="text-align:center"><a href="nowcoder/83-字符串最后一个单词.md">字符串最后一个单词</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49022812" target="_blank" rel="noopener">字符串最后一个单词</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">84</td>
+<td style="text-align:center"><a href="nowcoder/84-清除行列.md">清除行列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46327824" target="_blank" rel="noopener">清除行列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">85</td>
+<td style="text-align:center"><a href="nowcoder/85-井字棋.md">井字棋</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46326796" target="_blank" rel="noopener">井字棋</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">86</td>
+<td style="text-align:center"><a href="nowcoder/86-机器人走方格I.md">机器人走方格I</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46316199" target="_blank" rel="noopener">机器人走方格I</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">87</td>
+<td style="text-align:center"><a href="nowcoder/87-无判断max.md">无判断max</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46315954" target="_blank" rel="noopener">无判断max</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">88</td>
+<td style="text-align:center"><a href="nowcoder/88-另类加法.md">另类加法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46314373" target="_blank" rel="noopener">另类加法</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">89</td>
+<td style="text-align:center"><a href="nowcoder/89-最接近的数.md">最接近的数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46313992" target="_blank" rel="noopener">最接近的数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">90</td>
+<td style="text-align:center"><a href="nowcoder/90-整数转化.md">整数转化</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46313530" target="_blank" rel="noopener">整数转化</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">91</td>
+<td style="text-align:center"><a href="nowcoder/91-奇偶位交换.md">奇偶位交换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46313223" target="_blank" rel="noopener">奇偶位交换</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">92</td>
+<td style="text-align:center"><a href="nowcoder/92-链表分割.md">链表分割</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46312589" target="_blank" rel="noopener">链表分割</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">93</td>
+<td style="text-align:center"><a href="nowcoder/93-链式A+B.md">链式A+B</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46311663" target="_blank" rel="noopener">链式A+B</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">94</td>
+<td style="text-align:center"><a href="nowcoder/94-子串判断.md">子串判断</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46310797" target="_blank" rel="noopener">子串判断</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">95</td>
+<td style="text-align:center"><a href="nowcoder/95-最大子方阵.md">最大子方阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46310459" target="_blank" rel="noopener">最大子方阵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">96</td>
+<td style="text-align:center"><a href="nowcoder/96-最大和子矩阵.md">最大和子矩阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46310123" target="_blank" rel="noopener">最大和子矩阵</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">97</td>
+<td style="text-align:center"><a href="nowcoder/97-数组中的逆序对.md">数组中的逆序对</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46309876" target="_blank" rel="noopener">数组中的逆序对</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">98</td>
+<td style="text-align:center"><a href="nowcoder/98-实时中位数.md">实时中位数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46309152" target="_blank" rel="noopener">实时中位数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">99</td>
+<td style="text-align:center"><a href="nowcoder/99-二叉树平衡检查.md">二叉树平衡检查</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46307870" target="_blank" rel="noopener">二叉树平衡检查</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center"><a href="nowcoder/100-双栈排序.md">双栈排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46307076" target="_blank" rel="noopener">双栈排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">101</td>
+<td style="text-align:center"><a href="nowcoder/101-回文链表.md">回文链表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46306339" target="_blank" rel="noopener">回文链表</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">102</td>
+<td style="text-align:center"><a href="nowcoder/102-基本字符串压缩.md">基本字符串压缩</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46305819" target="_blank" rel="noopener">基本字符串压缩</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">103</td>
+<td style="text-align:center"><a href="nowcoder/103-确定字符互异.md">确定字符互异</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46303142" target="_blank" rel="noopener">确定字符互异</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">104</td>
+<td style="text-align:center"><a href="nowcoder/104-合并表记录.md">合并表记录</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46258845" target="_blank" rel="noopener">合并表记录</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">105</td>
+<td style="text-align:center"><a href="nowcoder/105-提取不重复的整数.md">提取不重复的整数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46257610" target="_blank" rel="noopener">提取不重复的整数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">106</td>
+<td style="text-align:center"><a href="nowcoder/106-字符个数统计.md">字符个数统计</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46257287" target="_blank" rel="noopener">字符个数统计</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">107</td>
+<td style="text-align:center"><a href="nowcoder/107-句子逆序.md">句子逆序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46257088" target="_blank" rel="noopener">句子逆序</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">108</td>
+<td style="text-align:center"><a href="nowcoder/108-矩阵乘法.md">矩阵乘法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46256436" target="_blank" rel="noopener">矩阵乘法</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">109</td>
+<td style="text-align:center"><a href="nowcoder/109-字符串排序.md">字符串排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46254636" target="_blank" rel="noopener">字符串排序</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">110</td>
+<td style="text-align:center"><a href="nowcoder/110-字符串合并处理.md">字符串合并处理</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46254141" target="_blank" rel="noopener">字符串合并处理</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">111</td>
+<td style="text-align:center"><a href="nowcoder/111-201301JA.md">201301 JA</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253677" target="_blank" rel="noopener">201301 JA</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">112</td>
+<td style="text-align:center"><a href="nowcoder/112-统计每个月兔子的总.md">统计每个月兔子的总</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253364" target="_blank" rel="noopener">统计每个月兔子的总</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">113</td>
+<td style="text-align:center"><a href="nowcoder/113-字符逆序.md">字符逆序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253204" target="_blank" rel="noopener">字符逆序</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">114</td>
+<td style="text-align:center"><a href="nowcoder/114-求int型正整数在.md">求int型正整数在</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46252677" target="_blank" rel="noopener">求int型正整数在</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">115</td>
+<td style="text-align:center"><a href="nowcoder/115-单词识别.md">单词识别</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46161641" target="_blank" rel="noopener">单词识别</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">116</td>
+<td style="text-align:center"><a href="nowcoder/116-农夫、羊、菜和狼的.md">农夫、羊、菜和狼的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46161296" target="_blank" rel="noopener">农夫、羊、菜和狼的</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">117</td>
+<td style="text-align:center"><a href="nowcoder/117-对称平方数1.md">对称平方数1</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46160605" target="_blank" rel="noopener">对称平方数1</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">118</td>
+<td style="text-align:center"><a href="nowcoder/118-反序数.md">反序数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46160427" target="_blank" rel="noopener">反序数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">119</td>
+<td style="text-align:center"><a href="nowcoder/119-加法等式.md">加法等式</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46160372" target="_blank" rel="noopener">加法等式</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">120</td>
+<td style="text-align:center"><a href="nowcoder/120-反序相等.md">反序相等</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46159832" target="_blank" rel="noopener">反序相等</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">121</td>
+<td style="text-align:center"><a href="nowcoder/121-对称平方数.md">对称平方数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46158525" target="_blank" rel="noopener">对称平方数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">122</td>
+<td style="text-align:center"><a href="nowcoder/122-三角形相加.md">三角形相加</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46157574" target="_blank" rel="noopener">三角形相加</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">123</td>
+<td style="text-align:center"><a href="nowcoder/123-ZOJ.md">ZOJ</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46154513" target="_blank" rel="noopener">ZOJ</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">124</td>
+<td style="text-align:center"><a href="nowcoder/124-开门人和关门人.md">开门人和关门人</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46152617" target="_blank" rel="noopener">开门人和关门人</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">125</td>
+<td style="text-align:center"><a href="nowcoder/125-最大报销额.md">最大报销额</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46151619" target="_blank" rel="noopener">最大报销额</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">126</td>
+<td style="text-align:center"><a href="nowcoder/126-字母统计.md">字母统计</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46151187" target="_blank" rel="noopener">字母统计</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">127</td>
+<td style="text-align:center"><a href="nowcoder/127-密码翻译.md">密码翻译</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46126462" target="_blank" rel="noopener">密码翻译</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">128</td>
+<td style="text-align:center"><a href="nowcoder/128-完数VS盈数.md">完数VS盈数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46124652" target="_blank" rel="noopener">完数VS盈数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">129</td>
+<td style="text-align:center"><a href="nowcoder/129-数字求和.md">数字求和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46124001" target="_blank" rel="noopener">数字求和</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">130</td>
+<td style="text-align:center"><a href="nowcoder/130-谁是你的潜在朋友.md">谁是你的潜在朋友</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46123525" target="_blank" rel="noopener">谁是你的潜在朋友</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">131</td>
+<td style="text-align:center"><a href="nowcoder/131-查找学生信息.md">查找学生信息</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46122823" target="_blank" rel="noopener">查找学生信息</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">132</td>
+<td style="text-align:center"><a href="nowcoder/132-神奇的口袋.md">神奇的口袋</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46121748" target="_blank" rel="noopener">神奇的口袋</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">133</td>
+<td style="text-align:center"><a href="nowcoder/133-全排列.md">全排列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46120315" target="_blank" rel="noopener">全排列</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">134</td>
+<td style="text-align:center"><a href="nowcoder/134-最简真分数.md">最简真分数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46119907" target="_blank" rel="noopener">最简真分数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">135</td>
+<td style="text-align:center"><a href="nowcoder/135-与7无关的数.md">与7无关的数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46119707" target="_blank" rel="noopener">与7无关的数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">136</td>
+<td style="text-align:center"><a href="nowcoder/136-吃糖果.md">吃糖果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46118908" target="_blank" rel="noopener">吃糖果</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">137</td>
+<td style="text-align:center"><a href="nowcoder/137-整数奇偶排序.md">整数奇偶排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46118303" target="_blank" rel="noopener">整数奇偶排序</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">138</td>
+<td style="text-align:center"><a href="nowcoder/138-字符串排序.md">字符串排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46117538" target="_blank" rel="noopener">字符串排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">139</td>
+<td style="text-align:center"><a href="nowcoder/139-最大上升子序列和.md">最大上升子序列和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46116367" target="_blank" rel="noopener">最大上升子序列和</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">140</td>
+<td style="text-align:center"><a href="nowcoder/140-学分绩点.md">学分绩点</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46115759" target="_blank" rel="noopener">学分绩点</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">141</td>
+<td style="text-align:center"><a href="nowcoder/141-打印极值点下标.md">打印极值点下标</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46115265" target="_blank" rel="noopener">打印极值点下标</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">142</td>
+<td style="text-align:center"><a href="nowcoder/142-日志排序.md">日志排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46114964" target="_blank" rel="noopener">日志排序</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">143</td>
+<td style="text-align:center"><a href="nowcoder/143-小白鼠排队.md">小白鼠排队</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46114616" target="_blank" rel="noopener">小白鼠排队</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">144</td>
+<td style="text-align:center"><a href="nowcoder/144-中位数.md">中位数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46114412" target="_blank" rel="noopener">中位数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">145</td>
+<td style="text-align:center"><a href="nowcoder/145-球的半径和体积.md">球的半径和体积</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46114242" target="_blank" rel="noopener">球的半径和体积</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">146</td>
+<td style="text-align:center"><a href="nowcoder/146-大整数的因子.md">大整数的因子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46112969" target="_blank" rel="noopener">大整数的因子</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">147</td>
+<td style="text-align:center"><a href="nowcoder/147-递推数列.md">递推数列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46112215" target="_blank" rel="noopener">递推数列</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">148</td>
+<td style="text-align:center"><a href="nowcoder/148-最小邮票数.md">最小邮票数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45791130" target="_blank" rel="noopener">最小邮票数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">149</td>
+<td style="text-align:center"><a href="nowcoder/149-复数.md">复数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45790871" target="_blank" rel="noopener">复数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">150</td>
+<td style="text-align:center"><a href="nowcoder/150-N阶楼梯上楼问题.md">N阶楼梯上楼问题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45788924" target="_blank" rel="noopener">N阶楼梯上楼问题</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">151</td>
+<td style="text-align:center"><a href="nowcoder/151-守形数.md">守形数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45787475" target="_blank" rel="noopener">守形数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">152</td>
+<td style="text-align:center"><a href="nowcoder/152-统计字符.md">统计字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45786710" target="_blank" rel="noopener">统计字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">153</td>
+<td style="text-align:center"><a href="nowcoder/153-数字反转.md">数字反转</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45785697" target="_blank" rel="noopener">数字反转</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">154</td>
+<td style="text-align:center"><a href="nowcoder/154-分段函数.md">分段函数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45783701" target="_blank" rel="noopener">分段函数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">155</td>
+<td style="text-align:center"><a href="nowcoder/155-进制转换2.md">进制转换2</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45783540" target="_blank" rel="noopener">进制转换2</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">156</td>
+<td style="text-align:center"><a href="nowcoder/156-最长&amp;最短文本.md">最长&amp;最短文本</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45783092" target="_blank" rel="noopener">最长&amp;最短文本</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">157</td>
+<td style="text-align:center"><a href="nowcoder/157-哈夫曼树.md">哈夫曼树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45781836" target="_blank" rel="noopener">哈夫曼树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">158</td>
+<td style="text-align:center"><a href="nowcoder/158-最小长方形.md">最小长方形</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45778839" target="_blank" rel="noopener">最小长方形</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">159</td>
+<td style="text-align:center"><a href="nowcoder/159-统计同成绩学生人数.md">统计同成绩学生人数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45777136" target="_blank" rel="noopener">统计同成绩学生人数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">160</td>
+<td style="text-align:center"><a href="nowcoder/160-二次方程计算器.md">二次方程计算器</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45776877" target="_blank" rel="noopener">二次方程计算器</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">161</td>
+<td style="text-align:center"><a href="nowcoder/161-计算表达式.md">计算表达式</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45776406" target="_blank" rel="noopener">计算表达式</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">162</td>
+<td style="text-align:center"><a href="nowcoder/162-进制转换.md">进制转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45775808" target="_blank" rel="noopener">进制转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">163</td>
+<td style="text-align:center"><a href="nowcoder/163-拦截导弹.md">拦截导弹</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45775186" target="_blank" rel="noopener">拦截导弹</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">164</td>
+<td style="text-align:center"><a href="nowcoder/164-买房子.md">买房子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45773427" target="_blank" rel="noopener">买房子</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">165</td>
+<td style="text-align:center"><a href="nowcoder/165-围圈报数.md">围圈报数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45771174" target="_blank" rel="noopener">围圈报数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">166</td>
+<td style="text-align:center"><a href="nowcoder/166-众数.md">众数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45770021" target="_blank" rel="noopener">众数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">167</td>
+<td style="text-align:center"><a href="nowcoder/167-阶乘.md">阶乘</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45734996" target="_blank" rel="noopener">阶乘</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">168</td>
+<td style="text-align:center"><a href="nowcoder/168-整数和.md">整数和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45734904" target="_blank" rel="noopener">整数和</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">169</td>
+<td style="text-align:center"><a href="nowcoder/169-字符串连接.md">字符串连接</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45734278" target="_blank" rel="noopener">字符串连接</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">170</td>
+<td style="text-align:center"><a href="nowcoder/170-完数.md">完数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45734159" target="_blank" rel="noopener">完数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">171</td>
+<td style="text-align:center"><a href="nowcoder/171-放苹果.md">放苹果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45676749" target="_blank" rel="noopener">放苹果</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">172</td>
+<td style="text-align:center"><a href="nowcoder/172-进制转换.md">进制转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45676193" target="_blank" rel="noopener">进制转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">173</td>
+<td style="text-align:center"><a href="nowcoder/173-abc.md">abc</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45675938" target="_blank" rel="noopener">abc</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">174</td>
+<td style="text-align:center"><a href="nowcoder/174-最大子矩阵.md">最大子矩阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45675498" target="_blank" rel="noopener">最大子矩阵</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">175</td>
+<td style="text-align:center"><a href="nowcoder/175-10进制VS2.md">10进制 VS 2</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45666396" target="_blank" rel="noopener">10进制 VS 2</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">176</td>
+<td style="text-align:center"><a href="nowcoder/176-剩下的树.md">剩下的树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45665619" target="_blank" rel="noopener">剩下的树</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">177</td>
+<td style="text-align:center"><a href="nowcoder/177-最大序列和.md">最大序列和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45665279" target="_blank" rel="noopener">最大序列和</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">178</td>
+<td style="text-align:center"><a href="nowcoder/178-玛雅人的密码.md">玛雅人的密码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45664921" target="_blank" rel="noopener">玛雅人的密码</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">179</td>
+<td style="text-align:center"><a href="nowcoder/179-回文串.md">回文串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39475375" target="_blank" rel="noopener">回文串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">180</td>
+<td style="text-align:center"><a href="nowcoder/180-有几个PAT（25.md">有几个PAT（25</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39459098" target="_blank" rel="noopener">有几个PAT（25</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">181</td>
+<td style="text-align:center"><a href="nowcoder/181-第二大的数.md">第二大的数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39355038" target="_blank" rel="noopener">第二大的数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">182</td>
+<td style="text-align:center"><a href="nowcoder/182-倒水.md">倒水</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39354952" target="_blank" rel="noopener">倒水</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">183</td>
+<td style="text-align:center"><a href="nowcoder/183-斐波那契数列.md">斐波那契数列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39354745" target="_blank" rel="noopener">斐波那契数列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">184</td>
+<td style="text-align:center"><a href="nowcoder/184-2的N次方.md">2的N次方</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39353832" target="_blank" rel="noopener">2的N次方</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">185</td>
+<td style="text-align:center"><a href="nowcoder/185-求素数.md">求素数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39353635" target="_blank" rel="noopener">求素数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">186</td>
+<td style="text-align:center"><a href="nowcoder/186-排序.md">排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39351700" target="_blank" rel="noopener">排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">187</td>
+<td style="text-align:center"><a href="nowcoder/187-合并符串.md">合并符串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39351555" target="_blank" rel="noopener">合并符串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">188</td>
+<td style="text-align:center"><a href="nowcoder/188-调整方阵.md">调整方阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39351357" target="_blank" rel="noopener">调整方阵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">189</td>
+<td style="text-align:center"><a href="nowcoder/189-找最小数.md">找最小数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39350586" target="_blank" rel="noopener">找最小数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">190</td>
+<td style="text-align:center"><a href="nowcoder/190-素数.md">素数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39350454" target="_blank" rel="noopener">素数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">191</td>
+<td style="text-align:center"><a href="nowcoder/191-找最小数.md">找最小数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39350184" target="_blank" rel="noopener">找最小数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">192</td>
+<td style="text-align:center"><a href="nowcoder/192-数字之和.md">数字之和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39350058" target="_blank" rel="noopener">数字之和</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">193</td>
+<td style="text-align:center"><a href="nowcoder/193-平方因子.md">平方因子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39349965" target="_blank" rel="noopener">平方因子</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">194</td>
+<td style="text-align:center"><a href="nowcoder/194-三角形的边.md">三角形的边</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39349660" target="_blank" rel="noopener">三角形的边</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">195</td>
+<td style="text-align:center"><a href="nowcoder/195-字符串的反码.md">字符串的反码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39349571" target="_blank" rel="noopener">字符串的反码</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">196</td>
+<td style="text-align:center"><a href="nowcoder/196-链表中倒数第k个结.md">链表中倒数第k个结</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39349286" target="_blank" rel="noopener">链表中倒数第k个结</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">197</td>
+<td style="text-align:center"><a href="nowcoder/197-简单计算器.md">简单计算器</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39324314" target="_blank" rel="noopener">简单计算器</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">198</td>
+<td style="text-align:center"><a href="nowcoder/198-进制转换.md">进制转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39323794" target="_blank" rel="noopener">进制转换</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">199</td>
+<td style="text-align:center"><a href="nowcoder/199-连通图.md">连通图</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39323529" target="_blank" rel="noopener">连通图</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center"><a href="nowcoder/200-N的阶乘.md">N的阶乘</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39322378" target="_blank" rel="noopener">N的阶乘</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">201</td>
+<td style="text-align:center"><a href="nowcoder/201-特殊乘法.md">特殊乘法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39322341" target="_blank" rel="noopener">特殊乘法</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td style="text-align:center"><a href="nowcoder/202-计算两个矩阵的乘积.md">计算两个矩阵的乘积</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39322226" target="_blank" rel="noopener">计算两个矩阵的乘积</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">203</td>
+<td style="text-align:center"><a href="nowcoder/203-字符串去特定字符.md">字符串去特定字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39321918" target="_blank" rel="noopener">字符串去特定字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td style="text-align:center"><a href="nowcoder/204-欧拉回路.md">欧拉回路</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39321684" target="_blank" rel="noopener">欧拉回路</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">205</td>
+<td style="text-align:center"><a href="nowcoder/205-最短路径问题.md">最短路径问题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39321231" target="_blank" rel="noopener">最短路径问题</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">206</td>
+<td style="text-align:center"><a href="nowcoder/206-字符串内排序.md">字符串内排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39314584" target="_blank" rel="noopener">字符串内排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">207</td>
+<td style="text-align:center"><a href="nowcoder/207-字符串链接.md">字符串链接</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39314515" target="_blank" rel="noopener">字符串链接</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">208</td>
+<td style="text-align:center"><a href="nowcoder/208-素数判定.md">素数判定</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39314461" target="_blank" rel="noopener">素数判定</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">209</td>
+<td style="text-align:center"><a href="nowcoder/209-阶乘.md">阶乘</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39313644" target="_blank" rel="noopener">阶乘</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">210</td>
+<td style="text-align:center"><a href="nowcoder/210-a+b.md">a+b</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39313161" target="_blank" rel="noopener">a+b</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">211</td>
+<td style="text-align:center"><a href="nowcoder/211-矩阵转置.md">矩阵转置</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39312122" target="_blank" rel="noopener">矩阵转置</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">212</td>
+<td style="text-align:center"><a href="nowcoder/212-比较奇偶数个数.md">比较奇偶数个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39311983" target="_blank" rel="noopener">比较奇偶数个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">213</td>
+<td style="text-align:center"><a href="nowcoder/213-求最大值.md">求最大值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39311370" target="_blank" rel="noopener">求最大值</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">214</td>
+<td style="text-align:center"><a href="nowcoder/214-数组逆置.md">数组逆置</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39311295" target="_blank" rel="noopener">数组逆置</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">215</td>
+<td style="text-align:center"><a href="nowcoder/215-找x.md">找x</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39310556" target="_blank" rel="noopener">找x</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">216</td>
+<td style="text-align:center"><a href="nowcoder/216-互换最大最小数.md">互换最大最小数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39310358" target="_blank" rel="noopener">互换最大最小数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">217</td>
+<td style="text-align:center"><a href="nowcoder/217-二叉树.md">二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39309971" target="_blank" rel="noopener">二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">218</td>
+<td style="text-align:center"><a href="nowcoder/218-反序输出.md">反序输出</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39309391" target="_blank" rel="noopener">反序输出</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">219</td>
+<td style="text-align:center"><a href="nowcoder/219-求平均年龄.md">求平均年龄</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39308606" target="_blank" rel="noopener">求平均年龄</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">220</td>
+<td style="text-align:center"><a href="nowcoder/220-八进制.md">八进制</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39308541" target="_blank" rel="noopener">八进制</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">221</td>
+<td style="text-align:center"><a href="nowcoder/221-回文字符串.md">回文字符串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39308431" target="_blank" rel="noopener">回文字符串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">222</td>
+<td style="text-align:center"><a href="nowcoder/222-矩阵最大值.md">矩阵最大值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39308223" target="_blank" rel="noopener">矩阵最大值</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">223</td>
+<td style="text-align:center"><a href="nowcoder/223-对称矩阵.md">对称矩阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39307764" target="_blank" rel="noopener">对称矩阵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">224</td>
+<td style="text-align:center"><a href="nowcoder/224-二叉树遍历.md">二叉树遍历</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39307374" target="_blank" rel="noopener">二叉树遍历</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">225</td>
+<td style="text-align:center"><a href="nowcoder/225-n的阶乘.md">n的阶乘</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39306199" target="_blank" rel="noopener">n的阶乘</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">226</td>
+<td style="text-align:center"><a href="nowcoder/226-重建二叉树.md">重建二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39303988" target="_blank" rel="noopener">重建二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">227</td>
+<td style="text-align:center"><a href="nowcoder/227-栈的压入、弹出序列.md">栈的压入、弹出序列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39303484" target="_blank" rel="noopener">栈的压入、弹出序列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">228</td>
+<td style="text-align:center"><a href="nowcoder/228-矩形覆盖.md">矩形覆盖</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39301970" target="_blank" rel="noopener">矩形覆盖</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">229</td>
+<td style="text-align:center"><a href="nowcoder/229-序列化二叉树.md">序列化二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39299903" target="_blank" rel="noopener">序列化二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">230</td>
+<td style="text-align:center"><a href="nowcoder/230-把二叉树打印成多行.md">把二叉树打印成多行</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39299748" target="_blank" rel="noopener">把二叉树打印成多行</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">231</td>
+<td style="text-align:center"><a href="nowcoder/231-机器人的运动范围.md">机器人的运动范围</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39299050" target="_blank" rel="noopener">机器人的运动范围</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">232</td>
+<td style="text-align:center"><a href="nowcoder/232-矩阵中的路径.md">矩阵中的路径</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39298723" target="_blank" rel="noopener">矩阵中的路径</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">233</td>
+<td style="text-align:center"><a href="nowcoder/233-滑动窗口的最大值.md">滑动窗口的最大值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39298403" target="_blank" rel="noopener">滑动窗口的最大值</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">234</td>
+<td style="text-align:center"><a href="nowcoder/234-反转链表.md">反转链表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39298069" target="_blank" rel="noopener">反转链表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">235</td>
+<td style="text-align:center"><a href="nowcoder/235-调整数组顺序使奇数.md">调整数组顺序使奇数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39297859" target="_blank" rel="noopener">调整数组顺序使奇数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">236</td>
+<td style="text-align:center"><a href="nowcoder/236-平衡二叉树.md">平衡二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39262857" target="_blank" rel="noopener">平衡二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">237</td>
+<td style="text-align:center"><a href="nowcoder/237-数字在排序数组中出.md">数字在排序数组中出</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39262622" target="_blank" rel="noopener">数字在排序数组中出</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">238</td>
+<td style="text-align:center"><a href="nowcoder/238-孩子们的游戏(圆圈">孩子们的游戏(圆圈</a>.md)</td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39262466" target="_blank" rel="noopener">孩子们的游戏(圆圈</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">239</td>
+<td style="text-align:center"><a href="nowcoder/239-数组中只出现一次的.md">数组中只出现一次的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39260452" target="_blank" rel="noopener">数组中只出现一次的</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">240</td>
+<td style="text-align:center"><a href="nowcoder/240-二叉树的深度.md">二叉树的深度</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39259054" target="_blank" rel="noopener">二叉树的深度</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">241</td>
+<td style="text-align:center"><a href="nowcoder/241-数组中出现次数超过.md">数组中出现次数超过</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39258050" target="_blank" rel="noopener">数组中出现次数超过</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">242</td>
+<td style="text-align:center"><a href="nowcoder/242-从上往下打印二叉树.md">从上往下打印二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39257326" target="_blank" rel="noopener">从上往下打印二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">243</td>
+<td style="text-align:center"><a href="nowcoder/243-对称的二叉树.md">对称的二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39254978" target="_blank" rel="noopener">对称的二叉树</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">244</td>
+<td style="text-align:center"><a href="nowcoder/244-两个链表的第一个公.md">两个链表的第一个公</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39254891" target="_blank" rel="noopener">两个链表的第一个公</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">245</td>
+<td style="text-align:center"><a href="nowcoder/245-第一个只出现一次的.md">第一个只出现一次的</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39252432" target="_blank" rel="noopener">第一个只出现一次的</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">246</td>
+<td style="text-align:center"><a href="nowcoder/246-把数组排成最小的数.md">把数组排成最小的数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39252238" target="_blank" rel="noopener">把数组排成最小的数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">247</td>
+<td style="text-align:center"><a href="nowcoder/247-整数中1出现的次数.md">整数中1出现的次数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39252152" target="_blank" rel="noopener">整数中1出现的次数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">248</td>
+<td style="text-align:center"><a href="nowcoder/248-连续子数组的最大和.md">连续子数组的最大和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39251873" target="_blank" rel="noopener">连续子数组的最大和</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">249</td>
+<td style="text-align:center"><a href="nowcoder/249-最小的K个数.md">最小的K个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39251432" target="_blank" rel="noopener">最小的K个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">250</td>
+<td style="text-align:center"><a href="nowcoder/250-数值的整数次方.md">数值的整数次方</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39247755" target="_blank" rel="noopener">数值的整数次方</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">251</td>
+<td style="text-align:center"><a href="nowcoder/251-二进制中1的个数.md">二进制中1的个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39247639" target="_blank" rel="noopener">二进制中1的个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">252</td>
+<td style="text-align:center"><a href="nowcoder/252-变态跳台阶.md">变态跳台阶</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39247003" target="_blank" rel="noopener">变态跳台阶</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">253</td>
+<td style="text-align:center"><a href="nowcoder/253-斐波那契数列.md">斐波那契数列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39245938" target="_blank" rel="noopener">斐波那契数列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">254</td>
+<td style="text-align:center"><a href="nowcoder/254-从尾到头打印链表.md">从尾到头打印链表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39244630" target="_blank" rel="noopener">从尾到头打印链表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">255</td>
+<td style="text-align:center"><a href="nowcoder/255-二维数组中的查找.md">二维数组中的查找</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39244365" target="_blank" rel="noopener">二维数组中的查找</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">256</td>
+<td style="text-align:center"><a href="nowcoder/256-用两个栈实现队列.md">用两个栈实现队列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39244198" target="_blank" rel="noopener">用两个栈实现队列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">257</td>
+<td style="text-align:center"><a href="nowcoder/257-合并两个排序的链表.md">合并两个排序的链表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39175672" target="_blank" rel="noopener">合并两个排序的链表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">258</td>
+<td style="text-align:center"><a href="nowcoder/258-输入整型数组和排序.md">输入整型数组和排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39106191" target="_blank" rel="noopener">输入整型数组和排序</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">259</td>
+<td style="text-align:center"><a href="nowcoder/259-查找输入整数二进制.md">查找输入整数二进制</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39105874" target="_blank" rel="noopener">查找输入整数二进制</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">260</td>
+<td style="text-align:center"><a href="nowcoder/260-找出字符串中第一个.md">找出字符串中第一个</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39105457" target="_blank" rel="noopener">找出字符串中第一个</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">261</td>
+<td style="text-align:center"><a href="nowcoder/261-尼科彻斯定理.md">尼科彻斯定理</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39104954" target="_blank" rel="noopener">尼科彻斯定理</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">262</td>
+<td style="text-align:center"><a href="nowcoder/262-字符串分割.md">字符串分割</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39103841" target="_blank" rel="noopener">字符串分割</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">263</td>
+<td style="text-align:center"><a href="nowcoder/263-（练习用）挑7.md">（练习用）挑7</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39101820" target="_blank" rel="noopener">（练习用）挑7</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">264</td>
+<td style="text-align:center"><a href="nowcoder/264-火车进站.md">火车进站</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39100498" target="_blank" rel="noopener">火车进站</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">265</td>
+<td style="text-align:center"><a href="nowcoder/265-超长正整数相加.md">超长正整数相加</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39099293" target="_blank" rel="noopener">超长正整数相加</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">266</td>
+<td style="text-align:center"><a href="nowcoder/266-按字节截取字符串.md">按字节截取字符串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39099222" target="_blank" rel="noopener">按字节截取字符串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">267</td>
+<td style="text-align:center"><a href="nowcoder/267-计算字符串的距离.md">计算字符串的距离</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39098493" target="_blank" rel="noopener">计算字符串的距离</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">268</td>
+<td style="text-align:center"><a href="nowcoder/268-输出单向链表中倒数.md">输出单向链表中倒数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39097860" target="_blank" rel="noopener">输出单向链表中倒数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">269</td>
+<td style="text-align:center"><a href="nowcoder/269-名字的漂亮度.md">名字的漂亮度</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39097652" target="_blank" rel="noopener">名字的漂亮度</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">270</td>
+<td style="text-align:center"><a href="nowcoder/270-蛇形矩阵.md">蛇形矩阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39097391" target="_blank" rel="noopener">蛇形矩阵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">271</td>
+<td style="text-align:center"><a href="nowcoder/271-24点运算.md">24点运算</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39097053" target="_blank" rel="noopener">24点运算</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">272</td>
+<td style="text-align:center"><a href="nowcoder/272-统计大写字母个数.md">统计大写字母个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39096831" target="_blank" rel="noopener">统计大写字母个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">273</td>
+<td style="text-align:center"><a href="nowcoder/273-表示数字.md">表示数字</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39089196" target="_blank" rel="noopener">表示数字</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">274</td>
+<td style="text-align:center"><a href="nowcoder/274-等差数列.md">等差数列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39088951" target="_blank" rel="noopener">等差数列</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">275</td>
+<td style="text-align:center"><a href="nowcoder/275-四则运算.md">四则运算</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39088261" target="_blank" rel="noopener">四则运算</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">276</td>
+<td style="text-align:center"><a href="nowcoder/276-字符串匹配.md">字符串匹配</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39087990" target="_blank" rel="noopener">字符串匹配</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">277</td>
+<td style="text-align:center"><a href="nowcoder/277-字符串运用-密码截.md">字符串运用-密码截</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39087478" target="_blank" rel="noopener">字符串运用-密码截</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">278</td>
+<td style="text-align:center"><a href="nowcoder/278-【中级】单词倒排.md">【中级】单词倒排</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39086588" target="_blank" rel="noopener">【中级】单词倒排</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">279</td>
+<td style="text-align:center"><a href="nowcoder/279-字符统计.md">字符统计</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39084731" target="_blank" rel="noopener">字符统计</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">280</td>
+<td style="text-align:center"><a href="nowcoder/280-螺旋数.md">螺旋数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39082544" target="_blank" rel="noopener">螺旋数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">281</td>
+<td style="text-align:center"><a href="nowcoder/281-寄居蟹与海葵.md">寄居蟹与海葵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39080363" target="_blank" rel="noopener">寄居蟹与海葵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">282</td>
+<td style="text-align:center"><a href="nowcoder/282-英文金曲大赛.md">英文金曲大赛</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39079283" target="_blank" rel="noopener">英文金曲大赛</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">283</td>
+<td style="text-align:center"><a href="nowcoder/283-叠筐.md">叠筐</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39078881" target="_blank" rel="noopener">叠筐</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">284</td>
+<td style="text-align:center"><a href="nowcoder/284-发放贷款.md">发放贷款</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39077933" target="_blank" rel="noopener">发放贷款</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">285</td>
+<td style="text-align:center"><a href="nowcoder/285-鹊桥相会.md">鹊桥相会</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39077485" target="_blank" rel="noopener">鹊桥相会</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">286</td>
+<td style="text-align:center"><a href="nowcoder/286-最长公共子序列.md">最长公共子序列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39076694" target="_blank" rel="noopener">最长公共子序列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">287</td>
+<td style="text-align:center"><a href="nowcoder/287-数字和为sum的方.md">数字和为sum的方</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39073612" target="_blank" rel="noopener">数字和为sum的方</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">288</td>
+<td style="text-align:center"><a href="nowcoder/288-删除公共字符.md">删除公共字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39065974" target="_blank" rel="noopener">删除公共字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">289</td>
+<td style="text-align:center"><a href="nowcoder/289-编码.md">编码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39065723" target="_blank" rel="noopener">编码</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">290</td>
+<td style="text-align:center"><a href="nowcoder/290-集合.md">集合</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39065323" target="_blank" rel="noopener">集合</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">291</td>
+<td style="text-align:center"><a href="nowcoder/291-整数加法.md">整数加法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39064646" target="_blank" rel="noopener">整数加法</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">292</td>
+<td style="text-align:center"><a href="nowcoder/292-统计字符.md">统计字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39061397" target="_blank" rel="noopener">统计字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">293</td>
+<td style="text-align:center"><a href="nowcoder/293-字符串中找出连续最.md">字符串中找出连续最</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39057669" target="_blank" rel="noopener">字符串中找出连续最</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">294</td>
+<td style="text-align:center"><a href="nowcoder/294-n个数里出现次数大.md">n个数里出现次数大</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39057494" target="_blank" rel="noopener">n个数里出现次数大</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">295</td>
+<td style="text-align:center"><a href="nowcoder/295-n个数里最小的k个.md">n个数里最小的k个</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39057371" target="_blank" rel="noopener">n个数里最小的k个</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">296</td>
+<td style="text-align:center"><a href="nowcoder/296-水仙花数.md">水仙花数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39056422" target="_blank" rel="noopener">水仙花数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">297</td>
+<td style="text-align:center"><a href="nowcoder/297-买苹果.md">买苹果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39055793" target="_blank" rel="noopener">买苹果</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">298</td>
+<td style="text-align:center"><a href="nowcoder/298-数字翻转.md">数字翻转</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39055124" target="_blank" rel="noopener">数字翻转</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">299</td>
+<td style="text-align:center"><a href="nowcoder/299-连续最大和.md">连续最大和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39053770" target="_blank" rel="noopener">连续最大和</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">300</td>
+<td style="text-align:center"><a href="nowcoder/300-最大的奇约数.md">最大的奇约数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39052749" target="_blank" rel="noopener">最大的奇约数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">301</td>
+<td style="text-align:center"><a href="nowcoder/301-数串.md">数串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39048049" target="_blank" rel="noopener">数串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">302</td>
+<td style="text-align:center"><a href="nowcoder/302-拼凑面额.md">拼凑面额</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39047687" target="_blank" rel="noopener">拼凑面额</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">303</td>
+<td style="text-align:center"><a href="nowcoder/303-求和.md">求和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39046946" target="_blank" rel="noopener">求和</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">304</td>
+<td style="text-align:center"><a href="nowcoder/304-求数列的和.md">求数列的和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39046596" target="_blank" rel="noopener">求数列的和</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">305</td>
+<td style="text-align:center"><a href="nowcoder/305-保留最大的数.md">保留最大的数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39045336" target="_blank" rel="noopener">保留最大的数</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">306</td>
+<td style="text-align:center"><a href="nowcoder/306-判断题.md">判断题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39031006" target="_blank" rel="noopener">判断题</a></td>
+<td style="text-align:center">Matlab</td>
+</tr>
+<tr>
+<td style="text-align:center">307</td>
+<td style="text-align:center"><a href="nowcoder/307-六一儿童节.md">六一儿童节</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=39011148" target="_blank" rel="noopener">六一儿童节</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">308</td>
+<td style="text-align:center"><a href="nowcoder/308-出差.md">出差</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38964478" target="_blank" rel="noopener">出差</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">309</td>
+<td style="text-align:center"><a href="nowcoder/309-砌墙.md">砌墙</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38963842" target="_blank" rel="noopener">砌墙</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">310</td>
+<td style="text-align:center"><a href="nowcoder/310-最大收益.md">最大收益</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38963549" target="_blank" rel="noopener">最大收益</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">311</td>
+<td style="text-align:center"><a href="nowcoder/311-中美代表.md">中美代表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38962078" target="_blank" rel="noopener">中美代表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">312</td>
+<td style="text-align:center"><a href="nowcoder/312-句子反转.md">句子反转</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38956060" target="_blank" rel="noopener">句子反转</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">313</td>
+<td style="text-align:center"><a href="nowcoder/313-数根.md">数根</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38955025" target="_blank" rel="noopener">数根</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">314</td>
+<td style="text-align:center"><a href="nowcoder/314-剪花布条.md">剪花布条</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38954136" target="_blank" rel="noopener">剪花布条</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">315</td>
+<td style="text-align:center"><a href="nowcoder/315-抄送列表.md">抄送列表</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38951820" target="_blank" rel="noopener">抄送列表</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">316</td>
+<td style="text-align:center"><a href="nowcoder/316-解读密码.md">解读密码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38951616" target="_blank" rel="noopener">解读密码</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">317</td>
+<td style="text-align:center"><a href="nowcoder/317-骆驼命名法.md">骆驼命名法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38950989" target="_blank" rel="noopener">骆驼命名法</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">318</td>
+<td style="text-align:center"><a href="nowcoder/318-冲突的电话号码.md">冲突的电话号码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38950458" target="_blank" rel="noopener">冲突的电话号码</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">319</td>
+<td style="text-align:center"><a href="nowcoder/319-All-in-Al.md">All-in-Al</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38949727" target="_blank" rel="noopener">All-in-Al</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">320</td>
+<td style="text-align:center"><a href="nowcoder/320-快到碗里来.md">快到碗里来</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38949137" target="_blank" rel="noopener">快到碗里来</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">321</td>
+<td style="text-align:center"><a href="nowcoder/321-统计一.md">统计一</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38948573" target="_blank" rel="noopener">统计一</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">322</td>
+<td style="text-align:center"><a href="nowcoder/322-红与黑.md">红与黑</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38948406" target="_blank" rel="noopener">红与黑</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">323</td>
+<td style="text-align:center"><a href="nowcoder/323-数据库连接池.md">数据库连接池</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38947118" target="_blank" rel="noopener">数据库连接池</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">324</td>
+<td style="text-align:center"><a href="nowcoder/324-最长句子.md">最长句子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38946442" target="_blank" rel="noopener">最长句子</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">325</td>
+<td style="text-align:center"><a href="nowcoder/325-Emacs计算器.md">Emacs计算器</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38945674" target="_blank" rel="noopener">Emacs计算器</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">326</td>
+<td style="text-align:center"><a href="nowcoder/326-过年回家.md">过年回家</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38942771" target="_blank" rel="noopener">过年回家</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">327</td>
+<td style="text-align:center"><a href="nowcoder/327-裁减网格纸.md">裁减网格纸</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38931060" target="_blank" rel="noopener">裁减网格纸</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">328</td>
+<td style="text-align:center"><a href="nowcoder/328-删数.md">删数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38930474" target="_blank" rel="noopener">删数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">329</td>
+<td style="text-align:center"><a href="nowcoder/329-年终奖.md">年终奖</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38928926" target="_blank" rel="noopener">年终奖</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">330</td>
+<td style="text-align:center"><a href="nowcoder/330-投篮游戏.md">投篮游戏</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38928544" target="_blank" rel="noopener">投篮游戏</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">331</td>
+<td style="text-align:center"><a href="nowcoder/331-最大间隔.md">最大间隔</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38927916" target="_blank" rel="noopener">最大间隔</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">332</td>
+<td style="text-align:center"><a href="nowcoder/332-表达式组成方案.md">表达式组成方案</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38926667" target="_blank" rel="noopener">表达式组成方案</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">333</td>
+<td style="text-align:center"><a href="nowcoder/333-表达式合法判断.md">表达式合法判断</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38925638" target="_blank" rel="noopener">表达式合法判断</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">334</td>
+<td style="text-align:center"><a href="nowcoder/334-平均年龄.md">平均年龄</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38924902" target="_blank" rel="noopener">平均年龄</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">335</td>
+<td style="text-align:center"><a href="nowcoder/335-添加回文串.md">添加回文串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38924046" target="_blank" rel="noopener">添加回文串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">336</td>
+<td style="text-align:center"><a href="nowcoder/336-顺时针旋转矩阵.md">顺时针旋转矩阵</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38916257" target="_blank" rel="noopener">顺时针旋转矩阵</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">337</td>
+<td style="text-align:center"><a href="nowcoder/337-汉诺塔问题I.md">汉诺塔问题I</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38916024" target="_blank" rel="noopener">汉诺塔问题I</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">338</td>
+<td style="text-align:center"><a href="nowcoder/338-发奖金.md">发奖金</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38915509" target="_blank" rel="noopener">发奖金</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">339</td>
+<td style="text-align:center"><a href="nowcoder/339-二分查找.md">二分查找</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38915381" target="_blank" rel="noopener">二分查找</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">340</td>
+<td style="text-align:center"><a href="nowcoder/340-首个重复字符.md">首个重复字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38915031" target="_blank" rel="noopener">首个重复字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">341</td>
+<td style="text-align:center"><a href="nowcoder/341-直方图内最大矩形.md">直方图内最大矩形</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38914400" target="_blank" rel="noopener">直方图内最大矩形</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">342</td>
+<td style="text-align:center"><a href="nowcoder/342-最后一位.md">最后一位</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38894573" target="_blank" rel="noopener">最后一位</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">343</td>
+<td style="text-align:center"><a href="nowcoder/343-奶牛编号.md">奶牛编号</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38892876" target="_blank" rel="noopener">奶牛编号</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">344</td>
+<td style="text-align:center"><a href="nowcoder/344-最小众倍数.md">最小众倍数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38891940" target="_blank" rel="noopener">最小众倍数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">345</td>
+<td style="text-align:center"><a href="nowcoder/345-小易喜欢的数列.md">小易喜欢的数列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38890669" target="_blank" rel="noopener">小易喜欢的数列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">346</td>
+<td style="text-align:center"><a href="nowcoder/346-数字游戏.md">数字游戏</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38882834" target="_blank" rel="noopener">数字游戏</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">347</td>
+<td style="text-align:center"><a href="nowcoder/347-迷宫寻路.md">迷宫寻路</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38877635" target="_blank" rel="noopener">迷宫寻路</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">348</td>
+<td style="text-align:center"><a href="nowcoder/348-彩色的砖块.md">彩色的砖块</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38876418" target="_blank" rel="noopener">彩色的砖块</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">349</td>
+<td style="text-align:center"><a href="nowcoder/349-交错01串.md">交错01串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38875705" target="_blank" rel="noopener">交错01串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">350</td>
+<td style="text-align:center"><a href="nowcoder/350-独立的小易.md">独立的小易</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38874344" target="_blank" rel="noopener">独立的小易</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">351</td>
+<td style="text-align:center"><a href="nowcoder/351-空中旅行.md">空中旅行</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38873849" target="_blank" rel="noopener">空中旅行</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">352</td>
+<td style="text-align:center"><a href="nowcoder/352-拼凑三角形.md">拼凑三角形</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38873244" target="_blank" rel="noopener">拼凑三角形</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">353</td>
+<td style="text-align:center"><a href="nowcoder/353-回文素数.md">回文素数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38871535" target="_blank" rel="noopener">回文素数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">354</td>
+<td style="text-align:center"><a href="nowcoder/354-删除重复字符.md">删除重复字符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38870936" target="_blank" rel="noopener">删除重复字符</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">355</td>
+<td style="text-align:center"><a href="nowcoder/355-大整数相乘.md">大整数相乘</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38869368" target="_blank" rel="noopener">大整数相乘</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">356</td>
+<td style="text-align:center"><a href="nowcoder/356-最长回文.md">最长回文</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38846432" target="_blank" rel="noopener">最长回文</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">357</td>
+<td style="text-align:center"><a href="nowcoder/357-换座位.md">换座位</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38846154" target="_blank" rel="noopener">换座位</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">358</td>
+<td style="text-align:center"><a href="nowcoder/358-寻找舞伴.md">寻找舞伴</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38843384" target="_blank" rel="noopener">寻找舞伴</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">359</td>
+<td style="text-align:center"><a href="nowcoder/359-二叉树.md">二叉树</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38842223" target="_blank" rel="noopener">二叉树</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">360</td>
+<td style="text-align:center"><a href="nowcoder/360-最短编辑距离.md">最短编辑距离</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38841861" target="_blank" rel="noopener">最短编辑距离</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">361</td>
+<td style="text-align:center"><a href="nowcoder/361-不喜欢括号.md">不喜欢括号</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38841653" target="_blank" rel="noopener">不喜欢括号</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">362</td>
+<td style="text-align:center"><a href="nowcoder/362-一笔画.md">一笔画</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38840184" target="_blank" rel="noopener">一笔画</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">363</td>
+<td style="text-align:center"><a href="nowcoder/363-滑雪.md">滑雪</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38837467" target="_blank" rel="noopener">滑雪</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">364</td>
+<td style="text-align:center"><a href="nowcoder/364-数字三角形.md">数字三角形</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38836438" target="_blank" rel="noopener">数字三角形</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">365</td>
+<td style="text-align:center"><a href="nowcoder/365-放苹果.md">放苹果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38834677" target="_blank" rel="noopener">放苹果</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">366</td>
+<td style="text-align:center"><a href="nowcoder/366-换零钱.md">换零钱</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38833051" target="_blank" rel="noopener">换零钱</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">367</td>
+<td style="text-align:center"><a href="nowcoder/367-五子棋.md">五子棋</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38832300" target="_blank" rel="noopener">五子棋</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">368</td>
+<td style="text-align:center"><a href="nowcoder/368-狐狸和绳子.md">狐狸和绳子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38831098" target="_blank" rel="noopener">狐狸和绳子</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">369</td>
+<td style="text-align:center"><a href="nowcoder/369-八皇后问题.md">八皇后问题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38829724" target="_blank" rel="noopener">八皇后问题</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">370</td>
+<td style="text-align:center"><a href="nowcoder/370-鸽兔同校.md">鸽兔同校</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38829453" target="_blank" rel="noopener">鸽兔同校</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">371</td>
+<td style="text-align:center"><a href="nowcoder/371-杨辉三角.md">杨辉三角</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38829118" target="_blank" rel="noopener">杨辉三角</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">372</td>
+<td style="text-align:center"><a href="nowcoder/372-循环数.md">循环数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38828375" target="_blank" rel="noopener">循环数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">373</td>
+<td style="text-align:center"><a href="nowcoder/373-猴子分桃.md">猴子分桃</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38826596" target="_blank" rel="noopener">猴子分桃</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">374</td>
+<td style="text-align:center"><a href="nowcoder/374-素数和.md">素数和</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38824999" target="_blank" rel="noopener">素数和</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">375</td>
+<td style="text-align:center"><a href="nowcoder/375-写出这个数.md">写出这个数 (20</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38804949" target="_blank" rel="noopener">写出这个数 (20</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">376</td>
+<td style="text-align:center"><a href="nowcoder/376-选大王.md">选大王</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38804282" target="_blank" rel="noopener">选大王</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">377</td>
+<td style="text-align:center"><a href="nowcoder/377-三角形.md">三角形</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38803379" target="_blank" rel="noopener">三角形</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">378</td>
+<td style="text-align:center"><a href="nowcoder/378-分解因数.md">分解因数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38750277" target="_blank" rel="noopener">分解因数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">379</td>
+<td style="text-align:center"><a href="nowcoder/379-一的个数.md">一的个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38749183" target="_blank" rel="noopener">一的个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">380</td>
+<td style="text-align:center"><a href="nowcoder/380-挖掘机技术哪家强.md">挖掘机技术哪家强(</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38747557" target="_blank" rel="noopener">挖掘机技术哪家强(</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">381</td>
+<td style="text-align:center"><a href="nowcoder/381-统计同成绩学生.md">统计同成绩学生(2</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38739133" target="_blank" rel="noopener">统计同成绩学生(2</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">382</td>
+<td style="text-align:center"><a href="nowcoder/382-组个最小数.md">组个最小数 (20</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38737209" target="_blank" rel="noopener">组个最小数 (20</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">383</td>
+<td style="text-align:center"><a href="nowcoder/383-D进制的A+B.md">D进制的A+B (</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38737041" target="_blank" rel="noopener">D进制的A+B (</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">384</td>
+<td style="text-align:center"><a href="nowcoder/384-个位数统计.md">个位数统计 (15</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38736663" target="_blank" rel="noopener">个位数统计 (15</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">385</td>
+<td style="text-align:center"><a href="nowcoder/385-锤子剪刀布.md">锤子剪刀布 (20</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38730450" target="_blank" rel="noopener">锤子剪刀布 (20</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">386</td>
+<td style="text-align:center"><a href="nowcoder/386-A除以B.md">A除以B (20)</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38729334" target="_blank" rel="noopener">A除以B (20)</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">387</td>
+<td style="text-align:center"><a href="nowcoder/387-1016.部分A.md">1016. 部分A</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38729018" target="_blank" rel="noopener">1016. 部分A</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">388</td>
+<td style="text-align:center"><a href="nowcoder/388-福尔摩斯的约会.md">福尔摩斯的约会 (</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38713517" target="_blank" rel="noopener">福尔摩斯的约会 (</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">389</td>
+<td style="text-align:center"><a href="nowcoder/389-数素数.md">数素数 (20)</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38696846" target="_blank" rel="noopener">数素数 (20)</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">390</td>
+<td style="text-align:center"><a href="nowcoder/390-A+B和C.md">A+B和C (15</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38695239" target="_blank" rel="noopener">A+B和C (15</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">391</td>
+<td style="text-align:center"><a href="nowcoder/391-幸运的袋子.md">幸运的袋子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38691391" target="_blank" rel="noopener">幸运的袋子</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">392</td>
+<td style="text-align:center"><a href="nowcoder/392-藏宝图.md">藏宝图</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38690198" target="_blank" rel="noopener">藏宝图</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">393</td>
+<td style="text-align:center"><a href="nowcoder/393-分田地.md">分田地</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38680574" target="_blank" rel="noopener">分田地</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">394</td>
+<td style="text-align:center"><a href="nowcoder/394-下厨房.md">下厨房</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38679946" target="_blank" rel="noopener">下厨房</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">395</td>
+<td style="text-align:center"><a href="nowcoder/395-素数对.md">素数对</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38406057" target="_blank" rel="noopener">素数对</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">396</td>
+<td style="text-align:center"><a href="nowcoder/396-进制转换.md">进制转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38405773" target="_blank" rel="noopener">进制转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">397</td>
+<td style="text-align:center"><a href="nowcoder/397-末尾0的个数.md">末尾0的个数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38405714" target="_blank" rel="noopener">末尾0的个数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">398</td>
+<td style="text-align:center"><a href="nowcoder/398-求最大最小数.md">求最大最小数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38261946" target="_blank" rel="noopener">求最大最小数</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">399</td>
+<td style="text-align:center"><a href="nowcoder/399-百万富翁问题.md">百万富翁问题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38261778" target="_blank" rel="noopener">百万富翁问题</a></td>
+<td style="text-align:center">Python</td>
+</tr>
+<tr>
+<td style="text-align:center">400</td>
+<td style="text-align:center"><a href="nowcoder/400-模块.md">模块</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38260932" target="_blank" rel="noopener">模块</a></td>
+<td style="text-align:center">前端</td>
+</tr>
+<tr>
+<td style="text-align:center">401</td>
+<td style="text-align:center"><a href="nowcoder/401-正确的使用par.md">正确的使用 par</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38260810" target="_blank" rel="noopener">正确的使用 par</a></td>
+<td style="text-align:center">前端</td>
+</tr>
+<tr>
+<td style="text-align:center">402</td>
+<td style="text-align:center"><a href="nowcoder/402-乘法.md">乘法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38260675" target="_blank" rel="noopener">乘法</a></td>
+<td style="text-align:center">前端</td>
+</tr>
+<tr>
+<td style="text-align:center">403</td>
+<td style="text-align:center"><a href="nowcoder/403-求二次方.md">求二次方</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38260654" target="_blank" rel="noopener">求二次方</a></td>
+<td style="text-align:center">前端</td>
+</tr>
+<tr>
+<td style="text-align:center">404</td>
+<td style="text-align:center"><a href="nowcoder/404-流程控制.md">流程控制</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38260626" target="_blank" rel="noopener">流程控制</a></td>
+<td style="text-align:center">前端</td>
+</tr>
+<tr>
+<td style="text-align:center">405</td>
+<td style="text-align:center"><a href="nowcoder/405-倒置字符串.md">倒置字符串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38245279" target="_blank" rel="noopener">倒置字符串</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">406</td>
+<td style="text-align:center"><a href="nowcoder/406-跳台阶.md">跳台阶</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38238429" target="_blank" rel="noopener">跳台阶</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">407</td>
+<td style="text-align:center"><a href="nowcoder/407-求1+2+3+...md">求1+2+3+..</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38235391" target="_blank" rel="noopener">求1+2+3+..</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">408</td>
+<td style="text-align:center"><a href="nowcoder/408-替换空格.md">替换空格</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=38234293" target="_blank" rel="noopener">替换空格</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">409</td>
+<td style="text-align:center"><a href="nowcoder/409-记负均正II.md">记负均正II</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28999379" target="_blank" rel="noopener">记负均正II</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">410</td>
+<td style="text-align:center"><a href="nowcoder/410-将真分数分解为埃及.md">将真分数分解为埃及</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28997643" target="_blank" rel="noopener">将真分数分解为埃及</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">411</td>
+<td style="text-align:center"><a href="nowcoder/411-放苹果.md">放苹果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28996667" target="_blank" rel="noopener">放苹果</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">412</td>
+<td style="text-align:center"><a href="nowcoder/412-查找组成一个偶数最.md">查找组成一个偶数最</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28995390" target="_blank" rel="noopener">查找组成一个偶数最</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">413</td>
+<td style="text-align:center"><a href="nowcoder/413-字符串通配符.md">字符串通配符</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28993793" target="_blank" rel="noopener">字符串通配符</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">414</td>
+<td style="text-align:center"><a href="nowcoder/414-成绩排序.md">成绩排序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28993419" target="_blank" rel="noopener">成绩排序</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">415</td>
+<td style="text-align:center"><a href="nowcoder/415-查找两个字符串a,.md">查找两个字符串a,</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28993175" target="_blank" rel="noopener">查找两个字符串a,</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">416</td>
+<td style="text-align:center"><a href="nowcoder/416-MP3光标位置.md">MP3光标位置</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28989245" target="_blank" rel="noopener">MP3光标位置</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">417</td>
+<td style="text-align:center"><a href="nowcoder/417-字符串加密.md">字符串加密</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28988690" target="_blank" rel="noopener">字符串加密</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">418</td>
+<td style="text-align:center"><a href="nowcoder/418-DNA序列.md">DNA序列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28984919" target="_blank" rel="noopener">DNA序列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">419</td>
+<td style="text-align:center"><a href="nowcoder/419-学英语.md">学英语</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28976579" target="_blank" rel="noopener">学英语</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">420</td>
+<td style="text-align:center"><a href="nowcoder/420-iNOC产品部--.md">iNOC产品部—</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28974734" target="_blank" rel="noopener">iNOC产品部—</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">421</td>
+<td style="text-align:center"><a href="nowcoder/421-质数因子.md">质数因子</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28973171" target="_blank" rel="noopener">质数因子</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">422</td>
+<td style="text-align:center"><a href="nowcoder/422-输入n个整数，输出.md">输入n个整数，输出</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28962262" target="_blank" rel="noopener">输入n个整数，输出</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">423</td>
+<td style="text-align:center"><a href="nowcoder/423-简单密码.md">简单密码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28959733" target="_blank" rel="noopener">简单密码</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">424</td>
+<td style="text-align:center"><a href="nowcoder/424-密码验证合格程序.md">密码验证合格程序</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28959016" target="_blank" rel="noopener">密码验证合格程序</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">425</td>
+<td style="text-align:center"><a href="nowcoder/425-表达式求值.md">表达式求值</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28958490" target="_blank" rel="noopener">表达式求值</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">426</td>
+<td style="text-align:center"><a href="nowcoder/426-称砝码.md">称砝码</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28957974" target="_blank" rel="noopener">称砝码</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">427</td>
+<td style="text-align:center"><a href="nowcoder/427-在字符串中找出连续.md">在字符串中找出连续</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28957453" target="_blank" rel="noopener">在字符串中找出连续</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">428</td>
+<td style="text-align:center"><a href="nowcoder/428-求解立方根.md">求解立方根</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28955012" target="_blank" rel="noopener">求解立方根</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">429</td>
+<td style="text-align:center"><a href="nowcoder/429-求最小公倍数.md">求最小公倍数</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28954578" target="_blank" rel="noopener">求最小公倍数</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">430</td>
+<td style="text-align:center"><a href="nowcoder/430-计算日期到天数转换.md">计算日期到天数转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28954198" target="_blank" rel="noopener">计算日期到天数转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">431</td>
+<td style="text-align:center"><a href="nowcoder/431-迷宫问题.md">迷宫问题</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28950685" target="_blank" rel="noopener">迷宫问题</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">432</td>
+<td style="text-align:center"><a href="nowcoder/432-进制转换.md">进制转换</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28881747" target="_blank" rel="noopener">进制转换</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">433</td>
+<td style="text-align:center"><a href="nowcoder/433-字符串分隔.md">字符串分隔</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28881568" target="_blank" rel="noopener">字符串分隔</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">434</td>
+<td style="text-align:center"><a href="nowcoder/434-暗黑的字符串.md">暗黑的字符串</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28795773" target="_blank" rel="noopener">暗黑的字符串</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">435</td>
+<td style="text-align:center"><a href="nowcoder/435-跳石板.md">跳石板</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28793265" target="_blank" rel="noopener">跳石板</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">436</td>
+<td style="text-align:center"><a href="nowcoder/436-优雅的点.md">优雅的点</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28793042" target="_blank" rel="noopener">优雅的点</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">437</td>
+<td style="text-align:center"><a href="nowcoder/437-回文序列.md">回文序列</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28792616" target="_blank" rel="noopener">回文序列</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">438</td>
+<td style="text-align:center"><a href="nowcoder/438-洗牌.md">洗牌</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28791722" target="_blank" rel="noopener">洗牌</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">439</td>
+<td style="text-align:center"><a href="nowcoder/439-Fibonacci.md">Fibonacci</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28776927" target="_blank" rel="noopener">Fibonacci</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">440</td>
+<td style="text-align:center"><a href="nowcoder/440-小易喜欢的单词.md">小易喜欢的单词</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28776648" target="_blank" rel="noopener">小易喜欢的单词</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">441</td>
+<td style="text-align:center"><a href="nowcoder/441-两种排序方法.md">两种排序方法</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28776244" target="_blank" rel="noopener">两种排序方法</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">442</td>
+<td style="text-align:center"><a href="nowcoder/442-饥饿的小易.md">饥饿的小易</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28775896" target="_blank" rel="noopener">饥饿的小易</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">443</td>
+<td style="text-align:center"><a href="nowcoder/443-统计回文.md">统计回文</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28774411" target="_blank" rel="noopener">统计回文</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">444</td>
+<td style="text-align:center"><a href="nowcoder/444-解救小易.md">解救小易</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28772803" target="_blank" rel="noopener">解救小易</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">445</td>
+<td style="text-align:center"><a href="nowcoder/445-不要二.md">不要二</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28771989" target="_blank" rel="noopener">不要二</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">446</td>
+<td style="text-align:center"><a href="nowcoder/446-混合颜料.md">混合颜料</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28769381" target="_blank" rel="noopener">混合颜料</a></td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">447</td>
+<td style="text-align:center"><a href="nowcoder/447-数列还原.md">数列还原</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28768110" target="_blank" rel="noopener">数列还原</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">448</td>
+<td style="text-align:center"><a href="nowcoder/448-星际穿越.md">星际穿越</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28763873" target="_blank" rel="noopener">星际穿越</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">449</td>
+<td style="text-align:center"><a href="nowcoder/449-分苹果.md">分苹果</a></td>
+<td style="text-align:center"><a href="https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=28761884" target="_blank" rel="noopener">分苹果</a></td>
+<td style="text-align:center">Java</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/刷题/" rel="tag"># 刷题</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/7ax52/" rel="next" title="leetcode刷题目录.md">
+                <i class="fa fa-chevron-left"></i> leetcode刷题目录.md
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/7ci5l/" rel="prev" title="推荐系统学习">
+                推荐系统学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">My accepted nowcoder solutions</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/7ax53/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

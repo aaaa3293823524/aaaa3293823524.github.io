@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="IDEA设置热加载加入依赖123456&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;            &amp;lt;scope&amp;gt;ru">
+<meta name="keywords" content="项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客项目开发">
+<meta property="og:url" content="https://userzhang.tk/p/81rob/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="IDEA设置热加载加入依赖123456&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;            &amp;lt;scope&amp;gt;ru">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210121750746.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210122028094.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210123716279.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210133755919.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210134218497.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210134300233.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210135523720.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210141743140.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210135907142.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210150905189.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210152225363.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210153658402.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210155026934.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210160128995.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210161820332.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210162057223.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210162222180.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210163502525.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210164052687.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170102148.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170257415.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170352082.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170637676.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170837625.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210171043850.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210181054296.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210203917818.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210203949909.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210212622603.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210191441168.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210192122032.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210200228920.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210201452046.jpg">
+<meta property="og:updated_time" content="2021-12-10T15:00:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客项目开发">
+<meta name="twitter:description" content="IDEA设置热加载加入依赖123456&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;            &amp;lt;scope&amp;gt;ru">
+<meta name="twitter:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210121750746.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/81rob/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>博客项目开发 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/81rob/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">博客项目开发
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-12-10 12:11:10 / 修改时间：23:00:56" itemprop="dateCreated datePublished" datetime="2021-12-10T12:11:10+08:00">2021-12-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="IDEA设置热加载"><a href="#IDEA设置热加载" class="headerlink" title="IDEA设置热加载"></a>IDEA设置热加载</h1><p>加入依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="使用springMVC开发-RESTFUL-API"><a href="#使用springMVC开发-RESTFUL-API" class="headerlink" title="使用springMVC开发 RESTFUL API"></a>使用springMVC开发 RESTFUL API</h1><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210121750746.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210122028094.jpg" alt><br>编写针对RESTfulAPI测试用例<br>MockMvc</p>
+<p>使用REST服务处理文件<br>多线程提高性能</p>
+<h2 id="使用Filter和interceptor拦截REST服务"><a href="#使用Filter和interceptor拦截REST服务" class="headerlink" title="使用Filter和interceptor拦截REST服务"></a>使用Filter和interceptor拦截REST服务</h2><h2 id="使用swagger自动生成文档"><a href="#使用swagger自动生成文档" class="headerlink" title="使用swagger自动生成文档"></a>使用swagger自动生成文档</h2><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210123716279.jpg" alt></p>
+<p>扫描程序生成文档</p>
+<p>参考<a href="https://blog.csdn.net/zhanggonglalala/article/details/98070986" target="_blank" rel="noopener">https://blog.csdn.net/zhanggonglalala/article/details/98070986</a></p>
+<ul>
+<li><p>加入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构建swagger配置类  SwaggerConfig</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Configuration</span></span><br><span class="line"><span class="variable">@EnableSwagger2</span></span><br><span class="line">public class SwaggerConfig &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建API</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="variable">@Bean</span></span><br><span class="line">    public Docket createRestApi() &#123;</span><br><span class="line">        <span class="comment">// 指定扫描包路径</span></span><br><span class="line">        <span class="selector-tag">return</span> <span class="selector-tag">new</span> <span class="selector-tag">Docket</span>(DocumentationType.SWAGGER_2) <span class="comment">// 指定生成的文档的类型是Swagger2</span></span><br><span class="line"><span class="comment">//                .pathMapping("/swagger")</span></span><br><span class="line">                <span class="comment">// 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）,配置文档页面的基本信息内容</span></span><br><span class="line">                <span class="comment">// 设置哪些接口暴露给Swagger展示</span></span><br><span class="line">                <span class="selector-class">.select</span>()</span><br><span class="line">                <span class="comment">// 扫描所有有注解的api，用这种方式更灵活</span></span><br><span class="line">                <span class="comment">//.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))</span></span><br><span class="line">                <span class="selector-class">.apis</span>(RequestHandlerSelectors.basePackage(<span class="string">"com.oycbest.springbootswagger.controller"</span>))</span><br><span class="line">                <span class="comment">// 扫描所有 .apis(RequestHandlerSelectors.any())</span></span><br><span class="line">                <span class="selector-class">.paths</span>(PathSelectors.any())<span class="selector-class">.build</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加摘要信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="selector-tag">private</span> <span class="selector-tag">ApiInfo</span> <span class="selector-tag">apiInfo</span>() &#123;</span><br><span class="line">        <span class="comment">// 用ApiInfoBuilder进行定制</span></span><br><span class="line">        <span class="selector-tag">return</span> <span class="selector-tag">new</span> <span class="selector-tag">ApiInfoBuilder</span>()</span><br><span class="line">                <span class="comment">// 设置标题</span></span><br><span class="line">                <span class="selector-class">.title</span>(<span class="string">"描述：Spring Boot中使用Swagger2构建RESTful APIs"</span>)</span><br><span class="line">                <span class="comment">// 描述</span></span><br><span class="line">                <span class="selector-class">.description</span>(<span class="string">"swagger 测试demo"</span>)</span><br><span class="line">                <span class="comment">// 版本</span></span><br><span class="line">                <span class="selector-class">.version</span>(<span class="string">"版本号: 1.0.1"</span>)</span><br><span class="line">                <span class="selector-class">.build</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在controller中添加swagger接口注解</p>
+</li>
+</ul>
+<blockquote>
+<p>@Api 修饰整个类，描述Controller的作用。<br>@ApiOperation 修饰一个类的一个方法，或者说一个接口 ，可以描述这个方法的功能和注意事项。若不使用则用函数名作为方法功能。<br>       参数：value=”说明方法的用途、作用”<br>notes=”方法的备注说明”<br>@apiResponses：用在请求的方法上，表示一组响应<br>@ApiResponse：用在@ApiResponses中，一般用于表达一个错误的响应信息<br>        code：数字，例如400<br>        message：信息，例如”请求参数没填好”<br>        response：抛出异常的类<br>@ApiImplicitParams 修饰方法，可以描述这个方法的参数的作用。若不使用则用参数名作为参数的作用。<br>@ApiImplicitParam：用在@ApiImplicitParams注解中，指定一个请求参数的各个方面<br>        name：参数名<br>        value：参数的汉字说明、解释<br>        required：参数是否必须传<br>        paramType：参数放在哪个地方<br>            · header —&gt; 请求参数的获取：@RequestHeader<br>            · query —&gt; 请求参数的获取：@RequestParam<br>            · path（用于restful接口）—&gt; 请求参数的获取：@PathVariable<br>            · body（不常用）<br>            · form（不常用）<br>        dataType：参数类型，默认String，其它值dataType=”Integer”<br>        defaultValue：参数的默认值<br>@ApiModel 修饰实体类，可以描述这个类的功能。<br>@ApiModelProperty 修饰实体类的属性，可以描述这个属性的作用。<br>@ApiIgnore修饰参数、方法和类，可以在自动生成文档时对修饰的对象进行忽略。<br>@ApiError ：发生错误返回的信息 </p>
+<ul>
+<li>查看&amp;测试接口<br>发现报错<br>这是因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher。 解决： 修改application.yaml spring: mvc: pathmatch: matching-strategy: ANT_PATH_MATCHER</li>
+</ul>
+</blockquote>
+<p>如果没有引入安全框架或设置路径拦截机制，可以直接访问 <a href="http://127.0.0.1:8080/[项目名称]/swagger-ui.html查看接口。" target="_blank" rel="noopener">http://127.0.0.1:8080/[项目名称]/swagger-ui.html查看接口。</a><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210133755919.jpg" alt></p>
+<h2 id="使用WireMock伪造REST服务"><a href="#使用WireMock伪造REST服务" class="headerlink" title="使用WireMock伪造REST服务"></a>使用WireMock伪造REST服务</h2><h2 id="图形验证码"><a href="#图形验证码" class="headerlink" title="图形验证码"></a>图形验证码</h2><p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210134218497.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210134300233.jpg" alt><br>BufferedImage</p>
+<p>ImageIO.write<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210135523720.jpg" alt></p>
+<h2 id="记住我功能"><a href="#记住我功能" class="headerlink" title="记住我功能"></a>记住我功能</h2><p>手机短信登录，qq登录</p>
+<p>UserDetailsService自定义登录认证逻辑<br>loadUserByUsername方法</p>
+<p>自定义认证流程<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210141743140.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210135907142.jpg" alt></p>
+<p>自定义登录成功处理器<br>实现AuthenticationSuccessHandler接口中的方法</p>
+<p>自定义登录失败处理器<br>实现AuthenticationFailureHandler接口中的方法</p>
+<p>@Secured   @PreAuthorize  注解</p>
+<p>基于权限判断   像会员   hasAuthority(“admin”)  hasAnyAuthority<br>基于角色判断    hasRole()   hasAnyRole(“abc”)<br>实现的UserDetailsService类中角色为 ROLE_abc<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210150905189.jpg" alt></p>
+<p>403页面</p>
+<p>remember-me<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210152225363.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210153658402.jpg" alt></p>
+<p>退出登录</p>
+<p>csrf<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210155026934.jpg" alt></p>
+<p>访问请求参数要有_csrf 值为token 否则不通过<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210160128995.jpg" alt></p>
+<p>redis存储token<br>引入redis依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>application.yml 中加入redis相关配置</p>
+<p>编写redis配置类   参考<a href="https://www.cnblogs.com/zeng1994/p/03303c805731afc9aa9c60dbbd32a323.html" target="_blank" rel="noopener">redis与springboot集成</a></p>
+<p>认证机制<br>Basic 用户名和密码<br>Cookie  认证<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210161820332.jpg" alt></p>
+<p>Oauth<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210162057223.jpg" alt><br>Token Auth   签发token  节约系统资源  token是字符串  session是对象<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210162222180.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210163502525.jpg" alt></p>
+<p>jwt   一个标准   头部和载荷不要放敏感信息<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210164052687.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170102148.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170257415.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170352082.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170637676.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210170837625.jpg" alt></p>
+<p>jjwt<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210171043850.jpg" alt><br>springboot集成jjwt<br>引入依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- json工具 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.68<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- jwt --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.jsonwebtoken<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jjwt<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>token生成  JwtBuilder<br>token解析<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210181054296.jpg" alt></p>
+<p>jwt过期校验<br>生成jwt时带有失效时间<br>setExpiration(new Date(exp))</p>
+<p>jwtUtils<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lss.jwt_test.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.<span class="keyword">HashMap</span>;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.crypto.SecretKey;</span><br><span class="line"><span class="keyword">import</span> javax.crypto.spec.SecretKeySpec;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lss.jwt_test.rest.TestController;</span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.JwtBuilder;</span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"><span class="keyword">import</span> org.apache.tomcat.util.codec.<span class="built_in">binary</span>.Base64;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class JwtUtils &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * token 过期时间, 单位: 秒. 这个值表示 30 天</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> TOKEN_EXPIRED_TIME = <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">String</span> jwtId = <span class="string">"tokenId"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * jwt 加密解密密钥(可自行填写)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">String</span> JWT_SECRET = <span class="string">"1234567890"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建JWT</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> createJWT(Map&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt; claims, Long time) &#123;</span><br><span class="line">        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256; <span class="comment">//指定签名的时候使用的签名算法，也就是header那部分，jjwt已经将这部分内容封装好了。</span></span><br><span class="line">        Date now = <span class="keyword">new</span> Date(System.currentTimeMillis());</span><br><span class="line"></span><br><span class="line">        SecretKey secretKey = generalKey();</span><br><span class="line">        <span class="keyword">long</span> nowMillis = System.currentTimeMillis();<span class="comment">//生成JWT的时间</span></span><br><span class="line">        <span class="comment">//下面就是在为payload添加各种标准声明和私有声明了</span></span><br><span class="line">        JwtBuilder builder = Jwts.builder() <span class="comment">//这里其实就是new一个JwtBuilder，设置jwt的body</span></span><br><span class="line">                .setClaims(claims)          <span class="comment">//如果有私有声明，一定要先设置这个自己创建的私有的声明，这个是给builder的claim赋值，一旦写在标准的声明赋值之后，就是覆盖了那些标准的声明的</span></span><br><span class="line">                .setId(jwtId)                  <span class="comment">//设置jti(JWT ID)：是JWT的唯一标识，根据业务需要，这个可以设置为一个不重复的值，主要用来作为一次性token,从而回避重放攻击。</span></span><br><span class="line">                .setIssuedAt(now)           <span class="comment">//iat: jwt的签发时间</span></span><br><span class="line">                .signWith(signatureAlgorithm, secretKey);<span class="comment">//设置签名使用的签名算法和签名使用的秘钥</span></span><br><span class="line">        <span class="keyword">if</span> (time &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">long</span> expMillis = nowMillis + time;</span><br><span class="line">            Date <span class="built_in">exp</span> = <span class="keyword">new</span> Date(expMillis);</span><br><span class="line">            builder.setExpiration(<span class="built_in">exp</span>);     <span class="comment">//设置过期时间</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> builder.compact();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 验证jwt</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Claims verifyJwt(<span class="keyword">String</span> token) &#123;</span><br><span class="line">        <span class="comment">//签名秘钥，和生成的签名的秘钥一模一样</span></span><br><span class="line">        SecretKey <span class="built_in">key</span> = generalKey();</span><br><span class="line">        Claims claims;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            claims = Jwts.parser()  <span class="comment">//得到DefaultJwtParser</span></span><br><span class="line">                    .setSigningKey(<span class="built_in">key</span>)         <span class="comment">//设置签名的秘钥</span></span><br><span class="line">                    .parseClaimsJws(token).getBody();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            claims = <span class="keyword">null</span>;</span><br><span class="line">        &#125;<span class="comment">//设置需要解析的jwt</span></span><br><span class="line">        <span class="keyword">return</span> claims;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 由字符串生成加密key</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SecretKey generalKey() &#123;</span><br><span class="line">        <span class="keyword">String</span> stringKey = JWT_SECRET;</span><br><span class="line">        <span class="built_in">byte</span>[] encodedKey = Base64.decodeBase64(stringKey);</span><br><span class="line">        SecretKey <span class="built_in">key</span> = <span class="keyword">new</span> SecretKeySpec(encodedKey, <span class="number">0</span>, encodedKey.length, <span class="string">"AES"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">key</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据userId和openid生成token</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> generateToken(<span class="keyword">String</span> openId, Integer userId) &#123;</span><br><span class="line">        Map&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="built_in">map</span>.put(<span class="string">"userId"</span>, userId);</span><br><span class="line">        <span class="built_in">map</span>.put(<span class="string">"openId"</span>, openId);</span><br><span class="line">        <span class="built_in">map</span>.put(<span class="string">"sub"</span>, openId);</span><br><span class="line">        <span class="keyword">return</span> createJWT(<span class="built_in">map</span>, TOKEN_EXPIRED_TIME);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">// 生成token</span></span><br><span class="line">        <span class="keyword">String</span> s = generateToken(<span class="string">"111"</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.<span class="built_in">println</span>(s);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 验证</span></span><br><span class="line">        <span class="keyword">String</span> token = <span class="string">"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTEiLCJvcGVuSWQiOiIxMTEiLCJleHAiOjE1OTI1NTc3ODMsInVzZXJJZCI6MjAsImlhdCI6MTU5MjU1NTE5MSwianRpIjoidG9rZW5JZCJ9.X7JHnx3Y5wtb-n3pT9tft2I4hENJdeRxW2QWaI4jv2E"</span>;</span><br><span class="line">        Claims claims = verifyJwt(token);</span><br><span class="line">        <span class="keyword">String</span> subject = claims.getSubject();</span><br><span class="line">        <span class="keyword">String</span> userId = (<span class="keyword">String</span>)claims.<span class="built_in">get</span>(<span class="string">"userId"</span>);</span><br><span class="line">        <span class="keyword">String</span> openId = (<span class="keyword">String</span>)claims.<span class="built_in">get</span>(<span class="string">"openId"</span>);</span><br><span class="line">        <span class="keyword">String</span> sub = (<span class="keyword">String</span>)claims.<span class="built_in">get</span>(<span class="string">"sub"</span>);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"subject:"</span> + subject);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"userId:"</span> + userId);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"openId:"</span> + openId);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"sub:"</span> + sub);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>循环依赖解决<br>spring:<br>  main:<br>      allow-circular-references: true</p>
+<h2 id="spring-AOP日志"><a href="#spring-AOP日志" class="headerlink" title="spring AOP日志"></a>spring AOP日志</h2><p><a href="https://blog.csdn.net/zhuzhezhuzhe1/article/details/80565067" target="_blank" rel="noopener">参考博客</a></p>
+<p>添加依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>自定义注解<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210203917818.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210203949909.jpg" alt></p>
+<p>切点表达式、环绕通知、前置通知、后置通知</p>
+<p>在消息产生的生产者方法加入效果<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210212622603.jpg" alt></p>
+<p>博客接口开发</p>
+<p>springboot与rabbitmq集成<br>加入依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--rabbitmq--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-amqp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210191441168.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210192122032.jpg" alt></p>
+<p>rabbitmq 配置类</p>
+<p>注入RabbitTemplate<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.<span class="keyword">annotation</span>.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.<span class="keyword">annotation</span>.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.<span class="keyword">annotation</span>.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RabbitMQConfig</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> static <span class="keyword">final</span> String EXCHANGE_NAME=<span class="string">"boot_topic_exchange"</span>;</span><br><span class="line">    <span class="keyword">public</span> static <span class="keyword">final</span> String QUEUE_NAME=<span class="string">"boot_queue"</span>;</span><br><span class="line">    <span class="comment">//交换机</span></span><br><span class="line">    <span class="meta">@Bean(<span class="meta-string">"bootExchange"</span>)</span></span><br><span class="line">    <span class="keyword">public</span> Exchange bootExchange()&#123;</span><br><span class="line">        <span class="keyword">return</span> ExchangeBuilder.topicExchange(EXCHANGE_NAME).durable(<span class="literal">true</span>).build();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//队列</span></span><br><span class="line">    <span class="meta">@Bean(<span class="meta-string">"bootQueue"</span>)</span></span><br><span class="line">    <span class="keyword">public</span> Queue bootQueue()&#123;</span><br><span class="line">        <span class="keyword">return</span> QueueBuilder.durable(QUEUE_NAME).build();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//队列和交换机绑定关系Binding</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Binding bindQueueExchange(<span class="meta">@Qualifier(<span class="meta-string">"bootQueue"</span>)</span>Queue queue,<span class="meta">@Qualifier(<span class="meta-string">"bootExchange"</span>)</span>Exchange exchange)&#123;</span><br><span class="line">        <span class="keyword">return</span> BindingBuilder.bind(queue).to(exchange).with(<span class="string">"boot.#"</span>).noargs();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210200228920.jpg" alt><br>定义监听类，使用@RabbitListener注解完成队列监听<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211210201452046.jpg" alt></p>
+<h2 id="验证码检验功能开发"><a href="#验证码检验功能开发" class="headerlink" title="验证码检验功能开发"></a>验证码检验功能开发</h2><p><a href="https://www.jb51.net/article/143170.htm?utm_medium=referral" target="_blank" rel="noopener">参考实现</a></p>
+<p>了解反射  ThreadLocal 循环依赖 aop  设计模式  </p>
+<p>线程池    阅读数<br>redis数据结构</p>
+<h2 id="前端Vue开发"><a href="#前端Vue开发" class="headerlink" title="前端Vue开发"></a>前端Vue开发</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/项目/" rel="tag"># 项目</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/81qzl/" rel="next" title="python开发图床工具">
+                <i class="fa fa-chevron-left"></i> python开发图床工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/81s1c/" rel="prev" title="秒杀项目开发">
+                秒杀项目开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IDEA设置热加载"><span class="nav-number">1.</span> <span class="nav-text">IDEA设置热加载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用springMVC开发-RESTFUL-API"><span class="nav-number">2.</span> <span class="nav-text">使用springMVC开发 RESTFUL API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Filter和interceptor拦截REST服务"><span class="nav-number">2.1.</span> <span class="nav-text">使用Filter和interceptor拦截REST服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用swagger自动生成文档"><span class="nav-number">2.2.</span> <span class="nav-text">使用swagger自动生成文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用WireMock伪造REST服务"><span class="nav-number">2.3.</span> <span class="nav-text">使用WireMock伪造REST服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形验证码"><span class="nav-number">2.4.</span> <span class="nav-text">图形验证码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记住我功能"><span class="nav-number">2.5.</span> <span class="nav-text">记住我功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-AOP日志"><span class="nav-number">2.6.</span> <span class="nav-text">spring AOP日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证码检验功能开发"><span class="nav-number">2.7.</span> <span class="nav-text">验证码检验功能开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端Vue开发"><span class="nav-number">2.8.</span> <span class="nav-text">前端Vue开发</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/81rob/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

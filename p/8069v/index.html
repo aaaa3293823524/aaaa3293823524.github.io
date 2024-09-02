@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.jpg?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.jpg?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="a ^ b = c ，则 a ^ c = b，且 b ^ c = a接雨水  dp  单调栈76 最小覆盖子串80  双指针146  LRU哈希表+双向链表 221最大正方形 141 环形链表 其实，快慢指针法，就是一种 映射 操作， 链表 里面的 一次映射操作，就是 求 next，且 将位置 更新到 这里； 数组 这里，就是 根据 下标 i 求 nums[i] 这个元素值，且 将 下标 更新到这">
+<meta name="keywords" content="搭建博客,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode刷题">
+<meta property="og:url" content="https://userzhang.tk/p/8069v/index.html">
+<meta property="og:site_name" content="魔圣的博客">
+<meta property="og:description" content="a ^ b = c ，则 a ^ c = b，且 b ^ c = a接雨水  dp  单调栈76 最小覆盖子串80  双指针146  LRU哈希表+双向链表 221最大正方形 141 环形链表 其实，快慢指针法，就是一种 映射 操作， 链表 里面的 一次映射操作，就是 求 next，且 将位置 更新到 这里； 数组 这里，就是 根据 下标 i 求 nums[i] 这个元素值，且 将 下标 更新到这">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213112909911.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213114319836.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213150828410.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213151141492.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213133459307.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213124131747.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213124926065.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213125419516.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213125704139.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213120650002.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213142024751.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213140923042.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213143017605.jpg">
+<meta property="og:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213150352411.jpg">
+<meta property="og:updated_time" content="2022-01-22T09:33:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="leetcode刷题">
+<meta name="twitter:description" content="a ^ b = c ，则 a ^ c = b，且 b ^ c = a接雨水  dp  单调栈76 最小覆盖子串80  双指针146  LRU哈希表+双向链表 221最大正方形 141 环形链表 其实，快慢指针法，就是一种 映射 操作， 链表 里面的 一次映射操作，就是 求 next，且 将位置 更新到 这里； 数组 这里，就是 根据 下标 i 求 nums[i] 这个元素值，且 将 下标 更新到这">
+<meta name="twitter:image" content="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213112909911.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://userzhang.tk/p/8069v/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>leetcode刷题 | 魔圣的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">魔圣的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://userzhang.tk/p/8069v/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="魔圣">
+      <meta itemprop="description" content="二十四桥明月夜，玉人何处教吹箫">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">leetcode刷题
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-10-19 20:19:01" itemprop="dateCreated datePublished" datetime="2021-10-19T20:19:01+08:00">2021-10-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-01-22 17:33:52" itemprop="dateModified" datetime="2022-01-22T17:33:52+08:00">2022-01-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>a ^ b = c ，则 a ^ c = b，且 b ^ c = a<br>接雨水  dp  单调栈<br>76 最小覆盖子串<br>80  双指针<br>146  LRU<br>哈希表+双向链表</p>
+<p>221最大正方形</p>
+<p>141 环形链表</p>
+<p>其实，快慢指针法，就是一种 映射 操作， 链表 里面的 一次映射操作，就是 求 next，且 将位置 更新到 这里； 数组 这里，就是 根据 下标 i 求 nums[i] 这个元素值，且 将 下标 更新到这里。</p>
+<p>链表里面 有环，即 一个节点 被不同的 节点指向（映射）； 而 这里说的 数组 有环，即 数组中的一个元素值 被不同的 index 指向（映射）； 所以，求解方法 一样可以 使用 快慢指针法。</p>
+<p>图java代码   牛客网美团试题<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class Graph &#123;</span><br><span class="line">    <span class="comment">//边</span></span><br><span class="line">    <span class="keyword">public</span> class EdgeNode&#123;</span><br><span class="line">        <span class="built_in">int</span> index;  <span class="comment">//存储该顶点对应的下标</span></span><br><span class="line">        <span class="built_in">int</span> weight; <span class="comment">//存储权重</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ArrayList&lt;<span class="keyword">String</span>&gt; pointList;    <span class="comment">//顶点数组</span></span><br><span class="line">    LinkedList&lt;EdgeNode&gt; edjList[]; <span class="comment">//邻接表</span></span><br><span class="line">    <span class="built_in">int</span> pointNum;       <span class="comment">//顶点数</span></span><br><span class="line">    <span class="built_in">int</span> edgeNum;        <span class="comment">//边数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Graph(<span class="built_in">int</span> n)&#123;</span><br><span class="line">        pointList = <span class="keyword">new</span> ArrayList&lt;&gt;(n);</span><br><span class="line">        edjList = <span class="keyword">new</span> LinkedList[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            edjList[i] = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        pointNum = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加一条顶点</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> addPoint(<span class="keyword">String</span> name)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pointList.<span class="built_in">size</span>() &gt;= pointNum)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"point array full"</span>);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pointList.indexOf(name) != <span class="number">-1</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"已经存在"</span>+name);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        pointList.<span class="built_in">add</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">String</span> getName(<span class="built_in">int</span> index)&#123;</span><br><span class="line">        <span class="keyword">return</span> pointList.<span class="built_in">get</span>(index);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加一条边</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> addEdge(<span class="keyword">String</span> name1, <span class="keyword">String</span> name2, <span class="built_in">int</span> weight)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">int</span> i = pointList.indexOf(name1);</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">-1</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"not find nam1="</span>+name1);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> j = pointList.indexOf(name2);</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">-1</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"not find name2="</span>+name2);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        EdgeNode edge = <span class="keyword">new</span> EdgeNode();</span><br><span class="line">        edge.index = j;</span><br><span class="line">        edge.weight = weight;</span><br><span class="line">        edjList[i].<span class="built_in">add</span>(edge);</span><br><span class="line">        edgeNum++;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//加入另一个边 （无向边 两边都加）</span></span><br><span class="line">        edge = <span class="keyword">new</span> EdgeNode();</span><br><span class="line">        edge.index = i;</span><br><span class="line">        edge.weight = weight;</span><br><span class="line">        edjList[j].<span class="built_in">add</span>(edge);</span><br><span class="line">        edgeNum++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> printAll()&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">String</span> s : pointList) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;pointList.<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">            System.out.<span class="built_in">print</span>(<span class="string">"节点"</span>+pointList.<span class="built_in">get</span>(i) +<span class="string">"边为:"</span>);</span><br><span class="line">            <span class="keyword">for</span> (EdgeNode edgeNode : edjList[i]) &#123;</span><br><span class="line">                System.out.<span class="built_in">print</span>(pointList.<span class="built_in">get</span>(edgeNode.index)+<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 广度遍历</span></span><br><span class="line"><span class="comment">     * @param name</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> BSTTraverse(<span class="keyword">String</span> name)&#123;</span><br><span class="line">        LinkedList&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//找到name</span></span><br><span class="line">        <span class="built_in">int</span> i = pointList.indexOf(name);</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">-1</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"not find name="</span>+name);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span>[] a = <span class="keyword">new</span> <span class="built_in">int</span>[pointNum];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; pointNum; j++) &#123;</span><br><span class="line">            a[j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        a[i] = <span class="number">1</span>;</span><br><span class="line">        LinkedList&lt;EdgeNode&gt; list = edjList[i];</span><br><span class="line">        <span class="keyword">for</span> (EdgeNode edgeNode : list) &#123;</span><br><span class="line">            queue.addLast(edgeNode.index);</span><br><span class="line">            a[edgeNode.index] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(queue.<span class="built_in">size</span>() != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//从queue中拿出一个节点</span></span><br><span class="line">            i = queue.removeFirst();</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"遍历 "</span> + pointList.<span class="built_in">get</span>(i));</span><br><span class="line"></span><br><span class="line">            list = edjList[i];</span><br><span class="line">            <span class="keyword">for</span> (EdgeNode edgeNode : list) &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[edgeNode.index] != <span class="number">1</span>)&#123;</span><br><span class="line">                    queue.addLast(edgeNode.index);</span><br><span class="line">                    a[edgeNode.index] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> class Node&#123;</span><br><span class="line">        <span class="built_in">int</span> index;</span><br><span class="line">        <span class="built_in">int</span> deep;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据深度获取好友队列</span></span><br><span class="line"><span class="comment">     * @param name</span></span><br><span class="line"><span class="comment">     * @param deep 获取1度好友 则深度为2</span></span><br><span class="line"><span class="comment">     * @return</span></span><br><span class="line"><span class="comment">     * 采用广度优先算法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> LinkedList&lt;Node&gt; getQueueByDeep(<span class="keyword">String</span> name, <span class="built_in">int</span> deep)&#123;</span><br><span class="line">        LinkedList&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        <span class="comment">//找到name</span></span><br><span class="line">        <span class="built_in">int</span> i = pointList.indexOf(name);</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">-1</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"not find name="</span>+name);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span>[] a = <span class="keyword">new</span> <span class="built_in">int</span>[pointNum];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; pointNum; j++) &#123;</span><br><span class="line">            a[j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Node node = <span class="keyword">new</span> Node();</span><br><span class="line">        node.index = i;</span><br><span class="line">        node.deep = <span class="number">1</span>;</span><br><span class="line">        queue.addLast(node);</span><br><span class="line">        a[i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(queue.<span class="built_in">size</span>() != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//从queue中拿出一个节点</span></span><br><span class="line">            node = queue.getFirst();</span><br><span class="line">            <span class="keyword">if</span>(node.deep == deep)&#123;</span><br><span class="line">                <span class="keyword">return</span> queue;</span><br><span class="line">            &#125;</span><br><span class="line">            queue.removeFirst();</span><br><span class="line">            <span class="comment">//System.out.println("遍历 " + pointList.get(node.index).data);</span></span><br><span class="line"></span><br><span class="line">            List&lt;EdgeNode&gt; list = edjList[node.index];</span><br><span class="line">            <span class="keyword">for</span> (EdgeNode edgeNode : list) &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[edgeNode.index] != <span class="number">1</span>)&#123;</span><br><span class="line">                    Node temp = <span class="keyword">new</span> Node();</span><br><span class="line">                    temp.index = edgeNode.index;</span><br><span class="line">                    temp.deep = node.deep+<span class="number">1</span>;</span><br><span class="line">                    queue.addLast(temp);</span><br><span class="line">                    a[edgeNode.index] = <span class="number">1</span>;</span><br><span class="line">                    System.out.<span class="built_in">println</span>(<span class="string">"deep="</span>+temp.deep + pointList.<span class="built_in">get</span>(edgeNode.index));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">        Graph g = <span class="keyword">new</span> Graph(<span class="number">7</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小团"</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小美"</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小诚"</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小信"</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小卓"</span>);</span><br><span class="line">        g.addPoint(<span class="string">"小越"</span>);</span><br><span class="line"></span><br><span class="line">        g.addPoint(<span class="string">"小孩"</span>);</span><br><span class="line"></span><br><span class="line">        g.addEdge(<span class="string">"小团"</span>, <span class="string">"小美"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小卓"</span>, <span class="string">"小美"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小诚"</span>, <span class="string">"小美"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小团"</span>, <span class="string">"小卓"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小诚"</span>, <span class="string">"小信"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小信"</span>, <span class="string">"小越"</span>, <span class="number">1</span>);</span><br><span class="line">        g.addEdge(<span class="string">"小卓"</span>, <span class="string">"小越"</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        g.addEdge(<span class="string">"小信"</span>, <span class="string">"小孩"</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        g.printAll();</span><br><span class="line"></span><br><span class="line">        g.BSTTraverse(<span class="string">"小美"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">int</span> deep = <span class="number">4</span>;</span><br><span class="line">        LinkedList&lt;Node&gt; queue = g.getQueueByDeep(<span class="string">"小美"</span>, <span class="number">4</span>);</span><br><span class="line">        <span class="keyword">if</span>(queue == <span class="keyword">null</span>)&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"没有"</span>+(deep<span class="number">-1</span>)+<span class="string">"度好友"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (Node node : queue) &#123;</span><br><span class="line">                System.out.<span class="built_in">println</span>(node.deep+<span class="string">"度好友为 "</span>+ g.getName(node.index));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>HTTPS的实现原理 HTTP的5个常用Method及其含义，以及5个常用Status Code及其含义</p>
+<p>拓扑排序<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.<span class="keyword">Array</span>;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 给定按火星字典序排列的单词，求单词中出现过的字符的字典序</span></span><br><span class="line"><span class="comment"> * wrt wrf er ett rftt</span></span><br><span class="line"><span class="comment"> * x z x</span></span><br><span class="line"><span class="comment"> * abc bbc</span></span><br><span class="line"><span class="comment"> * hij ikjk kih jkca jkaa jj</span></span><br><span class="line"><span class="comment"> * 构造一个字符的有向无环图，再找拓扑序列</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> class Main &#123;</span><br><span class="line">    <span class="comment">// 保存图，定义如果字符i在字符j前，那么存在i到j路径，即map[i][j]=1</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span>[][] <span class="built_in">map</span> = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">26</span>][<span class="number">26</span>];</span><br><span class="line">    <span class="comment">// 保存每个节点的入度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span>[] indegree = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="comment">// 记录出现过的字符</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">boolean</span>[] flag = <span class="keyword">new</span> <span class="built_in">boolean</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Set&lt;Character&gt; <span class="built_in">set</span> = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    <span class="comment">// 保存结果</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;Character&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">// wrt wrf er ett rftt</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">String</span>[] input = sc.nextLine().<span class="built_in">split</span>(<span class="string">" "</span>);</span><br><span class="line">        <span class="built_in">int</span> maxLen = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 创建有向图</span></span><br><span class="line">        build(input);</span><br><span class="line">        <span class="comment">// 找拓扑序列</span></span><br><span class="line">        topology();</span><br><span class="line">        <span class="keyword">if</span>(ans.<span class="built_in">size</span>() == <span class="built_in">set</span>.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Character c : ans) &#123;</span><br><span class="line">                System.out.<span class="built_in">print</span>(c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">"invalid"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> topology() &#123;</span><br><span class="line">        <span class="keyword">while</span>(ans.<span class="built_in">size</span>() &lt; <span class="built_in">set</span>.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="comment">// 是否在一个遍历中找到入度为0的节点，如果没找到，要break;如果一次遍历找到两个入度为0的点，说明是无法确认顺序的</span></span><br><span class="line">            <span class="built_in">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; indegree.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(indegree[i] == <span class="number">0</span> &amp;&amp; flag[i]) cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt != <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 找没有入度的节点，加入序列，在有向图中删除这个节点和从这个节点出发的边</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; indegree.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (indegree[i] == <span class="number">0</span> &amp;&amp; flag[i]) &#123;</span><br><span class="line">                    ans.<span class="built_in">add</span>((<span class="built_in">char</span>) (<span class="string">'a'</span> + i));</span><br><span class="line">                    flag[i] = <span class="keyword">false</span>;    <span class="comment">// 删除节点</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++) &#123;       <span class="comment">// 删除从这个节点出发的边</span></span><br><span class="line">                        <span class="keyword">if</span> (<span class="built_in">map</span>[i][j] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                        indegree[j]--;</span><br><span class="line">                        <span class="built_in">map</span>[i][j] = <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="comment">//[wrt wrf er ett rftt]</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> build(<span class="keyword">String</span>[] strs) &#123;</span><br><span class="line">        <span class="comment">// 找到相邻的两个字符串，第一个不相同的字符可以确定字符的顺序</span></span><br><span class="line">        <span class="comment">// 如wrt和wrf可以得到：t-&gt;f</span></span><br><span class="line">        <span class="keyword">String</span> pre = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">char</span> c : pre.toCharArray()) &#123;</span><br><span class="line">            <span class="built_in">set</span>.<span class="built_in">add</span>(c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">            <span class="keyword">String</span> cur = strs[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">char</span> c : cur.toCharArray()) &#123;</span><br><span class="line">                <span class="built_in">set</span>.<span class="built_in">add</span>(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; Math.<span class="built_in">min</span>(pre.length(), cur.length()); j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(pre.charAt(j) == cur.charAt(j)) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">map</span>[pre.charAt(j)-<span class="string">'a'</span>][cur.charAt(j)-<span class="string">'a'</span>] == <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="built_in">map</span>[pre.charAt(j)-<span class="string">'a'</span>][cur.charAt(j)-<span class="string">'a'</span>] = <span class="number">1</span>;</span><br><span class="line">                indegree[cur.charAt(j)-<span class="string">'a'</span>] += <span class="number">1</span>;</span><br><span class="line">                flag[pre.charAt(j)-<span class="string">'a'</span>] = <span class="keyword">true</span>;</span><br><span class="line">                flag[cur.charAt(j)-<span class="string">'a'</span>] = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>redis</p>
+<p>有序集合基于散列表和跳跃表实现，访问中间元素时间复杂度是OlogN</p>
+<p>单机版：很少使用。存在的问题：1、内存容量有限 2、处理能力有限 3、无法高可用。</p>
+<p>主从模式：master 节点挂掉后，需要手动指定新的 master，可用性不高，基本不用。</p>
+<p>哨兵模式：master 节点挂掉后，哨兵进程会主动选举新的 master，可用性高，但是每个节点存储的数据是一样的，浪费内存空间。数据量不是很多，集群规模不是很大，需要自动容错容灾的时候使用。</p>
+<p>Redis cluster：主要是针对海量数据+高并发+高可用的场景，如果是海量数据，如果你的数据量很大，那么建议就用Redis cluster，所有主节点的容量总和就是Redis cluster可缓存的数据容量。</p>
+<p>105  106 二叉树 前 中 后</p>
+<h1 id="创建普通的索引"><a href="#创建普通的索引" class="headerlink" title="创建普通的索引"></a>创建普通的索引</h1><p> alter table <code>table_name</code>  add  index <code>index_name</code> (<code>字段名</code>)</p>
+<h1 id="创建主键索引"><a href="#创建主键索引" class="headerlink" title="创建主键索引"></a>创建主键索引</h1><p>alter  table <code>table_name</code> add primary  key (<code>字段名</code>)</p>
+<h1 id="创建-唯一索引"><a href="#创建-唯一索引" class="headerlink" title="创建 唯一索引"></a>创建 唯一索引</h1><p>alter  table  <code>table_name</code> add unique  (<code>字段名</code>)</p>
+<h1 id="创建全文的索引"><a href="#创建全文的索引" class="headerlink" title="创建全文的索引"></a>创建全文的索引</h1><p>alter table <code>table_name</code> add  fulltext (<code>字段名</code>)</p>
+<h1 id="创建多个索引"><a href="#创建多个索引" class="headerlink" title="创建多个索引"></a>创建多个索引</h1><p>alter  table <code>table_name</code>  add index  <code>index_Name</code>(<code>column</code>,<code>column1</code>,<code>column_N</code>…….)</p>
+<p>下面是删除索引的语句</p>
+<p>drop  index <code>index_name</code> on <code>table_name</code></p>
+<p>alter  table <code>table_name</code> drop index <code>index_name</code></p>
+<p>40  组合总和</p>
+<p>分治</p>
+<p>int quickMulti(int A, int B) {<br>    int ans = 0;<br>    for ( ; B; B &gt;&gt;= 1) {<br>        if (B &amp; 1) {<br>            ans += A;<br>        }<br>        A &lt;&lt;= 1;<br>    }<br>    return ans;<br>}</p>
+<p>约瑟夫环</p>
+<p>扩展中心    priority queue   比较器<br>剑指 Offer II 020. 回文子字符串的个数 Manacher 算法</p>
+<p>instance = new Singleton();</p>
+<p>这句代码在执行时会分解为三个步骤：</p>
+<p>1.为对象分配内存空间。</p>
+<p>2.执行初始化的代码。</p>
+<p>3.将分配好的内存地址设置给instance引用。</p>
+<p>当线程进行一个volatile变量的写操作时，JIT编译器生成的汇编指令会在写操作的指令后面加上一个“lock”指令</p>
+<h1 id="线程池生命周期："><a href="#线程池生命周期：" class="headerlink" title="线程池生命周期："></a>线程池生命周期：</h1><h2 id="RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，"><a href="#RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，" class="headerlink" title="RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，"></a>RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，</h2><h2 id="SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown-方法会进入到SHUTDOWN状态。"><a href="#SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown-方法会进入到SHUTDOWN状态。" class="headerlink" title="SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown()方法会进入到SHUTDOWN状态。"></a>SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown()方法会进入到SHUTDOWN状态。</h2><h2 id="STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow-方法会进入到STOP状态。"><a href="#STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow-方法会进入到STOP状态。" class="headerlink" title="STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow()方法会进入到STOP状态。"></a>STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow()方法会进入到STOP状态。</h2><h2 id="TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。"><a href="#TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。" class="headerlink" title="TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。"></a>TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。</h2><h2 id="TERMINATED：表示线程池处于终止状态。值是3"><a href="#TERMINATED：表示线程池处于终止状态。值是3" class="headerlink" title="TERMINATED：表示线程池处于终止状态。值是3"></a>TERMINATED：表示线程池处于终止状态。值是3</h2><p>javap -v 命令查看class文件对应的JVM字节码信息<br>Java对象的内存布局其实由对象头+实例数据+对齐填充</p>
+<p>就是Java对象的内存布局其实由对象头+实例数据+对齐填充三部分组成，而对象头主要包含Mark Word+指向对象所属的类的指针组成。Mark Word主要用于存储对象自身的运行时数据，哈希码，GC分代年龄，锁标志等。</p>
+<blockquote>
+<p>最左匹配原则  联合索引  范围查询<br>同时我们还可以发现在a值相等的情况下，b值又是按顺序排列的，但是这种顺序是相对的。所以最左匹配原则遇上范围查询就会停止，剩下的字段都无法使用索引。例如a = 1 and b = 2 a,b字段都可以使用索引，因为在a值确定的情况下b是相对有序的，而a&gt;1and b=2，a字段可以匹配上索引，但b值不可以，因为a的值是一个范围，在这个范围中b是无序的。</p>
+</blockquote>
+<p>链表递归实现</p>
+<p>跳跃表  单链表 索引</p>
+<p>不用平衡二叉树做索引<br>指的是逻辑结构上的平衡二叉树，其物理实现是数组。然后由于在逻辑结构上相近的节点在物理结构上可能会差很远。因此，每次读取的磁盘页的数据中有许多是用不上的。因此，查找过程中要进行许多次的磁盘读取操作。</p>
+<p>Zset是基于跳跃表+字典实现的，如果只是单key查询，那么就直接从字典中查询(字典的key就是保存了元素的值，value则是元素的分值score)，这样可以用O(1)的时间复杂度完成查询。如果是根据分值score进行范围查询，就是去跳跃表中查询</p>
+<p>undo log 事务原子性 （失败回滚）  MVCC<br>逻辑日志 记录SQL语句</p>
+<p>redo log  持久性<br>将对数据页的更改写入到redo log，此时redo log中这条事务的状态为prepare状态。</p>
+<p>MySQL在可重复读的隔离级别下，通过MVCC机制和Next-key Lock解决了幻读的问题</p>
+<p>反射机制优缺点：<br>反射机制的优缺点：<br>优点： 1）能够运行时动态获取类的实例，提高灵活性； 2）与动态编译结合 缺点： 1）使用反射<br>性能较低，需要解析字节码，将内存中的对象进行解析。 解决方案： 1、通过setAccessible(true)<br>关闭JDK的安全检查来提升反射速度； 2、多次创建一个类的实例时，有缓存会快很多 3、<br>ReflectASM工具类，通过字节码生成的方式加快反射速度 2）相对不安全，破坏了封装性（因为通<br>过反射可以获得私有方法和属性）</p>
+<p>notify可能会导致死锁，而notifyAll则不会</p>
+<p>剑指offer33</p>
+<p>剑指offer40     小跟堆<br>647回文子串<br>网络问题，延迟开销，带宽问题，安全问题<br> kafka 的设计理念，broker -&gt; topic -&gt; partition</p>
+<p> 高可用：主从</p>
+<p> Lucene 是著名的搜索开源软件，ElasticSearch 和 Solr 底层用的都是它<br> 分词<br> 分段的思想大大的提高了维护索引的效率<br> TF IDF  TF-IDF = TF / IDF<br> ElasticSearch 是集群的 = 主分片 + 副本分片<br> 脑裂</p>
+<p> maven  pom 项目对象模型</p>
+<p> SaaS系统开发</p>
+<p>Zookeeper的核心是原子广播，这个机制保证了各个Server之间的同步。实现这个机制的协议叫做<br>Zab协议</p>
+<p>Zab 协议来保证分布式事务的最终一致性。Zab协议要求每个 Leader 都要经历三个阶段：发现，同<br>步，广播</p>
+<p>Zookeeper 有两种选举算法：基于 basic paxos 实现和基于 fast paxos 实现。默认为 fast paxos</p>
+<p>恢复模式  广播模式</p>
+<p>spring循环依赖 spring事务隔离级别 spring事务传播行为<br>http  https   1.0和1.1<br>mybatis缓存   mybatis设计模式<br>mybatis 1级缓存 没有容量限定的HashMap  （多个sqlSession或者分布式环境 数据库写操作会引起脏数据）</p>
+<p>多个 SqlSession之间需要共享缓存，则需要使用到二级缓存。</p>
+<p>跨域  sql语句 linux命令练习   fork()<br>Docker Netty  unicode和utf8编码</p>
+<p>Nginx是一个web服务器和方向代理服务器，用于HTTP、HTTPS、SMTP、POP3和IMAP协议<br>多进程  异步非阻塞  反向代理 负载均衡  </p>
+<p>正向代理（通过正向代理的方式，在我们的客户端运行一个软件，将我们的HTTP请求转发<br>到其他不同的服务器端）<br>mongodb文档  vue</p>
+<p>select poll epoll</p>
+<p>nginx用途：<br>Nginx服务器的最佳用法是在网络上部署动态HTTP内容，使用SCGI、WSGI应用程序服务器、用于<br>脚本的FastCGI处理程序。它还可以作为负载均衡器</p>
+<p>用户管理：提供用户的相关配置，新增用户后，默认密码为123456<br>角色管理：对权限与菜单进行分配，可根据部门设置角色的数据权限<br>菜单管理：已实现菜单动态路由，后端可配置化，支持多级菜单<br>部门管理：可配置系统组织架构，树形表格展示<br>岗位管理：配置各个部门的职位<br>字典管理：可维护常用一些固定的数据，如：状态，性别等<br>系统日志：记录用户操作日志与异常日志，方便开发人员定位排错<br>SQL监控：采用druid 监控数据库访问性能，默认用户名admin，密码123456<br>定时任务：整合Quartz做定时任务，加入任务日志，任务运行情况一目了然<br>代码生成：高灵活度生成前后端代码，减少大量重复的工作任务<br>邮件工具：配合富文本，发送html格式的邮件<br>七牛云存储：可同步七牛云存储的数据到系统，无需登录七牛云直接操作云数据<br>支付宝支付：整合了支付宝支付并且提供了测试账号，可自行测试<br>服务监控：监控服务器的负载情况<br>运维管理：一键部署你的应用</p>
+<p>347 前k个高频元素</p>
+<ol>
+<li>链表随机节点   蓄水池抽样</li>
+</ol>
+<p>28   kmp算法<br>208   实现Trie<br>547  省份数量   并查集</p>
+<p>leetcode 面试题17.13 恢复空格<br>方法1 Trie+动态规划<br>方法2  字符串哈希   Rabin-Karp </p>
+<p>最小k个数 快排 还不会</p>
+<p>最长递增子序列</p>
+<p>面试题17.07 婴儿名字 并查集</p>
+<p>面试题16.09 运算 </p>
+<p>面试题  10.03 旋转数组<br>189  153  154  33 81</p>
+<p>不同二叉搜索树  卡特兰数</p>
+<p>Morris中序遍历</p>
+<p>169  投票算法</p>
+<p>以 n = 1234567n=1234567 为例，我们需要统计「百位」上数字 11 出现的次数。我们知道，对于从 00 开始每 10001000 个数，「百位」上的数字 11 都会出现 100100 次，即数的最后三位每 10001000 个数都呈现 [000, 999][000,999] 的循环，其中的 [100, 199][100,199] 在「百位」上的数字为 11，共有 100100 个。</p>
+<p> 1382 将二叉搜索树变平衡<br> 783 二叉搜索树节点最小距离</p>
+<p> 337 打家劫舍 III<br> 递增的三元子序列</p>
+<p> 324摆动序列II  桶排序<br> 321 拼接最大数  单调栈<br> 316 去除重复字母  单调栈<br>354  套娃  动态规划<br> LIS<br> 牛顿迭代法<br> 牛顿迭代法是一种近似求解方程（近似求解函数零点）的方法。其本质是借助泰勒级数，从初始值开始快速向函数零点逼近。</p>
+<p> 413 等差数列划分<br> 416 动态规划<br> NP完全问题<br> 417 太平洋  大西洋<br> 406<br> 437<br> 474<br> 491<br> 494</p>
+<p> 459  kmp<br> 463<br> 498  对角线遍历</p>
+<p> 单调栈 下一个更大元素  496 503<br> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] nextGreaterElement(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">       Map&lt;Integer, Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">       Deque&lt;Integer&gt; <span class="built_in">stack</span> = <span class="keyword">new</span> ArrayDeque&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = nums2.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">           <span class="keyword">int</span> num = nums2[i];</span><br><span class="line">           <span class="keyword">while</span> (!<span class="built_in">stack</span>.isEmpty() &amp;&amp; num &gt;= <span class="built_in">stack</span>.peek()) &#123;</span><br><span class="line">               <span class="built_in">stack</span>.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="built_in">map</span>.put(num, <span class="built_in">stack</span>.isEmpty() ? <span class="number">-1</span> : <span class="built_in">stack</span>.peek());</span><br><span class="line">           <span class="built_in">stack</span>.push(num);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums1.length];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums1.length; ++i) &#123;</span><br><span class="line">           res[i] = <span class="built_in">map</span>.get(nums1[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>543  二叉树直径<br>零钱兑换看区别</p>
+<p>556<br>746 </p>
+<p>678 动态规划</p>
+<p>快排 堆排序手写</p>
+<p>单词接龙</p>
+<p>股票利润</p>
+<p>链表排序</p>
+<p>合并多个链表排序</p>
+<p>416<br>581<br>除法</p>
+<p>DAG有向无环图</p>
+<p>01背包逆序</p>
+<p>完全背包正序</p>
+<p>字符串哈希</p>
+<p>关键路径  AOV  AOE</p>
+<p>排序链表</p>
+<p>归并排序</p>
+<p>PriorityQueue<listnode> heap = new PriorityQueue<listnode>((a,b)-&gt;a.val-b.val);</listnode></listnode></p>
+<p>单调栈  找左边  正序  <strong><strong><em>*</em></strong></strong> 找右边  逆序<br><figure class="highlight plain"><figcaption><span>******更小></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while (!stack.isEmpty() &amp;&amp; num &gt;= stack.peek()) &#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(num, stack.isEmpty() ? -1 : stack.peek());</span><br><span class="line">            stack.push(num);</span><br></pre></td></tr></table></figure></p>
+<p>503</p>
+<p>子序列去重的问题。对于序列去重，我们可以使用串哈希算法（即 Rabin-Karp 编码</p>
+<p>去重还不太会</p>
+<p>1392  最长快乐前缀</p>
+<p>139  单词拆分</p>
+<p>Rabin-Karp 字符串编码   10的9次方+7     10的9次方+9 </p>
+<p>2018  dfs<br>2012</p>
+<p>1235   动态规划</p>
+<p>1995</p>
+<p>康托对角线</p>
+<p>1975   贪心</p>
+<p>Floyd 算法</p>
+<p>记忆化搜索</p>
+<p>1901</p>
+<p>1920  原地操作</p>
+<p>1922 快速幂    50</p>
+<p>1942</p>
+<p>最小费用最大流</p>
+<p>698 如果求方案 dfs怎么做<br>状态压缩动态规划   1931<br>1922    快速幂   50   分治算法       2进制拆分<br>递归<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">quickMul</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">long</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (N == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> y = quickMul(x, N / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> N % <span class="number">2</span> == <span class="number">0</span> ? y * y : y * y * x;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>迭代<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">quickMul</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">long</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> ans = <span class="number">1.0</span>;</span><br><span class="line">        <span class="comment">// 贡献的初始值为 x</span></span><br><span class="line">        <span class="keyword">double</span> x_contribute = x;</span><br><span class="line">        <span class="comment">// 在对 N 进行二进制拆分的同时计算答案</span></span><br><span class="line">        <span class="keyword">while</span> (N &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (N % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">// 如果 N 二进制表示的最低位为 1，那么需要计入贡献</span></span><br><span class="line">                ans *= x_contribute;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 将贡献不断地平方</span></span><br><span class="line">            x_contribute *= x_contribute;</span><br><span class="line">            <span class="comment">// 舍弃 N 二进制表示的最低位，这样我们每次只要判断最低位即可</span></span><br><span class="line">            N /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>除法实现</p>
+<p>1910  应用kmp</p>
+<ol>
+<li>最大子序列交替和</li>
+</ol>
+<p>200岛屿数量</p>
+<p>394  </p>
+<p>并查集   399<br>「力扣」第 547 题：省份数量（中等）；<br>「力扣」第 684 题：冗余连接（中等）；<br>「力扣」第 1319 题：连通网络的操作次数（中等）；<br>「力扣」第 1631 题：最小体力消耗路径（中等）；<br>「力扣」第 959 题：由斜杠划分区域（中等）；<br>「力扣」第 1202 题：交换字符串中的元素（中等）；<br>「力扣」第 947 题：移除最多的同行或同列石头（中等）；<br>「力扣」第 721 题：账户合并（中等）；<br>「力扣」第 803 题：打砖块（困难）；<br>「力扣」第 1579 题：保证图可完全遍历（困难）;<br>「力扣」第 778 题：水位上升的泳池中游泳（困难）</p>
+<p>兑换零钱贪心</p>
+<p>48  原地旋转    先水平翻转  再对角线翻转（实现矩阵顺时针旋转90度）</p>
+<p>1856  单调栈</p>
+<p>392  判断子序列</p>
+<p>1832  状态压缩</p>
+<p>回文  中心扩展  manacher</p>
+<p>698</p>
+<p>688  动态规划</p>
+<p>687</p>
+<p>684  并查集</p>
+<p>718</p>
+<p>797</p>
+<p>788  动态规划</p>
+<p>787   最短路<br>求解最短路一般有三种方法，floyd算法，dijkstra算法和bellman ford算法。这题使用bellman ford算法是适用性最强的，因为该算法的第k步就是求出的从给定起点到所有节点经过最多k步的最短路。如果只想到了dijkstra算法，说明思考方向是对的，但没有用到最合适的算法。</p>
+<p>779  找规律</p>
+<p>买股票无限次<br>买股票只买一次<br>买股票有手续费<br>买股票最多买两次</p>
+<p>841</p>
+<p>csp  收集卡牌  状态压缩dp</p>
+<p>Bellman-Ford     <a href="https://blog.csdn.net/lym940928/article/details/90209172" target="_blank" rel="noopener">https://blog.csdn.net/lym940928/article/details/90209172</a><br>它的基本原理是对图进行|V| - 1次松弛操作，得到所有可能的最短路径。<br>它比Dijkstra算法好的部分在于，在计算最短路径的班的权值可以为负，实现起来比较简单。<br>缺点则是时间复杂度较高，为O(|V||E|)。不过算法已经有了一些改进方案，比如队列优化的Bellmanford算法（SPFA算法），一定程度上提高了效率。</p>
+<p>SPFA算法</p>
+<p>改进的Dijkstra算法<br>由于最小费用最大流网络中存在负权值，Dijkstra算法不能直接求解最小费用最大流问题，如果最小费用最大流网络中的权值都非负，则可使用Dijkstra算法。引入势函数h(u)为上一次Dijkstra算法的dist(u)（表示从源点到顶点u的最短距离），对每一条边（u,v）,h(v)&lt;=h(u)+w(u,v)成立，则下一次计算中dist(v)=dist(u)+w(u,v)+h(u)-h(v)，所有的dist值必然都大于等于0，则可以继续用Dijkstra算法求解最短路。</p>
+<p>1928  动态规划</p>
+<p>1905  子岛屿</p>
+<p>出口</p>
+<p>784  字母大小写全排列   和子集看区别  90</p>
+<p>322  零钱兑换    518      求组合怎么求？</p>
+<p>70  爬楼梯</p>
+<p>做链表</p>
+<p>同值路径等深搜</p>
+<p>39  组合总和 搜索回溯</p>
+<p>6  z字型变换</p>
+<p>2^31−1=2147483647</p>
+<p>17</p>
+<p>二分查找经典题  旋转排序数组</p>
+<p>字符串相乘</p>
+<p>40</p>
+<p>75颜色分类  荷兰国旗  单指针  双指针</p>
+<p>91 解码方法<br>97  交错字符串 动态规划<br>剑指offer46</p>
+<p>做股票</p>
+<p>[−2147483648,2147483647]</p>
+<p>接雨水   双指针  单调栈  dp<br>正则表达式匹配</p>
+<p>85 单调栈</p>
+<p>140 记忆化搜索</p>
+<p>698  划分为k个相等子集   状态压缩dp</p>
+<p>线性筛  0/1背包  完全背包  最小费用最大流 taj强连通分量</p>
+<p>二分图  匈牙利算法</p>
+<p>DAG最小路径覆盖</p>
+<p>二分图最小点覆盖</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213112909911.jpg" alt><br>start法则</p>
+<p>二分图最大匹配<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213114319836.jpg" alt></p>
+<p>增广路的匈牙利算法<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213150828410.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213151141492.jpg" alt></p>
+<p>带权二分图最佳完美匹配</p>
+<p>manacher算法      最长回文子串    中心检测法O(n2)<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213133459307.jpg" alt></p>
+<p>无向图双连通分量      割点  桥<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213124131747.jpg" alt></p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213124926065.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213125419516.jpg" alt><br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213125704139.jpg" alt></p>
+<p>有向图强连通分量  Tarjan的SCC算法</p>
+<p>树上DP   平衡的艺术  树的重心</p>
+<p>FF  EA 最大流算法</p>
+<p>最小费用最大流<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213120650002.jpg" alt><br>Dinic<br>ISAP</p>
+<p>hash LCP</p>
+<p>后缀自动机</p>
+<p>线段树和树状数组   lowbit<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213142024751.jpg" alt><br>树状数组  动态前缀和（可修改）<br>线段树   平衡二叉树</p>
+<p>区间最值 线段树<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213140923042.jpg" alt><br>ST表  静态RMQ(区间最值)<br><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213143017605.jpg" alt></p>
+<p>组合数学和计数</p>
+<p>排序二叉树（二叉搜索树）    平衡树  set map 优势人群   multiset</p>
+<p>异象石</p>
+<p>Treap</p>
+<p>ac自动机</p>
+<p>RMQ     倍增法求解LCA    链式前向星</p>
+<p>关键路径</p>
+<p>增广路<br>dinic   分层图</p>
+<p><img src="https://gitee.com/mosheng123456789/pics/raw/master/img/360截图20211213150352411.jpg" alt><br>sap<br>ek<br>sf<br>ff<br><a href="https://www.cnblogs.com/ZJUT-jiangnan/p/3632525.html" target="_blank" rel="noopener">https://www.cnblogs.com/ZJUT-jiangnan/p/3632525.html</a></p>
+<p>Java红黑树 <a href="https://www.cnblogs.com/skywang12345/p/3624343.html" target="_blank" rel="noopener">https://www.cnblogs.com/skywang12345/p/3624343.html</a></p>
+<p>307 线段树<br><a href="https://www.cnblogs.com/strongmore/p/14223224.html" target="_blank" rel="noopener">https://www.cnblogs.com/strongmore/p/14223224.html</a></p>
+<p>Java  bellman-ford和SPFA算法实现<br><a href="https://www.cnblogs.com/lfri/p/9521271.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfri/p/9521271.html</a></p>
+<p>面试题 17.17. 多次搜索  trie  kmp</p>
+<p>面试题 08.14. 布尔运算  记忆化搜索  区间dp</p>
+<p>剑指 Offer II 063. 替换单词    trie</p>
+<p>kmp算法<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public static int strStr(String haystack, String needle) &#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.<span class="built_in">length</span>()==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		int[]next=new int[needle.<span class="built_in">length</span>()];</span><br><span class="line">		int <span class="built_in">j</span>=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(int <span class="built_in">i</span>=<span class="number">1</span>;<span class="built_in">i</span>&lt;needle.<span class="built_in">length</span>();<span class="built_in">i</span>++) &#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="built_in">j</span>&gt;<span class="number">0</span>&amp;&amp;needle.charAt(<span class="built_in">i</span>)!=needle.charAt(<span class="built_in">j</span>))<span class="built_in">j</span>=next[<span class="built_in">j</span><span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span>(needle.charAt(<span class="built_in">i</span>)==needle.charAt(<span class="built_in">j</span>))<span class="built_in">j</span>++;</span><br><span class="line">			next[<span class="built_in">i</span>]=<span class="built_in">j</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">j</span>=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(int <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;haystack.<span class="built_in">length</span>();<span class="built_in">i</span>++) &#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="built_in">j</span>&gt;<span class="number">0</span>&amp;&amp;haystack.charAt(<span class="built_in">i</span>)!=needle.charAt(<span class="built_in">j</span>))<span class="built_in">j</span>=next[<span class="built_in">j</span><span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span>(haystack.charAt(<span class="built_in">i</span>)==needle.charAt(<span class="built_in">j</span>)) &#123;</span><br><span class="line">				<span class="built_in">j</span>++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">j</span>==needle.<span class="built_in">length</span>())<span class="keyword">return</span> <span class="built_in">i</span>-needle.<span class="built_in">length</span>()+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>剑指offerII 76 快速排序</p>
+<p>单调队列   918. 环形子数组的最大和   前缀和 + 单调队列</p>
+<ol>
+<li>跳跃游戏 VI</li>
+</ol>
+<p>双连通分量   1192</p>
+<p>强连通分量  1489   tarjan<br><a href="https://blog.csdn.net/u013376508/article/details/50995675" target="_blank" rel="noopener">https://blog.csdn.net/u013376508/article/details/50995675</a><br><a href="https://blog.csdn.net/springrolls/article/details/101386049" target="_blank" rel="noopener">https://blog.csdn.net/springrolls/article/details/101386049</a><br><a href="https://www.cnblogs.com/nullzx/p/7968110.html" target="_blank" rel="noopener">https://www.cnblogs.com/nullzx/p/7968110.html</a></p>
+<p>关键路径<br><a href="https://blog.csdn.net/CmdSmith/article/details/60960276" target="_blank" rel="noopener">https://blog.csdn.net/CmdSmith/article/details/60960276</a></p>
+<p>计数排序</p>
+<p>基数排序</p>
+<p>线段树   673最长递增子序列个数</p>
+<ol>
+<li>区域和检索 - 数组可修改</li>
+</ol>
+<p>多线程</p>
+<p>欧拉回路</p>
+<p>马拉车    线性筛</p>
+<p>线性探查  二次探查</p>
+<p>B树  B+树<br><a href="https://www.jianshu.com/p/92d15df75027" target="_blank" rel="noopener">https://www.jianshu.com/p/92d15df75027</a></p>
+<p>字节流和字符流<br><a href="https://blog.csdn.net/qq_35122713/article/details/88793019" target="_blank" rel="noopener">https://blog.csdn.net/qq_35122713/article/details/88793019</a></p>
+<p>阻塞 非阻塞 同步  异步</p>
+<p>1717贪心</p>
+<p>1734</p>
+<p>1695   前缀和   滑动窗口</p>
+<p>1901 二分</p>
+<p>打断标记为真时 park失效</p>
+<p>锁  while(防止虚假唤醒)   wait</p>
+<p>无索引行锁升级为表锁</p>
+<p>show processlist</p>
+<p>in走索引 not in 不走</p>
+<p>大批量插入数据<br>主键顺序<br>关闭唯一性校验<br>设置手动提交事务</p>
+<p>insert</p>
+<p>like<br>前缀  覆盖索引</p>
+<p>order by<br>统一升序，统一降序  和索引顺序一致 覆盖索引</p>
+<p>group by<br> 用order by null 覆盖索引</p>
+<p>建议用union替换or</p>
+<p>索引提示<br>use index,ignore index,force index(针对全表扫描不走索引时)</p>
+<p>java图邻接链表实现<br><a href="https://www.jianshu.com/p/3b09a37cf16d" target="_blank" rel="noopener">https://www.jianshu.com/p/3b09a37cf16d</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/800a4/" rel="next" title="Mybatis框架学习">
+                <i class="fa fa-chevron-left"></i> Mybatis框架学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/807jl/" rel="prev" title="面经">
+                面经 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2Ni8yMDc5OQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt="魔圣">
+            
+              <p class="site-author-name" itemprop="name">魔圣</p>
+              <div class="site-description motion-element" itemprop="description">二十四桥明月夜，玉人何处教吹箫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">147</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/aaaa3293823524" title="GitHub &rarr; https://github.com/aaaa3293823524" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:3293823524@qq.com" title="E-Mail &rarr; mailto:3293823524@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com" title="http://www.baidu.com" rel="noopener" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建普通的索引"><span class="nav-number">1.</span> <span class="nav-text">创建普通的索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建主键索引"><span class="nav-number">2.</span> <span class="nav-text">创建主键索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建-唯一索引"><span class="nav-number">3.</span> <span class="nav-text">创建 唯一索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建全文的索引"><span class="nav-number">4.</span> <span class="nav-text">创建全文的索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建多个索引"><span class="nav-number">5.</span> <span class="nav-text">创建多个索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程池生命周期："><span class="nav-number">6.</span> <span class="nav-text">线程池生命周期：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，"><span class="nav-number">6.1.</span> <span class="nav-text">RUNNING：表示线程池处于运行状态，这时候的线程池可以接受任务和处理任务。值是-1，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown-方法会进入到SHUTDOWN状态。"><span class="nav-number">6.2.</span> <span class="nav-text">SHUTDOWN：表示线程池不接受新任务，但仍然可以处理队列中的任务，二进制值是0。调用showdown()方法会进入到SHUTDOWN状态。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow-方法会进入到STOP状态。"><span class="nav-number">6.3.</span> <span class="nav-text">STOP：表示线程池不接受新任务，也不处理队列中的任务，同时中断正在执行任务的线程，值是1。调用showdownNow()方法会进入到STOP状态。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。"><span class="nav-number">6.4.</span> <span class="nav-text">TIDYING：表示所有的任务都已经终止，并且工作线程的数量为0。值是2。SHUTDOWN和STOP状态的线程池任务执行完了，工作线程也为0了就会进入到TIDYING状态。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TERMINATED：表示线程池处于终止状态。值是3"><span class="nav-number">6.5.</span> <span class="nav-text">TERMINATED：表示线程池处于终止状态。值是3</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">魔圣</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'p/8069v/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
